@@ -33,6 +33,9 @@ const gilroy = localFont({
 });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fabian.art.br"),
+  verification: {
+    google: "dcct_ikHBbu2wTcy06T_H_WGmTNjK4TKxz-x7c40-R8",
+  },
   title: "Fabian Baldovino | Brand Filmmaking Porto Alegre",
   description: "Filmmaker de marcas em Porto Alegre. Narrativas visuais que blindam marcas e ativam percepção de alto valor. Conheça o portfólio.",
   keywords: [
