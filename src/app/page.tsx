@@ -8,26 +8,9 @@ import PersonImageSection from "@/components/PersonImageSection";
 import AboutContactSection from "@/components/AboutContactSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import Footer from "@/components/Footer";
-import ContactModal from "@/components/ContactModal";
-import AboutModal from "@/components/AboutModal";
 import { containerVariants } from "@/lib/animation/variants";
 
 export default function Home() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const { action } = (e as CustomEvent).detail;
-      if (action === 'contact') setIsContactOpen(true);
-      if (action === 'about') setIsAboutOpen(true);
-      if (action === 'projects') {
-        document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
-    window.addEventListener('nav-action', handler);
-    return () => window.removeEventListener('nav-action', handler);
-  }, []);
 
   return (
     <div className="flex flex-col h-screen min-h-screen font-sans pt-2 md:pt-0 lg:py-6 xl:py-0 xl:pb-6 overflow-auto lg:overflow-hidden">
@@ -52,8 +35,6 @@ export default function Home() {
         </motion.div>
       </main>
       <Footer className="mb-4" />
-      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
     </div>
   );
 }

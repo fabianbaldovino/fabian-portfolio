@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ConsoleProvider from "@/components/Console";
 import { Analytics } from "@vercel/analytics/next"
+import GlobalModals from "@/components/GlobalModals";
 
 // Initialize Gilroy font
 const gilroy = localFont({
@@ -112,6 +113,7 @@ export default function RootLayout({
         />
         <ConsoleProvider />
         {children}
+        <GlobalModals />
         <Analytics />
       </body>
     </html>
