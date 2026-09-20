@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
   { 
     name: "O Horizonte", 
-    imgSrc: "/FOTOS/DJI_0561.png",
+    imgSrc: "/FOTOS/DJI_0561.jpg",
     icon: "Compass",
     type: "copy",
     tags: ["Filmagem Aérea", "Escala Visual", "Identidade de Marca"],
@@ -39,12 +39,12 @@ export const projects: Project[] = [
     type: "gallery",
     tags: ["Making Of", "Processo Criativo", "Retaguarda Invisível"],
     content: [
-      "/FOTOS/2.png",
+      "/FOTOS/2.jpg",
       "/FOTOS/20260503_093522.jpg",
       "/FOTOS/20260606_092002.jpg",
-      "/FOTOS/3.png",
+      "/FOTOS/3.jpg",
       "/FOTOS/DSC00053.jpg.jpeg",
-      "/FOTOS/_MG_0806.png"
+      "/FOTOS/_MG_0806.jpg"
     ]
   },
   { 

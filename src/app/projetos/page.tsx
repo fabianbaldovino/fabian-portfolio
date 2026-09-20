@@ -34,7 +34,7 @@ function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose
             onClick={onClose}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Fechar"
+            aria-label="Fechar modal"
           >
             <X size={22} className="text-foreground" />
           </motion.button>
@@ -64,6 +64,7 @@ function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose
                 alt={project.name}
                 fill
                 quality={100}
+                sizes="(max-width: 768px) 100vw, 800px"
                 className="object-cover object-center"
               />
             </div>
@@ -148,6 +149,7 @@ export default function ProjetosPage() {
                 fill
                 priority
                 quality={100}
+                sizes="(max-width: 768px) 100vw, 65vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               {/* Gradient overlay */}
@@ -206,7 +208,7 @@ export default function ProjetosPage() {
 
               {rest.map((project, i) => (
                 <motion.div
-                  key={project.name}
+                  key={`${project.client}-${project.name}`}
                   variants={cardVariants}
                   whileHover="hover"
                   className="group"
@@ -234,6 +236,7 @@ export default function ProjetosPage() {
                           alt={project.name}
                           fill
                           quality={80}
+                          sizes="72px"
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import { X, Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { X, Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
 import { modalVariants, backdropVariants, textVariants, iconVariants } from "@/lib/animation/variants";
 import { contactInfo } from "@/lib/constants/contact";
 import { socials } from "@/lib/constants/socials";
@@ -39,6 +39,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               initial="hidden"
               animate="visible"
               whileHover="hover"
+              aria-label="Fechar modal"
             >
               <X size={24} className="text-foreground" />
             </motion.button>
@@ -156,6 +157,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 {[
                   { icon: Linkedin, href: socials.linkedin, label: "LinkedIn" },
                   { icon: Twitter, href: socials.twitter, label: "X (Twitter)" },
+                  { icon: Instagram, href: socials.instagram, label: "Instagram" },
                 ].map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}

@@ -86,7 +86,13 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                       fill
                       priority
                       quality={100}
-                      className={project.name === "O Código Brasil" ? "object-contain bg-background/5 p-4" : "object-cover object-[center_30%]"}
+                      className={
+                        project.name === "O Código Brasil"
+                          ? "object-contain bg-background/5 p-4"
+                          : project.name === "A Operação"
+                          ? "object-cover object-[center_45%]"
+                          : "object-cover object-[center_30%]"
+                      }
                     />
                   </div>
                   <p className="text-xl md:text-3xl font-light leading-relaxed text-foreground/90">
