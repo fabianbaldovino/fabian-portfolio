@@ -60,7 +60,7 @@ export default function ProjectsSection() {
           </motion.div>
         </div>
         <motion.div 
-          className="h-[200px] lg:h-[240px] xl:h-[30%] min-h-[180px] rounded-[20px] overflow-hidden mb-4 cursor-pointer group flex-shrink-0"
+          className="h-[250px] lg:h-[35%] min-h-[220px] rounded-[20px] overflow-hidden mb-4 cursor-pointer group flex-shrink-0 relative bg-black/40 border border-white/5"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
@@ -69,12 +69,11 @@ export default function ProjectsSection() {
           <Image
             src={projects[0].imgSrc}
             alt={`${projects[0].name} Project Showcase`}
-            width={1080}
-            height={1920}
+            fill
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
             quality={100}
-            className="w-full h-full object-cover object-top md:object-[center_15%] group-hover:scale-105 transition-transform duration-500"
+            className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
         <motion.div 
