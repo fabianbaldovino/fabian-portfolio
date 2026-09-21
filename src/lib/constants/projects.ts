@@ -31,7 +31,7 @@ export const projects: Project[] = [
   { 
     name: "O Horizonte", 
     imgSrc: "/FOTOS/DSC00053.jpg.jpeg",
-    modalImgSrc: "/FOTOS/DJI_0561.jpg",
+    modalImgSrc: "/FOTOS/DJI_0561.png",
     icon: "Compass",
     type: "copy",
     shortDescription: "Filmagem Aérea e Escala Visual",
