@@ -54,25 +54,26 @@ export default function AboutContactSection() {
         }}
         aria-label="Abrir formulário de contato"
       >
-        <div className="flex justify-between items-center mb-2 md:mb-4">
+        <div className="flex justify-between items-start mb-2 md:mb-4 gap-2">
           <motion.div 
-            className="flex flex-col"
+            className="flex flex-col min-w-0"
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
-            <p className="text-sm md:text-lg lg:text-xl font-light">Tem alguma</p>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] font-medium leading-[1.1] md:leading-tight">
+            <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-light truncate">Tem alguma</p>
+            <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] font-medium leading-[1.1] md:leading-tight break-words">
               Dúvida?
             </h2>
           </motion.div>
           <motion.div
+            className="flex-shrink-0 mt-1"
             variants={iconVariants}
             initial="hidden"
             animate="visible"
             whileHover="hover"
           >
-            <ArrowUpRight className="text-brand-accent" size={24} aria-hidden="true" />
+            <ArrowUpRight className="text-brand-accent w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" aria-hidden="true" />
           </motion.div>
         </div>
         
