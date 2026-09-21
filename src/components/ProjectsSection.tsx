@@ -60,7 +60,7 @@ export default function ProjectsSection() {
           </motion.div>
         </div>
         <motion.div 
-          className="h-[250px] lg:h-[35%] min-h-[220px] rounded-[20px] overflow-hidden mb-4 cursor-pointer group flex-shrink-0 relative bg-black/40 border border-white/5"
+          className="h-[250px] lg:h-[35%] min-h-[220px] rounded-[20px] overflow-hidden mb-4 cursor-pointer group flex-shrink-0 relative"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
@@ -73,7 +73,7 @@ export default function ProjectsSection() {
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
             quality={100}
-            className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+            className="object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
         <motion.div 
