@@ -81,7 +81,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                 <div className="flex flex-col gap-8">
                   <div className="w-full h-[300px] md:h-[500px] rounded-[20px] overflow-hidden relative">
                     <Image
-                      src={project.imgSrc}
+                      src={project.modalImgSrc || project.imgSrc}
                       alt={project.name}
                       fill
                       priority

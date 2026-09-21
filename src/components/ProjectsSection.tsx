@@ -118,12 +118,17 @@ export default function ProjectsSection() {
             <hr className="border-0 h-[1px] bg-accent" />
             <Link 
               href="/projetos"
-              className="flex justify-between items-center group cursor-pointer p-2 md:p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg"
+              className="w-full flex justify-between items-center group cursor-pointer p-2 md:p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg"
               aria-label="Ir para Obras Selecionadas"
             >
-              <span className="text-lg md:text-xl group-hover:text-brand-accent transition-colors">Obras Selecionadas</span>
-              <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full border border-background/20 group-hover:border-brand-accent group-hover:bg-brand-accent/5 transition-all duration-300">
-                <Sparkles size={20} strokeWidth={1.5} className="text-background/60 group-hover:text-brand-accent group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
+              <div className="flex flex-col gap-1 pr-2">
+                <span className="text-lg md:text-xl group-hover:text-brand-accent transition-colors">Obras Selecionadas</span>
+                <span className="text-xs md:text-sm text-foreground/60">Ver portfólio completo</span>
+              </div>
+              <div className="flex items-center flex-shrink-0">
+                <div className="overflow-hidden rounded-lg w-[80px] h-[48px] md:w-[120px] md:h-[72px]">
+                  <Image src="/FOTOS/trabalhos/ele nao foi embora.jpg" alt="Obras Selecionadas" width={120} height={72} loading="lazy" quality={80} sizes="(max-width: 768px) 80px, 120px" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
               </div>
             </Link>
           </motion.div>

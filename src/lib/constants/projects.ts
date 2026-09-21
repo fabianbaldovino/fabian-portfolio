@@ -1,6 +1,7 @@
 export type Project = { 
   name: string; 
   imgSrc: string;
+  modalImgSrc?: string;
   icon?: string;
   type: "copy" | "gallery";
   shortDescription?: string;
@@ -30,6 +31,7 @@ export const projects: Project[] = [
   { 
     name: "O Horizonte", 
     imgSrc: "/FOTOS/DSC00053.jpg.jpeg",
+    modalImgSrc: "/FOTOS/20260606_092002.jpg",
     icon: "Compass",
     type: "copy",
     shortDescription: "Filmagem Aérea e Escala Visual",
