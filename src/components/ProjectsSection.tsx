@@ -60,7 +60,7 @@ export default function ProjectsSection() {
           </motion.div>
         </div>
         <motion.div 
-          className="h-[300px] md:h-[50%] rounded-[20px] overflow-hidden mb-4 cursor-pointer group"
+          className="h-[200px] lg:h-[240px] xl:h-[30%] min-h-[180px] rounded-[20px] overflow-hidden mb-4 cursor-pointer group flex-shrink-0"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
