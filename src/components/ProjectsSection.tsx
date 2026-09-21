@@ -74,7 +74,7 @@ export default function ProjectsSection() {
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
             quality={100}
-            className="w-full h-full object-cover object-[center_30%] md:object-[center_60%] group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover object-top md:object-[center_15%] group-hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
         <motion.div 
