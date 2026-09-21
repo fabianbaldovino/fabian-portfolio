@@ -10,9 +10,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: #669C46;
+  --color-brand-accent: #669C46;
+  --color-brand-dark: #0C0D0F;
   --color-card: #242C2F;
   --font-sans: var(--font-gilroy);
   --font-mono: var(--font-gilroy);
+}
+
+@utility border-3 {
+  border-width: 3px;
 }
 
 @media (prefers-color-scheme: dark) {
