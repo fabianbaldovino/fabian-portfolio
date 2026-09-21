@@ -105,8 +105,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${gilroy.variable} font-gilroy antialiased`}>
+    <html lang="pt-BR" className="overflow-x-hidden">
+      <body className={`${gilroy.variable} font-gilroy antialiased overflow-x-hidden`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

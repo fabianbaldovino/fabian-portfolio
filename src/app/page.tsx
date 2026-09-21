@@ -17,12 +17,12 @@ export default function Home() {
       <Navbar />
       <main>
         <motion.div 
-          className="flex flex-col lg:flex-row flex-1 gap-4 pb-4 md:pb-0 lg:h-[calc(100vh-130px)]"
+          className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-8 pb-4 md:pb-0 lg:h-[calc(100vh-130px)]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <section id="about-section" aria-label="Hero e Sobre" className="flex flex-col w-full lg:w-[70%] gap-4 lg:mb-6">
+          <section id="about-section" aria-label="Hero e Sobre" className="flex flex-col w-full lg:w-[70%] gap-6 lg:mb-8">
             <div className="flex flex-col lg:flex-row gap-4 md:h-[60%]">
               <HeroSection />
               <PersonImageSection />

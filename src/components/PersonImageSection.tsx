@@ -13,9 +13,10 @@ export default function PersonImageSection() {
     >
       <video
         src="/videos/REEL_2026_1.mp4"
-        autoPlay
+        controls
+        preload="metadata"
+        poster="/FOTOS/20260522_120207.jpg"
         loop
-        muted
         playsInline
         className="w-full h-full object-cover"
         aria-label="Reel 2026"

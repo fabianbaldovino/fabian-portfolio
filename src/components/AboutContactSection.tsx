@@ -69,7 +69,7 @@ export default function AboutContactSection() {
         
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <motion.button 
-            className="bg-brand-accent text-brand-dark px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-colors w-full md:w-auto text-sm md:text-base"
+            className="bg-brand-accent text-brand-dark px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-colors w-full md:w-auto text-sm md:text-base min-h-[48px] flex items-center justify-center"
             onClick={(e) => {
               e.stopPropagation();
               setIsModalOpen(true);
@@ -77,7 +77,7 @@ export default function AboutContactSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Fale comigo
+            Agendar Conversa
           </motion.button>
         </div>
       </motion.div>

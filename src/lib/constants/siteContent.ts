@@ -1,7 +1,7 @@
 export const heroContent = {
-  line1: "Brand Filmmaking,",
+  line1: "Brand Filmmaking",
   line2Prefix: "construindo",
-  line2Emphasis: "sonhos",
+  line2Emphasis: " sonhos",
   line2Suffix: "",
   line3: "em marcas magnéticas",
 };

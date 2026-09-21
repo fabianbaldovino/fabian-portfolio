@@ -95,18 +95,16 @@ export default function ProjectsSection() {
                 onClick={() => handleProjectClick(project)}
                 aria-label={`Ver detalhes de ${project.name}`}
               >
-                <span className="text-lg md:text-xl group-hover:text-brand-accent transition-colors">{project.name}</span>
-                <div className="flex items-center">
-                  {project.icon && iconMap[project.icon] ? (
-                    <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full border border-background/20 group-hover:border-brand-accent group-hover:bg-brand-accent/5 transition-all duration-300">
-                      {(() => {
-                        const IconComponent = iconMap[project.icon];
-                        return <IconComponent className="text-background/60 group-hover:text-brand-accent group-hover:scale-110 transition-all duration-300" size={20} strokeWidth={1.5} aria-hidden="true" />;
-                      })()}
-                    </div>
-                  ) : (
-                    <Image src={project.imgSrc} alt={project.name} width={60} height={36} loading="lazy" quality={80} className="md:w-[100px] md:h-[68px] lg:w-[80px] lg:h-[48px] rounded-lg object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="flex flex-col gap-1 pr-2">
+                  <span className="text-lg md:text-xl group-hover:text-brand-accent transition-colors">{project.name}</span>
+                  {project.shortDescription && (
+                    <span className="text-xs md:text-sm text-foreground/60">{project.shortDescription}</span>
                   )}
+                </div>
+                <div className="flex items-center flex-shrink-0">
+                  <div className="overflow-hidden rounded-lg w-[80px] h-[48px] md:w-[120px] md:h-[72px]">
+                    <Image src={project.imgSrc} alt={project.name} width={120} height={72} loading="lazy" quality={80} sizes="(max-width: 768px) 80px, 120px" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  </div>
                 </div>
               </button>
             </motion.div>

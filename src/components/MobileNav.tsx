@@ -44,7 +44,7 @@ const MobileNav = React.memo(({ open, closeMenu }: Props) => {
                 {href ? (
                   <Link
                     href={href}
-                    className="text-xl uppercase font-light hover:opacity-80 transition-opacity block"
+                    className="text-xl uppercase font-light hover:opacity-80 transition-opacity flex items-center min-h-[48px] py-2"
                     aria-label={label}
                     onClick={closeMenu}
                     role="menuitem"
@@ -54,7 +54,7 @@ const MobileNav = React.memo(({ open, closeMenu }: Props) => {
                 ) : (
                   <button
                     onClick={() => handleAction(action)}
-                    className="text-xl uppercase font-light hover:opacity-80 transition-opacity w-full text-left cursor-pointer"
+                    className="text-xl uppercase font-light hover:opacity-80 transition-opacity w-full text-left cursor-pointer flex items-center min-h-[48px] py-2"
                     aria-label={label}
                     role="menuitem"
                   >
