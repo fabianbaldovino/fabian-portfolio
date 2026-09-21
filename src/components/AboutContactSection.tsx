@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { cardVariants, textVariants, iconVariants, contactCardVariants } from "@/lib/animation/variants";
+import { cardVariants, textVariants, contactCardVariants } from "@/lib/animation/variants";
 import ContactModal from "./ContactModal";
 import { aboutDescription } from "@/lib/constants/siteContent";
 
@@ -65,15 +64,6 @@ export default function AboutContactSection() {
             <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] font-medium leading-[1.1] md:leading-tight break-words">
               Dúvida?
             </h2>
-          </motion.div>
-          <motion.div
-            className="flex-shrink-0 mt-1"
-            variants={iconVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-          >
-            <ArrowUpRight className="text-brand-accent w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" aria-hidden="true" />
           </motion.div>
         </div>
         
