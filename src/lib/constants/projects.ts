@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "/FOTOS/20260606_092002.jpg",
       "/FOTOS/3.jpg",
       "/FOTOS/DSC00053.jpg.jpeg",
-      "/FOTOS/_MG_0806.jpg"
+      "/FOTOS/20260522_093422.jpg"
     ]
   },
   { 
