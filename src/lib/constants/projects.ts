@@ -11,7 +11,7 @@ export type Project = {
 export const projects: Project[] = [
   { 
     name: "A Operação", 
-    imgSrc: "/FOTOS/20260522_120207.jpg",
+    imgSrc: "/FOTOS/IMG_0831.png",
     icon: "Target",
     type: "copy",
     shortDescription: "Direção de Produção e Execução Técnica",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   },
   { 
     name: "O Horizonte", 
-    imgSrc: "/FOTOS/DJI_0561.jpg",
+    imgSrc: "/FOTOS/DSC00053.jpg.jpeg",
     icon: "Compass",
     type: "copy",
     shortDescription: "Filmagem Aérea e Escala Visual",
