@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import { modalVariants, backdropVariants, textVariants, iconVariants } from "@/lib/animation/variants";
 import { Project } from "@/lib/constants/projects";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -13,6 +14,8 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+  const modalRef = useModalA11y({ isOpen, onClose });
+
   if (!project) return null;
 
   return (
@@ -27,7 +30,12 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
           onClick={onClose}
         >
           <motion.div
-            className="bg-card rounded-[20px] p-6 md:p-8 lg:p-12 border-3 border-accent w-full max-w-5xl max-h-[90vh] overflow-y-auto relative flex flex-col gap-6"
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            tabIndex={-1}
+            className="bg-card rounded-[20px] p-6 md:p-8 lg:p-12 border-3 border-accent w-full max-w-5xl max-h-[90vh] overflow-y-auto relative flex flex-col gap-6 focus:outline-none"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
@@ -36,12 +44,13 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
           >
             {/* Close Button */}
             <motion.button
-              className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10"
+              className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent cursor-pointer"
               onClick={onClose}
               variants={iconVariants}
               initial="hidden"
               animate="visible"
               whileHover="hover"
+              aria-label="Fechar modal do projeto"
             >
               <X size={24} className="text-foreground" />
             </motion.button>
@@ -53,7 +62,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
               initial="hidden"
               animate="visible"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-brand-accent">
+              <h2 id="project-modal-title" className="text-4xl md:text-5xl lg:text-6xl font-medium text-brand-accent">
                 {project.name}
               </h2>
               {project.tags && project.tags.length > 0 && (

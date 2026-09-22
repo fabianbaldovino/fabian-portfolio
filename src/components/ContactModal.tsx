@@ -5,6 +5,7 @@ import { X, Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-rea
 import { modalVariants, backdropVariants, textVariants, iconVariants } from "@/lib/animation/variants";
 import { contactInfo } from "@/lib/constants/contact";
 import { socials } from "@/lib/constants/socials";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -12,6 +13,8 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const modalRef = useModalA11y({ isOpen, onClose });
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -24,7 +27,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           onClick={onClose}
         >
           <motion.div
-            className="bg-card rounded-[20px] p-6 md:p-8 lg:p-12 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative"
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-modal-title"
+            tabIndex={-1}
+            className="bg-card rounded-[20px] p-6 md:p-8 lg:p-12 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative focus:outline-none"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
@@ -33,13 +41,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           >
             {/* Close Button */}
             <motion.button
-              className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10"
+              className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent cursor-pointer"
               onClick={onClose}
               variants={iconVariants}
               initial="hidden"
               animate="visible"
               whileHover="hover"
-              aria-label="Fechar modal"
+              aria-label="Fechar modal de contato"
             >
               <X size={24} className="text-foreground" />
             </motion.button>
@@ -51,7 +59,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               initial="hidden"
               animate="visible"
             >
-              <h2 className="text-4xl md:text-6xl lg:text-8xl font-medium mb-4">
+              <h2 id="contact-modal-title" className="text-4xl md:text-6xl lg:text-8xl font-medium mb-4">
                 Fale comigo
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground">
@@ -62,13 +70,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             {/* Contact Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
               {/* Email */}
-              <motion.div
-                className="flex items-center gap-4 p-4 rounded-lg bg-background/5 hover:bg-background/10 transition-colors cursor-pointer"
+              <motion.a
+                href={`mailto:${contactInfo.email}`}
+                className="flex items-center gap-4 p-4 rounded-lg bg-background/5 hover:bg-background/10 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
                 whileHover={{ scale: 1.02 }}
-                onClick={() => window.open(`mailto:${contactInfo.email}`)}
+                aria-label={`Enviar e-mail para ${contactInfo.email}`}
               >
                 <motion.div
                   variants={iconVariants}
@@ -81,16 +90,19 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <h3 className="font-medium text-lg">E-mail</h3>
                   <p className="text-muted-foreground">{contactInfo.email}</p>
                 </div>
-              </motion.div>
+              </motion.a>
 
               {/* Phone */}
-              <motion.div
-                className="flex items-center gap-4 p-4 rounded-lg bg-background/5 hover:bg-background/10 transition-colors cursor-pointer"
+              <motion.a
+                href={`https://wa.me/${contactInfo.phoneRaw.replace('+', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg bg-background/5 hover:bg-background/10 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
                 whileHover={{ scale: 1.02 }}
-                onClick={() => window.open(`https://wa.me/${contactInfo.phoneRaw.replace('+', '')}`, '_blank')}
+                aria-label={`Chamar no WhatsApp ${contactInfo.phone}`}
               >
                 <motion.div
                   variants={iconVariants}
@@ -100,10 +112,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <Phone size={24} className="text-brand-accent" />
                 </motion.div>
                 <div>
-                  <h3 className="font-medium text-lg">Telefone</h3>
+                  <h3 className="font-medium text-lg">Telefone / WhatsApp</h3>
                   <p className="text-muted-foreground">{contactInfo.phone}</p>
                 </div>
-              </motion.div>
+              </motion.a>
 
               {/* Location */}
               <motion.div

@@ -9,22 +9,22 @@ import GlobalModals from "@/components/GlobalModals";
 const gilroy = localFont({
   src: [
     {
-      path: '../../public/fonts/Gilroy-Light.ttf',
+      path: '../../public/fonts/Gilroy-Light.woff',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/Gilroy-LightItalic.ttf',
+      path: '../../public/fonts/Gilroy-LightItalic.woff',
       weight: '300',
       style: 'italic',
     },
     {
-      path: '../../public/fonts/Gilroy-Medium.ttf',    
+      path: '../../public/fonts/Gilroy-Medium.woff',    
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/Gilroy-Bold.ttf',
+      path: '../../public/fonts/Gilroy-Bold.woff',
       weight: '700',
       style: 'normal',
     },
@@ -80,23 +80,142 @@ export const metadata: Metadata = {
 };
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Fabian Baldovino",
-  "jobTitle": "Brand Filmmaker",
-  "url": "https://www.fabian.art.br",
-  "sameAs": [
-    "https://www.instagram.com/fabianbaldovino9/",
-    "https://www.linkedin.com/in/fabianbaldovino/",
-    "https://x.com/FPaciel"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Porto Alegre",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  },
-  "description": "Brand Filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Especialista em construir percepção de alto valor através do audiovisual.",
-  "knowsAbout": ["Brand Filmmaking", "Vídeo Institucional", "Narrativa de Marca", "Estratégia Visual"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.fabian.art.br/#person",
+      "name": "Fabian Baldovino",
+      "jobTitle": "Brand Filmmaker & Diretor Audiovisual",
+      "url": "https://www.fabian.art.br",
+      "image": "https://www.fabian.art.br/FOTOS/20260522_093422.jpg",
+      "sameAs": [
+        "https://www.instagram.com/fabianbaldovino9/",
+        "https://www.linkedin.com/in/fabianbaldovino/",
+        "https://x.com/FPaciel"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Alegre",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "description": "Brand Filmmaker, autor de O Código Brasil e estrategista de narrativas visuais baseado em Porto Alegre, RS. Especialista em construir percepção de alto valor através do audiovisual.",
+      "knowsAbout": [
+        "Brand Filmmaking",
+        "Vídeo Institucional",
+        "Narrativa de Marca",
+        "Estratégia Visual",
+        "Produção Audiovisual Publicitária",
+        "Direção Cinematográfica"
+      ]
+    },
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://www.fabian.art.br/#organization",
+      "name": "Fabian Baldovino — Brand Filmmaking",
+      "url": "https://www.fabian.art.br",
+      "logo": "https://www.fabian.art.br/icon.svg",
+      "image": "https://www.fabian.art.br/FOTOS/og-image.jpg",
+      "description": "Produtora audiovisual e Brand Filmmaker em Porto Alegre, RS. Especialista em vídeos institucionais, filmes publicitários e narrativas que constroem marcas de alto valor.",
+      "telephone": "+5551999654160",
+      "priceRange": "$$$$",
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer, Pix",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Alegre",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -30.0346,
+        "longitude": -51.2177
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Porto Alegre"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Rio Grande do Sul"
+        },
+        {
+          "@type": "Country",
+          "name": "Brasil"
+        }
+      ],
+      "founder": {
+        "@id": "https://www.fabian.art.br/#person"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Produção Audiovisual e Brand Filmmaking",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Brand Filmmaking",
+              "description": "Filmes e narrativas visuais cinematográficas para construção de autoridade e valor de marca."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vídeo Institucional Corporativo",
+              "description": "Produção de vídeos corporativos e institucionais de alto impacto para médias e grandes empresas."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Campanhas Audiovisuais Publicitárias",
+              "description": "Campanhas em vídeo para lançamentos, posicionamento de mercado e tração em redes sociais e Meta Ads."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Séries e Documentários de Marca",
+              "description": "Mini-séries e documentários que criam conexão emocional profunda e autoridade inquestionável."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.fabian.art.br/#showreel",
+      "name": "Showreel Fabian Baldovino — Brand Filmmaker Porto Alegre",
+      "description": "Reel cinematográfico apresentando trabalhos de Brand Filmmaking e narrativas de alto impacto para marcas em Porto Alegre e Brasil.",
+      "thumbnailUrl": [
+        "https://www.fabian.art.br/FOTOS/20260522_120207.jpg",
+        "https://www.fabian.art.br/FOTOS/og-image.jpg"
+      ],
+      "uploadDate": "2026-01-01T00:00:00-03:00",
+      "contentUrl": "https://www.fabian.art.br/videos/REEL_2026_1.mp4",
+      "embedUrl": "https://www.fabian.art.br",
+      "creator": {
+        "@id": "https://www.fabian.art.br/#person"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://www.fabian.art.br/#livro-codigo-brasil",
+      "name": "O Código Brasil",
+      "author": {
+        "@id": "https://www.fabian.art.br/#person"
+      },
+      "description": "Literatura estratégica sobre valor percebido, psicanálise de consumo e engenharia de estímulos visuais no inconsciente do mercado brasileiro.",
+      "inLanguage": "pt-BR",
+      "image": "https://www.fabian.art.br/FOTOS/trabalhos/capa_ok.png"
+    }
+  ]
 };
 
 export default function RootLayout({

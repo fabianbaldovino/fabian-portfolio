@@ -34,6 +34,15 @@ export default function AboutContactSection() {
         >
           {aboutDescription}
         </motion.p>
+        <div className="sr-only">
+          <h2>Sobre Fabian Baldovino — Brand Filmmaker e Estrategista Audiovisual</h2>
+          <p>
+            Brand filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Fabian Baldovino é autor de O Código Brasil, livro que decodifica o inconsciente e o comportamento de consumo no mercado brasileiro, transformando a comunicação institucional em percepção de alto valor.
+          </p>
+          <p>
+            Atua como a retaguarda invisível de marcas, garantindo execução técnica cinematográfica, direção de produção e narrativas magnéticas para clientes como Termolar, Quick House, Copelmi e Wedy Nutrition.
+          </p>
+        </div>
       </motion.div>
       <motion.div 
         className="w-[50%] bg-card rounded-[20px] p-3 md:p-6 border-3 border-accent flex flex-col justify-between cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
@@ -64,6 +73,7 @@ export default function AboutContactSection() {
             <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] font-medium leading-[1.1] md:leading-tight break-words">
               Dúvida?
             </h2>
+            <span className="sr-only">Agende uma conversa sobre produção de vídeo institucional e projetos de brand filmmaking em Porto Alegre</span>
           </motion.div>
         </div>
         

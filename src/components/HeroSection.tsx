@@ -19,6 +19,9 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
+        <span className="text-xs uppercase tracking-widest text-brand-accent font-medium">
+          Brand Filmmaking &amp; Audiovisual Estratégico · Porto Alegre
+        </span>
         <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.1] md:leading-none tracking-tight">
           <span className="block text-foreground pb-2">{heroContent.line1}</span>
           <span className="block text-foreground/80 font-medium text-3xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">

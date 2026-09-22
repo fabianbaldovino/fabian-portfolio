@@ -18,6 +18,17 @@ const MobileNav = React.memo(({ open, closeMenu }: Props) => {
     closeMenu();
   };
 
+  React.useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [open, closeMenu]);
+
   return (
     <AnimatePresence>
       {open && (

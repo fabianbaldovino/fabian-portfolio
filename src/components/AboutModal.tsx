@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { modalVariants, backdropVariants, textVariants, iconVariants } from "@/lib/animation/variants";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -11,6 +12,8 @@ interface AboutModalProps {
 }
 
 export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
+  const modalRef = useModalA11y({ isOpen, onClose });
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -23,7 +26,12 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           onClick={onClose}
         >
           <motion.div
-            className="bg-card rounded-[20px] p-6 md:p-8 lg:p-12 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative"
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="about-modal-title"
+            tabIndex={-1}
+            className="bg-card rounded-[20px] p-6 md:p-8 lg:p-12 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative focus:outline-none"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
@@ -32,13 +40,13 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           >
             {/* Close Button */}
             <motion.button
-              className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10"
+              className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent cursor-pointer"
               onClick={onClose}
               variants={iconVariants}
               initial="hidden"
               animate="visible"
               whileHover="hover"
-              aria-label="Fechar modal"
+              aria-label="Fechar modal de sobre"
             >
               <X size={24} className="text-foreground" />
             </motion.button>
@@ -75,7 +83,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <p className="text-sm uppercase tracking-widest text-brand-accent font-medium mb-2">
                     Sobre
                   </p>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+                  <h2 id="about-modal-title" className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
                     Fabian<br />
                     <span className="font-light italic">Baldovino</span>
                   </h2>

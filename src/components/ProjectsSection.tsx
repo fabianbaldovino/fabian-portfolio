@@ -42,14 +42,15 @@ export default function ProjectsSection() {
         whileHover="hover"
       >
         <div className="mb-2.5">
-          <motion.h2 
+          <h2 className="sr-only">Especialidades e Portfólio de Brand Filmmaking em Porto Alegre</h2>
+          <motion.h3 
             className="text-lg md:text-xl xl:text-2xl font-medium"
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
             {projects[0].name}
-          </motion.h2>
+          </motion.h3>
         </div>
         <motion.div 
           className="h-[180px] lg:h-[26%] xl:h-[28%] min-h-[140px] rounded-[16px] lg:rounded-[20px] overflow-hidden mb-2.5 cursor-pointer group flex-shrink-0 relative"
@@ -60,7 +61,7 @@ export default function ProjectsSection() {
         >
           <Image
             src={projects[0].imgSrc}
-            alt={`${projects[0].name} Project Showcase`}
+            alt={`${projects[0].name} — Brand Filmmaking e Produção Audiovisual`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             priority

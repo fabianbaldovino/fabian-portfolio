@@ -9,8 +9,11 @@ import { portfolioProjects, PortfolioProject } from "@/lib/constants/portfolioPr
 import { containerVariants, cardVariants, textVariants, modalVariants, backdropVariants } from "@/lib/animation/variants";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose: () => void }) {
+  const modalRef = useModalA11y({ isOpen: Boolean(project), onClose });
+
   return (
     <AnimatePresence>
       <motion.div
@@ -22,7 +25,12 @@ function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose
         onClick={onClose}
       >
         <motion.div
-          className="bg-card rounded-[20px] p-6 md:p-10 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative"
+          ref={modalRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="portfolio-modal-title"
+          tabIndex={-1}
+          className="bg-card rounded-[20px] p-6 md:p-10 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative focus:outline-none"
           variants={modalVariants}
           initial="hidden"
           animate="visible"
@@ -30,11 +38,11 @@ function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose
           onClick={(e) => e.stopPropagation()}
         >
           <motion.button
-            className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10"
+            className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent cursor-pointer"
             onClick={onClose}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Fechar modal"
+            aria-label="Fechar modal do projeto"
           >
             <X size={22} className="text-foreground" />
           </motion.button>
@@ -45,7 +53,7 @@ function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose
               <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-1">
                 {project.client}
               </p>
-              <h2 className="text-4xl md:text-5xl font-medium leading-tight">
+              <h2 id="portfolio-modal-title" className="text-4xl md:text-5xl font-medium leading-tight">
                 {project.name}
               </h2>
               <div className="flex flex-wrap gap-2 mt-4">
@@ -78,6 +86,17 @@ function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose
             <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground/90">
               {project.description}
             </p>
+
+            {/* Link to dedicated case study page */}
+            <div className="pt-2 flex justify-end">
+              <Link
+                href={`/projetos/${project.slug}`}
+                className="inline-flex items-center gap-2 text-brand-accent hover:text-brand-accent/80 text-sm md:text-base font-medium transition-colors group"
+              >
+                <span>Ver Estudo de Caso Completo</span>
+                <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            </div>
           </div>
         </motion.div>
       </motion.div>
@@ -145,7 +164,7 @@ export default function ProjetosPage() {
             >
               <Image
                 src={featured.imgSrc}
-                alt={featured.name}
+                alt={`${featured.name} — Produção Audiovisual para ${featured.client} por Fabian Baldovino`}
                 fill
                 priority
                 quality={100}
@@ -181,6 +200,9 @@ export default function ProjetosPage() {
                   </h2>
                   <p className="text-sm text-white/50 uppercase tracking-widest">
                     {featured.deliverable}
+                  </p>
+                  <p className="sr-only">
+                    {featured.description}
                   </p>
                 </div>
               </div>
@@ -228,12 +250,15 @@ export default function ProjetosPage() {
                       <p className="text-xs text-background/40">
                         {project.deliverable}
                       </p>
+                      <p className="sr-only">
+                        {project.description}
+                      </p>
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
                       <div className="w-[72px] h-[48px] rounded-lg overflow-hidden relative">
                         <Image
                           src={project.imgSrc}
-                          alt={project.name}
+                          alt={`${project.name} — ${project.client} por Fabian Baldovino`}
                           fill
                           quality={80}
                           sizes="72px"
