@@ -8,7 +8,6 @@ import { motion } from "motion/react";
 import { cardVariants, projectsVariants, projectItemVariants, socialVariants, textVariants, iconVariants } from "@/lib/animation/variants";
 import { projects, Project } from "@/lib/constants/projects";
 import { socials } from "@/lib/constants/socials";
-import ProjectModal from "./ProjectModal";
 
 const iconMap: Record<string, React.ElementType> = {
   Target,
@@ -19,17 +18,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleProjectClick = (project: Project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
 
   return (
     <div className="flex flex-col w-full lg:w-[30%] gap-4 md:justify-between lg:mb-6 overflow-x-hidden">
@@ -52,25 +41,26 @@ export default function ProjectsSection() {
             {projects[0].name}
           </motion.h3>
         </div>
+        <Link href={`/especialidades/${projects[0].slug}`} passHref>
+          <motion.div 
+            className="w-full aspect-[4/3] lg:aspect-[16/10] rounded-[16px] lg:rounded-[20px] overflow-hidden mb-5 cursor-pointer group flex-shrink-0 relative block"
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Image
+              src={projects[0].imgSrc}
+              alt={`${projects[0].name} — Brand Filmmaking e Produção Audiovisual`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+              quality={100}
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+          </motion.div>
+        </Link>
         <motion.div 
-          className="h-[180px] lg:h-[26%] xl:h-[28%] min-h-[140px] rounded-[16px] lg:rounded-[20px] overflow-hidden mb-2.5 cursor-pointer group flex-shrink-0 relative"
-          variants={cardVariants}
-          initial="hidden"
-          animate="visible"
-          onClick={() => handleProjectClick(projects[0])}
-        >
-          <Image
-            src={projects[0].imgSrc}
-            alt={`${projects[0].name} — Brand Filmmaking e Produção Audiovisual`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority
-            quality={100}
-            className="object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-500"
-          />
-        </motion.div>
-        <motion.div 
-          className="flex-1 flex flex-col justify-between overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex flex-col gap-3 overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           variants={projectsVariants}
           initial="hidden"
           animate="visible"
@@ -80,12 +70,12 @@ export default function ProjectsSection() {
               key={project.name}
               variants={projectItemVariants}
               whileHover="hover"
-              className="flex flex-col justify-center flex-1"
+              className="flex flex-col justify-center"
             >
               <hr className="border-0 h-[1px] bg-accent/40" />
-              <button 
+              <Link 
+                href={`/especialidades/${project.slug}`}
                 className="w-full flex justify-between items-center group cursor-pointer py-1.5 md:py-2 px-1 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg"
-                onClick={() => handleProjectClick(project)}
                 aria-label={`Ver detalhes de ${project.name}`}
               >
                 <div className="flex flex-col gap-0.5 pr-2">
@@ -99,7 +89,7 @@ export default function ProjectsSection() {
                     <Image src={project.imgSrc} alt={project.name} width={84} height={48} loading="lazy" quality={80} sizes="(max-width: 768px) 68px, 84px" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                 </div>
-              </button>
+              </Link>
             </motion.div>
           ))}
           
@@ -107,7 +97,7 @@ export default function ProjectsSection() {
           <motion.div 
             variants={projectItemVariants}
             whileHover="hover"
-            className="flex flex-col justify-center flex-1"
+            className="flex flex-col justify-center mt-2"
           >
             <hr className="border-0 h-[1px] bg-accent/40" />
             <Link 
@@ -169,11 +159,7 @@ export default function ProjectsSection() {
         </motion.a>
       </motion.div>
 
-      <ProjectModal 
-        isOpen={isModalOpen} 
-        onClose={handleCloseModal} 
-        project={selectedProject} 
-      />
+
     </div>
   );
 }

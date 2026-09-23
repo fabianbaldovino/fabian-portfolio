@@ -1,5 +1,6 @@
 export type Project = { 
   name: string; 
+  slug: string;
   imgSrc: string;
   modalImgSrc?: string;
   icon?: string;
@@ -11,35 +12,39 @@ export type Project = {
 
 export const projects: Project[] = [
   { 
-    name: "A Operação", 
+    name: "A Operação",
+    slug: "a-operacao",
     imgSrc: "/FOTOS/IMG_0831.png",
     icon: "Target",
     type: "copy",
     shortDescription: "Direção de Produção e Execução Técnica",
     tags: ["Direção de Produção", "Execução Técnica", "Brand Filmmaking"],
-    content: "O audiovisual não é sobre ligar uma câmera; é sobre dominar a narrativa no caos da trincheira. Nós assumimos a linha de frente do teu projeto, mitigando o ruído e garantindo uma execução técnica implacável, para que a tua única preocupação seja colher o resultado."
+    content: "Produzir um filme não é só sobre ligar uma câmera; é sobre saber resolver problemas na vida real. Nós assumimos a frente do seu projeto, organizando a bagunça dos bastidores e garantindo uma execução técnica impecável. A sua única preocupação deve ser colher o resultado."
   },
   { 
     name: "A Visão", 
+    slug: "a-visao",
     imgSrc: "/FOTOS/20260517_121306(0).jpg",
     icon: "Eye",
     type: "copy",
     shortDescription: "Estratégia Visual e Narrativa de Marca",
     tags: ["Estratégia Visual", "Gatilhos Emocionais", "Narrativa de Marca"],
-    content: "A nossa lente é a extensão da tua autoridade. Não criamos vídeos bonitinhos, arquitetamos gatilhos visuais. Cada enquadramento é desenhado milimetricamente para ativar o lado instintivo e emocional do teu cliente, forçando uma percepção de alto valor imediata."
+    content: "A nossa lente funciona como uma extensão da sua autoridade. Não estamos aqui apenas para fazer vídeos bonitos; pensamos em cada enquadramento para conversar com o lado mais emocional e instintivo do seu cliente, construindo uma percepção de alto valor de forma natural e sincera."
   },
   { 
-    name: "O Horizonte", 
+    name: "O Horizonte",
+    slug: "o-horizonte",
     imgSrc: "/FOTOS/DSC00053.jpg.jpeg",
     modalImgSrc: "/FOTOS/DJI_0561.png",
     icon: "Compass",
     type: "copy",
     shortDescription: "Filmagem Aérea e Escala Visual",
     tags: ["Filmagem Aérea", "Escala Visual", "Identidade de Marca"],
-    content: "Uma marca sem escala visual morre no anonimato. Nós expandimos as tuas fronteiras, capturando a verdadeira dimensão da tua operação. Do micro ao macro, o teu legado precisa ser inegável."
+    content: "Para que as pessoas entendam o tamanho do seu negócio, elas precisam ver a verdadeira dimensão da sua operação. Através das nossas captações aéreas, expandimos as suas fronteiras visuais, mostrando do micro ao macro a força do que você construiu."
   },
   { 
     name: "Bastidores", 
+    slug: "bastidores",
     imgSrc: "/FOTOS/20260517_103203.jpg",
     icon: "Clapperboard",
     type: "gallery",
@@ -56,12 +61,13 @@ export const projects: Project[] = [
   },
   { 
     name: "O Código Brasil", 
+    slug: "o-codigo-brasil",
     imgSrc: "/FOTOS/trabalhos/capa_ok.png",
     icon: "Book",
     type: "copy",
     shortDescription: "Literatura Estratégica",
     tags: ["Literatura Estratégica", "Autoridade Visual", "Dominação de Mercado"],
-    content: "Neste livro, dissecamos a engenharia por trás do valor percebido. Você vai entender como o cérebro instintivo reage a estímulos visuais e como eliminar a fricção cognitiva da sua comunicação. Nossos clientes recebem um exemplar gratuito como armamento estratégico em suas jornadas de dominação."
+    content: "Neste livro, converso sobre o que realmente faz as pessoas perceberem valor em uma marca. Você vai entender como a cultura e os nossos instintos moldam o consumo brasileiro. Todo cliente nosso recebe um exemplar gratuito: é o nosso jeito de compartilhar a base do que fazemos antes mesmo de ligar a câmera."
   },
 ];
 

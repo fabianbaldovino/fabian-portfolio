@@ -214,6 +214,36 @@ const jsonLd = {
       "description": "Literatura estratégica sobre valor percebido, psicanálise de consumo e engenharia de estímulos visuais no inconsciente do mercado brasileiro.",
       "inLanguage": "pt-BR",
       "image": "https://www.fabian.art.br/FOTOS/trabalhos/capa_ok.png"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.fabian.art.br/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que é Brand Filmmaking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brand Filmmaking é a engenharia estratégica de vídeos institucionais e comerciais focada em construir autoridade e percepção de alto valor, unindo técnicas de cinema com psicanálise de consumo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A produtora atende apenas em Porto Alegre, RS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nossa base de operação é em Porto Alegre - Rio Grande do Sul, mas atendemos projetos de posicionamento de marcas, corporativos e institucionais em todo o Brasil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como agendar uma consultoria audiovisual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você pode entrar em contato diretamente pelo nosso WhatsApp na seção 'Dúvida?' do nosso site para agendarmos uma imersão na sua marca."
+          }
+        }
+      ]
     }
   ]
 };

@@ -9,8 +9,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: #669C46;
-  --color-brand-accent: #669C46;
+  --color-accent: #74c063;
+  --color-brand-accent: #74c063;
   --color-brand-dark: #0C0D0F;
   --color-card: #242C2F;
   --font-sans: var(--font-gilroy);
@@ -44,8 +44,7 @@ body {
 
 @media (min-width: 1024px) {
   body {
-    max-height: 100svh;
-    overflow: hidden;
+    min-height: 100svh;
   }
 }
 

@@ -7,7 +7,7 @@ export const heroContent = {
 };
 
 export const aboutDescription =
-  "O nosso verdadeiro ativo são as pessoas. Acreditamos que a confiança é construída nos bastidores e que narrativas fortes blindam marcas contra o ruído do mercado. Nós cuidamos da retaguarda para que não haja limites no teu avanço.";
+  "O nosso maior ativo são as pessoas. Acreditamos que a confiança de uma marca se constrói na verdade dos bastidores. Nós cuidamos de toda a estrutura audiovisual para que você tenha a tranquilidade de focar apenas no que importa: fazer o seu negócio avançar.";
 
 export const personImage = {
   src: "/FOTOS/20260522_120207.jpg",
