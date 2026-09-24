@@ -1,6 +1,20 @@
 import { conteudos } from "@/lib/constants/conteudos";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import type { Metadata } from "next";
+
+function renderFormattedText(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={i} className="italic text-foreground/95">{part.slice(1, -1)}</em>;
+    }
+    return part;
+  });
+}
 
 export async function generateStaticParams() {
   return conteudos.map((c) => ({
@@ -67,6 +81,15 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      <div className="mb-8">
+        <Link 
+          href="/conteudo" 
+          className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md py-1 px-2 -ml-2"
+        >
+          <span aria-hidden="true">&larr;</span> Voltar para Insights
+        </Link>
+      </div>
       
       <div className="mb-10">
         <span className="text-brand-accent text-sm font-bold tracking-widest uppercase mb-4 block">
@@ -115,13 +138,13 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
         <article className="prose prose-invert prose-lg max-w-none text-foreground/80 leading-relaxed font-light flex-1">
           {conteudo.content.map((paragraph, idx) => {
             if (paragraph.startsWith("### ")) {
-              return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{paragraph.replace("### ", "")}</h3>;
+              return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{renderFormattedText(paragraph.replace("### ", ""))}</h3>;
             }
             if (paragraph.startsWith("Fotografia:") || paragraph.startsWith("Trilha Sonora") || paragraph.startsWith("Motion Graphics:")) {
                const [title, ...rest] = paragraph.split(":");
-               return <p key={idx} className="mb-6"><strong className="text-brand-accent">{title}:</strong> {rest.join(":")}</p>;
+               return <p key={idx} className="mb-6"><strong className="text-brand-accent">{title}:</strong> {renderFormattedText(rest.join(":"))}</p>;
             }
-            return <p key={idx} className="mb-6">{paragraph}</p>;
+            return <p key={idx} className="mb-6">{renderFormattedText(paragraph)}</p>;
           })}
         </article>
       </div>
@@ -131,11 +154,19 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
         <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 relative border-2 border-brand-accent">
           <img src="/FOTOS/20260522_093422.jpg" alt="Fabian Baldovino" className="object-cover w-full h-full object-top" />
         </div>
-        <div>
+        <div className="flex-1">
           <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>
-          <p className="text-foreground/70 text-sm md:text-base">
+          <p className="text-foreground/70 text-sm md:text-base mb-4 leading-relaxed">
             Brand filmmaker e autor de <em>O Código Brasil</em>. Se o conteúdo gerou valor para você, considere estruturar a narrativa da sua própria empresa com uma produção de nível cinematográfico.
           </p>
+          <a
+            href="https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20li%20o%20artigo%20no%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-accent text-brand-dark font-medium text-sm hover:brightness-110 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+          >
+            Falar com Fabian via WhatsApp &rarr;
+          </a>
         </div>
       </div>
     </main>
