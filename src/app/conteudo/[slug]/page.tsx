@@ -62,7 +62,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
   }
 
   return (
-    <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 max-w-4xl mx-auto">
+    <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 max-w-6xl mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -97,32 +97,34 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
         </div>
       )}
 
-      {conteudo.instagramUrl && (
-        <div className="w-full flex justify-center mb-12 rounded-[20px] overflow-hidden">
-          <iframe 
-            src={`${conteudo.instagramUrl.replace(/\/$/, '')}/embed`}
-            width="400"
-            height="500"
-            frameBorder="0"
-            scrolling="no"
-            allowTransparency={true}
-            className="max-w-full rounded-[20px] border border-accent/20"
-          ></iframe>
-        </div>
-      )}
+      <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-12 items-start">
+        {conteudo.instagramUrl && (
+          <div className="w-full lg:w-[400px] flex justify-center flex-shrink-0 mb-12 lg:mb-0 rounded-[20px] overflow-hidden sticky top-32">
+            <iframe 
+              src={`${conteudo.instagramUrl.replace(/\/$/, '')}/embed`}
+              width="400"
+              height="500"
+              frameBorder="0"
+              scrolling="no"
+              allowTransparency={true}
+              className="max-w-full rounded-[20px] border border-accent/20"
+            ></iframe>
+          </div>
+        )}
 
-      <article className="prose prose-invert prose-lg max-w-none text-foreground/80 leading-relaxed font-light">
-        {conteudo.content.map((paragraph, idx) => {
-          if (paragraph.startsWith("### ")) {
-            return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{paragraph.replace("### ", "")}</h3>;
-          }
-          if (paragraph.startsWith("Fotografia:") || paragraph.startsWith("Trilha Sonora") || paragraph.startsWith("Motion Graphics:")) {
-             const [title, ...rest] = paragraph.split(":");
-             return <p key={idx} className="mb-6"><strong className="text-brand-accent">{title}:</strong> {rest.join(":")}</p>;
-          }
-          return <p key={idx} className="mb-6">{paragraph}</p>;
-        })}
-      </article>
+        <article className="prose prose-invert prose-lg max-w-none text-foreground/80 leading-relaxed font-light flex-1">
+          {conteudo.content.map((paragraph, idx) => {
+            if (paragraph.startsWith("### ")) {
+              return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{paragraph.replace("### ", "")}</h3>;
+            }
+            if (paragraph.startsWith("Fotografia:") || paragraph.startsWith("Trilha Sonora") || paragraph.startsWith("Motion Graphics:")) {
+               const [title, ...rest] = paragraph.split(":");
+               return <p key={idx} className="mb-6"><strong className="text-brand-accent">{title}:</strong> {rest.join(":")}</p>;
+            }
+            return <p key={idx} className="mb-6">{paragraph}</p>;
+          })}
+        </article>
+      </div>
 
       {/* Seção de Autor/CTA no final do artigo */}
       <div className="mt-20 pt-10 border-t border-accent flex flex-col md:flex-row gap-8 items-center bg-card p-8 rounded-[20px]">
