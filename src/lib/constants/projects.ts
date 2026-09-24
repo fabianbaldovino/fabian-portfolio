@@ -67,7 +67,7 @@ export const projects: Project[] = [
     type: "copy",
     shortDescription: "Literatura Estratégica",
     tags: ["Literatura Estratégica", "Autoridade Visual", "Dominação de Mercado"],
-    content: "Neste livro, converso sobre o que realmente faz as pessoas perceberem valor em uma marca. Você vai entender como a cultura e os nossos instintos moldam o consumo brasileiro. Todo cliente nosso recebe um exemplar gratuito: é o nosso jeito de compartilhar a base do que fazemos antes mesmo de ligar a câmera."
+    content: "Neste livro, converso sobre o que realmente faz as pessoas perceberem valor em uma marca. Você vai entender como a cultura e os nossos instintos moldam o consumo brasileiro. Todo cliente nosso recebe um exemplar digital gratuito: é o nosso jeito de compartilhar a base do que fazemos antes mesmo de ligar a câmera."
   },
 ];
 

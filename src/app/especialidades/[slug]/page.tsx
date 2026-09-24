@@ -75,17 +75,17 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
               </div>
 
               <div className="p-6 rounded-2xl bg-background/60 border border-accent/50 mb-6">
-                <h3 className="text-xl font-medium text-foreground mb-2">Exemplar Cortesia para Clientes</h3>
+                <h3 className="text-xl font-medium text-foreground mb-2">Exemplar Digital para Clientes</h3>
                 <p className="text-foreground/70 text-sm leading-relaxed mb-4">
-                  Todo parceiro e cliente de projetos de Brand Filmmaking recebe um exemplar impresso exclusivo de <em>O Código Brasil</em> como parte do onboarding estratégico.
+                  Todo parceiro e cliente de projetos de Brand Filmmaking recebe o livro digital exclusivo <em>O Código Brasil</em> como parte do onboarding estratégico.
                 </p>
                 <a
-                  href="https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20vi%20a%20capa%20do%20livro%20O%20C%C3%B3digo%20Brasil%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+                  href="https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20vi%20o%20livro%20O%20C%C3%B3digo%20Brasil%20e%20gostaria%20de%20receber%20o%20exemplar%20digital."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-accent text-brand-dark font-medium text-sm hover:brightness-110 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
                 >
-                  Solicitar Contato via WhatsApp &rarr;
+                  Solicitar Exemplar Digital via WhatsApp &rarr;
                 </a>
               </div>
             </div>
