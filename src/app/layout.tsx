@@ -213,7 +213,7 @@ const jsonLd = {
       },
       "description": "Literatura estratégica sobre valor percebido, psicanálise de consumo e engenharia de estímulos visuais no inconsciente do mercado brasileiro.",
       "inLanguage": "pt-BR",
-      "image": "https://www.fabian.art.br/FOTOS/trabalhos/capa_ok.png"
+      "image": "https://www.fabian.art.br/FOTOS/trabalhos/CAPA_OFICIAL.png"
     },
     {
       "@type": "FAQPage",

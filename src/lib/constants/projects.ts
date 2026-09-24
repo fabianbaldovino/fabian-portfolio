@@ -62,7 +62,7 @@ export const projects: Project[] = [
   { 
     name: "O Código Brasil", 
     slug: "o-codigo-brasil",
-    imgSrc: "/FOTOS/trabalhos/capa_ok.png",
+    imgSrc: "/FOTOS/trabalhos/CAPA_OFICIAL.png",
     icon: "Book",
     type: "copy",
     shortDescription: "Literatura Estratégica",

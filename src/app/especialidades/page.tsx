@@ -17,12 +17,12 @@ export default function EspecialidadesHub() {
           {projects.map((item) => (
             <Link key={item.slug} href={`/especialidades/${item.slug}`} className="group block h-full">
               <div className="border border-accent rounded-[20px] overflow-hidden bg-background/50 h-full flex flex-col transition-transform hover:-translate-y-1">
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-52 bg-card/40 flex items-center justify-center overflow-hidden">
                   <Image
                     src={item.imgSrc}
                     alt={item.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={item.slug === "o-codigo-brasil" ? "object-contain p-2 group-hover:scale-105 transition-transform duration-500" : "object-cover group-hover:scale-105 transition-transform duration-500"}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>

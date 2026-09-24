@@ -85,8 +85,17 @@ export default function ProjectsSection() {
                   )}
                 </div>
                 <div className="flex items-center flex-shrink-0">
-                  <div className="overflow-hidden rounded-lg w-[68px] h-[40px] md:w-[76px] md:h-[44px] xl:w-[84px] xl:h-[48px]">
-                    <Image src={project.imgSrc} alt={project.name} width={84} height={48} loading="lazy" quality={80} sizes="(max-width: 768px) 68px, 84px" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="overflow-hidden rounded-lg w-[68px] h-[40px] md:w-[76px] md:h-[44px] xl:w-[84px] xl:h-[48px] bg-card/60 flex items-center justify-center">
+                    <Image 
+                      src={project.imgSrc} 
+                      alt={project.name} 
+                      width={84} 
+                      height={48} 
+                      loading="lazy" 
+                      quality={85} 
+                      sizes="(max-width: 768px) 68px, 84px" 
+                      className={project.slug === 'o-codigo-brasil' ? "w-full h-full object-contain p-0.5 group-hover:scale-105 transition-transform duration-500" : "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"} 
+                    />
                   </div>
                 </div>
               </Link>
