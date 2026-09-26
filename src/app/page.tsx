@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <AboutContactSection />
           </section>
-          <section id="projects-section" aria-label="Projetos" className="w-full lg:w-auto flex">
+          <section id="projects-section" aria-label="Projetos" className="lg:contents">
             <ProjectsSection />
           </section>
         </motion.div>
