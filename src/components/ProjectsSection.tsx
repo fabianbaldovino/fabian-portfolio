@@ -21,7 +21,7 @@ export default function ProjectsSection() {
 
 
   return (
-    <div className="flex flex-col w-full lg:w-[30%] gap-4 md:justify-between lg:mb-6 overflow-x-hidden">
+    <div className="flex flex-col w-full lg:w-[30%] gap-4 md:justify-between lg:mb-6 overflow-x-hidden flex-1 lg:flex-none">
       {/* === CARD 3: Projects List === */}
       <motion.div 
         className="bg-foreground text-background p-4 lg:p-4 xl:p-5 rounded-[20px] flex-grow flex flex-col min-h-[400px] md:min-h-0 overflow-hidden"

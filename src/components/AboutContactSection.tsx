@@ -20,14 +20,14 @@ export default function AboutContactSection() {
   return (
     <div className="flex flex-row gap-1 md:gap-4 md:h-[40%] min-h-[200px] md:min-h-0">
       <motion.div 
-        className="w-[50%] bg-foreground text-background rounded-[20px] flex flex-col items-start justify-end p-3 md:p-6"
+        className="w-[50%] bg-foreground text-background rounded-[20px] flex flex-col items-start justify-between p-4 md:p-6"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
         whileHover="hover"
       >
         <motion.p 
-          className="text-sm md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl"
+          className="text-sm md:text-lg lg:text-base xl:text-lg 2xl:text-xl leading-relaxed"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -45,7 +45,7 @@ export default function AboutContactSection() {
         </div>
       </motion.div>
       <motion.div 
-        className="w-[50%] bg-card rounded-[20px] p-3 md:p-6 border-3 border-accent flex flex-col justify-between cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        className="w-[50%] bg-card rounded-[20px] p-4 md:p-6 border-3 border-accent flex flex-col justify-between cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent min-h-[160px] md:min-h-0"
         variants={contactCardVariants}
         initial="hidden"
         animate="visible"

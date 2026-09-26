@@ -13,7 +13,7 @@ import { containerVariants } from "@/lib/animation/variants";
 export default function Home() {
 
   return (
-    <div className="flex flex-col h-screen min-h-screen font-sans pt-2 md:pt-0 lg:py-6 xl:py-0 xl:pb-6 overflow-auto lg:overflow-hidden">
+    <div className="flex flex-col min-h-screen font-sans pt-2 md:pt-0 lg:py-6 xl:py-0 xl:pb-6 lg:h-screen lg:overflow-hidden">
       <Navbar />
       <main>
         <motion.div 
@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <AboutContactSection />
           </section>
-          <section id="projects-section" aria-label="Projetos" className="contents">
+          <section id="projects-section" aria-label="Projetos" className="w-full lg:w-auto flex">
             <ProjectsSection />
           </section>
         </motion.div>
