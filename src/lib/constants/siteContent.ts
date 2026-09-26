@@ -1,9 +1,7 @@
 export const heroContent = {
-  line1: "Brand Filmmaking",
-  line2Prefix: "construindo",
-  line2Emphasis: " sonhos",
-  line2Suffix: "",
-  line3: "em marcas magnéticas",
+  statement: "Ninguém compra um produto pela razão; a razão só existe para justificar o que o instinto já decidiu em milésimos de segundo.",
+  conclusion: "Nós não fazemos vídeos para entreter o intelecto, construímos percepção de valor direto na raiz.",
+  fullText: "Ninguém compra um produto pela razão; a razão só existe para justificar o que o instinto já decidiu em milésimos de segundo. Nós não fazemos vídeos para entreter o intelecto, construímos percepção de valor direto na raiz.",
 };
 
 export const aboutDescription =

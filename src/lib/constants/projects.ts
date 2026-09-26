@@ -29,7 +29,7 @@ export const projects: Project[] = [
     type: "copy",
     shortDescription: "Estratégia Visual e Narrativa de Marca",
     tags: ["Estratégia Visual", "Gatilhos Emocionais", "Narrativa de Marca"],
-    content: "Ninguém compra um produto pela razão; a razão só existe para justificar o que o instinto já decidiu em milésimos de segundo. Nós não fazemos vídeos para entreter o intelecto, construímos percepção de valor direto na raiz."
+    content: "A nossa lente funciona como uma extensão da sua autoridade. Não estamos aqui apenas para fazer vídeos bonitos; pensamos em cada enquadramento para conversar com o lado mais emocional e instintivo do seu cliente, construindo uma percepção de alto valor de forma natural e sincera."
   },
   { 
     name: "O Horizonte",

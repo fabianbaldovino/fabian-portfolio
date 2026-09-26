@@ -27,7 +27,7 @@ export const consoleUtil = {
     website: "https://fabianbaldovino.com.br",
     instagram: "https://www.instagram.com/fabianbaldovino9/",
     linkedin: "https://www.linkedin.com/in/fabianbaldovino/",
-    message: "Brand Filmmaking — construindo sonhos em marcas magnéticas. 🎬"
+    message: "Brand Filmmaking — construímos percepção de valor direto na raiz. 🎬"
   },
 
   styles: {
