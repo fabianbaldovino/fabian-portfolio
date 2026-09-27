@@ -211,7 +211,7 @@ const jsonLd = {
     },
     {
       "@type": "Book",
-      "@id": "https://www.fabian.art.br/#livro-codigo-brasil",
+      "@id": "https://www.fabian.art.br/#manifesto-codigo-brasil",
       "name": "O Código Brasil",
       "author": {
         "@id": "https://www.fabian.art.br/#person"

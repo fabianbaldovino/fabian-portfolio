@@ -1,30 +1,21 @@
 {
-  "name": "bentofolio",
+  "name": "fabian-baldovino-brand-filmmaking",
   "version": "0.1.0",
-  "description": "A modern, customizable portfolio template built with Next.js and TailwindCSS",
-  "private": false,
+  "description": "Portfolio of Fabian Baldovino - Brand Filmmaking",
+  "private": true,
   "author": {
-    "name": "Wafastarz (Muhammad Khoirul Wafa)",
-    "email": "wafastarzteam@gmail.com",
-    "url": "https://wafastarz.site"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/mkhoirulwafa18/bentofolio",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mkhoirulwafa18/bentofolio.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mkhoirulwafa18/bentofolio/issues"
+    "name": "Fabian Baldovino",
+    "email": "contato@fabian.art.br",
+    "url": "https://www.fabian.art.br"
   },
   "keywords": [
     "portfolio",
+    "brand-filmmaking",
+    "filmmaker",
     "nextjs",
     "react",
     "tailwindcss",
-    "typescript",
-    "motion",
-    "framer-motion"
+    "typescript"
   ],
   "scripts": {
     "dev": "next dev --turbopack",

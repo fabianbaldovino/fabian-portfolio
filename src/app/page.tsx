@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import PersonImageSection from "@/components/PersonImageSection";
 import AboutContactSection from "@/components/AboutContactSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ClientsStrip from "@/components/ClientsStrip";
 import Footer from "@/components/Footer";
 import { containerVariants } from "@/lib/animation/variants";
 
@@ -22,11 +23,13 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <section id="about-section" aria-label="Hero e Sobre" className="flex flex-col w-full lg:w-[70%] gap-6 lg:mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 md:h-[60%]">
+          <section id="about-section" aria-label="Hero e Sobre" className="flex flex-col w-full lg:w-[70%] gap-4 lg:mb-8">
+            <div className="flex flex-col lg:flex-row gap-4 md:h-[55%]">
               <HeroSection />
               <PersonImageSection />
             </div>
+            {/* Faixa de Autoridade — logos dos clientes atendidos */}
+            <ClientsStrip />
             <AboutContactSection />
           </section>
           <section id="projects-section" aria-label="Projetos" className="lg:contents">
@@ -37,4 +40,4 @@ export default function Home() {
       <Footer className="mb-4" />
     </div>
   );
-}
+}

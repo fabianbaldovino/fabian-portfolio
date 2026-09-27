@@ -1,0 +1,348 @@
+{
+  "desktop_localhost": {
+    "image": "E:\\SITES\\Fabian_melhor\\AUDITORIA_MIRA.AI\\screenshot_desktop.png",
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fixation_points": [
+      {
+        "x": 191,
+        "y": 68,
+        "intensity": 0.9681470990180969,
+        "area": 51605.0,
+        "x_pct": 9.95,
+        "y_pct": 6.3,
+        "order": "I"
+      },
+      {
+        "x": 1481,
+        "y": 75,
+        "intensity": 0.33153975009918213,
+        "area": 111888.5,
+        "x_pct": 77.14,
+        "y_pct": 6.94,
+        "order": "II"
+      },
+      {
+        "x": 814,
+        "y": 1017,
+        "intensity": 0.3251570761203766,
+        "area": 36191.5,
+        "x_pct": 42.4,
+        "y_pct": 94.17,
+        "order": "III"
+      },
+      {
+        "x": 42,
+        "y": 1047,
+        "intensity": 0.034127723425626755,
+        "area": 5796.0,
+        "x_pct": 2.19,
+        "y_pct": 96.94,
+        "order": "IV"
+      }
+    ],
+    "quadrants": {
+      "top_left_pct": 36.79,
+      "top_right_pct": 44.69,
+      "bottom_left_pct": 13.7,
+      "bottom_right_pct": 4.83
+    },
+    "roi_distribution": {
+      "hero_headline_statement": 1.1,
+      "video_showreel_container": 2.21,
+      "about_manifesto_card": 2.09,
+      "contact_cta_card": 7.56,
+      "portfolio_bento_column": 6.6
+    },
+    "scroll_attention_curve": [],
+    "peak_attention_score": 10.15,
+    "visual_entropy_pct": 37.32
+  },
+  "desktop_production": {
+    "image": "E:\\SITES\\Fabian_melhor\\AUDITORIA_MIRA.AI\\screenshot_production_desktop.png",
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fixation_points": [
+      {
+        "x": 860,
+        "y": 806,
+        "intensity": 0.9502216577529907,
+        "area": 40570.5,
+        "x_pct": 44.79,
+        "y_pct": 74.63,
+        "order": "I"
+      },
+      {
+        "x": 190,
+        "y": 49,
+        "intensity": 0.5748870372772217,
+        "area": 20525.5,
+        "x_pct": 9.9,
+        "y_pct": 4.54,
+        "order": "II"
+      },
+      {
+        "x": 1124,
+        "y": 339,
+        "intensity": 0.48431336879730225,
+        "area": 11291.5,
+        "x_pct": 58.54,
+        "y_pct": 31.39,
+        "order": "III"
+      },
+      {
+        "x": 799,
+        "y": 987,
+        "intensity": 0.4521026015281677,
+        "area": 10504.0,
+        "x_pct": 41.61,
+        "y_pct": 91.39,
+        "order": "IV"
+      },
+      {
+        "x": 1707,
+        "y": 247,
+        "intensity": 0.4272116720676422,
+        "area": 11721.5,
+        "x_pct": 88.91,
+        "y_pct": 22.87,
+        "order": "V"
+      },
+      {
+        "x": 358,
+        "y": 466,
+        "intensity": 0.26803058385849,
+        "area": 57638.0,
+        "x_pct": 18.65,
+        "y_pct": 43.15,
+        "order": "VI"
+      }
+    ],
+    "quadrants": {
+      "top_left_pct": 27.28,
+      "top_right_pct": 26.07,
+      "bottom_left_pct": 37.96,
+      "bottom_right_pct": 8.69
+    },
+    "roi_distribution": {
+      "hero_headline_statement": 20.83,
+      "video_showreel_container": 6.69,
+      "about_manifesto_card": 12.13,
+      "contact_cta_card": 24.69,
+      "portfolio_bento_column": 16.09
+    },
+    "scroll_attention_curve": [],
+    "peak_attention_score": 19.35,
+    "visual_entropy_pct": 20.53
+  },
+  "mobile_500x749": {
+    "image": "E:\\SITES\\Fabian_melhor\\AUDITORIA_MIRA.AI\\screenshot_mobile_500x749.png",
+    "resolution": {
+      "width": 500,
+      "height": 749
+    },
+    "fixation_points": [
+      {
+        "x": 123,
+        "y": 59,
+        "intensity": 0.7201287746429443,
+        "area": 24876.5,
+        "x_pct": 24.6,
+        "y_pct": 7.88,
+        "order": "I"
+      },
+      {
+        "x": 40,
+        "y": 705,
+        "intensity": 0.27263304591178894,
+        "area": 5026.0,
+        "x_pct": 8.0,
+        "y_pct": 94.13,
+        "order": "II"
+      },
+      {
+        "x": 440,
+        "y": 53,
+        "intensity": 0.09955666959285736,
+        "area": 6942.5,
+        "x_pct": 88.0,
+        "y_pct": 7.08,
+        "order": "III"
+      }
+    ],
+    "quadrants": {
+      "top_left_pct": 84.06,
+      "top_right_pct": 5.45,
+      "bottom_left_pct": 9.05,
+      "bottom_right_pct": 1.44
+    },
+    "roi_distribution": {},
+    "scroll_attention_curve": [],
+    "peak_attention_score": 11.22,
+    "visual_entropy_pct": 42.05
+  },
+  "mobile_390x844": {
+    "image": "E:\\SITES\\Fabian_melhor\\AUDITORIA_MIRA.AI\\screenshot_mobile_390x844.png",
+    "resolution": {
+      "width": 390,
+      "height": 844
+    },
+    "fixation_points": [
+      {
+        "x": 120,
+        "y": 59,
+        "intensity": 0.5259377360343933,
+        "area": 23804.0,
+        "x_pct": 30.77,
+        "y_pct": 6.99,
+        "order": "I"
+      },
+      {
+        "x": 39,
+        "y": 802,
+        "intensity": 0.27654528617858887,
+        "area": 3275.0,
+        "x_pct": 10.0,
+        "y_pct": 95.02,
+        "order": "II"
+      },
+      {
+        "x": 195,
+        "y": 631,
+        "intensity": 0.044366609305143356,
+        "area": 4962.5,
+        "x_pct": 50.0,
+        "y_pct": 74.76,
+        "order": "III"
+      }
+    ],
+    "quadrants": {
+      "top_left_pct": 77.45,
+      "top_right_pct": 6.55,
+      "bottom_left_pct": 10.25,
+      "bottom_right_pct": 5.75
+    },
+    "roi_distribution": {},
+    "scroll_attention_curve": [],
+    "peak_attention_score": 18.0,
+    "visual_entropy_pct": 36.26
+  },
+  "mobile_fullpage_scroll": {
+    "image": "E:\\SITES\\Fabian_melhor\\AUDITORIA_MIRA.AI\\screenshot_fullpage_mobile.png",
+    "resolution": {
+      "width": 500,
+      "height": 2154
+    },
+    "fixation_points": [
+      {
+        "x": 123,
+        "y": 120,
+        "intensity": 0.20831641554832458,
+        "area": 49473.5,
+        "x_pct": 24.6,
+        "y_pct": 5.57,
+        "order": "I"
+      },
+      {
+        "x": 45,
+        "y": 2090,
+        "intensity": 0.051354456692934036,
+        "area": 5146.5,
+        "x_pct": 9.0,
+        "y_pct": 97.03,
+        "order": "II"
+      },
+      {
+        "x": 253,
+        "y": 1209,
+        "intensity": 0.027692513540387154,
+        "area": 14431.5,
+        "x_pct": 50.6,
+        "y_pct": 56.13,
+        "order": "III"
+      },
+      {
+        "x": 358,
+        "y": 848,
+        "intensity": 0.023716015741229057,
+        "area": 9094.0,
+        "x_pct": 71.6,
+        "y_pct": 39.37,
+        "order": "IV"
+      },
+      {
+        "x": 399,
+        "y": 84,
+        "intensity": 0.02018575929105282,
+        "area": 22582.5,
+        "x_pct": 79.8,
+        "y_pct": 3.9,
+        "order": "V"
+      },
+      {
+        "x": 390,
+        "y": 1795,
+        "intensity": 0.018533457070589066,
+        "area": 4959.5,
+        "x_pct": 78.0,
+        "y_pct": 83.33,
+        "order": "VI"
+      }
+    ],
+    "quadrants": {
+      "top_left_pct": 73.59,
+      "top_right_pct": 11.35,
+      "bottom_left_pct": 5.93,
+      "bottom_right_pct": 9.12
+    },
+    "roi_distribution": {},
+    "scroll_attention_curve": [
+      {
+        "depth_pct": 10,
+        "attention_pct": 72.08
+      },
+      {
+        "depth_pct": 20,
+        "attention_pct": 3.44
+      },
+      {
+        "depth_pct": 30,
+        "attention_pct": 2.33
+      },
+      {
+        "depth_pct": 40,
+        "attention_pct": 3.3
+      },
+      {
+        "depth_pct": 50,
+        "attention_pct": 3.77
+      },
+      {
+        "depth_pct": 60,
+        "attention_pct": 4.46
+      },
+      {
+        "depth_pct": 70,
+        "attention_pct": 3.2
+      },
+      {
+        "depth_pct": 80,
+        "attention_pct": 1.72
+      },
+      {
+        "depth_pct": 90,
+        "attention_pct": 1.75
+      },
+      {
+        "depth_pct": 100,
+        "attention_pct": 3.79
+      }
+    ],
+    "peak_attention_score": 2.5,
+    "visual_entropy_pct": 45.28
+  }
+}

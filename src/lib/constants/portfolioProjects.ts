@@ -16,7 +16,7 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/ele nao foi embora.jpg",
     tags: ["Novela Vertical", "4 Episódios", "Thriller Psicológico"],
     deliverable: "Novela vertical · 4 episódios",
-    description: "Novela vertical em 4 episódios de thriller psicológico intitulada 'Ele Não Vai Embora', co-dirigida com Renara Maltz para a Termolar, realizada na cidade de Porto Alegre, RS. Uma narrativa seriada que une retenção de alta intensidade, emoção e posicionamento de marca de forma inegável.",
+    description: "O desafio não era fazer propaganda; era sequestrar a atenção. A Termolar precisava de um formato que hackeasse a biologia do consumo atual. Dirigimos 'Ele Não Vai Embora', um thriller psicológico em 4 episódios que trocou a interrupção chata do anúncio pela imersão absoluta. A marca deixou de ser um produto na tela e virou a protagonista de uma narrativa magnética que o espectador não conseguia parar de assistir.",
   },
   {
     slug: "ristorante-fontana-campanha",
@@ -25,7 +25,7 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/fontana.jpg",
     tags: ["Campanha de 4 Filmes", "META ADS", "Redes Sociais"],
     deliverable: "4 filmes · META ADS",
-    description: "O Ristorante Fontana nos contratou para uma série de 4 filmes focados nos seus principais serviços: Tele Entrega, Eventos, Buffets e Pratos Especiais. Focamos em uma narrativa acolhedora onde o espectador percebe o valor da marca já no primeiro frame. A campanha foi orquestrada para tração via META ADS, com hook nos primeiros 3 segundos para capturar o consumidor no Instagram e Facebook.",
+    description: "A escolha de um restaurante não acontece no estômago, acontece no sistema límbico. O Ristorante Fontana não precisava apenas mostrar pratos; precisava ancorar a sensação de 'Casa' e acolhimento. Orquestramos 4 filmes curtos para o META ADS projetados com um 'hook' neuro-visual nos primeiros 3 segundos. O resultado é um convite irresistível que transforma o scroll instintivo em desejo de pertencimento e conversão instantânea.",
   },
   {
     slug: "wedy-nutrition-wedy-pra-todos",
@@ -34,7 +34,7 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/wedy nutrition.png",
     tags: ["Série de Filmes", "Suplementação Esportiva", "Campanha de Marca"],
     deliverable: "Série de filmes · Campanha",
-    description: "Série de filmes para a campanha #WedyPraTodos da marca de suplementação esportiva Wedy Nutrition. Narrativas fortes constroem marcas fortes — e foi exatamente isso que entregamos: uma campanha que une identidade atlética com propósito de marca, criando conexão emocional com o consumidor.",
+    description: "O mercado de suplementação é um oceano vermelho de promessas estéticas vazias. Para a campanha #WedyPraTodos, abandonamos a linguagem fria dos laboratórios e acionamos o arquétipo do herói cotidiano. Nossa cinematografia forjou uma identidade visceral que não vende apenas performance, mas adoção por uma tribo implacável de força e disciplina.",
   },
   {
     slug: "quick-house-videos-institucionais",
@@ -43,7 +43,7 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/quickhouse.png",
     tags: ["Vídeo Institucional", "Construção à Seco", "Escala Nacional"],
     deliverable: "Dezenas de vídeos · Institucional",
-    description: "Além do vídeo institucional oficial, realizamos dezenas de vídeos para a maior empresa de construção à seco no Brasil, a Quick House. Cada produção foi desenvolvida para comunicar escala, confiabilidade e liderança — transformando a grandeza operacional da empresa em percepção de alto valor para clientes e parceiros.",
+    description: "A magia da construção modular (SteelPanel) permite erguer hospitais e a sede da COP-30 em velocidade recorde. Mas para o instinto humano, velocidade pode soar como fragilidade se não for ancorada em grandeza. Nossa direção de arte operou uma expansão das fronteiras visuais da Quick House: do micro-detalhe da precisão do aço às captações aéreas monumentais. Construímos a semiótica definitiva de um império modular imbatível.",
   },
   {
     slug: "copelmi-video-institucional",
@@ -52,7 +52,7 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/copelmi.png",
     tags: ["Vídeo Institucional", "Energia", "Mineração"],
     deliverable: "Produção institucional",
-    description: "Produção audiovisual institucional para a Copelmi, uma das principais empresas do setor energético e de mineração do Brasil. Cada frame foi concebido para transmitir solidez, escala e propósito — construindo uma percepção de autoridade que o mercado reconhece antes mesmo de qualquer palavra.",
+    description: "Uma das maiores potências do setor energético brasileiro não precisa provar seu tamanho, precisa orquestrar o seu legado. Nossa missão foi blindar a marca Copelmi, traduzindo o peso brutal de sua operação em uma percepção de autoridade pacífica e segura. Cada frame foi milimetricamente desenhado para transmitir a solidez institucional que apenas os líderes absolutos podem sustentar.",
   },
   {
     slug: "seival-sul-mineracao-video-institucional",
@@ -61,6 +61,6 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/seivalsulmineracao.png",
     tags: ["Vídeo Institucional", "Mineração", "Sul do Brasil"],
     deliverable: "1 filme · Institucional",
-    description: "Produção de um vídeo institucional para a Seival Sul Mineração, empresa referência no setor mineral da região Sul do Brasil. A obra traduziu a força operacional da empresa em uma narrativa visual de alto impacto, posicionando a marca com a autoridade que ela representa no mercado.",
+    description: "A Seival Sul não extrai apenas toneladas de minério na Mina de Candiota; ela é a força motriz que garante a segurança energética de uma região inteira. Abandonamos o formato de 'vídeo corporativo' e criamos um manifesto de soberania industrial. Através de uma escala visual colossal, transformamos a poeira e o aço da operação em um ativador instintivo de confiança máxima para parceiros e investidores do mercado de capitais.",
   },
 ];

@@ -5,7 +5,7 @@ export const heroContent = {
 };
 
 export const aboutDescription =
-  "O nosso maior ativo são as pessoas. Acreditamos que a confiança de uma marca se constrói na verdade dos bastidores. Nós cuidamos de toda a estrutura audiovisual para que você tenha a tranquilidade de focar apenas no que importa: fazer o seu negócio avançar.";
+  "Construímos a arquitetura de percepção que blinda o valor da sua marca. Muito além da estética cinematográfica, nós orquestramos narrativas magnéticas que posicionam seu negócio no topo da hierarquia visual do seu setor.";
 
 export const personImage = {
   src: "/FOTOS/20260522_120207.jpg",

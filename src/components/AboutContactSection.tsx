@@ -18,26 +18,31 @@ export default function AboutContactSection() {
   };
 
   return (
-    <div className="flex flex-row gap-1 md:gap-4 md:h-[40%] min-h-[200px] md:min-h-0">
+    <div className="flex flex-col md:flex-row gap-3 md:gap-4 flex-1 min-h-0">
       <motion.div 
-        className="w-[50%] bg-foreground text-background rounded-[20px] flex flex-col items-start justify-between p-4 md:p-6"
+        className="w-full md:w-[50%] bg-foreground text-background rounded-[20px] flex flex-col items-start justify-between p-4 md:p-5 lg:p-6"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
         whileHover="hover"
       >
-        <motion.p 
-          className="text-sm md:text-lg lg:text-base xl:text-lg 2xl:text-xl leading-relaxed"
+        <motion.div 
+          className="flex flex-col gap-4 lg:gap-6 w-full h-full justify-center"
           variants={textVariants}
           initial="hidden"
           animate="visible"
         >
-          {aboutDescription}
-        </motion.p>
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.25rem] font-medium text-background leading-[1.15] tracking-tight text-balance">
+            Construímos a <span className="italic font-light opacity-90">arquitetura de percepção</span> que blinda o valor da sua marca.
+          </p>
+          <p className="text-sm md:text-base lg:text-lg font-light text-background/75 leading-relaxed max-w-[95%] text-balance">
+            Muito além da estética cinematográfica, orquestramos <strong className="font-medium text-background/95">narrativas magnéticas</strong> que posicionam seu negócio no topo da hierarquia visual do seu setor.
+          </p>
+        </motion.div>
         <div className="sr-only">
           <h2>Sobre Fabian Baldovino — Brand Filmmaker e Estrategista Audiovisual</h2>
           <p>
-            Brand filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Fabian Baldovino é autor de O Código Brasil, livro que decodifica o inconsciente e o comportamento de consumo no mercado brasileiro, transformando a comunicação institucional em percepção de alto valor.
+            Brand filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Fabian Baldovino é autor de O Código Brasil, manifesto que decodifica o inconsciente e o comportamento de consumo no mercado brasileiro, transformando a comunicação institucional em percepção de alto valor.
           </p>
           <p>
             Atua como a retaguarda invisível de marcas, garantindo execução técnica cinematográfica, direção de produção e narrativas magnéticas para clientes como Termolar, Quick House, Copelmi e Wedy Nutrition.
@@ -45,7 +50,7 @@ export default function AboutContactSection() {
         </div>
       </motion.div>
       <motion.div 
-        className="w-[50%] bg-card rounded-[20px] p-4 md:p-6 border-3 border-accent flex flex-col justify-between cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent min-h-[160px] md:min-h-0"
+        className="w-full md:w-[50%] bg-card rounded-[20px] p-6 border-3 border-accent flex flex-col justify-between cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         variants={contactCardVariants}
         initial="hidden"
         animate="visible"
@@ -62,33 +67,32 @@ export default function AboutContactSection() {
         }}
         aria-label="Abrir formulário de contato"
       >
-        <div className="flex justify-between items-start mb-2 md:mb-4 gap-2">
+        <div className="flex justify-between items-start mb-6 lg:mb-8 gap-2">
           <motion.div 
             className="flex flex-col min-w-0"
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
-            <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-light truncate">Tem alguma</p>
-            <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] font-medium leading-[1.1] md:leading-tight break-words">
-              Dúvida?
+            <p className="text-sm md:text-base mb-1">
+              <span className="font-light italic text-foreground/80">Pronto para blindar a</span> <span className="font-medium text-brand-accent">percepção</span>
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl leading-[1.1] break-words">
+              <span className="font-light italic text-foreground/80">da sua</span> <span className="font-medium">marca?</span>
             </h2>
-            <span className="sr-only">Agende uma conversa sobre produção de vídeo institucional e projetos de brand filmmaking em Porto Alegre</span>
+            <span className="sr-only">Solicite um diagnóstico audiovisual e inicie seu projeto de brand filmmaking em Porto Alegre</span>
           </motion.div>
         </div>
         
-        <div className="flex flex-col md:flex-row gap-4 w-full">
-          <motion.button 
-            className="bg-brand-accent text-brand-dark px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-colors w-full md:w-auto text-sm md:text-base min-h-[48px] flex items-center justify-center"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsModalOpen(true);
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        <div className="flex flex-col w-full mt-auto">
+          <motion.p 
+            className="text-xs md:text-sm lg:text-[0.95rem] text-foreground/70 font-light leading-relaxed max-w-[95%]"
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
           >
-            Agendar Conversa
-          </motion.button>
+            Atendemos um volume rigoroso e delimitado de projetos por semestre para garantir o padrão absoluto de direção e craft. Solicite uma avaliação de aderência para a sua marca.
+          </motion.p>
         </div>
       </motion.div>
       

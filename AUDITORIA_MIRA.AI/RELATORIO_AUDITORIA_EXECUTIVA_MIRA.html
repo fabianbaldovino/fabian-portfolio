@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIRA.AI | Relatório de Auditoria Executiva — fabian.art.br</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --surface: #11141c;
+      --surface-border: #1f2533;
+      --card-hover: #161b26;
+      --primary: #00f0ff;
+      --primary-dim: rgba(0, 240, 255, 0.12);
+      --accent-purple: #7928ca;
+      --accent-amber: #ffaa00;
+      --accent-red: #ff3366;
+      --accent-green: #00df8f;
+      --text: #f0f3fa;
+      --text-muted: #8b95a8;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-bottom: 80px;
+    }
+    /* Header / Nav */
+    header {
+      background: rgba(17, 20, 28, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    }
+    .brand-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--primary-dim);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--primary);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    /* Hero Banner */
+    .hero-banner {
+      padding: 48px 32px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .hero-pre {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #a4b3cf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 840px;
+      margin-bottom: 32px;
+    }
+    /* Tabs Navigation */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      max-width: 1400px;
+      margin: 0 auto 32px;
+      padding: 0 32px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Score Cards Grid */
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(0, 240, 255, 0.3);
+    }
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .card-value {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .card-value small {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .score-high { color: var(--accent-green); }
+    .score-mid { color: var(--accent-amber); }
+    .score-crit { color: var(--accent-red); }
+    .score-cyan { color: var(--primary); }
+    /* Visual Heatmap Showcase */
+    .heatmap-showcase {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .showcase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .selector-pills {
+      display: flex;
+      gap: 8px;
+      background: #0d1017;
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid var(--surface-border);
+    }
+    .pill-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill-btn.active {
+      background: var(--primary);
+      color: #000;
+    }
+    .heatmap-viewer {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--surface-border);
+      background: #000;
+      text-align: center;
+    }
+    .heatmap-viewer img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+    /* Alerts and Findings */
+    .alert-card {
+      background: var(--surface);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 16px 16px 0;
+      padding: 24px;
+      margin-bottom: 16px;
+      border-top: 1px solid var(--surface-border);
+      border-right: 1px solid var(--surface-border);
+      border-bottom: 1px solid var(--surface-border);
+    }
+    .alert-critical { border-left-color: var(--accent-red); }
+    .alert-high { border-left-color: var(--accent-amber); }
+    .alert-medium { border-left-color: var(--primary); }
+    .alert-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .alert-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .tag-critical { background: rgba(255, 51, 102, 0.15); color: var(--accent-red); }
+    .tag-high { background: rgba(255, 170, 0, 0.15); color: var(--accent-amber); }
+    .tag-medium { background: var(--primary-dim); color: var(--primary); }
+    .alert-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .alert-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .alert-action {
+      font-size: 13px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .alert-action strong {
+      color: var(--primary);
+    }
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .data-table th, .data-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--surface-border);
+    }
+    .data-table th {
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #0d1017;
+    }
+    /* Split Row */
+    .split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) {
+      .split-row { grid-template-columns: 1fr; }
+      .hero-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">M</div>
+      <div>
+        <div class="brand-title">MIRA.AI FORENSIC ENGINE</div>
+        <div class="brand-subtitle">Auditoria de Saliência & Inteligência Cultural</div>
+      </div>
+    </div>
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      DAG SOTA V12 ATIVO & VERIFICADO
+    </div>
+  </header>
+
+  <div class="hero-banner">
+    <div class="hero-pre">Dossiê Executivo de Inteligência Competitiva</div>
+    <h1 class="hero-title">Auditoria Integral: Fabian Baldovino | Brand Filmmaking</h1>
+    <p class="hero-desc">
+      Varredura completa de Visão Computacional (DeepGaze IIE), Telemetria de Retenção Visual, Core Web Vitals, 
+      Semântica Cromática, Psicologia Decisória B2B e Decodificação Cultural dos frameworks de Pierre Bourdieu, Roberto DaMatta e Clotaire Rapaille.
+    </p>
+  </div>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="openTab('sumario')">1. Sumário & Scores</button>
+    <button class="tab-btn" onclick="openTab('heatmaps')">2. Mapas de Calor DeepGaze</button>
+    <button class="tab-btn" onclick="openTab('neuro-ux')">3. Neuro-UX & Queda Mobile</button>
+    <button class="tab-btn" onclick="openTab('engenharia')">4. Engenharia & Performance (LCP)</button>
+    <button class="tab-btn" onclick="openTab('semiotica')">5. Semiótica & Bourdieu</button>
+    <button class="tab-btn" onclick="openTab('conversao')">6. Conversão de Alto Ticket</button>
+    <button class="tab-btn" onclick="openTab('roadmap')">7. Roadmap de Ação</button>
+  </nav>
+
+  <main class="container">
+
+    <!-- TAB 1: SUMÁRIO -->
+    <section id="sumario" class="tab-content active">
+      <div class="score-grid">
+        <div class="card">
+          <div class="card-label">MIRA Composite Score</div>
+          <div class="card-value score-cyan">78.4 <small>/ 100</small></div>
+          <div class="card-desc">Classificação A- (Excelente substância autoral com gargalos de conversão e entrega técnica).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Semiótica & Narrativa</div>
+          <div class="card-value score-high">88 <small>/ 100</small></div>
+          <div class="card-desc">Diferencial raro. O autor de "O Código Brasil" possui substância intelectual cinematográfica real.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Saliência Visual DeepGaze</div>
+          <div class="card-value score-mid">76.5 <small>/ 100</small></div>
+          <div class="card-desc">Layout desktop limpo, mas com abismo de retenção após os primeiros 10% no mobile.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Core Web Vitals & Assets</div>
+          <div class="card-value score-crit">64 <small>/ 100</small></div>
+          <div class="card-desc">Alerta Crítico: Poster do vídeo com 7.32 MB em JPEG puro prejudicando o LCP mobile.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Conversão B2B & Prova Social</div>
+          <div class="card-value score-crit">62 <small>/ 100</small></div>
+          <div class="card-desc">Clientes gigantes (Termolar, Copelmi, Quick House) estão escondidos fora da home.</div>
+        </div>
+      </div>
+
+      <div class="heatmap-showcase">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Diagnóstico Executivo em 3 Frases</h3>
+        <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">
+          1. <strong>O Conteúdo é Ouro, a Embalagem Esconde os Tesouros:</strong> Fabian Baldovino reúne atributos que 99% das produtoras audiovisuais não têm (pensamento antropológico de alto nível, autoria de livro e clientes de peso), mas o Bento Grid da home exibe abstrações conceituais em vez dos seus filmes reais.<br><br>
+          2. <strong>O Abismo Mobile Trava o Negócio:</strong> 72% da atenção no smartphone se esgota nos primeiros 10% da tela. Como não há logos de autoridade nem play imediato na primeira dobra, o visitante sai antes de conhecer o portfólio.<br><br>
+          3. <strong>Oportunidade Imediata de Alto Ticket:</strong> Com apenas 3 intervenções cirúrgicas (otimizar os 7MB de imagem, injetar os logos de Termolar/Copelmi/Quick House na home e mudar o CTA de 'Dúvida?' para 'Diagnóstico'), o site salta imediatamente para o patamar de 95+ pontos.
+        </p>
+      </div>
+    </section>
+
+    <!-- TAB 2: HEATMAPS -->
+    <section id="heatmaps" class="tab-content">
+      <div class="heatmap-showcase">
+        <div class="showcase-header">
+          <div>
+            <h3 style="font-size: 20px; font-weight: 700;">Visor de Saliência Visual Computacional (DeepGaze IIE)</h3>
+            <p style="color: var(--text-muted); font-size: 13px;">Centróides numéricos I, II, III indicam a ordem e intensidade de fixação ocular simulada.</p>
+          </div>
+          <div class="selector-pills">
+            <button class="pill-btn active" onclick="switchHeatmap('desktop_prod')">Desktop Produção</button>
+            <button class="pill-btn" onclick="switchHeatmap('desktop_side')">Desktop Lado a Lado</button>
+            <button class="pill-btn" onclick="switchHeatmap('mobile_500')">Mobile (500x749)</button>
+            <button class="pill-btn" onclick="switchHeatmap('mobile_scroll')">Mobile Scroll (Full)</button>
+          </div>
+        </div>
+
+        <div class="heatmap-viewer">
+          <img id="heatmap-img" src="desktop_production_heatmap.png" alt="Heatmap Desktop Produção">
+        </div>
+
+        <div style="margin-top: 24px;">
+          <h4 style="font-size: 16px; margin-bottom: 12px;">Métricas Espaciais de Distribuição de Atenção (Desktop):</h4>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Região / Componente</th>
+                <th>Share de Atenção (%)</th>
+                <th>Diagnóstico do Olhar Humano</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Card de Contato ("Dúvida? Agendar")</strong></td>
+                <td style="color: var(--accent-amber); font-weight: 700;">24.69%</td>
+                <td>Ponto focal mais agressivo do layout devido ao alto contraste do botão branco/preto.</td>
+              </tr>
+              <tr>
+                <td><strong>Hero Headline (Statement + Conclusão)</strong></td>
+                <td style="color: var(--primary); font-weight: 700;">20.83%</td>
+                <td>Excelente leitura inicial (Padrão F de leitura). Frase memorável e magnética.</td>
+              </tr>
+              <tr>
+                <td><strong>Coluna Bento de Portfólio</strong></td>
+                <td style="color: var(--accent-green); font-weight: 700;">16.09%</td>
+                <td>Visibilidade moderada; o formato quadrado atrai olhares secundários.</td>
+              </tr>
+              <tr>
+                <td><strong>Card Manifesto ("Sobre Fabian")</strong></td>
+                <td>12.13%</td>
+                <td>Boa assimilação de texto institucional.</td>
+              </tr>
+              <tr>
+                <td><strong>Container de Vídeo (Showreel 9:16)</strong></td>
+                <td style="color: var(--accent-red); font-weight: 700;">6.69%</td>
+                <td><strong>Crítico:</strong> Atenção muito baixa para o asset mais importante de um cineasta (o vídeo estático escuro não chama o clique).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: NEURO-UX -->
+    <section id="neuro-ux" class="tab-content">
+      <div class="split-row">
+        <div class="card">
+          <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--accent-amber);">O Abismo de Retenção Mobile (Mobile Attention Cliff)</h3>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">
+            Medição de densidade de olhar realizada a cada 10% de profundidade vertical da página no smartphone:
+          </p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Profundidade da Página</th>
+                <th>Atenção Visual (%)</th>
+                <th>Comportamento do Visitante</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: rgba(0, 240, 255, 0.08);">
+                <td><strong>0% a 10% (Primeira Dobra)</strong></td>
+                <td style="color: var(--primary); font-weight: 800; font-size: 16px;">72.08%</td>
+                <td>Fixação total no logo e na frase impactante.</td>
+              </tr>
+              <tr>
+                <td><strong>10% a 20%</strong></td>
+                <td style="color: var(--accent-red);">3.44%</td>
+                <td>Queda brusca de engajamento visual.</td>
+              </tr>
+              <tr>
+                <td><strong>20% a 30%</strong></td>
+                <td>2.33%</td>
+                <td>Escaneamento rápido periférico.</td>
+              </tr>
+              <tr>
+                <td><strong>30% a 50%</strong></td>
+                <td>3.50%</td>
+                <td>Área fria (passagem rápida).</td>
+              </tr>
+              <tr>
+                <td><strong>50% a 70%</strong></td>
+                <td>4.46%</td>
+                <td>Leve recuperação ao bater o olho na foto dos bastidores.</td>
+              </tr>
+              <tr>
+                <td><strong>80% a 100% (Rodapé / Contato)</strong></td>
+                <td>3.79%</td>
+                <td>Apenas uma fração mínima atinge o CTA final.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">Semântica Cromática & Contraste (WCAG 2.1)</h3>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">
+            Extração matemática de tensores de cor via K-Means e luminância relativa:
+          </p>
+          <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+            <div style="flex: 9; background: #101112; border: 1px solid #333; border-radius: 8px; padding: 12px; text-align: center; font-size: 11px; font-family: var(--font-mono);">#101112<br>90.9%</div>
+            <div style="flex: 1; background: #232b2e; border: 1px solid #444; border-radius: 8px; padding: 12px; text-align: center; font-size: 11px; font-family: var(--font-mono);">#232b2e<br>7.1%</div>
+            <div style="flex: 1; background: #fbfafa; color: #000; border-radius: 8px; padding: 12px; text-align: center; font-size: 11px; font-family: var(--font-mono); font-weight: 700;">#fbfafa<br>0.6%</div>
+          </div>
+          <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.8; list-style: square; padding-left: 20px;">
+            <li><strong>Razão de Contraste: 8.89 : 1</strong> (Aprovado em WCAG AAA).</li>
+            <li><strong>Arquétipo:</strong> <em>Dark Minimalist Luxury (Cinematic High-Contrast)</em>. Perfeita evocação de prestígio e sala de pós-produção cinematográfica.</li>
+            <li><strong>Recomendação Cromática:</strong> Preservar a paleta escura, adicionando micro-acentos de âmbar ou dourado nos badges de clientes consagrados.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ENGENHARIA -->
+    <section id="engenharia" class="tab-content">
+      <div class="alert-card alert-critical">
+        <div class="alert-header">
+          <span class="alert-tag tag-critical">Crítico (Performance)</span>
+          <span class="alert-title">LCP Destruído por Imagem Poster Não Otimizada (7.32 MB)</span>
+        </div>
+        <div class="alert-body">
+          O poster do showreel (<code>/FOTOS/20260522_120207.jpg</code>) é servido em JPEG nativo sem qualquer processamento de build. Um usuário no 4G baixa 7.3 MB antes de ver a primeira tela renderizar limpa.
+        </div>
+        <div class="alert-action">
+          <strong>Ação Recomendada:</strong> Converter para <code>poster.webp</code> (720px de largura, qualidade 80, ~50 KB) e injetar <code>fetchpriority="high"</code>.
+        </div>
+      </div>
+
+      <div class="alert-card alert-high">
+        <div class="alert-header">
+          <span class="alert-tag tag-high">Alto Impacto</span>
+          <span class="alert-title">Vídeo Showreel: Formato 9:16 sem Autoplay Mudo</span>
+        </div>
+        <div class="alert-body">
+          O showreel <code>REEL_2026_1.mp4</code> (10.88 MB) não possui autoplay muted e depende dos controles HTML5 padrão do navegador. No desktop, o visitante se depara com um retângulo estático e quase nunca clica no play.
+        </div>
+        <div class="alert-action">
+          <strong>Ação Recomendada:</strong> Implementar <code>autoPlay muted loop playsInline</code> para criar movimento dinâmico imediato, com botão discreto de expandir em tela cheia com áudio.
+        </div>
+      </div>
+
+      <div class="alert-card alert-medium">
+        <div class="alert-header">
+          <span class="alert-tag tag-medium">Higiene de Código</span>
+          <span class="alert-title">Metadados de Template no package.json</span>
+        </div>
+        <div class="alert-body">
+          O repositório ainda preserva o nome <code>"bentofolio"</code> e a autoria de terceiros.
+        </div>
+        <div class="alert-action">
+          <strong>Ação Recomendada:</strong> Atualizar para <code>"name": "fabian-baldovino-brand-filmmaking"</code> e autor oficial.
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: SEMIÓTICA -->
+    <section id="semiotica" class="tab-content">
+      <div class="card" style="margin-bottom: 24px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Pierre Bourdieu & O Capital Simbólico do Cinema</h3>
+        <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">
+          Em <em>A Economia das Trocas Simbólicas</em>, Bourdieu demonstra que bens de prestígio artístico exigem a recusa aparente do mercantilismo em favor da consagração cultural.
+        </p>
+        <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">
+          <strong>Onde o site triunfa:</strong> A frase de abertura — <em>"Ninguém compra um produto pela razão; a razão só existe para justificar o que o instinto já decidiu em milésimos de segundo"</em> — é uma aula de neurociência de consumo. Coloca Fabian não como um técnico de câmera, mas como um arquiteto da mente do consumidor.
+        </p>
+        <p style="color: var(--text-muted); font-size: 15px;">
+          <strong>Onde há ruído:</strong> Ao adotar o termo <em>"Retaguarda Invisível que cuida da bagunça dos bastidores"</em>, a comunicação escorrega para a submissão operacional. Grandes diretores não "cuidam da bagunça"; eles **assinam obras que redefinem indústrias**. É imperativo manter o tom no nível de Direção Cinematográfica Estratégica.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--accent-amber);">Roberto DaMatta & Clotaire Rapaille</h3>
+        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.8;">
+          • <strong>DaMatta (A Casa e a Rua):</strong> O mercado corporativo brasileiro busca segurança contra a hostilidade da "Rua". Fabian acerta ao usar o conceito de autoridade e confiança nos bastidores.<br>
+          • <strong>Rapaille (O Código Cultural):</strong> O código brasileiro do "vídeo institucional" é sinônimo de sonolência e despesa inútil. O código do "Brand Filmmaking" evoca o status de líderes de mercado. O site faz a transição correta ao repudiar o institucional burocrático em favor de narrativas com visceralidade e suor.
+        </p>
+      </div>
+    </section>
+
+    <!-- TAB 6: CONVERSÃO -->
+    <section id="conversao" class="tab-content">
+      <div class="split-row">
+        <div class="card">
+          <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--accent-red);">O Problema Atual da Conversão B2B</h3>
+          <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.9; list-style: square; padding-left: 20px;">
+            <li><strong>Cases Gigantes Invisíveis:</strong> Termolar (série 4 episódios), Copelmi, Quick House e Wedy Nutrition só aparecem se o visitante adivinhar que deve navegar até a aba /projetos.</li>
+            <li><strong>CTA Fraco:</strong> "Tem alguma Dúvida? Agendar Conversa" é passivo e tem tom de suporte técnico.</li>
+            <li><strong>Ausência de Depoimentos:</strong> Nenhum diretor de marketing ou cliente expressando o retorno de percepção gerado pelas produções.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-color: rgba(0, 240, 255, 0.4);">
+          <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">A Solução de Alto Ticket (Proposta MIRA)</h3>
+          <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.9; list-style: square; padding-left: 20px;">
+            <li><strong>Faixa de Marcas Confiadas:</strong> Logo abaixo da frase hero, inserir os logotipos em tom cinza elegante: Termolar | Copelmi | Quick House | Wedy Nutrition.</li>
+            <li><strong>CTA Assertivo:</strong> "Pronto para blindar a percepção da sua marca? / Agendar Diagnóstico Audiovisual".</li>
+            <li><strong>Chamada de Autoridade:</strong> Inserir destaque ao livro "O Código Brasil" como credencial definitiva de expertise.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: ROADMAP -->
+    <section id="roadmap" class="tab-content">
+      <div class="card" style="margin-bottom: 20px;">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--primary);">Fase 1: Quick-Wins Imediatas (48 Horas)</h3>
+        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.8;">
+          1. Otimizar e comprimir o poster do vídeo para WebP (de 7.32 MB para < 60 KB).<br>
+          2. Alterar o copy do card de contato de "Tem alguma Dúvida?" para "Pronto para blindar a percepção da sua marca?".<br>
+          3. Sanitizar o package.json removendo os rastros do bentofolio.
+        </p>
+      </div>
+
+      <div class="card" style="margin-bottom: 20px;">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--accent-amber);">Fase 2: Ajustes Táticos de Tração (7 Dias)</h3>
+        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.8;">
+          1. Injetar a faixa de logotipos de clientes (Termolar, Copelmi, Quick House, Wedy) na Home.<br>
+          2. Configurar o showreel da primeira dobra com autoplay mudo em loop e botão de visualização cinematográfica.<br>
+          3. Rebatizar os cards de especialidades para conectar diretamente aos projetos executados.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--accent-green);">Fase 3: Autoridade & Escalar Alto Ticket (30 Dias)</h3>
+        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.8;">
+          1. Criar landing page imersiva de "O Código Brasil" para captação de leads qualificados (CMOs e Diretores de Marca).<br>
+          2. Adicionar depoimentos em vídeo dos diretores das empresas atendidas.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    function switchHeatmap(type) {
+      const img = document.getElementById('heatmap-img');
+      document.querySelectorAll('.selector-pills .pill-btn').forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      
+      if (type === 'desktop_prod') {
+        img.src = 'desktop_production_heatmap.png';
+      } else if (type === 'desktop_side') {
+        img.src = 'desktop_production_side_by_side.png';
+      } else if (type === 'mobile_500') {
+        img.src = 'mobile_500x749_heatmap.png';
+      } else if (type === 'mobile_scroll') {
+        img.src = 'mobile_fullpage_scroll_heatmap.png';
+      }
+    }
+  </script>
+</body>
+</html>

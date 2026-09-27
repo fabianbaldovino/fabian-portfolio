@@ -7,14 +7,14 @@ import { heroContent } from "@/lib/constants/siteContent";
 export default function HeroSection() {
   return (
     <motion.div 
-      className="w-full lg:flex-1 bg-card rounded-[20px] flex flex-col items-start justify-end p-6 md:p-8 xl:p-10 min-h-[250px] lg:min-h-0"
+      className="w-full lg:flex-1 bg-card rounded-[20px] flex flex-col items-start justify-center p-6 md:p-8 xl:p-10 min-h-[250px] lg:min-h-0 relative overflow-hidden"
       variants={heroVariants}
       initial="hidden"
       animate="visible"
       whileHover="hover"
     >
       <motion.div 
-        className="flex flex-col gap-3 md:gap-4 max-w-3xl"
+        className="flex flex-col gap-5 lg:gap-6 max-w-3xl"
         variants={textVariants}
         initial="hidden"
         animate="visible"
@@ -22,12 +22,12 @@ export default function HeroSection() {
         <span className="text-xs uppercase tracking-widest text-brand-accent font-medium">
           Brand Filmmaking &amp; Audiovisual Estratégico · Porto Alegre
         </span>
-        <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-[1.65rem] xl:text-[2rem] font-medium leading-[1.25] tracking-tight text-foreground flex flex-col gap-2.5 md:gap-3.5">
-          <span>
-            {heroContent.statement}
+        <h1 className="flex flex-col gap-3 md:gap-5 max-w-[95%]">
+          <span className="text-2xl sm:text-3xl md:text-3xl lg:text-[2.15rem] xl:text-[2.5rem] leading-[1.15] tracking-tight text-foreground text-balance">
+            <span className="font-light italic text-foreground/80">Ninguém compra um produto pela</span> <span className="font-medium">razão;</span> a razão só existe para justificar o que o <span className="font-medium text-brand-accent">instinto</span> já decidiu em milésimos de segundo.
           </span>
-          <span className="text-foreground/75 font-normal text-base sm:text-lg md:text-xl lg:text-[1.3rem] xl:text-[1.55rem] leading-relaxed">
-            {heroContent.conclusion}
+          <span className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/70 font-light leading-relaxed text-balance">
+            <span className="italic opacity-90">Nós não fazemos vídeos para</span> <span className="font-medium text-foreground/90">entreter o intelecto,</span> construímos <span className="font-medium text-brand-accent opacity-100">percepção de valor</span> direto na raiz.
           </span>
         </h1>
       </motion.div>
