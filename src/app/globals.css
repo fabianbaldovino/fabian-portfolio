@@ -6,7 +6,7 @@
   --font-gilroy: 'Gilroy', sans-serif;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: #C5A059;
@@ -15,6 +15,22 @@
   --color-card: #242C2F;
   --font-sans: var(--font-gilroy);
   --font-mono: var(--font-gilroy);
+}
+
+@utility text-brand-accent {
+  color: #C5A059;
+}
+@utility bg-brand-accent {
+  background-color: #C5A059;
+}
+@utility border-brand-accent {
+  border-color: #C5A059;
+}
+@utility border-accent {
+  border-color: #C5A059;
+}
+@utility text-accent {
+  color: #C5A059;
 }
 
 @utility border-3 {

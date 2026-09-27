@@ -34,105 +34,122 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
   const contentArray = Array.isArray(project.content) ? project.content : [project.content];
 
   return (
-    <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 max-w-5xl mx-auto">
-      <div className="bg-card rounded-[20px] p-6 md:p-12 border-3 border-accent w-full relative">
-        <div className="mb-6">
-          <Link 
-            href="/#especialidades" 
-            className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md py-1 px-2 -ml-2"
-          >
-            <span aria-hidden="true">&larr;</span> Voltar para Especialidades
-          </Link>
-        </div>
-
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-4">{project.name}</h1>
+    <main className="min-h-screen bg-background text-foreground flex flex-col items-center pb-24 overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
+      {/* Navigation Bar Minimal */}
+      <nav className="w-full max-w-6xl px-6 py-8 flex justify-between items-center relative z-20">
+        <Link 
+          href="/projetos" 
+          className="flex items-center gap-2 text-foreground/60 hover:text-brand-accent transition-colors text-sm uppercase tracking-widest font-medium group"
+        >
+          <span aria-hidden="true" className="group-hover:-translate-x-1 transition-transform">&larr;</span> Voltar para Projetos
+        </Link>
         {project.shortDescription && (
-          <p className="text-xl text-brand-accent mb-8 uppercase tracking-widest text-sm font-medium">
+          <div className="text-brand-accent font-serif italic text-sm tracking-widest opacity-80 hidden md:block">
             {project.shortDescription}
-          </p>
-        )}
-
-        {isBook ? (
-          <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-center md:items-start mb-12">
-            <div className="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] flex-shrink-0 flex justify-center">
-              <div className="relative w-full aspect-[896/1200] rounded-2xl overflow-hidden shadow-2xl border border-accent/60 bg-black/40 group hover:border-brand-accent/50 transition-all duration-300">
-                <Image
-                  src={project.modalImgSrc || project.imgSrc}
-                  alt={`Capa oficial do manifesto ${project.name} - Fabian Baldovino`}
-                  fill
-                  className="object-contain"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 380px"
-                />
-              </div>
-            </div>
-
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="prose prose-invert max-w-none text-foreground/80 leading-relaxed text-lg mb-8">
-                {contentArray.map((paragraph, idx) => (
-                  <p key={idx} className="mb-4 leading-relaxed">{paragraph}</p>
-                ))}
-              </div>
-
-              <div className="p-6 rounded-2xl bg-background/60 border border-accent/50 mb-6">
-                <h3 className="text-xl font-medium text-foreground mb-2">Exemplar Digital para Clientes</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed mb-4">
-                  Todo parceiro e cliente de projetos de Brand Filmmaking recebe o manifesto digital exclusivo <em>O Código Brasil</em> como parte do onboarding estratégico.
-                </p>
-                <a
-                  href="https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20vi%20o%20manifesto%20O%20C%C3%B3digo%20Brasil%20e%20gostaria%20de%20receber%20o%20exemplar%20digital."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-accent text-brand-dark font-medium text-sm hover:brightness-110 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
-                >
-                  Solicitar Exemplar Digital via WhatsApp &rarr;
-                </a>
-              </div>
-            </div>
           </div>
-        ) : (
-          <>
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-12">
-              <Image
+        )}
+      </nav>
+
+      <div className="w-full max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10 mt-8 lg:mt-12">
+        
+        {/* Left Column: Cover & Hero */}
+        <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start">
+          <div className="w-full text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+              Estudo de Caso
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-[1.1] mb-6 text-balance text-white">
+              {project.name}
+            </h1>
+          </div>
+
+          <div className={`relative w-full max-w-[400px] lg:max-w-[500px] ${isBook ? 'aspect-[3/4]' : 'aspect-video lg:aspect-[4/3]'} mt-6 lg:mt-8 group mx-auto lg:mx-0 [perspective:1000px]`}>
+            <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
+            <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-3deg] group-hover:rotate-x-[1deg]">
+              <Image 
                 src={project.modalImgSrc || project.imgSrc}
                 alt={project.name}
                 fill
-                className="object-cover"
+                className={isBook ? "object-contain" : "object-cover"}
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
+              {!isBook && <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />}
             </div>
+          </div>
+        </div>
 
-            <div className="prose prose-invert max-w-none text-foreground/80 leading-relaxed text-lg mb-12">
-              {!isGallery && contentArray.map((paragraph, idx) => (
-                <p key={idx} className="mb-4">{paragraph}</p>
+        {/* Right Column: Copy & Form Area */}
+        <div className="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-10">
+          <div className="prose prose-invert max-w-none mb-12">
+            {contentArray.map((paragraph, idx) => {
+              if (idx === 0 && !isBook) {
+                return (
+                  <p key={idx} className="text-lg md:text-xl font-light leading-relaxed text-foreground/90 border-l-2 border-brand-accent pl-6 mb-8">
+                    {paragraph}
+                  </p>
+                );
+              }
+              return (
+                <p key={idx} className="text-foreground/70 font-light mt-4 leading-relaxed text-balance">
+                  {paragraph}
+                </p>
+              );
+            })}
+
+            {isGallery && (
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {contentArray.map((imgSrc, idx) => (
+                  <div key={`gal-${idx}`} className="relative aspect-square rounded-xl overflow-hidden border border-white/10">
+                    <Image
+                      src={imgSrc}
+                      alt={`${project.name} imagem ${idx + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-3 mt-10">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs uppercase tracking-wider px-4 py-2 rounded-full border border-brand-accent/30 text-brand-accent font-medium bg-brand-accent/5"
+                >
+                  {tag}
+                </span>
               ))}
             </div>
-          </>
-        )}
-
-        {isGallery && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {contentArray.map((imgSrc, idx) => (
-              <div key={idx} className="relative aspect-square rounded-xl overflow-hidden">
-                <Image
-                  src={imgSrc}
-                  alt={`${project.name} imagem ${idx + 1}`}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            ))}
           </div>
-        )}
 
-        <div className="flex flex-wrap gap-2 mt-12">
-          {project.tags.map((tag) => (
-            <span key={tag} className="text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-accent text-foreground/60">
-              {tag}
-            </span>
-          ))}
+          {/* Golden CTA Card */}
+          <div className="bg-card/50 backdrop-blur-md p-8 md:p-10 rounded-[24px] border border-white/5 relative overflow-hidden mt-4">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent opacity-50" />
+            
+            <h3 className="text-xl font-medium tracking-wide mb-2">
+              {isBook ? 'Exemplar Digital' : 'Quer um resultado igual?'}
+            </h3>
+            <p className="text-sm text-foreground/60 mb-8 font-light text-balance leading-relaxed">
+              {isBook 
+                ? 'Todo parceiro e cliente de projetos de Brand Filmmaking recebe o manifesto digital exclusivo O Código Brasil como parte do onboarding estratégico.'
+                : 'Atendemos um volume rigoroso e delimitado de projetos por semestre para garantir o padrão absoluto de direção e craft.'}
+            </p>
+
+            <a 
+              href={isBook 
+                ? "https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20vi%20o%20manifesto%20O%20C%C3%B3digo%20Brasil%20e%20gostaria%20de%20receber%20o%20exemplar%20digital."
+                : "https://wa.me/5551999654160"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center hover:brightness-110 hover:shadow-[0_0_30px_rgba(205,160,89,0.3)] active:scale-[0.98] transition-all"
+            >
+              {isBook ? 'Solicitar Exemplar' : 'Falar no WhatsApp'}
+            </a>
+          </div>
         </div>
       </div>
     </main>
