@@ -75,7 +75,7 @@ export default function AboutContactSection() {
             animate="visible"
           >
             <p className="text-sm md:text-base mb-1">
-              <span className="font-light italic text-foreground/80">Pronto para blindar a</span> <span className="font-medium text-brand-accent">percepção</span>
+              <span className="font-light italic text-foreground/80">Pronto para elevar a</span> <span className="font-medium text-brand-accent">percepção</span>
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl leading-[1.1] break-words">
               <span className="font-light italic text-foreground/80">da sua</span> <span className="font-medium">marca?</span>

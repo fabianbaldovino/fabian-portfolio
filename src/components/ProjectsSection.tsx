@@ -31,15 +31,14 @@ export default function ProjectsSection() {
         whileHover="hover"
       >
         <div className="mb-3">
-          <h2 className="sr-only">Casos de Estudo de Brand Filmmaking</h2>
-          <motion.h3 
+          <motion.h2
             className="text-lg md:text-xl xl:text-2xl font-medium"
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
             Casos de Estudo
-          </motion.h3>
+          </motion.h2>
           <motion.p
             className="text-xs md:text-sm text-background/70 mt-1 font-light"
             variants={textVariants}
@@ -109,35 +108,44 @@ export default function ProjectsSection() {
         initial="hidden"
         animate="visible"
       >
-        <motion.a 
-          href={socials.instagram} 
+        <motion.a
+          href={socials.instagram}
           className="text-light hover:text-accent transition-colors"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
+          aria-label="Instagram de Fabian Baldovino"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Instagram size={20} />
+          <Instagram size={20} aria-hidden="true" />
         </motion.a>
-        <motion.a 
-          href={socials.twitter} 
+        <motion.a
+          href={socials.twitter}
           className="text-light hover:text-accent transition-colors"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
+          aria-label="X (Twitter) de Fabian Baldovino"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Twitter size={20} />
+          <Twitter size={20} aria-hidden="true" />
         </motion.a>
-        <motion.a 
-          href={socials.linkedin} 
+        <motion.a
+          href={socials.linkedin}
           className="text-light hover:text-accent transition-colors"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
+          aria-label="LinkedIn de Fabian Baldovino"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Linkedin size={20} />
+          <Linkedin size={20} aria-hidden="true" />
         </motion.a>
       </motion.div>
 

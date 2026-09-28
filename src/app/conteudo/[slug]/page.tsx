@@ -30,13 +30,31 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${conteudo.title} | Fabian Baldovino`,
     description: conteudo.excerpt,
+    alternates: {
+      canonical: `https://www.fabian.art.br/conteudo/${slug}`,
+    },
     openGraph: {
       type: "article",
+      url: `https://www.fabian.art.br/conteudo/${slug}`,
       title: conteudo.title,
       description: conteudo.excerpt,
       publishedTime: conteudo.date,
       authors: ["Fabian Baldovino"],
-    }
+      siteName: "Fabian Baldovino",
+      locale: "pt_BR",
+      ...(conteudo.coverImage
+        ? {
+            images: [
+              {
+                url: conteudo.coverImage,
+                width: 1200,
+                height: 630,
+                alt: conteudo.title,
+              },
+            ],
+          }
+        : {}),
+    },
   };
 }
 

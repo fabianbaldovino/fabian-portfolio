@@ -152,6 +152,63 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
           </div>
         </div>
       </div>
+
+      {/* ══════════════════════════════════════════
+          SEÇÃO DE FILMES — largura total da página
+          Fora do grid hero para ter espaço real.
+          Instagram: grid 1→2 colunas | YouTube: full-width 16:9
+      ═══════════════════════════════════════════ */}
+      {(project.instagramUrls?.length || project.youtubeIds?.length) ? (
+        <div className="w-full max-w-6xl px-6 mt-16 pb-16">
+          <h2 className="text-2xl md:text-3xl font-medium mb-8 flex items-center gap-3">
+            <span className="text-brand-accent text-xl">▶</span> Assistir aos Filmes
+          </h2>
+
+          {/* Instagram Reels */}
+          {project.instagramUrls && project.instagramUrls.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {project.instagramUrls.map((url, idx) => (
+                <div
+                  key={url}
+                  className="w-full rounded-[20px] overflow-hidden border border-white/10 bg-[#0a0a0a]"
+                  style={{ height: "600px" }}
+                >
+                  <iframe
+                    src={`${url.replace(/\/$/, "")}/embed`}
+                    style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen
+                    title={`${project.name} — Filme ${idx + 1}`}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* YouTube */}
+          {project.youtubeIds && project.youtubeIds.length > 0 && (
+            <div className="flex flex-col gap-8 mt-8">
+              {project.youtubeIds.map((id, idx) => (
+                <div
+                  key={id}
+                  className="w-full rounded-[20px] overflow-hidden border border-white/10 bg-black"
+                  style={{ aspectRatio: "16/9" }}
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+                    title={`${project.name} — Filme ${idx + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : null}
     </main>
   );
 }

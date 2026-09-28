@@ -1,113 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, X, ArrowLeft } from "lucide-react";
-import { portfolioProjects, PortfolioProject } from "@/lib/constants/portfolioProjects";
-import { containerVariants, cardVariants, textVariants, modalVariants, backdropVariants } from "@/lib/animation/variants";
+import { ArrowUpRight, ArrowLeft } from "lucide-react";
+import { portfolioProjects } from "@/lib/constants/portfolioProjects";
+import { containerVariants, cardVariants, textVariants } from "@/lib/animation/variants";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useModalA11y } from "@/hooks/useModalA11y";
-
-function ProjectModal({ project, onClose }: { project: PortfolioProject; onClose: () => void }) {
-  const modalRef = useModalA11y({ isOpen: Boolean(project), onClose });
-
-  return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-        variants={backdropVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        onClick={onClose}
-      >
-        <motion.div
-          ref={modalRef}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="portfolio-modal-title"
-          tabIndex={-1}
-          className="bg-card rounded-[20px] p-6 md:p-10 border-3 border-accent w-full max-w-4xl max-h-[90vh] overflow-y-auto relative focus:outline-none"
-          variants={modalVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <motion.button
-            className="absolute top-6 right-6 p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent cursor-pointer"
-            onClick={onClose}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Fechar modal do projeto"
-          >
-            <X size={22} className="text-foreground" />
-          </motion.button>
-
-          <div className="flex flex-col gap-6 mt-4">
-            {/* Header */}
-            <div className="border-b border-border pb-6">
-              <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-1">
-                {project.client}
-              </p>
-              <h2 id="portfolio-modal-title" className="text-4xl md:text-5xl font-medium leading-tight">
-                {project.name}
-              </h2>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-accent text-foreground/60">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Image */}
-            <div className="w-full h-[280px] md:h-[420px] rounded-[16px] overflow-hidden relative">
-              <Image
-                src={project.imgSrc}
-                alt={project.name}
-                fill
-                quality={100}
-                sizes="(max-width: 768px) 100vw, 800px"
-                className="object-cover object-center"
-              />
-            </div>
-
-            {/* Deliverable badge */}
-            <p className="text-sm text-foreground/50 uppercase tracking-widest">
-              {project.deliverable}
-            </p>
-
-            {/* Description */}
-            <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground/90">
-              {project.description}
-            </p>
-
-            {/* Link to dedicated case study page */}
-            <div className="pt-2 flex justify-end">
-              <Link
-                href={`/projetos/${project.slug}`}
-                className="inline-flex items-center gap-2 text-brand-accent hover:text-brand-accent/80 text-sm md:text-base font-medium transition-colors group"
-              >
-                <span>Ver Estudo de Caso Completo</span>
-                <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
-}
 
 export default function ProjetosPage() {
-  const [selected, setSelected] = useState<PortfolioProject | null>(null);
-
-  // Featured project = first one, rest in list
   const [featured, ...rest] = portfolioProjects;
 
   return (
@@ -153,60 +55,62 @@ export default function ProjetosPage() {
               </p>
             </motion.div>
 
-            {/* Featured Project */}
-            <motion.div
-              className="relative rounded-[20px] overflow-hidden cursor-pointer group flex-1 min-h-[300px] md:min-h-[400px]"
-              variants={cardVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              onClick={() => setSelected(featured)}
+            {/* Featured Project — link direto para o caso */}
+            <Link
+              href={`/especialidades/${featured.slug}`}
+              className="flex-1 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-[20px]"
             >
-              <Image
-                src={featured.imgSrc}
-                alt={`${featured.name} — Produção Audiovisual para ${featured.client} por Fabian Baldovino`}
-                fill
-                priority
-                quality={100}
-                sizes="(max-width: 768px) 100vw, 65vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <motion.div
+                className="relative rounded-[20px] overflow-hidden cursor-pointer group h-full min-h-[300px] md:min-h-[400px]"
+                variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+              >
+                <Image
+                  src={featured.imgSrc}
+                  alt={`${featured.name} — Produção Audiovisual para ${featured.client} por Fabian Baldovino`}
+                  fill
+                  priority
+                  quality={100}
+                  sizes="(max-width: 768px) 100vw, 65vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
-                <div className="flex justify-between items-start">
-                  <span className="text-xs uppercase tracking-widest bg-black/40 backdrop-blur-sm text-foreground/70 px-3 py-1 rounded-full border border-white/10">
-                    {featured.client}
-                  </span>
-                  <motion.div
-                    className="p-2 rounded-full bg-brand-accent/20 backdrop-blur-sm"
-                    whileHover={{ scale: 1.2, rotate: 45 }}
-                  >
-                    <ArrowUpRight size={20} className="text-brand-accent" />
-                  </motion.div>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-wrap gap-2">
-                    {featured.tags.map((tag) => (
-                      <span key={tag} className="text-xs uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-white/70">
-                        {tag}
-                      </span>
-                    ))}
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
+                  <div className="flex justify-between items-start">
+                    <span className="text-xs uppercase tracking-widest bg-black/40 backdrop-blur-sm text-foreground/70 px-3 py-1 rounded-full border border-white/10">
+                      {featured.client}
+                    </span>
+                    <motion.div
+                      className="p-2 rounded-full bg-brand-accent/20 backdrop-blur-sm"
+                      whileHover={{ scale: 1.2, rotate: 45 }}
+                    >
+                      <ArrowUpRight size={20} className="text-brand-accent" />
+                    </motion.div>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
-                    {featured.name}
-                  </h2>
-                  <p className="text-sm text-white/50 uppercase tracking-widest">
-                    {featured.deliverable}
-                  </p>
-                  <p className="sr-only">
-                    {featured.description}
-                  </p>
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-wrap gap-2">
+                      {featured.tags.map((tag) => (
+                        <span key={tag} className="text-xs uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-white/70">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
+                      {featured.name}
+                    </h2>
+                    <p className="text-sm text-white/50 uppercase tracking-widest">
+                      {featured.deliverable}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
+
           </section>
 
           {/* RIGHT COLUMN */}
@@ -236,9 +140,10 @@ export default function ProjetosPage() {
                   className="group"
                 >
                   {i > 0 && <hr className="border-0 h-[1px] bg-accent/30" />}
-                  <div
-                    className="flex justify-between items-center cursor-pointer py-4 px-2 gap-4"
-                    onClick={() => setSelected(project)}
+                  <Link
+                    href={`/especialidades/${project.slug}`}
+                    className="flex justify-between items-center py-4 px-2 gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-[8px]"
+                    aria-label={`Ver caso completo: ${project.name} — ${project.client}`}
                   >
                     <div className="flex flex-col gap-1 flex-1 min-w-0">
                       <p className="text-xs uppercase tracking-widest text-background/50 font-medium">
@@ -250,15 +155,12 @@ export default function ProjetosPage() {
                       <p className="text-xs text-background/40">
                         {project.deliverable}
                       </p>
-                      <p className="sr-only">
-                        {project.description}
-                      </p>
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
                       <div className="w-[72px] h-[48px] rounded-lg overflow-hidden relative">
                         <Image
                           src={project.imgSrc}
-                          alt={`${project.name} — ${project.client} por Fabian Baldovino`}
+                          alt={`${project.name} — ${project.client}`}
                           fill
                           quality={80}
                           sizes="72px"
@@ -267,19 +169,18 @@ export default function ProjetosPage() {
                       </div>
                       <ArrowUpRight size={18} className="text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>
 
             {/* CTA Card */}
             <motion.div
-              className="bg-card rounded-[20px] p-6 border-3 border-accent flex flex-col justify-between gap-4 cursor-pointer"
+              className="bg-card rounded-[20px] p-6 border-3 border-accent flex flex-col justify-between gap-4"
               variants={cardVariants}
               initial="hidden"
               animate="visible"
               whileHover={{ y: -4 }}
-              onClick={() => window.open(`https://wa.me/5551999654160`, '_blank')}
             >
               <div>
                 <p className="text-sm font-light text-foreground/60">Quer ser o próximo?</p>
@@ -288,13 +189,15 @@ export default function ProjetosPage() {
                   <span className="italic font-light text-brand-accent">juntos.</span>
                 </h2>
               </div>
-              <motion.button
-                className="bg-brand-accent text-brand-dark px-6 py-3 rounded-full font-medium w-full text-sm hover:bg-brand-accent/90 transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
+              <a
+                href="https://wa.me/5551999654160"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-accent text-brand-dark px-6 py-3 rounded-full font-medium w-full text-sm text-center hover:bg-brand-accent/90 hover:shadow-[0_0_20px_rgba(205,160,89,0.25)] active:scale-[0.98] transition-all min-h-[48px] flex items-center justify-center"
+                aria-label="Iniciar conversa no WhatsApp com Fabian Baldovino"
               >
                 Falar no WhatsApp
-              </motion.button>
+              </a>
             </motion.div>
 
           </section>
@@ -302,11 +205,6 @@ export default function ProjetosPage() {
       </main>
 
       <Footer className="mt-4" />
-
-      {/* Modal */}
-      {selected && (
-        <ProjectModal project={selected} onClose={() => setSelected(null)} />
-      )}
     </div>
   );
 }

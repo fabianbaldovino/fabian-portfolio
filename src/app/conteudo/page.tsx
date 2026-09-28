@@ -5,6 +5,31 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Conteúdo e Estratégia | Fabian Baldovino",
   description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor em Porto Alegre.",
+  alternates: {
+    canonical: "https://www.fabian.art.br/conteudo",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.fabian.art.br/conteudo",
+    title: "Conteúdo e Estratégia | Fabian Baldovino",
+    description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor em Porto Alegre.",
+    siteName: "Fabian Baldovino",
+    locale: "pt_BR",
+    images: [
+      {
+        url: "/FOTOS/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fabian Baldovino — Journal & Insights de Brand Filmmaking",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Conteúdo e Estratégia | Fabian Baldovino",
+    description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor.",
+    images: ["/FOTOS/og-image.jpg"],
+  },
 };
 
 export default function ConteudoHub() {
@@ -12,7 +37,7 @@ export default function ConteudoHub() {
     <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="bg-card rounded-[20px] p-6 md:p-12 border-3 border-accent w-full relative">
         <h1 className="text-4xl md:text-5xl font-medium mb-4">Journal & Insights</h1>
-        <p className="text-foreground/70 mb-10 text-lg">Estratégias visuais para blindar marcas e dominar o inconsciente do mercado.</p>
+        <p className="text-foreground/70 mb-10 text-lg">Estratégias visuais para fortalecer marcas e influenciar o inconsciente do mercado.</p>
         
         <div className="flex flex-col gap-8">
           {conteudos.map((item) => (
@@ -24,7 +49,11 @@ export default function ConteudoHub() {
               <div className="border border-accent rounded-[20px] p-6 lg:p-8 bg-background/50 hover:bg-background/80 hover:border-brand-accent/50 transition-all duration-300">
                 <div className="flex flex-col-reverse md:flex-row gap-6 justify-between items-start md:items-center">
                   <div className="flex-1 min-w-0">
-                    <span className="text-brand-accent text-xs md:text-sm font-bold tracking-widest uppercase mb-2 block">{item.date}</span>
+                    <span className="text-brand-accent text-xs md:text-sm font-bold tracking-widest uppercase mb-2 block">
+                      <time dateTime={item.date}>
+                        {new Date(item.date + "T12:00:00").toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+                      </time>
+                    </span>
                     <h2 className="text-2xl md:text-3xl font-medium mb-3 text-foreground group-hover:text-brand-accent transition-colors leading-snug">{item.title}</h2>
                     <p className="text-foreground/80 text-sm md:text-base leading-relaxed line-clamp-3 md:line-clamp-none">{item.excerpt}</p>
                     <div className="flex gap-2 flex-wrap mt-4">

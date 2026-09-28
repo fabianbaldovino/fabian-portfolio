@@ -48,9 +48,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Fabian Baldovino" }],
   creator: "Fabian Baldovino",
   publisher: "Fabian Baldovino",
-  alternates: {
-    canonical: "https://www.fabian.art.br",
-  },
+  // canonical é definido individualmente em cada page.tsx para evitar duplicatas de SEO
   robots: {
     index: true,
     follow: true,

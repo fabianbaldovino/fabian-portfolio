@@ -13,7 +13,7 @@ export type Conteudo = {
 export const conteudos: Conteudo[] = [
   {
     title: "O Ritual e o Caos: A Sociedade do Cansaço e a Antropologia Visual do Suor",
-    slug: "estetica-suor-sociedade-cansaco-ritual-mente-leandro",
+    slug: "estetica-suor-sociedade-cansaco-ritual",
     instagramUrl: "https://www.instagram.com/p/DPTnypsDgeA/",
     coverImage: "/FOTOS/Referencia_capa.png",
     excerpt: "Por que prometer o 'corpo perfeito' não funciona mais. Uma análise sobre como usamos a rotina nua e crua para posicionar a Wedy Nutrition como uma âncora na vida real.",

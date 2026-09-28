@@ -38,9 +38,10 @@ export default function ClientsStrip() {
         {doubled.map((client, idx) => (
           <div
             key={`${client.name}-${idx}`}
+            aria-hidden={idx >= clients.length ? "true" : undefined}
             className={`flex items-center justify-center flex-shrink-0 transition-all duration-300 w-[140px] h-[50px] ${
-              client.invert 
-                ? "opacity-70 hover:opacity-100 brightness-0 invert" 
+              client.invert
+                ? "opacity-70 hover:opacity-100 brightness-0 invert"
                 : "opacity-60 hover:opacity-100 grayscale hover:grayscale-0 mix-blend-screen"
             }`}
           >
