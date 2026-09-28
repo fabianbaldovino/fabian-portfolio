@@ -23,7 +23,7 @@ export const projects: Project[] = [
     type: "copy",
     shortDescription: "Sequestro de Atenção",
     tags: ["Novela Vertical", "Thriller Psicológico", "Imersão"],
-    content: "O desafio não era fazer propaganda; era sequestrar a atenção. A Termolar precisava de um formato que hackeasse a biologia do consumo móvel. Co-dirigimos 'Ele Não Vai Embora', um thriller psicológico em 4 episódios que trocou a interrupção chata do anúncio pela imersão absoluta. A marca deixou de ser um produto na tela e virou a protagonista de uma narrativa hipnótica que o espectador não conseguia abandonar.",
+    content: "A Termolar nos desafiou a repensar a interação com o público mobile. O resultado foi um thriller psicológico em 4 episódios. Abandonamos a publicidade convencional para criar uma novela vertical de alta retenção. Nesse formato, o produto não interrompe a experiência; ele conduz uma história envolvente escrita por Renata Maltz e eleva a percepção de valor da marca através do entretenimento.",
     instagramUrls: [
       "https://www.instagram.com/p/DYfosNtJSeg/",
       "https://www.instagram.com/p/DZGQom0p7Lm/",
