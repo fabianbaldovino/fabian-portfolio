@@ -72,7 +72,7 @@ export const projects: Project[] = [
     type: "copy",
     shortDescription: "O Acolhimento do Primeiro Frame",
     tags: ["META ADS", "Neuro-visual", "Pertencimento"],
-    content: "A escolha de um restaurante não acontece no estômago, acontece no sistema límbico. O Ristorante Fontana não precisava apenas mostrar pratos; precisava ancorar a sensação de 'Casa' e afeto. Orquestramos 4 filmes curtos para o META ADS projetados com um 'hook' neuro-visual de acolhimento nos primeiros 3 segundos, transformando o scroll automático em puro desejo de pertencimento.",
+    content: "Decisões gastronômicas nascem da emoção, não da fome. Para o Ristorante Fontana, fomos além da estética culinária e ancoramos a marca no conceito de 'Casa' e afeto. Produzimos 4 filmes projetados para capturar a atenção nos primeiros segundos através de um gatilho de acolhimento.",
     instagramUrls: [
       "https://www.instagram.com/p/DYQQL3ipo15/",
       "https://www.instagram.com/p/DZiF3xxJ9cr/",

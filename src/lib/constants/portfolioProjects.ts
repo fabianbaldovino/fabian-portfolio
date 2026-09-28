@@ -35,7 +35,7 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/fontana.jpg",
     tags: ["Campanha de 4 Filmes", "META ADS", "Redes Sociais"],
     deliverable: "4 filmes · META ADS",
-    description: "A escolha de um restaurante não acontece no estômago, acontece no sistema límbico. O Ristorante Fontana não precisava apenas mostrar pratos; precisava ancorar a sensação de 'Casa' e acolhimento. Orquestramos 4 filmes curtos para o META ADS projetados com um 'hook' neuro-visual nos primeiros 3 segundos. O resultado é um convite irresistível que transforma o scroll instintivo em desejo de pertencimento e conversão instantânea.",
+    description: "Decisões gastronômicas nascem da emoção, não da fome. Para o Ristorante Fontana, fomos além da estética culinária e ancoramos a marca no conceito de 'Casa' e afeto. Produzimos 4 filmes projetados para capturar a atenção nos primeiros segundos através de um gatilho de acolhimento.",
     instagramUrls: [
       "https://www.instagram.com/p/DYQQL3ipo15/",
       "https://www.instagram.com/p/DZiF3xxJ9cr/",
