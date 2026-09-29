@@ -54,7 +54,7 @@ export default function OCodigoBrasilPage() {
               <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
               <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[2deg]">
                 <Image
-                  src="/FOTOS/capa_o_codigo_brasil_fabian_baldovino_2026.png"
+                  src="/FOTOS/capa_manifesto_o_codigo_brasil_fabian_baldovino.png"
                   alt="Capa do Manifesto O Código Brasil — Fabian Baldovino"
                   fill
                   className="object-cover object-center"
@@ -101,7 +101,7 @@ export default function OCodigoBrasilPage() {
                 <h2 className="text-xl font-medium tracking-wide">Gatekeeping Ativado</h2>
               </div>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Este manifesto não é para o grande público. Preencha seus dados para que Fabian envie o arquivo diretamente para você pelo WhatsApp.
+                O acesso a esta tese é restrito e blindado contra a superficialidade. Este material de alto rigor estratégico está disponível <strong>gratuitamente</strong>, em caráter de exclusividade e acolhimento (A Casa), para clientes e parceiros de Fabian Baldovino. Se você pertence a este seleto grupo, solicite seu material diretamente pelo WhatsApp.
               </p>
 
               <form onSubmit={handleWhatsAppRedirect} className="flex flex-col gap-6" noValidate>
