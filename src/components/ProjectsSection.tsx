@@ -22,15 +22,14 @@ export default function ProjectsSection() {
 
   return (
     <div className="flex flex-col w-full lg:w-[30%] gap-4 md:justify-between lg:mb-6 overflow-x-hidden">
-      {/* === CARD 3: Case Studies === */}
       <motion.div 
-        className="bg-foreground text-background p-4 lg:p-4 xl:p-5 rounded-[20px] flex-grow flex flex-col min-h-[400px] md:min-h-0 overflow-hidden"
+        className="bg-foreground text-background p-4 lg:p-3 xl:p-4 rounded-[20px] flex-grow flex flex-col min-h-[400px] md:min-h-0 overflow-hidden"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
         whileHover="hover"
       >
-        <div className="mb-3">
+        <div className="mb-2">
           <motion.h2
             className="text-lg md:text-xl xl:text-2xl font-medium"
             variants={textVariants}
@@ -52,7 +51,7 @@ export default function ProjectsSection() {
         </div>
 
         <motion.div 
-          className="flex flex-col gap-4 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-1 h-full"
+          className="flex flex-col gap-3 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-1 h-full"
           variants={projectsVariants}
           initial="hidden"
           animate="visible"
@@ -82,22 +81,24 @@ export default function ProjectsSection() {
               </motion.div>
             </Link>
           ))}
+        </motion.div>
 
-          {/* Obras Selecionadas Link Simplificado */}
-          <motion.div 
-            variants={projectItemVariants}
-            className="flex flex-col justify-center mt-auto pt-2 pb-1"
+        {/* Obras Selecionadas Link Simplificado */}
+        <motion.div 
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col justify-center pt-3 pb-1 shrink-0"
+        >
+          <hr className="border-0 h-[1px] bg-background/20 mb-2" />
+          <Link 
+            href="/projetos"
+            className="w-full flex justify-between items-center group cursor-pointer text-left focus:outline-none"
+            aria-label="Ir para Obras Selecionadas"
           >
-            <hr className="border-0 h-[1px] bg-background/20 mb-3" />
-            <Link 
-              href="/projetos"
-              className="w-full flex justify-between items-center group cursor-pointer text-left focus:outline-none"
-              aria-label="Ir para Obras Selecionadas"
-            >
-              <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Obras Selecionadas</span>
-              <span className="text-brand-dark group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </motion.div>
+            <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Obras Selecionadas</span>
+            <span className="text-brand-dark group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
         </motion.div>
       </motion.div>
 

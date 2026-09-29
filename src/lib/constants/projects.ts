@@ -18,7 +18,7 @@ export const projects: Project[] = [
   { 
     name: "Termolar",
     slug: "termolar",
-    imgSrc: "/FOTOS/IMG_0831.webp",
+    imgSrc: "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rs.webp",
     icon: "Target",
     type: "copy",
     shortDescription: "Sequestro de Atenção",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
   { 
     name: "Seival Sul Mineração", 
     slug: "seival-sul-mineradora",
-    imgSrc: "/FOTOS/20260517_121306(0).jpg",
+    imgSrc: "/FOTOS/fabian_baldovino_casa_de_cultura_mario_quintana_porto_alegre_rs.webp",
     modalImgSrc: "/FOTOS/trabalhos/seivalsulmineracao.png",
     icon: "Eye",
     type: "copy",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
   { 
     name: "Quick House",
     slug: "quick-house",
-    imgSrc: "/FOTOS/DSC00053.jpg.jpeg",
+    imgSrc: "/FOTOS/fabian_baldovino_montevideo_uruguay_pilotando_drone.webp",
     modalImgSrc: "/FOTOS/trabalhos/hospital.png",
     icon: "Compass",
     type: "copy",
@@ -95,18 +95,18 @@ export const projects: Project[] = [
   { 
     name: "Bastidores", 
     slug: "bastidores",
-    imgSrc: "/FOTOS/20260517_103203.jpg",
+    imgSrc: "/FOTOS/fabian_baldovino_casa_de_cultura_mario_quintana_producao_audiovisual_porto_alegre_rs.webp",
     icon: "Clapperboard",
     type: "gallery",
     shortDescription: "Making Of e Processo Criativo",
     tags: ["Making Of", "Processo Criativo", "Retaguarda Invisível"],
     content: [
-      "/FOTOS/2.jpg",
-      "/FOTOS/20260503_093522.jpg",
-      "/FOTOS/20260606_092002.jpg",
-      "/FOTOS/3.jpg",
-      "/FOTOS/DSC00053.jpg.jpeg",
-      "/FOTOS/20260522_093422.jpg"
+      "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rio_grande_do_sul.webp",
+      "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rio_grande_do_sul_cinema.webp",
+      "/FOTOS/fabian_baldovino_feir_ecologia_bom_fim_porto_alegre_rio_grande_do_sul.webp",
+      "/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento.webp",
+      "/FOTOS/fabian_baldovino_montevideo_uruguay_pilotando_drone.webp",
+      "/FOTOS/fabian_baldovino_moinhos_de_vento_porto_alegre_Rio_grande_do_sul.webp"
     ]
   }
 ];

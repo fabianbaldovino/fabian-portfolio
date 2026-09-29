@@ -170,7 +170,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       {/* Seção de Autor/CTA no final do artigo */}
       <div className="mt-20 pt-10 border-t border-accent flex flex-col md:flex-row gap-8 items-center bg-card p-8 rounded-[20px]">
         <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 relative border-2 border-brand-accent">
-          <img src="/FOTOS/20260522_093422.jpg" alt="Fabian Baldovino" className="object-cover w-full h-full object-top" />
+          <img src="/FOTOS/fabian_baldovino_moinhos_de_vento_porto_alegre_Rio_grande_do_sul.webp" alt="Fabian Baldovino" className="object-cover w-full h-full object-top" />
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>

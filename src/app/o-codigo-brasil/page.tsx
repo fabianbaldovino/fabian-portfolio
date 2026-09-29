@@ -54,7 +54,7 @@ export default function OCodigoBrasilPage() {
               <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
               <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[2deg]">
                 <Image
-                  src="/FOTOS/trabalhos/CAPA_OFICIAL.png"
+                  src="/FOTOS/capa_o_codigo_brasil_fabian_baldovino.webp"
                   alt="Capa do Manifesto O Código Brasil — Fabian Baldovino"
                   fill
                   className="object-cover object-center"

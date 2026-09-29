@@ -5,14 +5,17 @@ import { motion } from "motion/react";
 
 // Ordem de importancia: marcas de maior porte corporativo primeiro
 const clients = [
-  { name: "Seival Sul Mineração", src: "/clientes/novos/SEIVAL_SUL_MINERAÇÃO.png", invert: true },
-  { name: "PUC RS", src: "/clientes/novos/PUC_RS.png", invert: true },
-  { name: "Prefeitura de Canoas RS", src: "/clientes/novos/PREFEITURA_CANOAS_RS.png", invert: true },
-  { name: "Quick House", src: "/clientes/novos/QUICK_HOUSE.png" },
-  { name: "Wedy Nutrition", src: "/clientes/novos/WEDY_NUTRITION.png" },
-  { name: "Kolosh", src: "/clientes/novos/KOLOSH.png" },
-  { name: "Vita Minimalista", src: "/clientes/novos/VITA_MINIMALISTA.png" },
-  { name: "Mercato", src: "/clientes/novos/MERCATO.png", invert: true },
+  { name: "Fábrica de Suplementos", src: "/marcas/FABIRCA_DE_SUPLEMENTOS.png", scale: "scale-[1.4]" },
+  { name: "Prefeitura de Canoas RS", src: "/marcas/logo_Prefeitura_de_canoas_rio_grande_do_sul.png", invert: true },
+  { name: "BPM Society", src: "/marcas/logo_bpmsociety_brasil.png", invert: true },
+  { name: "Copelmi", src: "/marcas/logo_copelmi_rio_grande_do_sul.png", invert: true, scale: "scale-[1.5]" },
+  { name: "Kolosh", src: "/marcas/logo_kolosh_poa_rs.png" },
+  { name: "Mercato", src: "/marcas/logo_mercato_rio_grande_do_sul.png", invert: true },
+  { name: "PUC RS", src: "/marcas/logo_puc_rs.png", invert: true, scale: "scale-[1.5]" },
+  { name: "Quick House", src: "/marcas/logo_quick_house_canoas_rio_grande_do_sul.png", scale: "scale-[2]" },
+  { name: "Seival Sul Mineração", src: "/marcas/logo_seival_sul_mineracao_rs.png", invert: true },
+  { name: "Vita Minimalista", src: "/marcas/logo_vita_minimalista_porto_alegre_rs.png", scale: "scale-[1.5]" },
+  { name: "Wedy Nutrition", src: "/marcas/logo_wedy_nutrition_brasil.png" }
 ];
 
 const doubled = [...clients, ...clients];
@@ -50,7 +53,7 @@ export default function ClientsStrip() {
               alt={`${client.name} — cliente Fabian Baldovino Brand Filmmaking`}
               width={140}
               height={50}
-              className="w-full h-full object-contain"
+              className={`w-full h-full object-contain ${client.scale || ""}`}
               loading="lazy"
             />
           </div>

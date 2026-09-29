@@ -16,7 +16,7 @@ export default function PersonImageSection() {
         autoPlay
         muted
         preload="metadata"
-        poster="/FOTOS/20260522_120207.webp"
+        poster="/FOTOS/fabian_baldovino_parque_moinhos_de_vento_porto_alegre_rs.webp"
         loop
         playsInline
         className="w-full h-full object-cover"

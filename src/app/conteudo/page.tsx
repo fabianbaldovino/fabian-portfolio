@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/FOTOS/og-image.jpg",
+        url: "/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp",
         width: 1200,
         height: 630,
         alt: "Fabian Baldovino — Journal & Insights de Brand Filmmaking",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Conteúdo e Estratégia | Fabian Baldovino",
     description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor.",
-    images: ["/FOTOS/og-image.jpg"],
+    images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
   },
 };
 

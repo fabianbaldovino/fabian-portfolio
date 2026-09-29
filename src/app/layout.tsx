@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/FOTOS/og-image.jpg",
+        url: "/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp",
         width: 1200,
         height: 630,
         alt: "Fabian Baldovino — Brand Filmmaker Porto Alegre",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fabian Baldovino | Brand Filmmaking Porto Alegre",
     description: "Filmmaker de marcas em Porto Alegre. Narrativas visuais que blindam marcas e ativam percepção de alto valor.",
-    images: ["/FOTOS/og-image.jpg"],
+    images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
   },
 };
 const jsonLd = {
@@ -90,7 +90,7 @@ const jsonLd = {
       "name": "Fabian Baldovino",
       "jobTitle": "Brand Filmmaker & Diretor Audiovisual",
       "url": "https://www.fabian.art.br",
-      "image": "https://www.fabian.art.br/FOTOS/20260522_093422.jpg",
+      "image": "https://www.fabian.art.br/FOTOS/fabian_baldovino_moinhos_de_vento_porto_alegre_Rio_grande_do_sul.webp",
       "sameAs": [
         "https://www.instagram.com/fabianbaldovino9/",
         "https://www.linkedin.com/in/fabianbaldovino/",
@@ -118,7 +118,7 @@ const jsonLd = {
       "name": "Fabian Baldovino — Brand Filmmaking",
       "url": "https://www.fabian.art.br",
       "logo": "https://www.fabian.art.br/icon.svg",
-      "image": "https://www.fabian.art.br/FOTOS/og-image.jpg",
+      "image": "https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp",
       "description": "Produtora audiovisual e Brand Filmmaker em Porto Alegre, RS. Especialista em vídeos institucionais, filmes publicitários e narrativas que constroem marcas de alto valor.",
       "telephone": "+5551999654160",
       "priceRange": "$$$$",
@@ -197,8 +197,8 @@ const jsonLd = {
       "name": "Showreel Fabian Baldovino — Brand Filmmaker Porto Alegre",
       "description": "Reel cinematográfico apresentando trabalhos de Brand Filmmaking e narrativas de alto impacto para marcas em Porto Alegre e Brasil.",
       "thumbnailUrl": [
-        "https://www.fabian.art.br/FOTOS/20260522_120207.jpg",
-        "https://www.fabian.art.br/FOTOS/og-image.jpg"
+        "https://www.fabian.art.br/FOTOS/fabian_baldovino_parque_moinhos_de_vento_porto_alegre_rs.webp",
+        "https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"
       ],
       "uploadDate": "2026-01-01T00:00:00-03:00",
       "contentUrl": "https://www.fabian.art.br/videos/REEL_2026_1.mp4",
@@ -216,7 +216,7 @@ const jsonLd = {
       },
       "description": "Literatura estratégica sobre valor percebido, psicanálise de consumo e engenharia de estímulos visuais no inconsciente do mercado brasileiro.",
       "inLanguage": "pt-BR",
-      "image": "https://www.fabian.art.br/FOTOS/trabalhos/CAPA_OFICIAL.png"
+      "image": "https://www.fabian.art.br/FOTOS/capa_o_codigo_brasil_fabian_baldovino.webp"
     },
     {
       "@type": "FAQPage",

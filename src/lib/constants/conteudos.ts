@@ -15,7 +15,7 @@ export const conteudos: Conteudo[] = [
     title: "O Ritual e o Caos: A Sociedade do Cansaço e a Antropologia Visual do Suor",
     slug: "estetica-suor-sociedade-cansaco-ritual",
     instagramUrl: "https://www.instagram.com/p/DPTnypsDgeA/",
-    coverImage: "/FOTOS/Referencia_capa.png",
+    coverImage: "/FOTOS/capa_o_codigo_brasil_fabian_baldovino.webp",
     excerpt: "Por que prometer o 'corpo perfeito' não funciona mais. Uma análise sobre como usamos a rotina nua e crua para posicionar a Wedy Nutrition como uma âncora na vida real.",
     content: [
       "Se você observar o nosso contexto, vai notar que o mercado está saturado do óbvio. Estamos afogados naquilo que o filósofo Byung-Chul Han brilhantemente definiu como a *Sociedade do Cansaço* — uma cultura que exige performance o tempo todo e só entrega esgotamento. Quando o cenário é esse, tentar vender um suplemento gritando sobre 'corpo perfeito' ou hipertrofia virou paisagem. O brasileiro contemporâneo não levanta às 5 da manhã motivado pelo espelho; ele levanta para dar conta da batalha diária, para enfrentar a hostilidade da 'Rua' (como categoriza o antropólogo Roberto DaMatta).",
@@ -31,7 +31,7 @@ export const conteudos: Conteudo[] = [
     title: "O Código Cultural da Força: Os Bastidores do Brand Filmmaking para a Wedy Nutrition",
     slug: "codigo-cultural-forca-brand-filmmaking-wedy",
     instagramUrl: "https://www.instagram.com/p/DPEgGKQCQnW/",
-    coverImage: "/FOTOS/CAPA_REEL_KALWYN.png",
+    coverImage: "/FOTOS/capa_kalwyn_producao_audiovisual_fabian_baldovino.webp",
     excerpt: "Como traduzimos o esforço e a superação em vídeo. Os bastidores das gravações na SmartFit do Bourbon Assis Brasil.",
     content: [
       "Fazer vídeos hoje em dia não é só sobre mostrar produtos; é sobre criar uma conexão real com as pessoas. Quando desenvolvemos esse projeto para a Wedy Nutrition, gravado lá na academia SmartFit do Bourbon Assis Brasil, em Porto Alegre, nosso objetivo era ir além daquele 'vídeo de treino' tradicional. Queríamos capturar a essência da marca de um jeito humano e verdadeiro.",
