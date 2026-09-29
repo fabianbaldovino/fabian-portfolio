@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import InstagramEmbed from "@/components/InstagramEmbed";
 
 export async function generateStaticParams() {
   return projects.map((p) => ({
@@ -37,8 +38,8 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
     <main className="min-h-screen bg-background text-foreground flex flex-col items-center pb-24 overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
       {/* Navigation Bar Minimal */}
       <nav className="w-full max-w-6xl px-6 py-8 flex justify-between items-center relative z-20">
-        <Link 
-          href="/projetos" 
+        <Link
+          href="/projetos"
           className="flex items-center gap-2 text-foreground/60 hover:text-brand-accent transition-colors text-sm uppercase tracking-widest font-medium group"
         >
           <span aria-hidden="true" className="group-hover:-translate-x-1 transition-transform">&larr;</span> Voltar para Projetos
@@ -51,14 +52,14 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
       </nav>
 
       <div className="w-full max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10 mt-8 lg:mt-12">
-        
+
         {/* Left Column: Cover & Hero */}
         <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start">
           <div className="w-full text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
               Estudo de Caso
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-[1.1] mb-6 text-balance text-white">
               {project.name}
             </h1>
@@ -67,7 +68,7 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
           <div className={`relative w-full max-w-[400px] lg:max-w-[500px] ${isBook ? 'aspect-[3/4]' : 'aspect-video lg:aspect-[4/3]'} mt-6 lg:mt-8 group mx-auto lg:mx-0 [perspective:1000px]`}>
             <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
             <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-3deg] group-hover:rotate-x-[1deg]">
-              <Image 
+              <Image
                 src={project.modalImgSrc || project.imgSrc}
                 alt={project.name}
                 fill
@@ -129,18 +130,18 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
           {/* Golden CTA Card */}
           <div className="bg-card/50 backdrop-blur-md p-8 md:p-10 rounded-[24px] border border-white/5 relative overflow-hidden mt-4">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent opacity-50" />
-            
+
             <h3 className="text-xl font-medium tracking-wide mb-2">
-              {isBook ? 'Exemplar Digital' : 'Quer um resultado igual?'}
+              {isBook ? 'Exemplar Digital' : 'Construir uma obra similar?'}
             </h3>
             <p className="text-sm text-foreground/60 mb-8 font-light text-balance leading-relaxed">
-              {isBook 
+              {isBook
                 ? 'Todo parceiro e cliente de projetos de Brand Filmmaking recebe o manifesto digital exclusivo O Código Brasil como parte do onboarding estratégico.'
-                : 'Atendemos um volume rigoroso e delimitado de projetos por semestre para garantir o padrão absoluto de direção e craft.'}
+                : 'Operamos com dedicação imersiva a poucas marcas por ciclo, garantindo presença direta da direção em cada etapa da sua produção.'}
             </p>
 
-            <a 
-              href={isBook 
+            <a
+              href={isBook
                 ? "https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20vi%20o%20manifesto%20O%20C%C3%B3digo%20Brasil%20e%20gostaria%20de%20receber%20o%20exemplar%20digital."
                 : "https://wa.me/5551999654160"}
               target="_blank"
@@ -166,24 +167,7 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
 
           {/* Instagram Reels */}
           {project.instagramUrls && project.instagramUrls.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {project.instagramUrls.map((url, idx) => (
-                <div
-                  key={url}
-                  className="w-full rounded-[20px] overflow-hidden border border-white/10 bg-[#0a0a0a]"
-                  style={{ height: "600px" }}
-                >
-                  <iframe
-                    src={`${url.replace(/\/$/, "")}/embed`}
-                    style={{ width: "100%", height: "100%", border: "none", display: "block" }}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    allowFullScreen
-                    title={`${project.name} — Filme ${idx + 1}`}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
+            <InstagramEmbed urls={project.instagramUrls} projectName={project.name} />
           )}
 
           {/* YouTube */}

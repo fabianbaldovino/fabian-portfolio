@@ -129,9 +129,9 @@ export default function SobrePage() {
             <div className="bg-card/50 backdrop-blur-md p-8 md:p-10 rounded-[24px] border border-white/5 relative overflow-hidden mt-4">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent opacity-50" />
 
-              <h2 className="text-xl font-medium tracking-wide mb-2">Quer ser o próximo?</h2>
+              <h2 className="text-xl font-medium tracking-wide mb-2">Vamos conversar sobre a sua marca?</h2>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Atendemos um volume rigoroso e delimitado de projetos por semestre para garantir o padrão absoluto de direção e craft.
+                Operamos com dedicação imersiva a poucas marcas por ciclo, garantindo presença direta da direção em cada etapa.
               </p>
 
               <a

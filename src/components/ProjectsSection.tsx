@@ -29,7 +29,7 @@ export default function ProjectsSection() {
         animate="visible"
         whileHover="hover"
       >
-        <div className="mb-2">
+        <div className="mb-2 shrink-0">
           <motion.h2
             className="text-lg md:text-xl xl:text-2xl font-medium"
             variants={textVariants}
@@ -51,31 +51,36 @@ export default function ProjectsSection() {
         </div>
 
         <motion.div 
-          className="flex flex-col gap-3 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-1 h-full"
+          className="flex flex-col gap-2.5 lg:gap-3 flex-1 min-h-0"
           variants={projectsVariants}
           initial="hidden"
           animate="visible"
         >
-          {[projects[1], projects[2]].map((project) => (
-            <Link key={project.name} href={`/especialidades/${project.slug}`} passHref className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark rounded-[16px]">
+          {[projects[0], projects[2]].map((project) => (
+            <Link 
+              key={project.name} 
+              href={`/especialidades/${project.slug}`} 
+              passHref 
+              className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark rounded-[16px] flex flex-col lg:flex-1 lg:min-h-0"
+            >
               <motion.div 
                 variants={projectItemVariants}
-                className="flex flex-col gap-2 cursor-pointer relative"
+                className="flex flex-col cursor-pointer relative w-full h-full lg:flex-1 lg:min-h-0"
               >
-                <div className="w-full aspect-[16/9] lg:aspect-[16/10] rounded-[12px] lg:rounded-[16px] overflow-hidden relative block">
+                <div className="w-full aspect-[16/9] lg:aspect-auto lg:h-full lg:flex-1 rounded-[12px] lg:rounded-[16px] overflow-hidden relative block min-h-0">
                   <Image
                     src={project.imgSrc}
                     alt={`${project.name} — Caso de Estudo`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={project.name === projects[1].name}
+                    priority={project.name === projects[0].name}
                     quality={90}
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                  <div className="absolute bottom-3 left-4 right-4 flex flex-col">
-                    <span className="text-white font-medium text-lg lg:text-xl drop-shadow-md">{project.name}</span>
-                    <span className="text-white/90 text-xs font-light drop-shadow-md">{project.shortDescription}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                  <div className="absolute bottom-2.5 lg:bottom-3 left-3 lg:left-4 right-3 lg:right-4 flex flex-col">
+                    <span className="text-white font-medium text-base lg:text-lg xl:text-xl drop-shadow-md leading-tight">{project.name}</span>
+                    <span className="text-white/90 text-xs font-light drop-shadow-md truncate">{project.shortDescription}</span>
                   </div>
                 </div>
               </motion.div>
@@ -88,12 +93,12 @@ export default function ProjectsSection() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col justify-center pt-3 pb-1 shrink-0"
+          className="flex flex-col justify-center pt-2 pb-1 shrink-0"
         >
           <hr className="border-0 h-[1px] bg-background/20 mb-2" />
           <Link 
             href="/projetos"
-            className="w-full flex justify-between items-center min-h-[44px] py-2 group cursor-pointer text-left focus:outline-none active:opacity-70 transition-opacity"
+            className="w-full flex justify-between items-center min-h-[44px] py-1.5 group cursor-pointer text-left focus:outline-none active:opacity-70 transition-opacity"
             aria-label="Ir para Obras Selecionadas"
           >
             <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Obras Selecionadas</span>

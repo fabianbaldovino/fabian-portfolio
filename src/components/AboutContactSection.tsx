@@ -36,7 +36,7 @@ export default function AboutContactSection() {
             Construímos a <span className="italic font-light opacity-90">arquitetura de percepção</span> que blinda o valor da sua marca.
           </p>
           <p className="text-sm md:text-base lg:text-lg font-light text-background/75 leading-relaxed max-w-[95%] text-balance">
-            Muito além da estética cinematográfica, orquestramos <strong className="font-medium text-background/95">narrativas magnéticas</strong> que posicionam seu negócio no topo da hierarquia visual do seu setor.
+            Muito além da estética cinematográfica, orquestramos <strong className="font-medium text-background/95">narrativas magnéticas</strong> que consolidam seu negócio como a autoridade definitiva do seu setor.
           </p>
         </motion.div>
         <div className="sr-only">
@@ -91,7 +91,7 @@ export default function AboutContactSection() {
             initial="hidden"
             animate="visible"
           >
-            Atendemos um volume rigoroso e delimitado de projetos por semestre para garantir o padrão absoluto de direção e craft. Solicite uma avaliação de aderência para a sua marca.
+            Operamos com dedicação imersiva a poucas marcas por ciclo, garantindo presença direta da direção em cada etapa. Inicie uma conversa estratégica para o seu próximo filme.
           </motion.p>
         </div>
       </motion.div>

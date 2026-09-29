@@ -19,9 +19,10 @@ export const projects: Project[] = [
     name: "Termolar",
     slug: "termolar",
     imgSrc: "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rs.webp",
+    modalImgSrc: "/FOTOS/fabian_baldovino_prodcao_audiovisual_porto_alegre_rs.jpg",
     icon: "Target",
     type: "copy",
-    shortDescription: "Sequestro de Atenção",
+    shortDescription: "Novela Vertical",
     tags: ["Novela Vertical", "Thriller Psicológico", "Imersão"],
     content: "A Termolar nos desafiou a repensar a interação com o público mobile. O resultado foi um thriller psicológico em 4 episódios. Abandonamos a publicidade convencional para criar uma novela vertical de alta retenção. Nesse formato, o produto não interrompe a experiência; ele conduz uma história envolvente escrita por Renata Maltz e eleva a percepção de valor da marca através do entretenimento.",
     instagramUrls: [
