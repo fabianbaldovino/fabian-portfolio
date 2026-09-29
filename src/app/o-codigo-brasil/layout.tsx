@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/FOTOS/capa_o_codigo_brasil_fabian_baldovino.webp",
+        url: "/FOTOS/capa_o_codigo_brasil_fabian_baldovino_2026.png",
         width: 1200,
         height: 630,
         alt: "O Código Brasil — Manifesto de Fabian Baldovino",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "O Código Brasil | Manifesto de Fabian Baldovino",
     description:
       "O manifesto que decifra o inconsciente do consumidor brasileiro. Neuromarketing aplicado à realidade brasileira.",
-    images: ["/FOTOS/capa_o_codigo_brasil_fabian_baldovino.webp"],
+    images: ["/FOTOS/capa_o_codigo_brasil_fabian_baldovino_2026.png"],
   },
 };
 

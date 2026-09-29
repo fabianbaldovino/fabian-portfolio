@@ -216,7 +216,7 @@ const jsonLd = {
       },
       "description": "Literatura estratégica sobre valor percebido, psicanálise de consumo e engenharia de estímulos visuais no inconsciente do mercado brasileiro.",
       "inLanguage": "pt-BR",
-      "image": "https://www.fabian.art.br/FOTOS/capa_o_codigo_brasil_fabian_baldovino.webp"
+      "image": "https://www.fabian.art.br/FOTOS/capa_o_codigo_brasil_fabian_baldovino_2026.png"
     },
     {
       "@type": "FAQPage",
