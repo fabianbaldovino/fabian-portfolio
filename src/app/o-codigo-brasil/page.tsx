@@ -14,7 +14,7 @@ export default function OCodigoBrasilPage() {
     e.preventDefault();
     if (!formData.name || !formData.company || !formData.role) return;
 
-    const message = `Olá Fabian. Sou ${formData.name}, ${formData.role} na empresa ${formData.company}. Tenho interesse em acessar o manifesto de elite 'O Código Brasil'.`;
+    const message = `Olá Fabian. Sou ${formData.name}, ${formData.role} da ${formData.company}. Gostaria de solicitar o meu acesso gratuito ao manifesto 'O Código Brasil'.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/5551999654160?text=${encodedMessage}`;
 
