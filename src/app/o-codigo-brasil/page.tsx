@@ -101,7 +101,7 @@ export default function OCodigoBrasilPage() {
                 <h2 className="text-xl font-medium tracking-wide">Gatekeeping Ativado</h2>
               </div>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                O manifesto completo é um material premium comercializado na Hotmart. No entanto, se você é cliente ou parceiro de Fabian Baldovino, seu acesso é <strong>100% gratuito</strong>. Preencha os dados abaixo para validar sua parceria e receber o arquivo direto no WhatsApp.
+                Clientes e parceiros de Fabian Baldovino têm acesso <strong>gratuito</strong> a este manifesto. Preencha os dados abaixo para solicitar o arquivo direto pelo WhatsApp.
               </p>
 
               <form onSubmit={handleWhatsAppRedirect} className="flex flex-col gap-6" noValidate>
