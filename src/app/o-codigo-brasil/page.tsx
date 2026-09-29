@@ -98,7 +98,7 @@ export default function OCodigoBrasilPage() {
 
               <div className="flex items-center gap-3 mb-6">
                 <Lock size={20} className="text-brand-accent" />
-                <h2 className="text-xl font-medium tracking-wide">Gatekeeping Ativado</h2>
+                <h2 className="text-xl font-medium tracking-wide">Acesso ao Manifesto</h2>
               </div>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Clientes e parceiros de Fabian Baldovino têm acesso <strong>gratuito</strong> a este manifesto. Preencha os dados abaixo para solicitar o arquivo direto pelo WhatsApp.
