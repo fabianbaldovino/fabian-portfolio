@@ -24,7 +24,7 @@ export default function Home() {
           animate="visible"
         >
           <section id="about-section" aria-label="Hero e Sobre" className="flex flex-col w-full lg:w-[70%] gap-4 lg:mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 md:h-[55%]">
+            <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-4 md:h-[55%]">
               <HeroSection />
               <PersonImageSection />
             </div>

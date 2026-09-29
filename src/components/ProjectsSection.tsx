@@ -93,7 +93,7 @@ export default function ProjectsSection() {
           <hr className="border-0 h-[1px] bg-background/20 mb-2" />
           <Link 
             href="/projetos"
-            className="w-full flex justify-between items-center group cursor-pointer text-left focus:outline-none"
+            className="w-full flex justify-between items-center min-h-[44px] py-2 group cursor-pointer text-left focus:outline-none active:opacity-70 transition-opacity"
             aria-label="Ir para Obras Selecionadas"
           >
             <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Obras Selecionadas</span>
@@ -111,11 +111,12 @@ export default function ProjectsSection() {
       >
         <motion.a
           href={socials.instagram}
-          className="text-light hover:text-accent transition-colors"
+          className="text-light hover:text-accent transition-all p-3 flex items-center justify-center"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
+          whileTap={{ scale: 0.88 }}
           aria-label="Instagram de Fabian Baldovino"
           target="_blank"
           rel="noopener noreferrer"
@@ -124,11 +125,12 @@ export default function ProjectsSection() {
         </motion.a>
         <motion.a
           href={socials.twitter}
-          className="text-light hover:text-accent transition-colors"
+          className="text-light hover:text-accent transition-all p-3 flex items-center justify-center"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
+          whileTap={{ scale: 0.88 }}
           aria-label="X (Twitter) de Fabian Baldovino"
           target="_blank"
           rel="noopener noreferrer"
@@ -137,11 +139,12 @@ export default function ProjectsSection() {
         </motion.a>
         <motion.a
           href={socials.linkedin}
-          className="text-light hover:text-accent transition-colors"
+          className="text-light hover:text-accent transition-all p-3 flex items-center justify-center"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
+          whileTap={{ scale: 0.88 }}
           aria-label="LinkedIn de Fabian Baldovino"
           target="_blank"
           rel="noopener noreferrer"

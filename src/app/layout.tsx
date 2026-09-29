@@ -216,7 +216,7 @@ const jsonLd = {
       },
       "description": "Literatura estratégica sobre valor percebido, psicanálise de consumo e engenharia de estímulos visuais no inconsciente do mercado brasileiro.",
       "inLanguage": "pt-BR",
-      "image": "https://www.fabian.art.br/FOTOS/capa_o_codigo_brasil_fabian_baldovino_2026.png"
+      "image": "https://www.fabian.art.br/FOTOS/capa_manifesto_o_codigo_brasil_fabian_baldovino.png"
     },
     {
       "@type": "FAQPage",
@@ -257,8 +257,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="overflow-x-hidden">
-      <body className={`${gilroy.variable} font-gilroy antialiased overflow-x-hidden`}>
+    <html lang="pt-BR">
+      <body className={`${gilroy.variable} font-gilroy antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -15,7 +15,7 @@ export default function Navbar() {
       <nav className="flex flex-row justify-between px-4 py-4 lg:px-10 lg:py-6 items-center md:flex-row md:items-center relative" aria-label="Main navigation">
         <Link
           href="/"
-          className="flex flex-row gap-1 items-center"
+          className="flex flex-row gap-1 items-center py-2 active:scale-[0.97] transition-transform"
           aria-label="Go to homepage"
         >
           <span className="text-xl lg:text-2xl uppercase font-light italic">Fabian</span>

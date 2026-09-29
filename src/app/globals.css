@@ -60,7 +60,6 @@ p a[href^="mailto:"],
 p a[x-apple-data-detectors] {
   color: inherit !important;
   text-decoration: none !important;
-  pointer-events: none;
 }
 
 /* Previne qualquer sublinhado não intencional em parágrafos dentro de cards */

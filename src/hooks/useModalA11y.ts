@@ -51,6 +51,10 @@ export function useModalA11y({ isOpen, onClose }: UseModalA11yOptions) {
 
     window.addEventListener("keydown", handleKeyDown);
 
+    // Scroll-lock: impede a página de rolar atrás do modal
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     // Auto focus first interactive element
     const timer = setTimeout(() => {
       if (modalRef.current) {
@@ -64,6 +68,7 @@ export function useModalA11y({ isOpen, onClose }: UseModalA11yOptions) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       clearTimeout(timer);
+      document.body.style.overflow = previousOverflow;
       if (previousActiveElement.current && typeof previousActiveElement.current.focus === "function") {
         previousActiveElement.current.focus();
       }
