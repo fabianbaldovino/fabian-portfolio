@@ -171,6 +171,19 @@ export default function OCodigoBrasilPage() {
                   Solicitar pelo WhatsApp <ArrowRight size={18} />
                 </button>
               </form>
+
+              <p className="mt-6 pt-6 border-t border-white/5 text-center text-xs text-foreground/50 font-light leading-relaxed">
+                Não é cliente ainda? Leia os artigos e adquira o manifesto completo em{" "}
+                <a
+                  href="https://www.ocodigobrasil.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 text-brand-accent/80 hover:text-brand-accent transition-colors"
+                >
+                  ocodigobrasil.com.br
+                </a>
+                .
+              </p>
             </motion.div>
           </div>
 
