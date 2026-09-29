@@ -101,7 +101,7 @@ export default function OCodigoBrasilPage() {
                 <h2 className="text-xl font-medium tracking-wide">Gatekeeping Ativado</h2>
               </div>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                O acesso a esta tese é restrito e blindado contra a superficialidade. Este material de alto rigor estratégico está disponível <strong>gratuitamente</strong>, em caráter de exclusividade e acolhimento (A Casa), para clientes e parceiros de Fabian Baldovino. Se você pertence a este seleto grupo, solicite seu material diretamente pelo WhatsApp.
+                Este documento não é para o mercado de massa. Trata-se de uma análise aprofundada, disponível <strong>gratuitamente</strong> e com exclusividade para clientes e parceiros de Fabian Baldovino. Se você já atua ao nosso lado, preencha os dados e solicite seu arquivo direto pelo WhatsApp.
               </p>
 
               <form onSubmit={handleWhatsAppRedirect} className="flex flex-col gap-6" noValidate>
