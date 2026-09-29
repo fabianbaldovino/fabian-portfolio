@@ -175,7 +175,7 @@ export default function OCodigoBrasilPage() {
               <p className="mt-6 pt-6 border-t border-white/5 text-center text-xs text-foreground/50 font-light leading-relaxed">
                 Não é cliente ainda? Leia os artigos e adquira o manifesto completo em{" "}
                 <a
-                  href="https://www.ocodigobrasil.com.br"
+                  href="https://ocodigobrasil.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline underline-offset-2 text-brand-accent/80 hover:text-brand-accent transition-colors"
