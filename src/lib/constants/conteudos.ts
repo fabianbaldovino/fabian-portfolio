@@ -15,7 +15,7 @@ export const conteudos: Conteudo[] = [
     title: "O Ritual e o Caos: A Sociedade do Cansaço e a Antropologia Visual do Suor",
     slug: "estetica-suor-sociedade-cansaco-ritual",
     instagramUrl: "https://www.instagram.com/p/DPTnypsDgeA/",
-    coverImage: "/FOTOS/capa_manifesto_o_codigo_brasil_fabian_baldovino.png",
+    coverImage: "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rio_grande_do_sul.webp",
     excerpt: "Por que prometer o 'corpo perfeito' não funciona mais. Uma análise sobre como usamos a rotina nua e crua para posicionar a Wedy Nutrition como uma âncora na vida real.",
     content: [
       "Se você observar o nosso contexto, vai notar que o mercado está saturado do óbvio. Estamos afogados naquilo que o filósofo Byung-Chul Han brilhantemente definiu como a *Sociedade do Cansaço* — uma cultura que exige performance o tempo todo e só entrega esgotamento. Quando o cenário é esse, tentar vender um suplemento gritando sobre 'corpo perfeito' ou hipertrofia virou paisagem. O brasileiro contemporâneo não levanta às 5 da manhã motivado pelo espelho; ele levanta para dar conta da batalha diária, para enfrentar a hostilidade da 'Rua' (como categoriza o antropólogo Roberto DaMatta).",

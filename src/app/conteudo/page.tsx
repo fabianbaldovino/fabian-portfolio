@@ -50,7 +50,7 @@ export default function JournalHub() {
                 Journal <span className="italic font-light text-brand-accent">&</span> Insights
               </h1>
               <p className="text-foreground/70 text-lg">
-                Estratégias visuais para fortalecer marcas e influenciar o inconsciente do mercado.
+                Estratégias visuais para fortalecer marcas e influenciar decisões de compra do mercado.
               </p>
             </div>
             <p className="text-foreground/50 text-sm uppercase tracking-wider md:text-right">
