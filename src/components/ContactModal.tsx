@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import { X, Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
+import { X, Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
 import { modalVariants, backdropVariants, textVariants, iconVariants } from "@/lib/animation/variants";
 import { contactInfo } from "@/lib/constants/contact";
 import { socials } from "@/lib/constants/socials";
@@ -168,7 +168,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <div className="flex justify-center gap-4">
                 {[
                   { icon: Linkedin, href: socials.linkedin, label: "LinkedIn" },
-                  { icon: Twitter, href: socials.twitter, label: "X (Twitter)" },
                   { icon: Instagram, href: socials.instagram, label: "Instagram" },
                 ].map(({ icon: Icon, href, label }) => (
                   <motion.a

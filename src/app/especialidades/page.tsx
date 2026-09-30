@@ -6,6 +6,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Especialidades | Fabian Baldovino",
   description: "Conheça nossas especialidades em brand filmmaking, estratégias visuais, e execução técnica audiovisual em Porto Alegre.",
+  alternates: {
+    canonical: "https://www.fabian.art.br/projetos",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function EspecialidadesHub() {

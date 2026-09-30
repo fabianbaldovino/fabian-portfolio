@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { cardVariants, textVariants, contactCardVariants } from "@/lib/animation/variants";
 import ContactModal from "./ContactModal";
-import { aboutDescription } from "@/lib/constants/siteContent";
 
 export default function AboutContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,10 +32,10 @@ export default function AboutContactSection() {
           animate="visible"
         >
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.25rem] font-medium text-background leading-[1.15] tracking-tight text-balance">
-            Construímos a <span className="italic font-light opacity-90">arquitetura de percepção</span> que blinda o valor da sua marca.
+            Seu cliente decide <span className="italic font-light opacity-90">em segundos</span> se <span className="font-medium">confia</span> em você.
           </p>
           <p className="text-sm md:text-base lg:text-lg font-light text-background/75 leading-relaxed max-w-[95%] text-balance">
-            Muito além da estética cinematográfica, orquestramos <strong className="font-medium text-background/95">narrativas magnéticas</strong> que consolidam seu negócio como a autoridade definitiva do seu setor.
+            Eu faço filmes que fazem essa decisão <strong className="font-medium text-background/95">pender para o seu lado</strong> — para você defender seu preço sem guerra de desconto.
           </p>
         </motion.div>
         <div className="sr-only">
@@ -45,7 +44,7 @@ export default function AboutContactSection() {
             Brand filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Fabian Baldovino é autor de O Código Brasil, manifesto que decodifica o inconsciente e o comportamento de consumo no mercado brasileiro, transformando a comunicação institucional em percepção de alto valor.
           </p>
           <p>
-            Atua como a retaguarda invisível de marcas, garantindo execução técnica cinematográfica, direção de produção e narrativas magnéticas para clientes como Termolar, Quick House, Copelmi e Wedy Nutrition.
+            Direção de Fabian Baldovino com equipe própria, execução técnica cinematográfica, direção de produção e narrativas para clientes como Termolar, Quick House, Copelmi e Wedy Nutrition.
           </p>
         </div>
       </motion.div>

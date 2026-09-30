@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar />
       <main>
         <motion.div 
-          className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-8 pb-4 md:pb-0 lg:h-[calc(100vh-130px)]"
+          className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-8 pb-4 md:pb-0 lg:h-[calc(100vh-186px)]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

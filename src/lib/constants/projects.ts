@@ -100,7 +100,7 @@ export const projects: Project[] = [
     icon: "Clapperboard",
     type: "gallery",
     shortDescription: "Making Of e Processo Criativo",
-    tags: ["Making Of", "Processo Criativo", "Retaguarda Invisível"],
+    tags: ["Making Of", "Processo Criativo", "Direção em Campo"],
     content: [
       "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rio_grande_do_sul.webp",
       "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rio_grande_do_sul_cinema.webp",

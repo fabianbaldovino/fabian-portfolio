@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "Sobre | Fabian Baldovino — Brand Filmmaker Porto Alegre",
   description:
-    "Brand filmmaker e estrategista de narrativas visuais. Autor do Manifesto O Código Brasil. Especialista em construir percepção de alto valor em Porto Alegre, RS.",
+    "Fabian Baldovino: filmmaker de marcas desde 2011, de Ciências Sociais a +100 marcas e instituições, com equipe própria e DRT. Autor do manifesto O Código Brasil. Porto Alegre, RS.",
   alternates: {
     canonical: "https://www.fabian.art.br/sobre",
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://www.fabian.art.br/sobre",
     title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
     description:
-      "Brand filmmaker e estrategista de narrativas visuais. Autor do Manifesto O Código Brasil. Especialista em construir percepção de alto valor em Porto Alegre, RS.",
+      "Fabian Baldovino: filmmaker de marcas desde 2011, de Ciências Sociais a +100 marcas e instituições, com equipe própria e DRT. Autor do manifesto O Código Brasil. Porto Alegre, RS.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
     description:
-      "Brand filmmaker e estrategista de narrativas visuais. Autor do Manifesto O Código Brasil.",
+      "Filmmaker de marcas desde 2011, +100 marcas, equipe própria e DRT. Autor do manifesto O Código Brasil.",
     images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
   },
 };
@@ -57,8 +57,8 @@ export default function SobrePage() {
               </h1>
 
               {/* Credencial — prova social imediata */}
-              <p className="text-sm text-foreground/50 uppercase tracking-widest font-light mb-6">
-                +8 anos · +50 filmes · Porto Alegre, RS
+              <p className="text-sm text-foreground/70 uppercase tracking-widest font-light mb-6">
+                +15 anos · +100 marcas · Porto Alegre, RS
               </p>
             </div>
 
@@ -82,7 +82,10 @@ export default function SobrePage() {
           {/* Right Column: Copy & CTA */}
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-10">
             <div className="prose prose-invert max-w-none mb-12">
-              <p className="text-foreground/70 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
+              <p className="text-foreground/90 font-medium leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
+                Sou Fabian Baldovino, filmmaker de marcas em Porto Alegre. Dirijo com uma equipe própria e parceiros de captação desde <strong className="text-brand-accent">2011</strong> — já são <strong className="text-brand-accent">+100 marcas e instituições</strong>. Comecei em <strong className="text-brand-accent">Ciências Sociais</strong>, fazendo documentário e oficina de cinema em escolas públicas da rede municipal, e hoje unimos técnica de cinema e o entendimento de como o brasileiro decide confiar.
+              </p>
+              <p className="text-foreground/70 font-light mt-6 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Autor do Manifesto <strong className="text-brand-accent font-medium tracking-wide">O Código Brasil</strong>, Fabian mergulhou na antropologia de Roberto DaMatta para entender o que move o consumidor brasileiro: não apenas a lógica, mas o instinto, o pertencimento e a confiança.
               </p>
               <p className="text-foreground/70 font-light mt-4 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
@@ -119,7 +122,7 @@ export default function SobrePage() {
                   className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-brand-accent transition-colors group"
                 >
                   <BookOpen size={16} className="text-brand-accent" />
-                  <span>Acessar o Manifesto</span>
+                  <span>Conhecer o Método</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>
@@ -147,6 +150,57 @@ export default function SobrePage() {
           </div>
 
         </div>
+
+        {/* Trajetória — marcos verificados (§10.2 da auditoria) */}
+        <section aria-label="Trajetória" className="w-full max-w-6xl px-6 mt-16 lg:mt-24">
+          <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-3">
+            Trajetória
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium mb-2 text-white">
+            De oficina de cinema em escolas a +100 marcas
+          </h2>
+          <p className="text-foreground/60 font-light mb-8 max-w-2xl leading-relaxed">
+            2011 — Ciências Sociais, documentário e educação pública: o começo que explica o método.
+          </p>
+
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0">
+            {[
+              {
+                ano: "2011 · Origem",
+                titulo: "Ciências Sociais e o primeiro documentário",
+                desc: "O Aquartelamento da Democracia no Brasil — uma jornada de 1920 até os dias atuais, na graduação em Ciências Sociais.",
+              },
+              {
+                ano: "2011 · Educação",
+                titulo: "Curta nas Escolas",
+                desc: "Como educador social na rede municipal: 8 curtas com 450 crianças na Escola Ana Íris do Amaral e a 1ª Mostra de Curtas na Câmara Municipal de Porto Alegre.",
+              },
+              {
+                ano: "2011 · UFRGS",
+                titulo: "Palestra na Faculdade de Educação",
+                desc: "Palestrante do curso de Especialização em Educação em Saúde Mental Coletiva — 2h na UFRGS.",
+              },
+              {
+                ano: "2011 · Imprensa",
+                titulo: "Cobertura dos curtas",
+                desc: "Jornal da Capital, Correio do Povo e Prefeitura de Porto Alegre noticiaram a mostra dos alunos das escolas municipais.",
+              },
+              {
+                ano: "Hoje",
+                titulo: "+100 marcas e DRT nacional",
+                desc: "Direção com equipe própria para +100 marcas e instituições, com DRT 0014530/RS — diretor de fotografia e produtor executivo.",
+              },
+            ].map((marco) => (
+              <li key={marco.titulo} className="bg-card rounded-[20px] border border-white/5 p-6 hover:border-brand-accent/30 transition-colors">
+                <span className="text-brand-accent text-xs font-bold uppercase tracking-widest block mb-2">
+                  {marco.ano}
+                </span>
+                <h3 className="text-lg font-medium mb-1 text-white">{marco.titulo}</h3>
+                <p className="text-sm text-foreground/70 font-light leading-relaxed">{marco.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
       </main>
     </div>
   );

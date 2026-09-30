@@ -38,17 +38,14 @@ export const metadata: Metadata = {
     google: "dcct_ikHBbu2wTcy06T_H_WGmTNjK4TKxz-x7c40-R8",
   },
   title: "Fabian Baldovino | Brand Filmmaking Porto Alegre",
-  description: "Filmmaker de marcas em Porto Alegre. Narrativas visuais que blindam marcas e ativam percepção de alto valor. Conheça o portfólio.",
-  keywords: [
-    "brand filmmaking", "filmmaker porto alegre", "vídeo institucional porto alegre",
-    "produtora audiovisual porto alegre", "filmagem institucional rs",
-    "video marketing porto alegre", "produção de vídeo para empresas",
-    "Fabian Baldovino", "audiovisual", "brand filmmaking brasil"
-  ],
+  description: "Filmmaker de marcas em Porto Alegre. Filmes de marca e institucionais que fazem seu cliente confiar em segundos e você defender seu preço. Conheça o portfólio.",
+  alternates: {
+    canonical: "https://www.fabian.art.br",
+  },
   authors: [{ name: "Fabian Baldovino" }],
   creator: "Fabian Baldovino",
   publisher: "Fabian Baldovino",
-  // canonical é definido individualmente em cada page.tsx para evitar duplicatas de SEO
+  // rotas internas declaram o próprio alternates/canonical em seus page/layout
   robots: {
     index: true,
     follow: true,
@@ -62,7 +59,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.fabian.art.br",
     title: "Fabian Baldovino | Brand Filmmaking Porto Alegre",
-    description: "Filmmaker de marcas em Porto Alegre. Narrativas visuais que blindam marcas e ativam percepção de alto valor. Conheça o portfólio.",
+    description: "Filmmaker de marcas em Porto Alegre. Filmes de marca e institucionais que fazem seu cliente confiar em segundos e você defender seu preço. Conheça o portfólio.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -77,7 +74,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fabian Baldovino | Brand Filmmaking Porto Alegre",
-    description: "Filmmaker de marcas em Porto Alegre. Narrativas visuais que blindam marcas e ativam percepção de alto valor.",
+    description: "Filmmaker de marcas em Porto Alegre. Filmes de marca e institucionais que fazem seu cliente confiar em segundos e você defender seu preço.",
     images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
   },
 };
@@ -93,8 +90,7 @@ const jsonLd = {
       "image": "https://www.fabian.art.br/FOTOS/fabian_baldovino_moinhos_de_vento_porto_alegre_Rio_grande_do_sul.webp",
       "sameAs": [
         "https://www.instagram.com/fabianbaldovino9/",
-        "https://www.linkedin.com/in/fabianbaldovino/",
-        "https://x.com/FPaciel"
+        "https://www.linkedin.com/in/fabianbaldovino/"
       ],
       "address": {
         "@type": "PostalAddress",

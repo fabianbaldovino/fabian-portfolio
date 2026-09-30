@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Twitter, Linkedin, Target, Eye, Compass, Clapperboard, Sparkles, Book } from "lucide-react";
+import { Instagram, Linkedin, Target, Eye, Compass, Clapperboard, Sparkles, Book } from "lucide-react";
 import { motion } from "motion/react";
 import { cardVariants, projectsVariants, projectItemVariants, socialVariants, textVariants, iconVariants } from "@/lib/animation/variants";
 import { projects, Project } from "@/lib/constants/projects";
@@ -127,20 +127,6 @@ export default function ProjectsSection() {
           rel="noopener noreferrer"
         >
           <Instagram size={20} aria-hidden="true" />
-        </motion.a>
-        <motion.a
-          href={socials.twitter}
-          className="text-light hover:text-accent transition-all p-3 flex items-center justify-center"
-          variants={socialVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-          whileTap={{ scale: 0.88 }}
-          aria-label="X (Twitter) de Fabian Baldovino"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Twitter size={20} aria-hidden="true" />
         </motion.a>
         <motion.a
           href={socials.linkedin}

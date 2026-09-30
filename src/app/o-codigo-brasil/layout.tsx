@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "O Código Brasil | Manifesto de Fabian Baldovino",
+  title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
   description:
-    "O manifesto que decifra o inconsciente do consumidor brasileiro. Baseado na antropologia de Roberto DaMatta e neuromarketing aplicado. Por Fabian Baldovino.",
+    "Como Fabian Baldovino trabalha: direção com equipe própria, câmera cinema Sony e drone 4K — e o manifesto que decifra o consumidor brasileiro.",
   alternates: {
     canonical: "https://www.fabian.art.br/o-codigo-brasil",
   },
   openGraph: {
     type: "website",
     url: "https://www.fabian.art.br/o-codigo-brasil",
-    title: "O Código Brasil | Manifesto de Fabian Baldovino",
+    title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
     description:
-      "O manifesto que decifra o inconsciente do consumidor brasileiro. Baseado na antropologia de Roberto DaMatta e neuromarketing aplicado.",
+      "Como Fabian Baldovino trabalha: direção com equipe própria, câmera cinema Sony e drone 4K — e o manifesto que decifra o consumidor brasileiro.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "O Código Brasil | Manifesto de Fabian Baldovino",
+    title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
     description:
-      "O manifesto que decifra o inconsciente do consumidor brasileiro. Neuromarketing aplicado à realidade brasileira.",
+      "Direção com equipe própria, câmera cinema Sony e drone 4K, e o manifesto O Código Brasil: como o consumidor brasileiro decide confiar.",
     images: ["/FOTOS/capa_manifesto_o_codigo_brasil_fabian_baldovino.png"],
   },
 };

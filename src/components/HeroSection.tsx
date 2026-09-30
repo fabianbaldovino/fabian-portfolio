@@ -2,7 +2,6 @@
 
 import { motion } from "motion/react";
 import { heroVariants, textVariants } from "@/lib/animation/variants";
-import { heroContent } from "@/lib/constants/siteContent";
 
 export default function HeroSection() {
   return (
@@ -19,10 +18,10 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        <span className="text-xs uppercase tracking-widest text-brand-accent font-medium">
-          Brand Filmmaking &amp; Audiovisual Estratégico · Porto Alegre
-        </span>
         <h1 className="flex flex-col gap-3 md:gap-5 max-w-[95%]">
+          <span className="text-base md:text-lg lg:text-xl font-medium leading-snug text-brand-accent">
+            Filmes de marca e institucionais para empresas de Porto Alegre e do RS.
+          </span>
           <span className="text-2xl sm:text-3xl md:text-3xl lg:text-[2.15rem] xl:text-[2.5rem] leading-[1.15] tracking-tight text-foreground text-balance">
             <span className="font-light italic text-foreground/80">Ninguém compra um produto pela</span> <span className="font-medium">razão;</span> a razão só existe para justificar o que o <span className="font-medium text-brand-accent">instinto</span> já decidiu em milésimos de segundo.
           </span>

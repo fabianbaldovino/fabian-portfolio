@@ -16,9 +16,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
 
+  // Casos duplicados consolidam no sistema único (/projetos/{slug}).
+  // "bastidores" não existe em /projetos — mantém canonical próprio.
+  const canonicalSlug = slug === "bastidores" ? null : slug;
+
   return {
     title: `${project.name} | Fabian Baldovino`,
     description: project.shortDescription || `Detalhes da especialidade ${project.name} por Fabian Baldovino, brand filmmaker em Porto Alegre.`,
+    ...(canonicalSlug
+      ? { alternates: { canonical: `https://www.fabian.art.br/projetos/${canonicalSlug}` } }
+      : { alternates: { canonical: `https://www.fabian.art.br/especialidades/${slug}` } }),
   };
 }
 

@@ -87,4 +87,9 @@ main.min-h-screen {
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(197, 160, 89, 0.04) 0%, transparent 70%),
     radial-gradient(ellipse 60% 40% at 80% 80%, rgba(232, 206, 194, 0.03) 0%, transparent 60%);
 }
-
+
+/* Marquee do ClientsStrip - keyframes no CSS global garantem presenca desde o primeiro paint (styled-jsx so injeta apos hidratacao e o Chrome nao inicia animacoes criadas antes das keyframes existirem) */
+@keyframes marquee-scroll {
+  0% { transform: translate(0); }
+  100% { transform: translate(-50%); }
+}

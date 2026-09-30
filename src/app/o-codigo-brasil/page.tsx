@@ -3,9 +3,42 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Lock, ArrowRight, ShieldCheck } from "lucide-react";
+import { Lock, ArrowRight, ShieldCheck, Workflow } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
+
+const etapas = [
+  {
+    titulo: "Imersão",
+    desc: "Briefing focado na decisão que o filme precisa provocar no seu cliente — não no que a marca quer dizer.",
+  },
+  {
+    titulo: "Narrativa",
+    desc: "Roteiro, estrutura e referências visuais aprovadas antes de qualquer câmera ligar.",
+  },
+  {
+    titulo: "Captação",
+    desc: "Direção no set com equipe própria e parceiros de captação conforme o projeto.",
+  },
+  {
+    titulo: "Pós-produção",
+    desc: "Montagem, cor e som com padrão cinematográfico.",
+  },
+  {
+    titulo: "Entrega",
+    desc: "Arquivos finais prontos para cada canal — do site ao social — nos formatos definidos no briefing.",
+  },
+];
+
+const estrutura = [
+  "Câmera cinema Sony",
+  "Drone 4K",
+  "Equipe própria",
+  "DRT 0014530/RS",
+  "Porto Alegre + operações nacionais",
+  "Operações internacionais na América Latina",
+  "Espanhol nativo",
+];
 
 export default function OCodigoBrasilPage() {
   const [formData, setFormData] = useState({ name: "", company: "", role: "" });
@@ -26,9 +59,111 @@ export default function OCodigoBrasilPage() {
       <Navbar />
 
       <main className="flex flex-col items-center pb-24 overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
-        <div className="w-full max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10 mt-8 lg:mt-12">
 
-          {/* Left Column: Cover & Hero */}
+        {/* BLOCO 1 — MÉTODO: como operamos */}
+        <section
+          aria-label="Método de trabalho"
+          className="w-full max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 relative z-10 mt-8 lg:mt-12"
+        >
+          <div className="col-span-1 lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full text-center lg:text-left"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+                <Workflow size={14} /> Como Operamos
+              </div>
+
+              <h1
+                className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-[1.1] mb-6 text-white"
+                style={{ textWrap: "balance" } as React.CSSProperties}
+              >
+                Do briefing à entrega, com{" "}
+                <span className="text-brand-accent italic font-serif">equipe própria</span>.
+              </h1>
+
+              <p
+                className="text-foreground/70 font-light leading-relaxed max-w-xl mx-auto lg:mx-0"
+                style={{ textWrap: "balance" } as React.CSSProperties}
+              >
+                Direção de Fabian Baldovino com equipe própria e parceiros de captação conforme o projeto — de Porto Alegre para operações nacionais e internacionais na América Latina, com espanhol nativo no set. Câmera cinema{" "}
+                <strong className="text-brand-accent font-medium">Sony</strong> e{" "}
+                <strong className="text-brand-accent font-medium">drone 4K</strong>.
+              </p>
+            </motion.div>
+
+            {/* Foto de set — prova visual do método */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+              className="relative w-full max-w-[320px] lg:max-w-[380px] aspect-[3/4] mt-8 lg:mt-10 group mx-auto lg:mx-0"
+            >
+              <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
+              <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                <Image
+                  src="/FOTOS/fabian_baldovino_parque_moinhos_de_vento_porto_alegre_rs.webp"
+                  alt="Fabian Baldovino na câmera cinema durante gravação — Porto Alegre, RS"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 90vw, 380px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50" />
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="col-span-1 lg:col-span-6 lg:pl-10">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+              <ol className="flex flex-col gap-4 list-none p-0 m-0">
+                {etapas.map((etapa, i) => (
+                  <li
+                    key={etapa.titulo}
+                    className="bg-card/50 backdrop-blur-md rounded-[20px] border border-white/5 p-5 md:p-6 flex gap-4 items-start"
+                  >
+                    <span className="text-brand-accent text-sm font-bold uppercase tracking-widest pt-1 shrink-0">
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <h2 className="text-lg font-medium mb-1 text-white">{etapa.titulo}</h2>
+                      <p className="text-sm text-foreground/70 font-light leading-relaxed">{etapa.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="mt-8">
+                <p className="text-[10px] uppercase tracking-widest text-foreground/50 font-medium mb-3 ml-1">
+                  Estrutura
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {estrutura.map((item) => (
+                    <span
+                      key={item}
+                      className="text-xs uppercase tracking-wider px-4 py-2 rounded-full border border-brand-accent/30 text-brand-accent font-medium bg-brand-accent/5"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* BLOCO 2 — MANIFESTO O CÓDIGO BRASIL */}
+        <section
+          aria-label="Manifesto O Código Brasil"
+          className="w-full max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10 mt-16 lg:mt-24"
+        >
+
+          {/* Left Column: Cover & Manifesto */}
           <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -40,9 +175,9 @@ export default function OCodigoBrasilPage() {
                 <ShieldCheck size={14} /> Neuromarketing Estratégico
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] mb-6 text-white" style={{ textWrap: "balance" } as React.CSSProperties}>
+              <h2 className="text-3xl md:text-4xl lg:text-[44px] font-medium leading-[1.1] mb-6 text-white" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Decifrando a Mente no Mercado Mais <br className="hidden lg:block" /><span className="text-brand-accent italic font-serif">Emocional</span> do Mundo.
-              </h1>
+              </h2>
             </motion.div>
 
             <motion.div
@@ -98,7 +233,7 @@ export default function OCodigoBrasilPage() {
 
               <div className="flex items-center gap-3 mb-6">
                 <Lock size={20} className="text-brand-accent" />
-                <h2 className="text-xl font-medium tracking-wide">Acesso ao Manifesto</h2>
+                <h3 className="text-xl font-medium tracking-wide">Acesso ao Manifesto</h3>
               </div>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Clientes e parceiros de Fabian Baldovino têm acesso <strong>gratuito</strong> a este manifesto. Preencha os dados abaixo para solicitar o arquivo direto pelo WhatsApp.
@@ -186,8 +321,8 @@ export default function OCodigoBrasilPage() {
               </p>
             </motion.div>
           </div>
+        </section>
 
-        </div>
       </main>
     </div>
   );

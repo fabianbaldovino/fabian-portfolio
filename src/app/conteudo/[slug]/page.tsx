@@ -105,7 +105,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
           href="/conteudo" 
           className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md py-1 px-2 -ml-2"
         >
-          <span aria-hidden="true">&larr;</span> Voltar para Insights
+          <span aria-hidden="true">&larr;</span> Voltar para o Journal
         </Link>
       </div>
       
@@ -147,7 +147,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
               height="500"
               frameBorder="0"
               scrolling="no"
-              allowTransparency={true}
+              title={conteudo.title}
               className="max-w-full rounded-[20px] border border-accent/20"
             ></iframe>
           </div>

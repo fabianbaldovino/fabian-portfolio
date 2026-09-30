@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ContactModal from "@/components/ContactModal";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function GlobalModals() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function GlobalModals() {
   return (
     <>
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <FloatingWhatsApp />
     </>
   );
 }
