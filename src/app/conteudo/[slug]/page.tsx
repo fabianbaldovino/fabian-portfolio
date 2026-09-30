@@ -138,22 +138,8 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
         </div>
       )}
 
-      <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-12 items-start">
-        {conteudo.instagramUrl && (
-          <div className="w-full lg:w-[400px] flex justify-center flex-shrink-0 mb-12 lg:mb-0 rounded-[20px] overflow-hidden sticky top-32">
-            <iframe 
-              src={`${conteudo.instagramUrl.replace(/\/$/, '')}/embed`}
-              width="400"
-              height="500"
-              frameBorder="0"
-              scrolling="no"
-              title={conteudo.title}
-              className="max-w-full rounded-[20px] border border-accent/20"
-            ></iframe>
-          </div>
-        )}
-
-        <article className="prose prose-invert prose-lg max-w-none text-foreground/80 leading-relaxed font-light flex-1">
+      <div className="flex flex-col gap-8 items-start">
+        <article className="prose prose-invert prose-lg max-w-none text-foreground/80 leading-relaxed font-light w-full">
           {conteudo.content.map((paragraph, idx) => {
             if (paragraph.startsWith("### ")) {
               return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{renderFormattedText(paragraph.replace("### ", ""))}</h3>;
@@ -165,6 +151,22 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
             return <p key={idx} className="mb-6">{renderFormattedText(paragraph)}</p>;
           })}
         </article>
+
+        {/* Player do Instagram — fixado após o texto do artigo (sem sticky: não cobre a leitura) */}
+        {conteudo.instagramUrl && (
+          <div className="w-full flex justify-center rounded-[20px] overflow-hidden">
+            <iframe
+              src={`${conteudo.instagramUrl.replace(/\/$/, '')}/embed`}
+              width="400"
+              height="500"
+              frameBorder="0"
+              scrolling="no"
+              title={conteudo.title}
+              loading="lazy"
+              className="max-w-full rounded-[20px] border border-accent/20"
+            ></iframe>
+          </div>
+        )}
       </div>
 
       {/* Seção de Autor/CTA no final do artigo */}
