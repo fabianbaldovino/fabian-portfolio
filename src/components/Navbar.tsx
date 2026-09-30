@@ -11,11 +11,14 @@ export default function Navbar() {
   const { dispatchAction } = useNavAction();
 
   return (
-    <header className="rounded-[20px] bg-card mb-4" role="banner">
+    <header
+      className="sticky top-0 z-[45] rounded-[20px] bg-card mb-4"
+      role="banner"
+    >
       <nav className="flex flex-row justify-between px-4 py-4 lg:px-10 lg:py-6 items-center md:flex-row md:items-center relative" aria-label="Main navigation">
         <Link
           href="/"
-          className="flex flex-row gap-1 items-center py-2 active:scale-[0.97] transition-transform"
+          className="relative z-[41] flex flex-row gap-1 items-center py-2 active:scale-[0.97] transition-transform"
           aria-label="Go to homepage"
         >
           <span className="text-xl lg:text-2xl uppercase font-light italic">Fabian</span>
