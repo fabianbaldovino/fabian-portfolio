@@ -93,3 +93,6 @@ main.min-h-screen {
   0% { transform: translate(0); }
   100% { transform: translate(-50%); }
 }
+
+/* Referencia em classe CSS: o minifier de producao descarta @keyframes sem uso dentro do CSS — esta regra marca marquee-scroll como usada. */
+.marquee-track { animation: marquee-scroll 36s linear infinite; }

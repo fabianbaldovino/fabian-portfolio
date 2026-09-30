@@ -32,11 +32,14 @@ export default function ClientsStrip() {
     >
       <p className="sr-only">Clientes atendidos por Fabian Baldovino — Brand Filmmaking Porto Alegre</p>
 
+      {/* Keyframes inline: no build Linux da Vercel o minifier descarta @keyframes nao referenciados dentro do CSS (a referencia mora no style do JSX) — manter a definicao no HTML garante a animacao em qualquer pipeline. */}
+      <style>{`@keyframes marquee-scroll{0%{transform:translate(0)}100%{transform:translate(-50%)}}`}</style>
+
       <div className="pointer-events-none absolute inset-y-0 left-0 w-16 z-10 bg-gradient-to-r from-card to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-16 z-10 bg-gradient-to-l from-card to-transparent" />
 
       <div
-        className="flex items-center gap-12 w-max h-[50px]"
+        className="marquee-track flex items-center gap-12 w-max h-[50px]"
         style={{ animation: "marquee-scroll 36s linear infinite" }}
       >
         {doubled.map((client, idx) => (
