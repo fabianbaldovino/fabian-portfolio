@@ -10,6 +10,8 @@ export type PortfolioProject = {
   instagramUrls?: string[];
   /** IDs de vídeos do YouTube */
   youtubeIds?: string[];
+  /** Rótulo das peças no player: "Episódio" (padrão) ou "Filme" */
+  videoNoun?: string;
 };
 
 export const portfolioProjects: PortfolioProject[] = [
@@ -36,6 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
     tags: ["Campanha de 4 Filmes", "META ADS", "Redes Sociais"],
     deliverable: "4 filmes · META ADS",
     description: "Decisões gastronômicas nascem da emoção, não da fome. Para o Ristorante Fontana, fomos além da estética culinária e ancoramos a marca no conceito de 'Casa' e afeto. Produzimos 4 filmes projetados para capturar a atenção nos primeiros segundos através de um gatilho de acolhimento.",
+    videoNoun: "Filme",
     instagramUrls: [
       "https://www.instagram.com/p/DYQQL3ipo15/",
       "https://www.instagram.com/p/DZiF3xxJ9cr/",
@@ -50,6 +53,7 @@ export const portfolioProjects: PortfolioProject[] = [
     tags: ["Série de Filmes", "Suplementação Esportiva", "Campanha de Marca"],
     deliverable: "Série de filmes · Campanha",
     description: "O mercado de suplementação é um oceano vermelho de promessas estéticas vazias. Para a campanha #WedyPraTodos, abandonamos a linguagem fria dos laboratórios e acionamos o arquétipo do herói cotidiano. Nossa cinematografia construiu uma identidade autêntica que não vende apenas performance, mas pertencimento a uma comunidade comprometida com força e disciplina.",
+    videoNoun: "Filme",
     instagramUrls: [
       "https://www.instagram.com/p/DNVwaOb1cBU/",
     ],

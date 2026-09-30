@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import InstagramEmbed from "@/components/InstagramEmbed";
 import { portfolioProjects } from "@/lib/constants/portfolioProjects";
 
 interface PageProps {
@@ -223,6 +224,51 @@ export default async function ProjectCasePage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        {/* ══════════════════════════════════════════
+            SEÇÃO DE FILMES — players embutidos no site
+            Mesmo padrão do Journal: Instagram via /embed e
+            YouTube via iframe. Nenhum link leva o usuário
+            para fora de fabian.art.br.
+        ═══════════════════════════════════════════ */}
+        {(project.instagramUrls?.length || project.youtubeIds?.length) ? (
+          <div className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
+            <h2 className="text-2xl md:text-3xl font-medium mb-8 flex items-center gap-3">
+              <span className="text-brand-accent text-xl">▶</span> Assistir aos Filmes
+            </h2>
+
+            {/* Instagram — player embutido */}
+            {project.instagramUrls && project.instagramUrls.length > 0 && (
+              <InstagramEmbed
+                urls={project.instagramUrls}
+                projectName={project.client}
+                itemNoun={project.videoNoun}
+              />
+            )}
+
+            {/* YouTube */}
+            {project.youtubeIds && project.youtubeIds.length > 0 && (
+              <div className="flex flex-col gap-8 mt-8">
+                {project.youtubeIds.map((id, idx) => (
+                  <div
+                    key={id}
+                    className="w-full rounded-[20px] overflow-hidden border border-white/10 bg-black"
+                    style={{ aspectRatio: "16/9" }}
+                  >
+                    <iframe
+                      src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+                      title={`${project.client} — Filme ${idx + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      loading="lazy"
+                      className="w-full h-full border-none block"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : null}
       </main>
 
       <Footer className="mt-8" />

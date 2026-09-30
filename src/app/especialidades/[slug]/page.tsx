@@ -172,9 +172,13 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
             <span className="text-brand-accent text-xl">▶</span> Assistir aos Filmes
           </h2>
 
-          {/* Instagram Reels */}
+          {/* Instagram Reels — player embutido, usuário assiste no site */}
           {project.instagramUrls && project.instagramUrls.length > 0 && (
-            <InstagramEmbed urls={project.instagramUrls} projectName={project.name} />
+            <InstagramEmbed
+              urls={project.instagramUrls}
+              projectName={project.name}
+              itemNoun={project.videoNoun}
+            />
           )}
 
           {/* YouTube */}
