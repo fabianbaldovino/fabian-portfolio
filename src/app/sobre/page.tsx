@@ -57,9 +57,30 @@ export default function SobrePage() {
               </h1>
 
               {/* Credencial — prova social imediata */}
-              <p className="text-sm text-foreground/70 uppercase tracking-widest font-light mb-6">
+              <p className="text-sm text-foreground/70 uppercase tracking-widest font-light mb-3">
                 +15 anos · +100 marcas · Porto Alegre, RS
               </p>
+
+              {/* Cobertura da imprensa — selos de confiança (veículos que noticiaram, não clientes) */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 mb-6">
+                <span className="w-full text-center lg:text-left text-[10px] text-foreground/40 uppercase tracking-widest font-light">
+                  Na imprensa
+                </span>
+                {[
+                  { src: "/marcas/RBS_TV.png", alt: "RBS TV" },
+                  { src: "/marcas/zero_hora.png", alt: "Zero Hora" },
+                  { src: "/marcas/correio_do_povo_novo.png", alt: "Correio do Povo" },
+                ].map((logo) => (
+                  <Image
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={`${logo.alt} — veículo que noticiou o trabalho de Fabian Baldovino`}
+                    width={120}
+                    height={32}
+                    className="h-5 w-auto object-contain opacity-60 brightness-0 invert"
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Foto com controle de altura para mobile */}
@@ -83,13 +104,13 @@ export default function SobrePage() {
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-10">
             <div className="prose prose-invert max-w-none mb-12">
               <p className="text-foreground/90 font-medium leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Sou Fabian Baldovino, filmmaker de marcas em Porto Alegre. Dirijo com uma equipe própria e parceiros de captação desde <strong className="text-brand-accent">2011</strong> — já são <strong className="text-brand-accent">+100 marcas e instituições</strong>. Comecei em <strong className="text-brand-accent">Ciências Sociais</strong>, fazendo documentário e oficina de cinema em escolas públicas da rede municipal, e hoje unimos técnica de cinema e o entendimento de como o brasileiro decide confiar.
+                Sou Fabian Baldovino, filmmaker de marcas em Porto Alegre. Dirijo com uma equipe própria e parceiros de captação desde <strong className="text-brand-accent">2011</strong> — já são <strong className="text-brand-accent">+100 marcas e instituições</strong>. Comecei em <strong className="text-brand-accent">Ciências Sociais</strong>, fazendo documentário e oficina de cinema em escolas públicas da rede municipal, e hoje unimos técnica de cinema e o entendimento da entropologia do consumo na realização das nossas obras.
               </p>
               <p className="text-foreground/70 font-light mt-6 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Autor do Manifesto <strong className="text-brand-accent font-medium tracking-wide">O Código Brasil</strong>, Fabian mergulhou na antropologia de Roberto DaMatta para entender o que move o consumidor brasileiro: não apenas a lógica, mas o instinto, o pertencimento e a confiança.
+                Escrevi o Manifesto <strong className="text-brand-accent font-medium tracking-wide">O Código Brasil</strong> para entender uma coisa simples: por que o brasileiro confia — ou não — em uma marca. A resposta é que a pessoa decide sentindo primeiro, e só depois raciocina.
               </p>
               <p className="text-foreground/70 font-light mt-4 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Essa visão humana moldou o jeito que ele trabalha. Cada cena é uma forma de conversar com o cliente de forma mais sincera. Ele não busca fazer vídeos meramente bonitos; a ideia é transmitir o real valor da sua marca, criando uma conexão visceral.
+                Essa forma de ver as pessoas mudou o meu jeito de trabalhar. Cada cena é uma forma de conversar de verdade com quem vai assistir. Não quero fazer só um vídeo bonito: quero mostrar o valor real da sua marca e aproximar quem assiste dela.
               </p>
               <p className="text-foreground/90 font-medium italic mt-8 leading-relaxed border-l-2 border-brand-accent pl-6" style={{ textWrap: "balance" } as React.CSSProperties}>
                 &ldquo;Quando você para de tentar convencer com argumentos lógicos e começa a se conectar com a vontade de pertencer, o preço deixa de ser uma barreira e a confiança toma o seu lugar.&rdquo;
@@ -134,7 +155,7 @@ export default function SobrePage() {
 
               <h2 className="text-xl font-medium tracking-wide mb-2">Vamos conversar sobre a sua marca?</h2>
               <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Operamos com dedicação imersiva a poucas marcas por ciclo, garantindo presença direta da direção em cada etapa.
+                Atendo poucas marcas por vez para cuidar do seu filme de perto, do começo ao fim.
               </p>
 
               <a
@@ -163,6 +184,51 @@ export default function SobrePage() {
             2011 — Ciências Sociais, documentário e educação pública: o começo que explica o método.
           </p>
 
+          {/* Prova visual — acervo original das oficinas de cinema em escolas (2011) */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-8">
+            {[
+              {
+                src: "/FOTOS/educacao/cinema.jpg",
+                alt: "Fabian Baldovino apresentando o projeto Curta nas Escolas",
+                caption: "Curta nas Escolas — 8 curtas com 450 crianças",
+              },
+              {
+                src: "/FOTOS/educacao/fabian_baldovino_CECE.jpg",
+                alt: "Fabian Baldovino falando sobre o projeto de curtas nas escolas de Porto Alegre",
+                caption: "1ª Mostra de Curtas na Câmara Municipal",
+              },
+              {
+                src: "/FOTOS/educacao/educa_cinema.jpg",
+                alt: "Oficina de cinema com alunos da rede pública de Porto Alegre",
+                caption: "2011 · Educação pública em Porto Alegre",
+              },
+              {
+                src: "/FOTOS/educacao/fabian_baldovino_CECE_2.jpg",
+                alt: "Fabian Baldovino apresentando o projeto Curta nas Escolas na Cece da Câmara Municipal",
+                caption: "Apresentação na Cece — Câmara Municipal (2011)",
+              },
+              {
+                src: "/FOTOS/educacao/prefeitura_porto_alegre.jpg",
+                alt: "Registro do projeto de curtas em escolas com a Prefeitura de Porto Alegre",
+                caption: "Prefeitura de Porto Alegre — educação e cultura",
+              },
+            ].map((foto) => (
+              <figure key={foto.src} className="relative m-0 aspect-[4/3] rounded-[20px] overflow-hidden border border-white/5 bg-card">
+                <Image
+                  src={foto.src}
+                  alt={foto.alt}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <figcaption className="absolute bottom-0 left-0 right-0 p-3 text-[11px] font-light text-foreground/85 leading-snug">
+                  {foto.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
           <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0">
             {[
               {
@@ -179,6 +245,11 @@ export default function SobrePage() {
                 ano: "2011 · UFRGS",
                 titulo: "Palestra na Faculdade de Educação",
                 desc: "Palestrante do curso de Especialização em Educação em Saúde Mental Coletiva — 2h na UFRGS.",
+              },
+              {
+                ano: "2011 · Ofício CECE",
+                titulo: "Chamado da Câmara para debater",
+                desc: "Ofício Circular nº 101/2011-Circ (03/10/2011) da Comissão de Educação, Cultura, Esporte e Juventude: convite para a reunião de 11/10, às 14h30, sala 303 — pauta: apresentação do projeto Curta nas Escolas. Assinado pelo ver. Professor Garcia, presidente da CECE.",
               },
               {
                 ano: "2011 · Imprensa",
