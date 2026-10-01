@@ -1,19 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "motion/react";
 import { cardVariants, textVariants, contactCardVariants } from "@/lib/animation/variants";
-import ContactModal from "./ContactModal";
+import { contactInfo } from "@/lib/constants/contact";
 
 export default function AboutContactSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const whatsappUrl = `https://wa.me/${contactInfo.phoneRaw.replace("+", "")}`;
 
   const handleContactClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -35,7 +30,7 @@ export default function AboutContactSection() {
             Seu cliente decide <span className="italic font-light opacity-90">em segundos</span> se <span className="font-medium">confia</span> em você.
           </p>
           <p className="text-sm md:text-base lg:text-lg font-light text-background/75 leading-relaxed max-w-[95%] text-balance">
-            Eu faço filmes que fazem essa decisão <strong className="font-medium text-background/95">pender para o seu lado</strong> — para você defender seu preço sem guerra de desconto.
+            <strong className="font-medium text-background/95">+15 anos e +100 marcas</strong> de Porto Alegre — estratégia, captação e entrega com equipe própria.
           </p>
         </motion.div>
         <div className="sr-only">
@@ -49,7 +44,7 @@ export default function AboutContactSection() {
         </div>
       </motion.div>
       <motion.div 
-        className="w-full md:w-[50%] bg-card rounded-[20px] p-6 border-3 border-accent flex flex-col justify-between cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        className="w-full md:w-[50%] bg-card rounded-[20px] p-5 lg:p-[clamp(1.1rem,2.5vh,1.5rem)] border-3 border-accent flex flex-col justify-between cursor-pointer overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         variants={contactCardVariants}
         initial="hidden"
         animate="visible"
@@ -64,16 +59,16 @@ export default function AboutContactSection() {
             handleContactClick();
           }
         }}
-        aria-label="Abrir formulário de contato"
+        aria-label="Conversar no WhatsApp com Fabian Baldovino"
       >
-        <div className="flex justify-between items-start mb-6 lg:mb-8 gap-2">
+        <div className="flex justify-between items-start mb-4 gap-2">
           <motion.div 
             className="flex flex-col min-w-0"
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl leading-[1.1] break-words">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-[clamp(1.75rem,4.2vh,3rem)] leading-[1.1] break-words">
               <span className="block text-sm md:text-base mb-1 leading-normal font-light italic text-foreground/80">Pronto para elevar a <span className="font-medium text-brand-accent">percepção</span></span>
               <span className="block"><span className="font-light italic text-foreground/80">da sua</span> <span className="font-medium">marca?</span></span>
             </h2>
@@ -83,17 +78,15 @@ export default function AboutContactSection() {
         
         <div className="flex flex-col w-full mt-auto">
           <motion.p 
-            className="text-xs md:text-sm lg:text-[0.95rem] text-foreground/70 font-light leading-relaxed max-w-[95%]"
+            className="text-xs md:text-sm lg:text-[clamp(0.8rem,1.7vh,0.95rem)] text-foreground/70 font-light leading-relaxed"
             variants={textVariants}
             initial="hidden"
             animate="visible"
           >
-            Operamos com dedicação imersiva a poucas marcas por ciclo, garantindo presença direta da direção em cada etapa. Inicie uma conversa estratégica para o seu próximo filme.
+            Atendo poucas marcas por vez para cuidar do seu filme de perto, do começo ao fim. Me conta o que você precisa — a gente conversa pelo WhatsApp.
           </motion.p>
         </div>
       </motion.div>
-      
-      <ContactModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }
