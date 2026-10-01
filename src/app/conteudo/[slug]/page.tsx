@@ -94,7 +94,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
   }
 
   return (
-    <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 max-w-6xl mx-auto">
+    <main className="min-h-screen pt-24 pb-24 px-4 md:px-8 max-w-6xl mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

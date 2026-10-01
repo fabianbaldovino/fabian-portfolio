@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function EspecialidadesHub() {
   return (
-    <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto">
+    <main className="min-h-screen pt-24 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="bg-card rounded-[20px] p-6 md:p-12 border-3 border-accent w-full relative">
         <h1 className="text-4xl md:text-5xl font-medium mb-8">Nossas Especialidades</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -235,13 +235,13 @@ export default function OCodigoBrasilPage() {
                 <Lock size={20} className="text-brand-accent" />
                 <h3 className="text-xl font-medium tracking-wide">Acesso ao Manifesto</h3>
               </div>
-              <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
+              <p className="text-sm text-foreground/70 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Clientes e parceiros de Fabian Baldovino têm acesso <strong>gratuito</strong> a este manifesto. Preencha os dados abaixo para solicitar o arquivo direto pelo WhatsApp.
               </p>
 
               <form onSubmit={handleWhatsAppRedirect} className="flex flex-col gap-6" noValidate>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-[10px] uppercase tracking-widest text-foreground/50 font-medium ml-1">
+                  <label htmlFor="name" className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium ml-1">
                     Seu Nome
                   </label>
                   <input
@@ -251,14 +251,14 @@ export default function OCodigoBrasilPage() {
                     autoComplete="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-background/50 border border-white/10 rounded-xl px-4 py-3.5 text-foreground text-sm focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
+                    className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/45 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
                     placeholder="Como devemos chamá-lo?"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="company" className="text-[10px] uppercase tracking-widest text-foreground/50 font-medium ml-1">
+                    <label htmlFor="company" className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium ml-1">
                       Sua Empresa
                     </label>
                     <input
@@ -268,13 +268,13 @@ export default function OCodigoBrasilPage() {
                       autoComplete="organization"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="bg-background/50 border border-white/10 rounded-xl px-4 py-3.5 text-foreground text-sm focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
+                      className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/45 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
                       placeholder="Sua marca"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
                     {/* "Sua Posição" → "Seu Cargo" — mais claro e direto */}
-                    <label htmlFor="role" className="text-[10px] uppercase tracking-widest text-foreground/50 font-medium ml-1">
+                    <label htmlFor="role" className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium ml-1">
                       Seu Cargo
                     </label>
                     <input
@@ -284,14 +284,14 @@ export default function OCodigoBrasilPage() {
                       autoComplete="organization-title"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="bg-background/50 border border-white/10 rounded-xl px-4 py-3.5 text-foreground text-sm focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
+                      className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/45 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
                       placeholder="CEO, Diretor, etc."
                     />
                   </div>
                 </div>
 
                 {/* Aviso de privacidade — LGPD */}
-                <p className="text-[11px] text-foreground/40 font-light leading-relaxed">
+                <p className="text-[11px] text-foreground/55 font-light leading-relaxed">
                   Seus dados são usados exclusivamente para o envio do manifesto via WhatsApp e não são armazenados ou compartilhados com terceiros.{" "}
                   <Link href="/sobre" className="underline underline-offset-2 hover:text-brand-accent/70 transition-colors">
                     Saiba mais sobre Fabian Baldovino.
@@ -307,7 +307,7 @@ export default function OCodigoBrasilPage() {
                 </button>
               </form>
 
-              <p className="mt-6 pt-6 border-t border-white/5 text-center text-xs text-foreground/50 font-light leading-relaxed">
+              <p className="mt-6 pt-6 border-t border-white/10 text-center text-xs text-foreground/65 font-light leading-relaxed">
                 Não é cliente ainda? Leia os artigos e adquira o manifesto completo em{" "}
                 <a
                   href="https://ocodigobrasil.com.br"

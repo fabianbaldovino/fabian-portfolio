@@ -9,7 +9,7 @@ export default function Footer({ className = "" }: FooterProps) {
   const whatsappUrl = `https://wa.me/${contactInfo.phoneRaw.replace("+", "")}`;
 
   return (
-    <footer className={`text-foreground/70 text-xs ${className}`}>
+    <footer className={`text-foreground/70 text-xs pb-14 md:pb-0 ${className}`}>
       <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 px-6 py-3">
         <a
           href={whatsappUrl}
