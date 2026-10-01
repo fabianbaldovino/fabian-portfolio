@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 import { cardVariants, textVariants, contactCardVariants } from "@/lib/animation/variants";
 import { contactInfo } from "@/lib/constants/contact";
 
@@ -85,6 +86,14 @@ export default function AboutContactSection() {
           >
             Atendo poucas marcas por vez para cuidar do seu filme de perto, do começo ao fim. Me conta o que você precisa — a gente conversa pelo WhatsApp.
           </motion.p>
+
+          <div className="flex items-center justify-between gap-3 mt-4 pt-4 border-t border-white/10 text-brand-accent text-[11px] font-bold uppercase tracking-widest">
+            <span className="flex items-center gap-2 min-w-0">
+              <MessageCircle size={14} className="shrink-0" aria-hidden="true" />
+              Iniciar conversa
+            </span>
+            <ArrowRight size={14} className="shrink-0" aria-hidden="true" />
+          </div>
         </div>
       </motion.div>
     </div>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
   description:
-    "Como Fabian Baldovino trabalha: direção com equipe própria, câmera cinema Sony e drone 4K — e o manifesto que decifra o consumidor brasileiro.",
+      "Como Fabian Baldovino trabalha: direção com equipe própria, câmera Cinema Line da Sony e drone 4K — e o manifesto que decifra o consumidor brasileiro.",
   alternates: {
     canonical: "https://www.fabian.art.br/o-codigo-brasil",
   },
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.fabian.art.br/o-codigo-brasil",
     title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
-    description:
-      "Como Fabian Baldovino trabalha: direção com equipe própria, câmera cinema Sony e drone 4K — e o manifesto que decifra o consumidor brasileiro.",
+      description:
+      "Como Fabian Baldovino trabalha: direção com equipe própria, câmera Cinema Line da Sony e drone 4K — e o manifesto que decifra o consumidor brasileiro.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
     description:
-      "Direção com equipe própria, câmera cinema Sony e drone 4K, e o manifesto O Código Brasil: como o consumidor brasileiro decide confiar.",
+      "Direção com equipe própria, câmera Cinema Line da Sony e drone 4K, e o manifesto O Código Brasil: como o consumidor brasileiro decide confiar.",
     images: ["/FOTOS/capa_manifesto_o_codigo_brasil_fabian_baldovino.png"],
   },
 };

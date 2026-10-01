@@ -31,7 +31,7 @@ const etapas = [
 ];
 
 const estrutura = [
-  "Câmera cinema Sony",
+  "Câmera Cinema Line da Sony",
   "Drone 4K",
   "Equipe própria",
   "DRT 0014530/RS",
@@ -88,8 +88,8 @@ export default function OCodigoBrasilPage() {
                 className="text-foreground/70 font-light leading-relaxed max-w-xl mx-auto lg:mx-0"
                 style={{ textWrap: "balance" } as React.CSSProperties}
               >
-                Direção de Fabian Baldovino com equipe própria e parceiros de captação conforme o projeto — de Porto Alegre para operações nacionais e internacionais na América Latina, com espanhol nativo no set. Câmera cinema{" "}
-                <strong className="text-brand-accent font-medium">Sony</strong> e{" "}
+                Direção de Fabian Baldovino com equipe própria e parceiros de captação conforme o projeto — de Porto Alegre para operações nacionais e internacionais na América Latina, com espanhol nativo no set. Câmera{" "}
+                <strong className="text-brand-accent font-medium">Cinema Line da Sony</strong> e{" "}
                 <strong className="text-brand-accent font-medium">drone 4K</strong>.
               </p>
             </motion.div>
@@ -164,7 +164,7 @@ export default function OCodigoBrasilPage() {
         >
 
           {/* Left Column: Cover & Manifesto */}
-          <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start">
+          <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start lg:justify-between">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function OCodigoBrasilPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="relative w-full max-w-[320px] lg:max-w-[400px] aspect-[3/4] mt-8 lg:mt-12 group mx-auto lg:mx-0 [perspective:1000px]"
+              className="relative w-full max-w-[320px] lg:max-w-none aspect-[3/4] mt-8 lg:mt-12 group mx-auto lg:mx-0 [perspective:1000px]"
             >
               <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
               <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[2deg]">
