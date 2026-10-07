@@ -84,6 +84,7 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
 
   const isGallery = project.type === "gallery";
   const isBook = project.slug === "o-codigo-brasil";
+  const imageFitContain = isBook || project.slug === "quick-house";
   const contentArray = Array.isArray(project.content) ? project.content : [project.content];
 
   const jsonLd = {
@@ -137,7 +138,7 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
                 src={project.modalImgSrc || project.imgSrc}
                 alt={project.name}
                 fill
-                className={isBook ? "object-contain" : "object-cover"}
+                className={imageFitContain ? "object-contain" : "object-cover"}
                 priority
                 sizes="(max-width: 768px) 100vw, 500px"
               />
