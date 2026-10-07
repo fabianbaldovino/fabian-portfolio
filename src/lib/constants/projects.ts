@@ -71,8 +71,8 @@ export const projects: Project[] = [
   { 
     name: "Quick House",
     slug: "quick-house",
-    imgSrc: "/FOTOS/fabian_baldovino_filmmaker_porto_alegre_rs_filmagem_de_drone.webp",
-    modalImgSrc: "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre.jpg",
+    imgSrc: "/FOTOS/trabalhos/quickhouse.png",
+    modalImgSrc: "/FOTOS/trabalhos/quickhouse.png",
     icon: "Building",
     type: "copy",
     shortDescription: "Construção Rápida de Alto Padrão",
