@@ -2,6 +2,7 @@ import { conteudos } from "@/lib/constants/conteudos";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
 
 function renderFormattedText(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
@@ -27,33 +28,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const conteudo = conteudos.find((c) => c.slug === slug);
   if (!conteudo) return {};
 
-  return {
+    return {
     title: `${conteudo.title} | Fabian Baldovino`,
     description: conteudo.excerpt,
     alternates: {
-      canonical: `https://www.fabian.art.br/conteudo/${slug}`,
+      canonical: `/conteudo/${slug}`,
     },
     openGraph: {
-      type: "article",
-      url: `https://www.fabian.art.br/conteudo/${slug}`,
       title: conteudo.title,
       description: conteudo.excerpt,
+      url: `https://www.fabian.art.br/conteudo/${slug}`,
+      type: "article",
       publishedTime: conteudo.date,
       authors: ["Fabian Baldovino"],
       siteName: "Fabian Baldovino",
       locale: "pt_BR",
-      ...(conteudo.coverImage
-        ? {
-            images: [
-              {
-                url: conteudo.coverImage,
-                width: 1200,
-                height: 630,
-                alt: conteudo.title,
-              },
-            ],
-          }
-        : {}),
+      images: [
+        {
+          url: conteudo.coverImage ? `https://www.fabian.art.br${conteudo.coverImage}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`,
+          width: 1200,
+          height: 630,
+          alt: conteudo.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: conteudo.title,
+      description: conteudo.excerpt,
+      images: [conteudo.coverImage ? `https://www.fabian.art.br${conteudo.coverImage}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`],
     },
   };
 }
@@ -67,16 +70,28 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
   }
 
   // Schema Markup for SEO
-  const jsonLd: any[] = [
+    const jsonLd: any[] = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": conteudo.title,
       "description": conteudo.excerpt,
+      "image": conteudo.coverImage ? "https://www.fabian.art.br" + conteudo.coverImage : "https://www.fabian.art.br/og-image.jpg",
       "datePublished": conteudo.date,
+      "dateModified": conteudo.date,
       "author": {
         "@type": "Person",
-        "name": "Fabian Baldovino"
+        "name": "Fabian Baldovino",
+        "url": "https://www.fabian.art.br"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Fabian Baldovino",
+        "url": "https://www.fabian.art.br"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://www.fabian.art.br/conteudo/${slug}`
       }
     }
   ];
@@ -95,10 +110,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="min-h-screen pt-24 pb-24 px-4 md:px-8 max-w-6xl mx-auto">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd as any} />
 
       <div className="mb-8">
         <Link 
@@ -143,6 +155,9 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
           {conteudo.content.map((paragraph, idx) => {
             if (paragraph.startsWith("### ")) {
               return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{renderFormattedText(paragraph.replace("### ", ""))}</h3>;
+            }
+            if (paragraph.startsWith("> ")) {
+              return <blockquote key={idx} className="border-l-2 border-brand-accent pl-6 py-2 my-8 italic text-foreground/70 bg-accent/5 rounded-r-lg">{renderFormattedText(paragraph.replace("> ", ""))}</blockquote>;
             }
             if (paragraph.startsWith("Fotografia:") || paragraph.startsWith("Trilha Sonora") || paragraph.startsWith("Motion Graphics:")) {
                const [title, ...rest] = paragraph.split(":");

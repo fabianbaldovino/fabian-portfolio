@@ -6,17 +6,15 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Sobre | Fabian Baldovino — Brand Filmmaker Porto Alegre",
-  description:
-    "Fabian Baldovino: filmmaker de marcas desde 2011, de Ciências Sociais a +100 marcas e instituições, com equipe própria e DRT. Autor do manifesto O Código Brasil. Porto Alegre, RS.",
+  description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
   alternates: {
-    canonical: "https://www.fabian.art.br/sobre",
+    canonical: "/sobre",
   },
   openGraph: {
     type: "website",
     url: "https://www.fabian.art.br/sobre",
     title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
-    description:
-      "Fabian Baldovino: filmmaker de marcas desde 2011, de Ciências Sociais a +100 marcas e instituições, com equipe própria e DRT. Autor do manifesto O Código Brasil. Porto Alegre, RS.",
+    description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -31,8 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
-    description:
-      "Filmmaker de marcas desde 2011, +100 marcas, equipe própria e DRT. Autor do manifesto O Código Brasil.",
+    description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
     images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
   },
 };

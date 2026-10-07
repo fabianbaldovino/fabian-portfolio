@@ -3,6 +3,28 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+
+function renderFormattedText(text: string) {
+  const parts = text.split(/(\**[^*]+\**|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={i} className="italic text-foreground/95">{part.slice(1, -1)}</em>;
+    }
+    if (part.startsWith("[") && part.endsWith(")")) {
+      const match = part.match(/\[([^\]]+)\]\(([^)]+)\)/);
+      if (match) {
+        // Here we just render as a link, assuming Link is imported
+        return <Link key={i} href={match[2]} className="text-brand-accent underline hover:text-foreground transition-colors">{match[1]}</Link>;
+      }
+    }
+    return part;
+  });
+}
+
 import InstagramEmbed from "@/components/InstagramEmbed";
 
 export async function generateStaticParams() {
@@ -20,12 +42,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // "bastidores" não existe em /projetos — mantém canonical próprio.
   const canonicalSlug = slug === "bastidores" ? null : slug;
 
+    const desc = project.shortDescription || `Detalhes da especialidade ${project.name} por Fabian Baldovino, brand filmmaker em Porto Alegre.`;
   return {
     title: `${project.name} | Fabian Baldovino`,
-    description: project.shortDescription || `Detalhes da especialidade ${project.name} por Fabian Baldovino, brand filmmaker em Porto Alegre.`,
-    ...(canonicalSlug
-      ? { alternates: { canonical: `https://www.fabian.art.br/projetos/${canonicalSlug}` } }
-      : { alternates: { canonical: `https://www.fabian.art.br/especialidades/${slug}` } }),
+    description: desc,
+    alternates: {
+      canonical: `/especialidades/${slug}`,
+    },
+    openGraph: {
+      title: `${project.name} | Fabian Baldovino`,
+      description: desc,
+      url: `https://www.fabian.art.br/especialidades/${slug}`,
+      type: "website",
+      siteName: "Fabian Baldovino",
+      locale: "pt_BR",
+      images: [
+        {
+          url: project.imgSrc ? `https://www.fabian.art.br${project.imgSrc}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`,
+          width: 1200,
+          height: 630,
+          alt: project.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} | Fabian Baldovino`,
+      description: desc,
+      images: [project.imgSrc ? `https://www.fabian.art.br${project.imgSrc}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`],
+    },
   };
 }
 
@@ -41,8 +86,21 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
   const isBook = project.slug === "o-codigo-brasil";
   const contentArray = Array.isArray(project.content) ? project.content : [project.content];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": project.name,
+    "description": project.shortDescription || project.name,
+    "thumbnailUrl": "https://www.fabian.art.br" + (project.imgSrc || "/og-image.jpg"),
+    "author": {
+      "@type": "Person",
+      "name": "Fabian Baldovino"
+    }
+  };
+
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col items-center pb-24 overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
+      <JsonLd data={jsonLd as any} />
       {/* Navigation Bar Minimal */}
       <nav className="w-full max-w-6xl px-6 py-8 flex justify-between items-center relative z-20">
         <Link
@@ -92,16 +150,23 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
         <div className="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-10">
           <div className="prose prose-invert max-w-none mb-12">
             {contentArray.map((paragraph, idx) => {
+              if (paragraph.startsWith("### ")) {
+                return (
+                  <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">
+                    {renderFormattedText(paragraph.replace("### ", ""))}
+                  </h3>
+                );
+              }
               if (idx === 0 && !isBook) {
                 return (
                   <p key={idx} className="text-lg md:text-xl font-light leading-relaxed text-foreground/90 border-l-2 border-brand-accent pl-6 mb-8">
-                    {paragraph}
+                    {renderFormattedText(paragraph)}
                   </p>
                 );
               }
               return (
                 <p key={idx} className="text-foreground/70 font-light mt-4 leading-relaxed text-balance">
-                  {paragraph}
+                  {renderFormattedText(paragraph)}
                 </p>
               );
             })}
@@ -131,6 +196,20 @@ export default async function EspecialidadePage({ params }: { params: Promise<{ 
                   {tag}
                 </span>
               ))}
+            </div>
+
+            {/* Leitura relacionada */}
+            <div className="mt-12 pt-8 border-t border-white/10">
+              <p className="text-sm uppercase tracking-widest text-white/40 mb-4">Leitura relacionada</p>
+              <ul className="space-y-3 list-none p-0 m-0">
+                {project.tags.some(t => t.toLowerCase().includes("brand film") || t.toLowerCase().includes("filmmaking") || t.toLowerCase().includes("novela") || t.toLowerCase().includes("filme")) && (
+                  <li><Link href="/conteudo/o-que-e-brand-film-e-por-que-sua-marca-ainda-nao-tem-um" className="text-brand-accent hover:text-white transition-colors underline-offset-4 hover:underline">O que é Brand Film — e por que sua marca ainda não tem um &rarr;</Link></li>
+                )}
+                {project.tags.some(t => t.toLowerCase().includes("institucional") || t.toLowerCase().includes("vídeo") || t.toLowerCase().includes("construção") || t.toLowerCase().includes("corporativo")) && (
+                  <li><Link href="/conteudo/video-institucional-vs-brand-film-a-diferenca-real" className="text-brand-accent hover:text-white transition-colors underline-offset-4 hover:underline">Vídeo institucional vs. brand film: a diferença real &rarr;</Link></li>
+                )}
+                <li><Link href="/conteudo/como-o-codigo-brasil-transforma-narrativa-de-marcas" className="text-brand-accent hover:text-white transition-colors underline-offset-4 hover:underline">Como O Código Brasil transforma a narrativa de marcas reais &rarr;</Link></li>
+              </ul>
             </div>
           </div>
 
