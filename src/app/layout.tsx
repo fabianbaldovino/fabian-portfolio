@@ -93,53 +93,38 @@ export default function RootLayout({
         <JsonLd data={{
           "@context": "https://schema.org",
           "@type": "Person",
-          "name": "Fabian Baldovino",
-          "jobTitle": "Brand Filmmaker",
-          "url": "https://www.fabian.art.br",
-          "image": "https://www.fabian.art.br/og-image.jpg",
-          "sameAs": [
+          name: "Fabian Baldovino",
+          url: "https://www.fabian.art.br",
+          jobTitle: "Brand Filmmaker",
+          description: "Brand Filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Autor de O Código Brasil.",
+          image: "https://www.fabian.art.br/FOTOS/fabian_baldovino_filmmaker_porto_alegre_rs_filmagem_de_drone.webp",
+          sameAs: [
+            "https://www.linkedin.com/in/fabianbaldovino",
             "https://www.instagram.com/fabianbaldovino9",
-            "https://br.linkedin.com/in/fabianbaldovino",
-            "https://www.youtube.com/@Volcan7"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Porto Alegre",
-            "addressRegion": "RS",
-            "addressCountry": "BR"
-          },
-          "knowsAbout": ["Brand Filmmaking", "Neuromarketing", "Documentário Corporativo", "Estratégia de Conteúdo Audiovisual"]
+            "https://www.youtube.com/@FabianBaldovino9",
+            "https://www.threads.com/@fabianbaldovino9"
+          ]
         }} />
         <JsonLd data={{
           "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "name": "Fabian Baldovino — Brand Filmmaker",
-          "url": "https://www.fabian.art.br",
-          "description": "Brand Filmmaker em Porto Alegre. Criador da metodologia O Código Brasil, une cinema e neuromarketing para produzir brand films que revelam a verdade das marcas.",
-          "areaServed": {
-            "@type": "Country",
-            "name": "Brasil"
-          },
-          "address": {
+          "@type": "LocalBusiness",
+          name: "Fabian Baldovino — Brand Filmmaking",
+          url: "https://www.fabian.art.br",
+          telephone: "+5551997147448",
+          address: {
             "@type": "PostalAddress",
-            "addressLocality": "Porto Alegre",
-            "addressRegion": "RS",
-            "addressCountry": "BR"
+            addressLocality: "Porto Alegre",
+            addressRegion: "RS",
+            addressCountry: "BR"
           },
-          "founder": {
-            "@type": "Person",
-            "name": "Fabian Baldovino"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Serviços",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Film" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Documentary" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Teaser Cinematográfico" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria em Narrativa de Marca" } }
-            ]
-          }
+          areaServed: ["Porto Alegre", "Rio Grande do Sul", "Brasil"],
+          sameAs: [
+            "https://www.linkedin.com/in/fabianbaldovino",
+            "https://www.instagram.com/fabianbaldovino9",
+            "https://www.youtube.com/@FabianBaldovino9"
+          ],
+          priceRange: "$$",
+          description: "Brand Filmmaker em Porto Alegre. Une cinema e neuromarketing para criar brand films que revelam a verdade das marcas."
         }} />
       </head>
       <body className={`${gilroy.variable} font-gilroy antialiased`}>
