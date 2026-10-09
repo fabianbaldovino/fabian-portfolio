@@ -57,7 +57,7 @@ export default function ProjetosPage() {
 
             {/* Featured Project — link direto para o caso */}
             <Link
-              href={`/especialidades/${featured.slug}`}
+              href={`/projetos/${featured.slug}`}
               className="flex-1 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-[20px]"
             >
               <motion.div
@@ -141,7 +141,7 @@ export default function ProjetosPage() {
                 >
                   {i > 0 && <hr className="border-0 h-[1px] bg-accent/30" />}
                   <Link
-                    href={`/especialidades/${project.slug}`}
+                    href={`/projetos/${project.slug}`}
                     className="flex justify-between items-center py-4 px-2 gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-[8px]"
                     aria-label={`Ver caso completo: ${project.name} — ${project.client}`}
                   >

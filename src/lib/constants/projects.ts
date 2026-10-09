@@ -1,5 +1,5 @@
-export type Project = { 
-  name: string; 
+export type Project = {
+  name: string;
   slug: string;
   imgSrc: string;
   modalImgSrc?: string;
@@ -17,7 +17,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { 
+  {
     name: "Termolar",
     slug: "termolar",
     imgSrc: "/FOTOS/fabian_baldovino_producao_audiovisual_porto_alegre_rs.webp",
@@ -47,8 +47,8 @@ export const projects: Project[] = [
       "https://www.instagram.com/p/DaEFFErp1Kh/",
     ],
   },
-  { 
-    name: "Seival Sul Mineração", 
+  {
+    name: "Seival Sul Mineração",
     slug: "seival-sul-mineradora",
     imgSrc: "/FOTOS/fabian_baldovino_casa_de_cultura_mario_quintana_porto_alegre_rs.webp",
     modalImgSrc: "/FOTOS/trabalhos/seivalsulmineracao.png",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       "Ao assistir ao filme, o investidor ou parceiro não avalia mais se a Seival Sul tem capacidade técnica. O filme impõe uma presença incontestável. Transformou a narrativa da marca de uma 'operação de mineração' para uma 'guardiã energética inabalável'."
     ],
   },
-  { 
+  {
     name: "Quick House",
     slug: "quick-house",
     imgSrc: "/FOTOS/trabalhos/quickhouse.png",
@@ -93,8 +93,8 @@ export const projects: Project[] = [
     ],
     youtubeIds: ["a01rHmvCfN4", "_ijnZb_6aHA"],
   },
-  { 
-    name: "Copelmi", 
+  {
+    name: "Copelmi",
     slug: "copelmi",
     imgSrc: "/FOTOS/trabalhos/copelmi.png",
     icon: "Target",
@@ -114,8 +114,8 @@ export const projects: Project[] = [
       "Um posicionamento que cala qualquer questionamento antes que ele comece. O brand film da Copelmi se transformou em uma credencial imediata que afirma a posição da empresa como base de infraestrutura na mente do público, elevando sua herança a um patamar cinematográfico."
     ],
   },
-  { 
-    name: "Ristorante Fontana", 
+  {
+    name: "Ristorante Fontana",
     slug: "ristorante-fontana",
     imgSrc: "/FOTOS/trabalhos/fontana.jpg",
     icon: "Eye",
@@ -141,8 +141,8 @@ export const projects: Project[] = [
       "https://www.instagram.com/p/DZFqX-Ap3CU/",
     ],
   },
-  { 
-    name: "Wedy Nutrition", 
+  {
+    name: "Wedy Nutrition",
     slug: "wedy-nutrition",
     imgSrc: "/FOTOS/trabalhos/wedy nutrition.png",
     icon: "Compass",
@@ -165,8 +165,8 @@ export const projects: Project[] = [
       "https://www.instagram.com/p/DNVwaOb1cBU/",
     ],
   },
-  { 
-    name: "Bastidores", 
+  {
+    name: "Bastidores",
     slug: "bastidores",
     imgSrc: "/FOTOS/fabian_baldovino_casa_de_cultura_mario_quintana_producao_audiovisual_porto_alegre_rs.webp",
     icon: "Clapperboard",

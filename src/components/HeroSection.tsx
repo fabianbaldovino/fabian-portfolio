@@ -24,7 +24,7 @@ export default function HeroSection() {
       >
         <div className="flex flex-col gap-3 md:gap-4 max-w-[95%]">
           <p className="text-base md:text-lg lg:text-xl font-medium leading-snug text-brand-accent">
-            Filmes de marca e institucionais para empresas de Porto Alegre e do RS.
+            Filmes de marca no RS • <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="underline decoration-1 underline-offset-4 hover:text-foreground transition-colors">O Código Brasil, manifesto de Fabian Baldovino</a>
           </p>
           <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-[2.15rem] xl:text-[2.5rem] leading-[1.15] tracking-tight text-foreground text-balance">
             <span className="font-light italic text-foreground/80">Ninguém compra um produto pela</span> <span className="font-medium">razão;</span> a razão só existe para justificar o que o <span className="font-medium text-brand-accent">instinto</span> já decidiu em milésimos de segundo.

@@ -102,15 +102,27 @@ export default function RootLayout({
             "https://www.linkedin.com/in/fabianbaldovino",
             "https://www.instagram.com/fabianbaldovino9",
             "https://www.youtube.com/@FabianBaldovino9",
-            "https://www.threads.com/@fabianbaldovino9"
-          ]
+            "https://www.threads.com/@fabianbaldovino9",
+            "https://ocodigobrasil.com.br"
+          ],
+        }} />
+        <JsonLd data={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": "O Código Brasil",
+          "url": "https://ocodigobrasil.com.br",
+          "author": {
+            "@type": "Person",
+            "name": "Fabian Baldovino",
+            "url": "https://www.fabian.art.br"
+          }
         }} />
         <JsonLd data={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Fabian Baldovino — Brand Filmmaking",
           url: "https://www.fabian.art.br",
-          telephone: "+5551997147448",
+          telephone: "+5551999654160",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Porto Alegre",

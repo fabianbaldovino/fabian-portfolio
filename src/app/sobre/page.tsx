@@ -136,11 +136,13 @@ export default function SobrePage() {
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
                 <Link
-                  href="/o-codigo-brasil"
+                  href="https://ocodigobrasil.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-brand-accent transition-colors group"
                 >
                   <BookOpen size={16} className="text-brand-accent" />
-                  <span>Conhecer o Método</span>
+                  <span>O Código Brasil, manifesto de Fabian Baldovino</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>

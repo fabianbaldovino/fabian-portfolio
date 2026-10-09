@@ -36,7 +36,7 @@ const estrutura = [
   "Equipe própria",
   "DRT 0014530/RS",
   "Porto Alegre + operações nacionais",
-  "Operações internacionais na América Latina",
+  "Atuação em Porto Alegre, Rio Grande do Sul e todo o Brasil",
   "Espanhol nativo",
 ];
 
@@ -88,7 +88,7 @@ export default function OCodigoBrasilPage() {
                 className="text-foreground/70 font-light leading-relaxed max-w-xl mx-auto lg:mx-0"
                 style={{ textWrap: "balance" } as React.CSSProperties}
               >
-                Direção de Fabian Baldovino com equipe própria e parceiros de captação conforme o projeto — de Porto Alegre para operações nacionais e internacionais na América Latina, com espanhol nativo no set. Câmera{" "}
+                Direção de Fabian Baldovino com equipe própria e parceiros de captação conforme o projeto — de Porto Alegre para o Rio Grande do Sul e todo o Brasil. Câmera{" "}
                 <strong className="text-brand-accent font-medium">Cinema Line da Sony</strong> e{" "}
                 <strong className="text-brand-accent font-medium">drone 4K</strong>.
               </p>

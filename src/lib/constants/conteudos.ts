@@ -55,14 +55,14 @@ export const conteudos: Conteudo[] = [
       "**Resistência à imitação.** Um brand film construído sobre o código real da marca não pode ser copiado. A concorrência pode copiar o formato, a estética, até o roteiro. Mas não consegue copiar o que é verdadeiro — e o espectador sente a diferença imediatamente.",
       "### O código nos cases",
       "Cada projeto que passo é uma nova decodificação. Um código nunca se repete, porque nenhuma marca é idêntica a outra.",
-      "↳ Veja o processo em ação: [Case Termolar](/especialidades/termolar)",
-      "↳ Outro ponto de vista sobre o código: [Case Quick House](/especialidades/quick-house)",
+      "↳ Veja o processo em ação: [Case Termolar](/projetos/termolar)",
+      "↳ Outro ponto de vista sobre o código: [Case Quick House](/projetos/quick-house)",
       "### Uma última pergunta",
       "Você sabe qual é o código da sua marca?",
       "Não o posicionamento. Não os valores declarados. Não o que está no deck para os investidores.",
       "O código real — aquele que aparece quando você para de falar sobre sua empresa e começa a falar sobre por que ela existe.",
       "Se você ainda não sabe, esse é o começo do trabalho.",
-      "↳ Conheça a metodologia completa: [O Código Brasil](/o-codigo-brasil)"
+      "↳ Conheça a metodologia completa: [O Código Brasil, manifesto de Fabian Baldovino](https://ocodigobrasil.com.br)"
     ],
     date: "2026-10-07",
     tags: ["O Código Brasil", "Brand Filmmaking", "Metodologia", "Neuromarketing", "Narrativa de Marca"]
@@ -109,7 +109,7 @@ export const conteudos: Conteudo[] = [
       "Essa diferença de pergunta de abertura não é cosmética — ela revela uma filosofia inteira de trabalho.",
       "O vídeo institucional é construído em cima do que a empresa quer *mostrar*. O brand film é construído em cima do que a empresa *é* — mesmo nos aspectos que ela nunca havia formulado em palavras.",
       "Meu processo parte de uma imersão de escuta. Antes de qualquer câmera, antes de qualquer roteiro, existe um trabalho de arqueologia cultural: entender o código que organiza as decisões daquele negócio, a lógica que conecta o fundador ao produto ao cliente ao impacto. Quando esse código é encontrado, o filme já está praticamente pronto — o que fica é a tarefa de revelá-lo com imagens.",
-      "↳ Conheça a metodologia: [O Código Brasil](/o-codigo-brasil)",
+      "↳ Conheça a metodologia: [O Código Brasil, manifesto de Fabian Baldovino](https://ocodigobrasil.com.br)",
       "### A pergunta que decide tudo",
       "Antes de qualquer contratação audiovisual, faça esta pergunta:",
       "**Você quer que as pessoas saibam o que você faz — ou que sintam quem você é?**",
@@ -148,7 +148,7 @@ export const conteudos: Conteudo[] = [
       "A Casa é o espaço do acolhimento, da confiança, das relações pessoais — onde \"você conhece alguém de verdade\". A Rua é o espaço da transação, da formalidade, da desconfiança — onde \"você não sabe com quem está lidando\".",
       "O problema da maioria dos vídeos institucionais brasileiros é que foram feitos para A Rua. Têm o visual impecável, o texto correto, a produção cuidadosa — e nenhuma alma. São comunicações de A Rua tentando entrar em A Casa.",
       "O brand film genuíno faz o movimento inverso. Não pede passagem — cria familiaridade. Não demonstra credenciais — revela caráter. E o espectador brasileiro, culturalmente treinado para distinguir o que é autêntico do que é \"corporativês\", percebe a diferença em segundos.",
-      "↳ Veja como esse princípio funcionou na prática: [Case Termolar](/especialidades/termolar)",
+      "↳ Veja como esse princípio funcionou na prática: [Case Termolar](/projetos/termolar)",
       "### Por que a maioria das marcas evita o brand film",
       "Se o brand film é mais eficaz, por que tão poucas marcas fazem?",
       "Porque ele exige o que é mais difícil de pedir para uma empresa: **vulnerabilidade**.",
@@ -166,7 +166,7 @@ export const conteudos: Conteudo[] = [
       "Quando uma marca decide fazer um brand film, ela toma uma decisão antes mesmo de ligar a câmera: a decisão de parar de parecer e começar a ser.",
       "É uma aposta de que o público prefere verdade a perfeição. Uma crença de que existe algo genuíno no núcleo do negócio — e que esse genuíno, quando encontrado e filmado, ressoa de uma maneira que nenhuma campanha de mídia paga consegue replicar.",
       "Essa é a razão pela qual marcas que fazem brand films não param de fazer. Não é uma estratégia de conteúdo — é uma forma de existir no mundo.",
-      "↳ Conheça a metodologia por trás desse processo: [O Código Brasil](/o-codigo-brasil)"
+      "↳ Conheça a metodologia por trás desse processo: [O Código Brasil, manifesto de Fabian Baldovino](https://ocodigobrasil.com.br)"
     ],
     date: "2026-10-07",
     tags: ["Brand Filmmaking", "O Código Brasil", "Neuromarketing", "Narrativa de Marca"]

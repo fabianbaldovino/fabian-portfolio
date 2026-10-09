@@ -59,7 +59,7 @@ export default function ProjectsSection() {
           {[projects[0], projects[2]].map((project) => (
             <Link 
               key={project.name} 
-              href={`/especialidades/${project.slug}`} 
+              href={`/projetos/${project.slug}`} 
               passHref 
               className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark rounded-[16px] flex flex-col lg:flex-1 lg:min-h-0"
             >

@@ -31,7 +31,7 @@ export default function AboutContactSection() {
             Seu cliente decide <span className="italic font-light opacity-90">em segundos</span> se <span className="font-medium">confia</span> em você.
           </p>
           <p className="text-sm md:text-base lg:text-lg font-light text-background/75 leading-relaxed max-w-[95%] text-balance">
-            <strong className="font-medium text-background/95">+15 anos e +100 marcas</strong> de Porto Alegre — estratégia, captação e entrega com equipe própria.
+            <strong className="font-medium text-background/95">+15 anos e +100 marcas</strong> de Porto Alegre — estratégia, captação e entrega com equipe própria. <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="font-medium text-background/95 underline decoration-1 underline-offset-2 hover:text-brand-accent transition-colors">O Código Brasil, manifesto de Fabian Baldovino</a>.
           </p>
         </motion.div>
         <div className="sr-only">

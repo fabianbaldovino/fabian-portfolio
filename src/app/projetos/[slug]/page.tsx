@@ -201,6 +201,9 @@ export default async function ProjectCasePage({ params }: PageProps) {
                 <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
                   {project.description}
                 </p>
+                <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
+                  <strong>Local de atuação:</strong> Porto Alegre, Rio Grande do Sul e Brasil.
+                </p>
               </div>
             </div>
 

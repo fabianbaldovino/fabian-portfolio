@@ -11,14 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const especialidadeEntries: MetadataRoute.Sitemap = projects
-    .filter((p) => !portfolioProjects.some((pp) => pp.slug === p.slug))
-    .map((p) => ({
-      url: `https://www.fabian.art.br/especialidades/${p.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    }));
+
 
   const conteudoEntries: MetadataRoute.Sitemap = conteudos.map((c) => ({
     url: `https://www.fabian.art.br/conteudo/${c.slug}`,
@@ -47,13 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...projectEntries,
-    {
-      url: 'https://www.fabian.art.br/especialidades',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    ...especialidadeEntries,
+
     {
       url: 'https://www.fabian.art.br/conteudo',
       lastModified: new Date(),
