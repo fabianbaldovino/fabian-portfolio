@@ -1,5 +1,6 @@
 import { conteudos } from "@/lib/constants/conteudos";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -85,14 +86,14 @@ export default function JournalHub() {
                       </div>
                       {item.coverImage ? (
                         <div className="w-full md:w-56 lg:w-64 aspect-video md:aspect-[16/10] flex-shrink-0 rounded-xl border border-accent/40 relative overflow-hidden bg-card group-hover:border-brand-accent/60 group-hover:scale-[1.02] transition-all duration-300">
-                          <img src={item.coverImage} className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" alt={item.title} loading="lazy" />
+                          <Image src={item.coverImage} fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover opacity-85 group-hover:opacity-100 transition-opacity" alt={item.title} />
                           {item.youtubeId && <span className="text-red-500 font-bold text-[10px] uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2">▶ YouTube</span>}
                           {item.instagramUrl && !item.youtubeId && <span className="text-brand-accent font-bold text-[10px] uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2 border border-brand-accent/30">Instagram</span>}
                         </div>
                       ) : item.youtubeId ? (
                         <div className="w-full md:w-56 lg:w-64 aspect-video md:aspect-[16/10] flex-shrink-0 rounded-xl border border-accent/40 relative overflow-hidden bg-black group-hover:border-brand-accent/60 group-hover:scale-[1.02] transition-all duration-300">
                           <span className="text-red-500 font-bold text-[10px] uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2">▶ YouTube</span>
-                          <img src={`https://img.youtube.com/vi/${item.youtubeId}/mqdefault.jpg`} className="absolute inset-0 w-full h-full object-cover opacity-70" alt={item.title} loading="lazy" />
+                          <Image src={`https://img.youtube.com/vi/${item.youtubeId}/mqdefault.jpg`} fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover opacity-70" alt={item.title} />
                         </div>
                       ) : item.instagramUrl ? (
                         <div className="w-full md:w-56 lg:w-64 aspect-video md:aspect-[16/10] flex-shrink-0 rounded-xl border border-accent/40 relative overflow-hidden bg-brand-accent/10 flex items-center justify-center group-hover:scale-[1.02] transition-all duration-300">

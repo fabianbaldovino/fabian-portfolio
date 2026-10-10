@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";

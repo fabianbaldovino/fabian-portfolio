@@ -6,7 +6,6 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function GlobalModals() {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   useEffect(() => {
     const handler = (e: Event) => {

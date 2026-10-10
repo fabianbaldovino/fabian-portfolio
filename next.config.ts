@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
       {
         hostname: "images.unsplash.com",
       },
+      {
+        // thumbnails de video usados nos cards do Journal
+        hostname: "img.youtube.com",
+      },
     ],
   },
   async redirects() {
@@ -32,9 +36,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
       {
-        // Galeria de bastidores não tem equivalente 1:1 — manda para o hub.
+        // Galeria de bastidores foi descontinuada — manda para o hub.
         source: "/especialidades/bastidores",
         destination: "/projetos",
+        permanent: true,
+      },
+      {
+        // Artigo renomeado: "O Código Cultural" é o livro do Clotaire Rapaille.
+        // O método autoral é "O Código Brasil".
+        source: "/conteudo/codigo-cultural-forca-brand-filmmaking-wedy",
+        destination: "/conteudo/codigo-brasil-forca-brand-filmmaking-wedy",
         permanent: true,
       },
     ];

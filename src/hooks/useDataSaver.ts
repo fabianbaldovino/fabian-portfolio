@@ -31,6 +31,11 @@ export function useDataSaver(): DataSaverState {
       !!connection &&
       (connection.saveData === true ||
         /^(slow-)?2g$/.test(connection.effectiveType ?? ""));
+    // A API navigator.connection só existe no cliente, então esta é uma
+    // sincronização pontual pós-hidratação — roda uma vez, com deps vazias,
+    // e não gera cascata de renders. Refatorar para useSyncExternalStore
+    // mudaria o contrato de `checked`, que o autoplay do hero depende.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setState({ dataSaver, checked: true });
   }, []);
 

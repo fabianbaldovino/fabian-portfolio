@@ -1,8 +1,8 @@
 import { conteudos } from "@/lib/constants/conteudos";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
-import JsonLd from "@/components/JsonLd";
 
 function renderFormattedText(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
@@ -70,7 +70,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
   }
 
   // Schema Markup for SEO
-    const jsonLd: any[] = [
+    const jsonLd: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -110,7 +110,10 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="min-h-screen pt-24 pb-24 px-4 md:px-8 max-w-6xl mx-auto">
-      <JsonLd data={jsonLd as any} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <div className="mb-8">
         <Link 
@@ -187,7 +190,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       {/* Seção de Autor/CTA no final do artigo */}
       <div className="mt-20 pt-10 border-t border-accent flex flex-col md:flex-row gap-8 items-center bg-card p-8 rounded-[20px]">
         <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 relative border-2 border-brand-accent">
-          <img src="/og-image.jpg" alt="Fabian Baldovino" className="object-cover object-center w-full h-full" />
+          <Image src="/og-image.jpg" alt="Fabian Baldovino" fill sizes="96px" className="object-cover object-center" />
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>

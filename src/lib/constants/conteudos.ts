@@ -143,7 +143,7 @@ export const conteudos: Conteudo[] = [
       "O vídeo institucional fala com o Sistema 2. O brand film conversa com o Sistema 1.",
       "Isso não é manipulação — é arquitetura da comunicação. Uma boa história de marca não cria uma emoção artificial: ela encontra uma emoção real que já existe no espectador e a nomeia. O espectador não pensa \"que mensagem bem construída\". Ele pensa: *\"é exatamente assim que eu me sinto\"*.",
       "Esse momento de reconhecimento é o que Clotaire Rapaille chamou de *imprint* — a impressão emocional que persiste muito depois que a lógica é esquecida. É o que faz alguém recomendar uma marca para um amigo sem conseguir explicar exatamente por quê.",
-      "### O Código Cultural: histórias brasileiras precisam de brasileiros para serem contadas",
+      "### O Código Brasil: histórias brasileiras precisam de brasileiros para serem contadas",
       "Roberto DaMatta mapeou uma tensão central na identidade brasileira: a dialética entre **A Casa** e **A Rua**.",
       "A Casa é o espaço do acolhimento, da confiança, das relações pessoais — onde \"você conhece alguém de verdade\". A Rua é o espaço da transação, da formalidade, da desconfiança — onde \"você não sabe com quem está lidando\".",
       "O problema da maioria dos vídeos institucionais brasileiros é que foram feitos para A Rua. Têm o visual impecável, o texto correto, a produção cuidadosa — e nenhuma alma. São comunicações de A Rua tentando entrar em A Casa.",
@@ -188,8 +188,8 @@ export const conteudos: Conteudo[] = [
     tags: ["Brand Filmmaking", "Antropologia Visual", "Sociedade do Cansaço", "Wedy Nutrition"]
   },
   {
-    title: "O Código Cultural da Força: Os Bastidores do Brand Filmmaking para a Wedy Nutrition",
-    slug: "codigo-cultural-forca-brand-filmmaking-wedy",
+    title: "O Código Brasil da Força: Os Bastidores do Brand Filmmaking para a Wedy Nutrition",
+    slug: "codigo-brasil-forca-brand-filmmaking-wedy",
     instagramUrl: "https://www.instagram.com/p/DPEgGKQCQnW/",
     coverImage: "/FOTOS/capa_kalwyn_producao_audiovisual_fabian_baldovino.webp",
     excerpt: "Como traduzimos o esforço e a superação em vídeo. Os bastidores das gravações na SmartFit do Bourbon Assis Brasil.",

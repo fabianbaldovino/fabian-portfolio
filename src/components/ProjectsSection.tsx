@@ -1,21 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Linkedin, Target, Eye, Compass, Clapperboard, Sparkles, Book } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import { motion } from "motion/react";
-import { cardVariants, projectsVariants, projectItemVariants, socialVariants, textVariants, iconVariants } from "@/lib/animation/variants";
+import { cardVariants, projectsVariants, projectItemVariants, socialVariants, textVariants } from "@/lib/animation/variants";
 import { projects, Project } from "@/lib/constants/projects";
 import { socials } from "@/lib/constants/socials";
 
-const iconMap: Record<string, React.ElementType> = {
-  Target,
-  Eye,
-  Compass,
-  Clapperboard,
-  Book,
-};
+/** Cases exibidos na home. Selecionados por slug — não por índice. */
+const DESTAQUES: Project[] = ["termolar", "quick-house"]
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is Project => Boolean(p));
 
 export default function ProjectsSection() {
 
@@ -56,7 +52,7 @@ export default function ProjectsSection() {
           initial="hidden"
           animate="visible"
         >
-          {[projects[0], projects[2]].map((project) => (
+          {DESTAQUES.map((project) => (
             <Link 
               key={project.name} 
               href={`/projetos/${project.slug}`} 
@@ -73,7 +69,7 @@ export default function ProjectsSection() {
                     alt={`${project.name} — Caso de Estudo`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={project.name === projects[0].name}
+                    priority={project.slug === DESTAQUES[0]?.slug}
                     quality={90}
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
