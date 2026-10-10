@@ -50,6 +50,16 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    // Sem estas diretivas o Google assume "standard": miniatura pequena,
+    // snippet encurtado e prévia de vídeo limitada. Para um filmmaker,
+    // a imagem é o produto — ela precisa aparecer grande.
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   formatDetection: {
     telephone: false,

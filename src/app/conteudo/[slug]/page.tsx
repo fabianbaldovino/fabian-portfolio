@@ -5,10 +5,38 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 function renderFormattedText(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  // Inclui [texto](/destino): sem isto os links dos artigos vazavam como
+  // markdown cru na página e não geravam <a> nenhum para o rastreador.
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("[") && part.endsWith(")")) {
+      const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (match) {
+        const [, rotulo, destino] = match;
+        const externo = /^https?:\/\//.test(destino);
+        return externo ? (
+          <a
+            key={i}
+            href={destino}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-accent underline underline-offset-2 hover:text-foreground transition-colors"
+          >
+            {rotulo}
+          </a>
+        ) : (
+          <Link
+            key={i}
+            href={destino}
+            className="text-brand-accent underline underline-offset-2 hover:text-foreground transition-colors"
+          >
+            {rotulo}
+          </Link>
+        );
+      }
     }
     if (part.startsWith("*") && part.endsWith("*")) {
       return <em key={i} className="italic text-foreground/95">{part.slice(1, -1)}</em>;
