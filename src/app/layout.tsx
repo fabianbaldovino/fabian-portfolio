@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Fabian Baldovino — Brand Filmmaker Porto Alegre",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fabian Baldovino | Brand Filmmaking Porto Alegre",
     description: "Brand Filmmaker em Porto Alegre. Une cinema e neuromarketing para criar brand films que revelam a verdade das marcas. Criador de O Código Brasil.",
-    images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -97,7 +97,7 @@ export default function RootLayout({
           url: "https://www.fabian.art.br",
           jobTitle: "Brand Filmmaker",
           description: "Brand Filmmaker e estrategista de narrativas visuais baseado em Porto Alegre, RS. Autor de O Código Brasil.",
-          image: "https://www.fabian.art.br/FOTOS/fabian_baldovino_filmmaker_porto_alegre_rs_filmagem_de_drone.webp",
+          image: "https://www.fabian.art.br/og-image.jpg",
           sameAs: [
             "https://www.linkedin.com/in/fabianbaldovino",
             "https://www.instagram.com/fabianbaldovino9",

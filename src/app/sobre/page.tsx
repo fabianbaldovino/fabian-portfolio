@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Fabian Baldovino — Brand Filmmaker Porto Alegre",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
     description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
-    images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 

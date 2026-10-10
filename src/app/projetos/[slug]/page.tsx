@@ -7,9 +7,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import { portfolioProjects } from "@/lib/constants/portfolioProjects";
+import { especialidades } from "@/lib/constants/especialidades";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+/** Renderiza **negrito** e *itálico* dentro de um parágrafo. */
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return (
+        <em key={i} className="italic text-foreground/95">
+          {part.slice(1, -1)}
+        </em>
+      );
+    }
+    return part;
+  });
 }
 
 export async function generateStaticParams() {
@@ -69,6 +92,10 @@ export default async function ProjectCasePage({ params }: PageProps) {
   if (!project) {
     notFound();
   }
+
+  const especialidade = project.especialidade
+    ? especialidades.find((e) => e.slug === project.especialidade)
+    : undefined;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -204,6 +231,17 @@ export default async function ProjectCasePage({ params }: PageProps) {
                 <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
                   <strong>Local de atuação:</strong> Porto Alegre, Rio Grande do Sul e Brasil.
                 </p>
+                {especialidade && (
+                  <p className="text-sm font-light text-foreground/70 mt-1">
+                    Formato:{" "}
+                    <Link
+                      href={`/especialidades/${especialidade.slug}`}
+                      className="text-brand-accent underline hover:text-foreground transition-colors"
+                    >
+                      {especialidade.name}
+                    </Link>
+                  </p>
+                )}
               </div>
             </div>
 
@@ -227,6 +265,34 @@ export default async function ProjectCasePage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        {/* ══════════════════════════════════════════
+            NARRATIVA DO CASE — O desafio / A abordagem / O resultado
+            Conteúdo editorial longo. Principal ativo de SEO da página.
+        ═══════════════════════════════════════════ */}
+        {project.narrative && project.narrative.length > 0 && (
+          <article className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-12">
+            <div className="max-w-3xl flex flex-col gap-5">
+              {project.narrative.map((block, i) =>
+                block.startsWith("### ") ? (
+                  <h2
+                    key={i}
+                    className="text-2xl md:text-3xl font-medium mt-6 first:mt-0 text-foreground"
+                  >
+                    {block.slice(4)}
+                  </h2>
+                ) : (
+                  <p
+                    key={i}
+                    className="text-base md:text-lg font-light leading-relaxed text-foreground/85"
+                  >
+                    {renderInline(block)}
+                  </p>
+                )
+              )}
+            </div>
+          </article>
+        )}
 
         {/* ══════════════════════════════════════════
             SEÇÃO DE FILMES — players embutidos no site

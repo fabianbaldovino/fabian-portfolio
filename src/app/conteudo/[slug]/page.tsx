@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: "pt_BR",
       images: [
         {
-          url: conteudo.coverImage ? `https://www.fabian.art.br${conteudo.coverImage}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`,
+          url: conteudo.coverImage ? `https://www.fabian.art.br${conteudo.coverImage}` : `https://www.fabian.art.br/og-image.jpg`,
           width: 1200,
           height: 630,
           alt: conteudo.title,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: "summary_large_image",
       title: conteudo.title,
       description: conteudo.excerpt,
-      images: [conteudo.coverImage ? `https://www.fabian.art.br${conteudo.coverImage}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`],
+      images: [conteudo.coverImage ? `https://www.fabian.art.br${conteudo.coverImage}` : `https://www.fabian.art.br/og-image.jpg`],
     },
   };
 }
@@ -187,7 +187,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       {/* Seção de Autor/CTA no final do artigo */}
       <div className="mt-20 pt-10 border-t border-accent flex flex-col md:flex-row gap-8 items-center bg-card p-8 rounded-[20px]">
         <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 relative border-2 border-brand-accent">
-          <img src="/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp" alt="Fabian Baldovino" className="object-cover object-center w-full h-full" />
+          <img src="/og-image.jpg" alt="Fabian Baldovino" className="object-cover object-center w-full h-full" />
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>

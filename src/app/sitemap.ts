@@ -1,20 +1,27 @@
 import { MetadataRoute } from 'next'
 import { portfolioProjects } from '@/lib/constants/portfolioProjects'
-import { projects } from '@/lib/constants/projects'
+import { especialidades } from '@/lib/constants/especialidades'
 import { conteudos } from '@/lib/constants/conteudos'
+
+const BASE = 'https://www.fabian.art.br';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projectEntries: MetadataRoute.Sitemap = portfolioProjects.map((p) => ({
-    url: `https://www.fabian.art.br/projetos/${p.slug}`,
+    url: `${BASE}/projetos/${p.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
-
+  const especialidadeEntries: MetadataRoute.Sitemap = especialidades.map((e) => ({
+    url: `${BASE}/especialidades/${e.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  }));
 
   const conteudoEntries: MetadataRoute.Sitemap = conteudos.map((c) => ({
-    url: `https://www.fabian.art.br/conteudo/${c.slug}`,
+    url: `${BASE}/conteudo/${c.slug}`,
     lastModified: new Date(c.date),
     changeFrequency: 'monthly',
     priority: 0.6,
@@ -22,34 +29,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: 'https://www.fabian.art.br',
+      url: BASE,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: 'https://www.fabian.art.br/sobre',
+      url: `${BASE}/especialidades`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    ...especialidadeEntries,
+    {
+      url: `${BASE}/sobre`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://www.fabian.art.br/projetos',
+      url: `${BASE}/projetos`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     ...projectEntries,
-
     {
-      url: 'https://www.fabian.art.br/conteudo',
+      url: `${BASE}/conteudo`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     ...conteudoEntries,
     {
-      url: 'https://www.fabian.art.br/o-codigo-brasil',
+      url: `${BASE}/o-codigo-brasil`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

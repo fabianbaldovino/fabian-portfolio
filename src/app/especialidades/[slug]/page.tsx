@@ -1,289 +1,305 @@
-import { projects } from "@/lib/constants/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft, ArrowUpRight, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
-import JsonLd from "@/components/JsonLd";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { especialidades } from "@/lib/constants/especialidades";
+import { portfolioProjects } from "@/lib/constants/portfolioProjects";
 
-function renderFormattedText(text: string) {
-  const parts = text.split(/(\**[^*]+\**|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+/** Renderiza **negrito** e *itálico* dentro de um parágrafo. */
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+      return (
+        <strong key={i} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
     }
     if (part.startsWith("*") && part.endsWith("*")) {
-      return <em key={i} className="italic text-foreground/95">{part.slice(1, -1)}</em>;
-    }
-    if (part.startsWith("[") && part.endsWith(")")) {
-      const match = part.match(/\[([^\]]+)\]\(([^)]+)\)/);
-      if (match) {
-        // Here we just render as a link, assuming Link is imported
-        return <Link key={i} href={match[2]} className="text-brand-accent underline hover:text-foreground transition-colors">{match[1]}</Link>;
-      }
+      return (
+        <em key={i} className="italic text-foreground/95">
+          {part.slice(1, -1)}
+        </em>
+      );
     }
     return part;
   });
 }
 
-import InstagramEmbed from "@/components/InstagramEmbed";
-
 export async function generateStaticParams() {
-  return projects.map((p) => ({
-    slug: p.slug,
-  }));
+  return especialidades.map((e) => ({ slug: e.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return {};
+  const esp = especialidades.find((e) => e.slug === slug);
 
-  // Casos duplicados consolidam no sistema único (/projetos/{slug}).
-  // "bastidores" não existe em /projetos — mantém canonical próprio.
-  const canonicalSlug = slug === "bastidores" ? null : slug;
+  if (!esp) {
+    return { title: "Especialidade não encontrada | Fabian Baldovino" };
+  }
 
-    const desc = project.shortDescription || `Detalhes da especialidade ${project.name} por Fabian Baldovino, brand filmmaker em Porto Alegre.`;
   return {
-    title: `${project.name} | Fabian Baldovino`,
-    description: desc,
+    title: esp.metaTitle,
+    description: esp.metaDescription,
+    keywords: esp.keywords,
     alternates: {
-      canonical: `/especialidades/${slug}`,
+      canonical: `https://www.fabian.art.br/especialidades/${esp.slug}`,
     },
     openGraph: {
-      title: `${project.name} | Fabian Baldovino`,
-      description: desc,
-      url: `https://www.fabian.art.br/especialidades/${slug}`,
+      title: esp.metaTitle,
+      description: esp.metaDescription,
+      url: `https://www.fabian.art.br/especialidades/${esp.slug}`,
       type: "website",
       siteName: "Fabian Baldovino",
       locale: "pt_BR",
       images: [
         {
-          url: project.imgSrc ? `https://www.fabian.art.br${project.imgSrc}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`,
+          url: `https://www.fabian.art.br${esp.imgSrc}`,
           width: 1200,
           height: 630,
-          alt: project.name,
+          alt: `${esp.name} — ${esp.tagline}`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.name} | Fabian Baldovino`,
-      description: desc,
-      images: [project.imgSrc ? `https://www.fabian.art.br${project.imgSrc}` : `https://www.fabian.art.br/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp`],
+      title: esp.metaTitle,
+      description: esp.metaDescription,
+      images: [`https://www.fabian.art.br${esp.imgSrc}`],
     },
   };
 }
 
-export default async function EspecialidadePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function EspecialidadePage({ params }: PageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const esp = especialidades.find((e) => e.slug === slug);
 
-  if (!project) {
+  if (!esp) {
     notFound();
   }
 
-  const isGallery = project.type === "gallery";
-  const isBook = project.slug === "o-codigo-brasil";
-  const imageFitContain = isBook || project.slug === "quick-house";
-  const contentArray = Array.isArray(project.content) ? project.content : [project.content];
+  const cases = esp.relatedCases
+    .map((s) => portfolioProjects.find((p) => p.slug === s))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+  const url = `https://www.fabian.art.br/especialidades/${esp.slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": project.name,
-    "description": project.shortDescription || project.name,
-    "thumbnailUrl": "https://www.fabian.art.br" + (project.imgSrc || "/og-image.jpg"),
-    "author": {
-      "@type": "Person",
-      "name": "Fabian Baldovino"
-    }
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        serviceType: esp.name,
+        name: esp.metaTitle,
+        description: esp.metaDescription,
+        url,
+        image: `https://www.fabian.art.br${esp.imgSrc}`,
+        provider: {
+          "@type": "Person",
+          name: "Fabian Baldovino",
+          url: "https://www.fabian.art.br",
+          jobTitle: "Brand Filmmaker",
+        },
+        areaServed: [
+          { "@type": "City", name: "Porto Alegre" },
+          { "@type": "State", name: "Rio Grande do Sul" },
+          { "@type": "Country", name: "Brasil" },
+        ],
+        keywords: esp.keywords.join(", "),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Início",
+            item: "https://www.fabian.art.br",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Especialidades",
+            item: "https://www.fabian.art.br/especialidades",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: esp.name,
+            item: url,
+          },
+        ],
+      },
+    ],
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground flex flex-col items-center pb-24 overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
-      <JsonLd data={jsonLd as any} />
-      {/* Navigation Bar Minimal */}
-      <nav className="w-full max-w-6xl px-6 py-8 flex justify-between items-center relative z-20">
-        <Link
-          href="/projetos"
-          className="flex items-center gap-2 text-foreground/60 hover:text-brand-accent transition-colors text-sm uppercase tracking-widest font-medium group"
-        >
-          <span aria-hidden="true" className="group-hover:-translate-x-1 transition-transform">&larr;</span> Voltar para Projetos
-        </Link>
-        {project.shortDescription && (
-          <div className="text-brand-accent font-serif italic text-sm tracking-widest opacity-80 hidden md:block">
-            {project.shortDescription}
-          </div>
-        )}
-      </nav>
+    <div className="flex flex-col min-h-screen font-sans pt-2 md:pt-0 lg:py-6 xl:py-0 xl:pb-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
 
-      <div className="w-full max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10 mt-8 lg:mt-12">
-
-        {/* Left Column: Cover & Hero */}
-        <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start">
-          <div className="w-full text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-              Estudo de Caso
+      <main className="flex-1 flex flex-col gap-6 max-w-7xl mx-auto w-full px-2 sm:px-4">
+        {/* Breadcrumb & voltar */}
+        <div className="flex items-center justify-between bg-card rounded-[20px] p-4 md:p-6 border border-white/5">
+          <Link
+            href="/especialidades"
+            className="flex items-center gap-2 text-foreground/80 hover:text-brand-accent transition-colors font-medium text-sm md:text-base group"
+            aria-label="Voltar para especialidades"
+          >
+            <div className="p-2 rounded-full bg-background/20 group-hover:bg-brand-accent/20 transition-colors">
+              <ArrowLeft size={18} className="group-hover:-translate-x-0.5 transition-transform" />
             </div>
+            <span>Voltar para Especialidades</span>
+          </Link>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-[1.1] mb-6 text-balance text-white">
-              {project.name}
-            </h1>
-          </div>
+          <nav
+            aria-label="Breadcrumb"
+            className="hidden sm:flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/50"
+          >
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/especialidades" className="hover:text-foreground transition-colors">
+              Especialidades
+            </Link>
+            <span>/</span>
+            <span className="text-brand-accent font-medium">{esp.name}</span>
+          </nav>
+        </div>
 
-          <div className={`relative w-full max-w-[400px] lg:max-w-[500px] ${isBook ? 'aspect-[3/4]' : 'aspect-video lg:aspect-[4/3]'} mt-6 lg:mt-8 group mx-auto lg:mx-0 [perspective:1000px]`}>
-            <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
-            <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-3deg] group-hover:rotate-x-[1deg]">
+        {/* Hero */}
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="w-full lg:w-[55%]">
+            <div className="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-[20px] overflow-hidden bg-card border border-white/5">
               <Image
-                src={project.modalImgSrc || project.imgSrc}
-                alt={project.name}
+                src={esp.imgSrc}
+                alt={`${esp.name} — ${esp.tagline}. Fabian Baldovino, brand filmmaker em Porto Alegre.`}
                 fill
-                className={imageFitContain ? "object-contain" : "object-cover"}
                 priority
-                sizes="(max-width: 768px) 100vw, 500px"
+                quality={90}
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover object-center"
               />
-              {!isBook && <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            </div>
+          </div>
+
+          <div className="w-full lg:w-[45%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-10 border border-white/5">
+            <div className="flex flex-col gap-4">
+              <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold">
+                Especialidade
+              </p>
+              <h1 className="text-3xl md:text-5xl font-medium leading-tight">{esp.name}</h1>
+              <p className="text-sm uppercase tracking-widest text-foreground/50">
+                {esp.tagline}
+              </p>
+
+              <div className="h-[1px] bg-accent/30 my-2" />
+
+              <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
+                {esp.intro}
+              </p>
+              <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
+                <strong>Atendimento:</strong> Porto Alegre, Rio Grande do Sul e Brasil.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
+              <p className="text-xs text-foreground/60">
+                Quer avaliar se esse é o formato certo para sua marca?
+              </p>
+              <a
+                href={`https://wa.me/5551999654160?text=${encodeURIComponent(
+                  `Olá Fabian, vi a página de ${esp.name} no seu site e gostaria de conversar sobre um projeto para minha marca.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
+              >
+                <MessageCircle size={20} />
+                <span>Conversar no WhatsApp</span>
+                <ArrowUpRight
+                  size={18}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Copy & Form Area */}
-        <div className="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-10">
-          <div className="prose prose-invert max-w-none mb-12">
-            {contentArray.map((paragraph, idx) => {
-              if (paragraph.startsWith("### ")) {
-                return (
-                  <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">
-                    {renderFormattedText(paragraph.replace("### ", ""))}
-                  </h3>
-                );
-              }
-              if (idx === 0 && !isBook) {
-                return (
-                  <p key={idx} className="text-lg md:text-xl font-light leading-relaxed text-foreground/90 border-l-2 border-brand-accent pl-6 mb-8">
-                    {renderFormattedText(paragraph)}
-                  </p>
-                );
-              }
-              return (
-                <p key={idx} className="text-foreground/70 font-light mt-4 leading-relaxed text-balance">
-                  {renderFormattedText(paragraph)}
+        {/* Corpo */}
+        <article className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-12">
+          <div className="max-w-3xl flex flex-col gap-5">
+            {esp.content.map((block, i) =>
+              block.startsWith("### ") ? (
+                <h2
+                  key={i}
+                  className="text-2xl md:text-3xl font-medium mt-6 first:mt-0 text-foreground"
+                >
+                  {block.slice(4)}
+                </h2>
+              ) : (
+                <p
+                  key={i}
+                  className="text-base md:text-lg font-light leading-relaxed text-foreground/85"
+                >
+                  {renderInline(block)}
                 </p>
-              );
-            })}
-
-            {isGallery && (
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                {contentArray.map((imgSrc, idx) => (
-                  <div key={`gal-${idx}`} className="relative aspect-square rounded-xl overflow-hidden border border-white/10">
-                    <Image
-                      src={imgSrc}
-                      alt={`${project.name} imagem ${idx + 1}`}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
-              </div>
+              )
             )}
+          </div>
+        </article>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-3 mt-10">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs uppercase tracking-wider px-4 py-2 rounded-full border border-brand-accent/30 text-brand-accent font-medium bg-brand-accent/5"
-                >
-                  {tag}
-                </span>
+        {/* Cases que comprovam */}
+        {cases.length > 0 && (
+          <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
+            <h2 className="text-2xl md:text-3xl font-medium mb-8">
+              Cases nesse formato
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cases.map((c) => (
+                <Link key={c.slug} href={`/projetos/${c.slug}`} className="group block h-full">
+                  <article className="border border-white/5 rounded-[20px] overflow-hidden bg-background/40 h-full flex flex-col transition-transform hover:-translate-y-1">
+                    <div className="relative w-full h-44 overflow-hidden">
+                      <Image
+                        src={c.imgSrc}
+                        alt={`${c.name} — ${c.client}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <div className="p-5 flex flex-col gap-2 flex-grow">
+                      <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold">
+                        {c.client}
+                      </p>
+                      <h3 className="text-lg font-medium group-hover:text-brand-accent transition-colors">
+                        {c.name}
+                      </h3>
+                      <p className="text-xs uppercase tracking-wider text-foreground/50">
+                        {c.deliverable}
+                      </p>
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
+          </section>
+        )}
+      </main>
 
-            {/* Leitura relacionada */}
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <p className="text-sm uppercase tracking-widest text-white/40 mb-4">Leitura relacionada</p>
-              <ul className="space-y-3 list-none p-0 m-0">
-                {project.tags.some(t => t.toLowerCase().includes("brand film") || t.toLowerCase().includes("filmmaking") || t.toLowerCase().includes("novela") || t.toLowerCase().includes("filme")) && (
-                  <li><Link href="/conteudo/o-que-e-brand-film-e-por-que-sua-marca-ainda-nao-tem-um" className="text-brand-accent hover:text-white transition-colors underline-offset-4 hover:underline">O que é Brand Film — e por que sua marca ainda não tem um &rarr;</Link></li>
-                )}
-                {project.tags.some(t => t.toLowerCase().includes("institucional") || t.toLowerCase().includes("vídeo") || t.toLowerCase().includes("construção") || t.toLowerCase().includes("corporativo")) && (
-                  <li><Link href="/conteudo/video-institucional-vs-brand-film-a-diferenca-real" className="text-brand-accent hover:text-white transition-colors underline-offset-4 hover:underline">Vídeo institucional vs. brand film: a diferença real &rarr;</Link></li>
-                )}
-                <li><Link href="/conteudo/como-o-codigo-brasil-transforma-narrativa-de-marcas" className="text-brand-accent hover:text-white transition-colors underline-offset-4 hover:underline">Como O Código Brasil transforma a narrativa de marcas reais &rarr;</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Golden CTA Card */}
-          <div className="bg-card/50 backdrop-blur-md p-8 md:p-10 rounded-[24px] border border-white/5 relative overflow-hidden mt-4">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent opacity-50" />
-
-            <h3 className="text-xl font-medium tracking-wide mb-2">
-              {isBook ? 'Exemplar Digital' : 'Construir uma obra similar?'}
-            </h3>
-            <p className="text-sm text-foreground/60 mb-8 font-light text-balance leading-relaxed">
-              {isBook
-                ? 'Todo parceiro e cliente de projetos de Brand Filmmaking recebe o manifesto digital exclusivo O Código Brasil como parte do onboarding estratégico.'
-                : 'Operamos com dedicação imersiva a poucas marcas por ciclo, garantindo presença direta da direção em cada etapa da sua produção.'}
-            </p>
-
-            <a
-              href={isBook
-                ? "https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20vi%20o%20manifesto%20O%20C%C3%B3digo%20Brasil%20e%20gostaria%20de%20receber%20o%20exemplar%20digital."
-                : "https://wa.me/5551999654160"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center hover:brightness-110 hover:shadow-[0_0_30px_rgba(205,160,89,0.3)] active:scale-[0.98] transition-all"
-            >
-              {isBook ? 'Solicitar Exemplar' : 'Falar no WhatsApp'}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ══════════════════════════════════════════
-          SEÇÃO DE FILMES — largura total da página
-          Fora do grid hero para ter espaço real.
-          Instagram: grid 1→2 colunas | YouTube: full-width 16:9
-      ═══════════════════════════════════════════ */}
-      {(project.instagramUrls?.length || project.youtubeIds?.length) ? (
-        <div className="w-full max-w-6xl px-6 mt-16 pb-16">
-          <h2 className="text-2xl md:text-3xl font-medium mb-8 flex items-center gap-3">
-            <span className="text-brand-accent text-xl">▶</span> Assistir aos Filmes
-          </h2>
-
-          {/* Instagram Reels — player embutido, usuário assiste no site */}
-          {project.instagramUrls && project.instagramUrls.length > 0 && (
-            <InstagramEmbed
-              urls={project.instagramUrls}
-              projectName={project.name}
-              itemNoun={project.videoNoun}
-            />
-          )}
-
-          {/* YouTube */}
-          {project.youtubeIds && project.youtubeIds.length > 0 && (
-            <div className="flex flex-col gap-8 mt-8">
-              {project.youtubeIds.map((id, idx) => (
-                <div
-                  key={id}
-                  className="w-full rounded-[20px] overflow-hidden border border-white/10 bg-black"
-                  style={{ aspectRatio: "16/9" }}
-                >
-                  <iframe
-                    src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
-                    title={`${project.name} — Filme ${idx + 1}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    style={{ width: "100%", height: "100%", border: "none", display: "block" }}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ) : null}
-    </main>
+      <Footer className="mt-8" />
+    </div>
   );
 }

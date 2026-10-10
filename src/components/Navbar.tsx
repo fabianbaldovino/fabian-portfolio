@@ -22,7 +22,7 @@ export default function Navbar() {
           <span className="text-xl lg:text-2xl uppercase font-medium">Baldovino</span>
         </Link>
         <HamburgerButton open={menuOpen} onClick={toggleMenu} />
-        <ul className="hidden md:flex flex-row gap-20 list-none m-0 items-center">
+        <ul className="hidden md:flex flex-row gap-6 lg:gap-10 xl:gap-14 list-none m-0 items-center">
           {navItems.map(({ action, href, label, title }) => (
             <li key={action}>
               {href ? (

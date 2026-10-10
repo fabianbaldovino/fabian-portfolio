@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Obras Selecionadas — Fabian Baldovino Brand Filmmaker",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Obras Selecionadas | Fabian Baldovino — Brand Filmmaker Porto Alegre",
     description: "Portfólio de Brand Filmmaking: Termolar, Quick House, Copelmi e mais. Conheça as narrativas visuais que constroem marcas de alto valor.",
-    images: ["/FOTOS/fabian_baldovino_porto_alegre_rio_grande_do_sul_moinhos_de_vento_whapp.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 

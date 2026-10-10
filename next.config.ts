@@ -12,6 +12,33 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    // /especialidades deixou de hospedar cases de cliente e passou a hospedar
+    // as especialidades de serviço. Os slugs antigos de cliente consolidam
+    // em /projetos/{slug}, que é onde a narrativa do case passou a viver.
+    const casosMigrados = [
+      "termolar",
+      "seival-sul-mineradora",
+      "quick-house",
+      "copelmi",
+      "ristorante-fontana",
+      "wedy-nutrition",
+    ];
+
+    return [
+      ...casosMigrados.map((slug) => ({
+        source: `/especialidades/${slug}`,
+        destination: `/projetos/${slug}`,
+        permanent: true,
+      })),
+      {
+        // Galeria de bastidores não tem equivalente 1:1 — manda para o hub.
+        source: "/especialidades/bastidores",
+        destination: "/projetos",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
