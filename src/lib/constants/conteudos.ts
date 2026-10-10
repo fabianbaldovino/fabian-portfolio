@@ -14,7 +14,7 @@ export const conteudos: Conteudo[] = [
   {
     title: "Como O Código Brasil transforma a narrativa de marcas reais",
     slug: "como-o-codigo-brasil-transforma-narrativa-de-marcas",
-    coverImage: "/og-image.jpg",
+    coverImage: "/FOTOS/capa_livro_o_codigo_brasil_fabian_baldovino.webp",
     excerpt: "O Código Brasil é uma metodologia de imersão que encontra o código cultural latente de cada marca e o traduz em cinema. Entenda como esse processo funciona na prática.",
     content: [
       "Toda marca tem dois rostos.",
@@ -70,7 +70,7 @@ export const conteudos: Conteudo[] = [
   {
     title: "Vídeo institucional vs. brand film: a diferença que nenhuma agência vai te contar",
     slug: "video-institucional-vs-brand-film-a-diferenca-real",
-    coverImage: "/og-image.jpg",
+    coverImage: "/FOTOS/claquete_brand_film_fabian_baldovino.webp",
     excerpt: "Não é sobre orçamento nem qualidade de câmera. A diferença entre vídeo institucional e brand film é filosófica — e entender isso muda como você contrata produção audiovisual para sempre.",
     content: [
       "A pergunta mais frequente de quem chega pela primeira vez no meu trabalho é simples e honesta:",
@@ -124,7 +124,7 @@ export const conteudos: Conteudo[] = [
   {
     title: "O que é Brand Film — e por que sua marca ainda não tem um",
     slug: "o-que-e-brand-film-e-por-que-sua-marca-ainda-nao-tem-um",
-    coverImage: "/og-image.jpg",
+    coverImage: "/FOTOS/claquete_brand_film_fabian_baldovino.webp",
     excerpt: "Brand film não é um vídeo bonito sobre sua empresa. É o momento em que sua marca para de parecer e começa a ser. Entenda a diferença que seu público já percebe.",
     content: [
       "Existe uma pergunta que faço para toda empresa que chega até mim achando que precisa de \"um vídeo institucional\":",
