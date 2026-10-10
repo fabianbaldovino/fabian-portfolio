@@ -27,11 +27,14 @@ export default function AboutContactSection() {
           initial="hidden"
           animate="visible"
         >
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.25rem] font-medium text-background leading-[1.15] tracking-tight text-balance">
-            Seu cliente decide <span className="italic font-light opacity-90">em segundos</span> se <span className="font-medium">confia</span> em você.
-          </p>
-          <p className="text-sm md:text-base lg:text-lg font-light text-background/75 leading-relaxed max-w-[95%] text-balance">
-            <strong className="font-medium text-background/95">+15 anos e +100 marcas</strong> de Porto Alegre — estratégia, captação e entrega com equipe própria. <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="font-medium text-background/95 underline decoration-1 underline-offset-2 hover:text-brand-accent transition-colors">O Código Brasil, manifesto de Fabian Baldovino</a>.
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-[clamp(1.75rem,4.2vh,3rem)] leading-[1.1] break-words text-background tracking-tight">
+            <span className="block font-light text-background/80 mb-1">
+              Seu cliente decide <span className="italic">em segundos</span>
+            </span>
+            <span className="block font-medium">se confia em você.</span>
+          </h2>
+          <p className="text-xs md:text-sm lg:text-[clamp(0.8rem,1.7vh,0.95rem)] font-light text-background/70 leading-relaxed text-balance">
+            <strong className="font-medium text-background/90">+15 anos e +100 marcas</strong> de Porto Alegre — estratégia, captação e entrega com equipe própria. <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="font-medium text-background/90 underline decoration-1 underline-offset-2 hover:opacity-75 transition-opacity">O Código Brasil, manifesto de Fabian Baldovino</a>.
           </p>
         </motion.div>
         <div className="sr-only">
