@@ -118,7 +118,7 @@ export const conteudos: Conteudo[] = [
       "Se a resposta for a segunda, você precisa de um brand film.",
       "Não porque seja \"mais moderno\" ou \"mais criativo\". Mas porque é o único formato de vídeo criado especificamente para construir o único ativo que não pode ser copiado: a identidade.",
       "Qualquer concorrente pode copiar seu produto. Ninguém consegue copiar sua história.",
-      "↳ Em breve: [Como O Código Brasil transforma a narrativa de marcas reais → proximamente]"
+      "↳ O processo por trás disso: [Como O Código Brasil transforma a narrativa de marcas reais](/conteudo/como-o-codigo-brasil-transforma-narrativa-de-marcas)"
     ],
     date: "2026-10-07",
     tags: ["Brand Filmmaking", "Vídeo Institucional", "Produção Audiovisual", "Narrativa de Marca", "O Código Brasil"]
@@ -163,7 +163,7 @@ export const conteudos: Conteudo[] = [
       "**Você consegue se ver nele.** Não necessariamente como cliente — mas como ser humano que partilha daquele valor, daquela tensão, daquela forma de enxergar a vida.",
       "**Você quer assistir de novo.** Não porque é bonito (pode ser), mas porque diz algo que você ainda está processando.",
       "**Gera conversa.** Brand films que funcionam viram referência interna nas empresas, são compartilhados por pessoas que se identificam, criam uma linguagem comum. Isso não acontece com vídeo institucional.",
-      "↳ Em breve: [Entenda a diferença técnica e narrativa entre brand film e vídeo institucional → proximamente]",
+      "↳ A comparação lado a lado: [Vídeo institucional vs. brand film](/conteudo/video-institucional-vs-brand-film-a-diferenca-real)",
       "### Brand film não é um produto. É uma posição.",
       "↳ A especialidade na prática: [Brand Film](/especialidades/brand-film) · Para operações de grande escala: [Brand Documentary](/especialidades/brand-documentary)",
       "Quando uma marca decide fazer um brand film, ela toma uma decisão antes mesmo de ligar a câmera: a decisão de parar de parecer e começar a ser.",
@@ -185,7 +185,8 @@ export const conteudos: Conteudo[] = [
       "Foi com essa profundidade sociológica que fomos desenhar o filme do Leandro para a Wedy Nutrition. Aos 39 anos e com quase duas décadas de trincheira, ele não precisava falar sobre estética. Precisávamos usar a câmera para extrair algo muito mais magnético: a sanidade. Quando ele relata que 'a atividade física é o pilar psicológico para recomeçar em cima de qualquer adversidade', tocamos num código cultural poderosíssimo.",
       "Para traduzir isso em vídeo (Brand Filmmaking), a estética precisava ser brutalmente honesta. Matamos qualquer vestígio de 'comercial de TV'. Optamos por uma iluminação *low key*, usando luzes práticas da própria academia. O foco nas sombras e na textura do suor cria uma atmosfera quase confessional. O som do ferro batendo não é só sonoplastia; é o tambor de um ritual. Num mundo onde, como diz Zygmunt Bauman, tudo é líquido e incerto, o peso de uma anilha é a única coisa sólida que muita gente tem no dia.",
       "O produto da Wedy Nutrition entra nessa narrativa sem forçar a barra. Ele não é a poção mágica do super-herói, mas a ferramenta pragmática de sobrevivência. Quando Leandro fala que confia na marca há 10 anos porque ela substitui metade do peito de frango que ele teria que comer, ele tira a suplementação do pedestal da vaidade e a coloca no centro do mundo real. Ele tangibiliza a falta de tempo.",
-      "Isso é o que chamamos de Antropologia Visual aplicada ao posicionamento de marca. Fazer filmes corporativos não é sobre ter uma câmera de cinema. É sobre entender profundamente o que move o intelecto e a alma do espectador, transformando o seu produto em algo que o mercado não apenas consome, mas respeita silenciosamente."
+      "Isso é o que chamamos de Antropologia Visual aplicada ao posicionamento de marca. Fazer filmes corporativos não é sobre ter uma câmera de cinema. É sobre entender profundamente o que move o intelecto e a alma do espectador, transformando o seu produto em algo que o mercado não apenas consome, mas respeita silenciosamente.",
+      "↳ O case completo: [Wedy Nutrition](/projetos/wedy-nutrition) · Os bastidores da gravação: [O Código Brasil da Força](/conteudo/codigo-brasil-forca-brand-filmmaking-wedy)"
     ],
     date: "2026-09-24",
     tags: ["Brand Filmmaking", "Antropologia Visual", "Sociedade do Cansaço", "Wedy Nutrition"]
