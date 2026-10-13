@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import { portfolioProjects } from "@/lib/constants/portfolioProjects";
 import { especialidades } from "@/lib/constants/especialidades";
+import { business, LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -107,16 +108,8 @@ export default async function ProjectCasePage({ params }: PageProps) {
         "headline": `${project.name} para ${project.client}`,
         "description": project.description,
         "image": `https://www.fabian.art.br${project.imgSrc}`,
-        "creator": {
-          "@type": "Person",
-          "name": "Fabian Baldovino",
-          "url": "https://www.fabian.art.br"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Fabian Baldovino — Brand Filmmaking",
-          "url": "https://www.fabian.art.br"
-        },
+        "creator": { "@id": SCHEMA_IDS.person },
+        "publisher": { "@id": SCHEMA_IDS.business },
         "keywords": project.tags.join(", ")
       },
       {
@@ -229,7 +222,11 @@ export default async function ProjectCasePage({ params }: PageProps) {
                   {project.description}
                 </p>
                 <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
-                  <strong>Local de atuação:</strong> Porto Alegre, Rio Grande do Sul e Brasil.
+                  <strong>Produção:</strong>{" "}
+                  <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+                    produtora de vídeo em Porto Alegre
+                  </Link>
+                  , com atuação em todo o Rio Grande do Sul e no Brasil.
                 </p>
                 {especialidade && (
                   <p className="text-sm font-light text-foreground/70 mt-1">
@@ -262,6 +259,16 @@ export default async function ProjectCasePage({ params }: PageProps) {
                 <span>Conversar no WhatsApp</span>
                 <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
+              {business.googleReviewUrl && (
+                <a
+                  href={business.googleReviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-center text-foreground/60 hover:text-brand-accent transition-colors pt-1"
+                >
+                  Fez parte deste projeto? <span className="underline underline-offset-4">Avalie no Google ★</span>
+                </a>
+              )}
             </div>
           </div>
         </div>

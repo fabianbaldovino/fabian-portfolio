@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { especialidades } from "@/lib/constants/especialidades";
+import { LOCAL_PAGE_PATH } from "@/lib/constants/business";
 
 export const metadata: Metadata = {
   title: "Especialidades — Brand Film, Documentary e Novela Vertical | Fabian Baldovino",
@@ -92,6 +93,13 @@ export default function EspecialidadesHub() {
             Quatro formatos de narrativa audiovisual. A escolha entre eles não é
             estética — é estratégica. Depende de quem precisa ser convencido, de
             quanto tempo você tem para convencer, e de onde o filme vai viver.
+          </p>
+          <p className="text-sm font-light text-foreground/70 max-w-2xl mt-4">
+            Todos os formatos são produzidos a partir de Porto Alegre.{" "}
+            <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+              Conheça a produtora de vídeo em Porto Alegre
+            </Link>
+            .
           </p>
         </div>
 

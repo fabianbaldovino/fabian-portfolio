@@ -1,51 +1,65 @@
-import { contactInfo } from "@/lib/constants/contact";
+import Link from "next/link";
 import { socials } from "@/lib/constants/socials";
+import { business, whatsappUrl, LOCAL_PAGE_PATH } from "@/lib/constants/business";
 
 interface FooterProps {
   className?: string;
 }
 
+/**
+ * Rodapé com NAP (nome, cidade, telefone) idêntico ao Perfil da Empresa
+ * no Google, link para a página local e — quando os links estiverem
+ * preenchidos em business.ts — "Google Maps" e "Avalie no Google".
+ */
 export default function Footer({ className = "" }: FooterProps) {
-  const whatsappUrl = `https://wa.me/${contactInfo.phoneRaw.replace("+", "")}`;
+  const linkClass = "hover:text-brand-accent transition-colors";
+  const dot = <span aria-hidden="true" className="opacity-40">·</span>;
 
   return (
     <footer className={`text-foreground/70 text-xs pb-14 md:pb-0 ${className}`}>
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 px-6 py-3">
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-brand-accent transition-colors"
-        >
-          WhatsApp
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-3">
+        <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          WhatsApp {business.phone}
         </a>
-        <span aria-hidden="true" className="opacity-40">·</span>
-        <a
-          href={`mailto:${contactInfo.email}`}
-          className="hover:text-brand-accent transition-colors"
-        >
-          {contactInfo.email}
+        {dot}
+        <a href={`mailto:${business.email}`} className={linkClass}>
+          {business.email}
         </a>
-        <span aria-hidden="true" className="opacity-40">·</span>
-        <a
-          href={socials.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-brand-accent transition-colors"
-        >
+        {dot}
+        <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className={linkClass}>
           Instagram
         </a>
-        <span aria-hidden="true" className="opacity-40">·</span>
-        <a
-          href={socials.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-brand-accent transition-colors"
-        >
+        {dot}
+        <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className={linkClass}>
           LinkedIn
         </a>
-        <span aria-hidden="true" className="opacity-40">·</span>
-        <span>&copy; 2026 Fabian Baldovino</span>
+        {business.googleMapsUrl && (
+          <>
+            {dot}
+            <a href={business.googleMapsUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+              Google Maps
+            </a>
+          </>
+        )}
+        {business.googleReviewUrl && (
+          <>
+            {dot}
+            <a
+              href={business.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-accent hover:text-foreground transition-colors"
+            >
+              Avalie no Google ★
+            </a>
+          </>
+        )}
+        {dot}
+        <Link href={LOCAL_PAGE_PATH} className={linkClass}>
+          Produtora de vídeo em {business.city}
+        </Link>
+        {dot}
+        <span>&copy; 2026 {business.name}</span>
       </div>
     </footer>
   );

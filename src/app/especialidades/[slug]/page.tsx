@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { especialidades } from "@/lib/constants/especialidades";
 import { portfolioProjects } from "@/lib/constants/portfolioProjects";
+import { LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -103,12 +104,7 @@ export default async function EspecialidadePage({ params }: PageProps) {
         description: esp.metaDescription,
         url,
         image: `https://www.fabian.art.br${esp.imgSrc}`,
-        provider: {
-          "@type": "Person",
-          name: "Fabian Baldovino",
-          url: "https://www.fabian.art.br",
-          jobTitle: "Brand Filmmaker",
-        },
+        provider: { "@id": SCHEMA_IDS.business },
         areaServed: [
           { "@type": "City", name: "Porto Alegre" },
           { "@type": "State", name: "Rio Grande do Sul" },
@@ -211,7 +207,11 @@ export default async function EspecialidadePage({ params }: PageProps) {
                 {esp.intro}
               </p>
               <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
-                <strong>Atendimento:</strong> Porto Alegre, Rio Grande do Sul e Brasil.
+                <strong>Atendimento:</strong>{" "}
+                <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+                  produtora de vídeo em Porto Alegre
+                </Link>
+                , com projetos em todo o Rio Grande do Sul e no Brasil.
               </p>
             </div>
 
