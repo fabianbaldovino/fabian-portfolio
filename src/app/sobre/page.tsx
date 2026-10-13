@@ -85,7 +85,7 @@ export default function SobrePage() {
               <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] rounded-full group-hover:bg-brand-accent/30 transition-all duration-700" />
               <div className="relative w-full max-h-[65vh] lg:max-h-none aspect-[3/4] rounded-xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[2deg]">
                 <Image
-                  src="/FOTOS/fabian_baldovino_moinhos_de_vento_porto_alegre_Rio_grande_do_sul.webp"
+                  src="/FOTOS/fabian_baldovino_porto_alegre_Rio_grande_do_sul_2.webp"
                   alt="Fabian Baldovino — Brand Filmmaker em Porto Alegre, RS"
                   fill
                   className="object-cover object-top"
