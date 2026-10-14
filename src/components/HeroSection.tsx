@@ -28,10 +28,10 @@ export default function HeroSection() {
             <Link href={LOCAL_PAGE_PATH} className="hover:text-foreground transition-colors">Produtora de vídeo em Porto Alegre, RS</Link> • <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="underline decoration-1 underline-offset-4 hover:text-foreground transition-colors">O Código Brasil</a>
           </p>
           <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-[2.15rem] xl:text-[2.5rem] leading-[1.15] tracking-tight text-foreground text-balance">
-            <span className="font-light italic text-foreground/80">Ninguém compra um produto pela</span> <span className="font-medium">razão;</span> a razão só existe para justificar o que o <span className="font-medium text-brand-accent">instinto</span> já decidiu em milésimos de segundo.
+            <span className="font-light italic text-foreground/80">Seu cliente decide</span> <span className="font-medium text-brand-accent">em segundos</span> <span className="font-light italic text-foreground/80">se confia em</span> <span className="font-medium">você.</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-lg text-foreground/70 font-light leading-relaxed text-balance">
-            <span className="italic opacity-90">Não fazemos vídeo enfeite:</span> fazemos o <span className="font-medium text-brand-accent opacity-100">filme</span> que faz seu cliente <span className="font-medium text-foreground/90">confiar em você</span> e fechar negócio sem pedir desconto.
+            <span className="italic opacity-90">Filmes de marca e vídeos institucionais para empresas de Porto Alegre e do RS.</span> Eu dirijo o <span className="font-medium text-brand-accent opacity-100">filme</span> que faz essa decisão pender para o seu lado, para você <span className="font-medium text-foreground/90">defender seu preço</span> sem guerra de desconto.
           </p>
           <div className="flex flex-wrap items-center gap-3 mt-1">
             <a

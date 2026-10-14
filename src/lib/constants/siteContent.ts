@@ -1,7 +1,7 @@
 export const heroContent = {
-  statement: "Ninguém compra um produto pela razão; a razão só existe para justificar o que o instinto já decidiu em milésimos de segundo.",
-  conclusion: "Não produzimos vídeos para vaidades passageiras; construímos a percepção de valor que governa a decisão de compra.",
-  fullText: "Filmes de marca e institucionais para empresas de Porto Alegre e do RS. Ninguém compra um produto pela razão; a razão só existe para justificar o que o instinto já decidiu em milésimos de segundo. Não produzimos vídeos para vaidades passageiras; construímos a percepção de valor que governa a decisão de compra.",
+  statement: "Seu cliente decide em segundos se confia em você.",
+  conclusion: "Eu dirijo o filme que faz essa decisão pender para o seu lado, para você defender seu preço sem guerra de desconto.",
+  fullText: "Filmes de marca e vídeos institucionais para empresas de Porto Alegre e do RS. Seu cliente decide em segundos se confia em você. Eu dirijo o filme que faz essa decisão pender para o seu lado, para você defender seu preço sem guerra de desconto.",
 };
 
 export const aboutDescription =
@@ -10,4 +10,4 @@ export const aboutDescription =
 export const personImage = {
   src: "/FOTOS/fabian_baldovino_parque_moinhos_de_vento_porto_alegre_rs.webp",
   alt: "Fabian Baldovino - Brand Filmmaker em Porto Alegre",
-};
+};

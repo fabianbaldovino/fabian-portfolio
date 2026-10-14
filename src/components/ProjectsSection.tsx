@@ -66,7 +66,7 @@ export default function ProjectsSection() {
                 <div className="w-full aspect-[16/9] lg:aspect-auto lg:h-full lg:flex-1 rounded-[12px] lg:rounded-[16px] overflow-hidden relative block min-h-0">
                   <Image
                     src={project.imgSrc}
-                    alt={`${project.name} — Caso de Estudo`}
+                    alt={`${project.name} — projeto`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={project.slug === DESTAQUES[0]?.slug}
@@ -95,9 +95,9 @@ export default function ProjectsSection() {
           <Link 
             href="/projetos"
             className="w-full flex justify-between items-center min-h-[44px] py-1.5 group cursor-pointer text-left focus:outline-none active:opacity-70 transition-opacity"
-            aria-label="Ir para Obras Selecionadas"
+            aria-label="Ir para Projetos"
           >
-            <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Obras Selecionadas</span>
+            <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Projetos</span>
             <span className="text-brand-dark group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </motion.div>

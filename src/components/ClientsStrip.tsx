@@ -12,7 +12,7 @@ export default function ClientsStrip() {
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.15 }}
       aria-label="Marcas atendidas e imprensa que noticiou Fabian Baldovino"
     >
-      <p className="sr-only">Clientes atendidos por Fabian Baldovino e veículos de imprensa que noticiaram seu trabalho — Brand Filmmaking Porto Alegre</p>
+      <p className="sr-only">Marcas atendidas e veículos de imprensa que noticiaram o trabalho</p>
 
       {/* Keyframes inline: no build Linux da Vercel o minifier descarta @keyframes nao referenciados dentro do CSS (a referencia mora no style do JSX) — manter a definicao no HTML garante a animacao em qualquer pipeline. */}
       <style>{`@keyframes marquee-scroll{0%{transform:translate(0)}100%{transform:translate(-50%)}}`}</style>

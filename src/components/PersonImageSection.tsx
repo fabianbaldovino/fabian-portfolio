@@ -11,13 +11,19 @@ export default function PersonImageSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(true);
 
-  // autoplay é disparado por JS após a checagem de Save-Data e de
-  // prefers-reduced-motion: o atributo nunca é renderizado pela SSR,
-  // evitando playback em rede lenta antes da hidratação.
+  // Autoplay sempre sem som (muted): o usuário liga o áudio pelos controles.
+  // Disparado por JS após a checagem de Save-Data (2G / economia de dados),
+  // para não baixar o vídeo em rede lenta antes da hidratação.
   useEffect(() => {
     if (!checked || dataSaver) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    videoRef.current?.play().catch(() => {});
+    const v = videoRef.current;
+    if (!v) return;
+    // React nem sempre aplica o atributo muted no HTML; sem isso o navegador bloqueia o autoplay.
+    v.muted = true;
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    v.addEventListener("canplay", tryPlay, { once: true });
+    return () => v.removeEventListener("canplay", tryPlay);
   }, [checked, dataSaver]);
 
   return (

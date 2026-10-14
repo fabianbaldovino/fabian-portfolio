@@ -148,7 +148,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
           href="/conteudo" 
           className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md py-1 px-2 -ml-2"
         >
-          <span aria-hidden="true">&larr;</span> Voltar para o Journal
+          <span aria-hidden="true">&larr;</span> Voltar para os artigos
         </Link>
       </div>
       
@@ -189,6 +189,14 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
             }
             if (paragraph.startsWith("> ")) {
               return <blockquote key={idx} className="border-l-2 border-brand-accent pl-6 py-2 my-8 italic text-foreground/70 bg-accent/5 rounded-r-lg">{renderFormattedText(paragraph.replace("> ", ""))}</blockquote>;
+            }
+            if (paragraph.startsWith("- ")) {
+              return (
+                <p key={idx} className="mb-2 pl-6 relative">
+                  <span aria-hidden="true" className="absolute left-1 text-brand-accent">•</span>
+                  {renderFormattedText(paragraph.slice(2))}
+                </p>
+              );
             }
             if (paragraph.startsWith("Fotografia:") || paragraph.startsWith("Trilha Sonora") || paragraph.startsWith("Motion Graphics:")) {
                const [title, ...rest] = paragraph.split(":");

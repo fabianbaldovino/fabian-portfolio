@@ -87,12 +87,13 @@ export default function EspecialidadesHub() {
           </nav>
 
           <h1 className="text-4xl md:text-5xl font-medium mb-4 leading-tight">
-            Especialidades
+            Que tipo de filme sua empresa precisa?
           </h1>
           <p className="text-base md:text-lg font-light text-foreground/80 max-w-2xl leading-relaxed">
-            Quatro formatos de narrativa audiovisual. A escolha entre eles não é
-            estética — é estratégica. Depende de quem precisa ser convencido, de
-            quanto tempo você tem para convencer, e de onde o filme vai viver.
+            São quatro formatos, cada um para um objetivo: apresentar a empresa, contar
+            sua história, vender com emoção ou falar com quem está no celular. A escolha
+            depende de quem precisa ser convencido, de quanto tempo você tem para isso
+            e de onde o filme vai ser visto.
           </p>
           <p className="text-sm font-light text-foreground/70 max-w-2xl mt-4">
             Todos os formatos são produzidos a partir de Porto Alegre.{" "}

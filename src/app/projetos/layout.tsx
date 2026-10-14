@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Obras Selecionadas | Fabian Baldovino — Brand Filmmaker Porto Alegre",
-  description: "Portfólio de Brand Filmmaking: Termolar, Quick House, Copelmi e mais. Narrativas visuais que constroem marcas de alto valor em Porto Alegre, RS.",
+  title: "Projetos | Fabian Baldovino — Produtora de Vídeo em Porto Alegre",
+  description: "Projetos de vídeo e brand filmmaking: Termolar, Quick House, Copelmi e mais. Narrativas visuais que constroem marcas de alto valor em Porto Alegre, RS.",
   alternates: {
     canonical: "https://www.fabian.art.br/projetos",
   },
   openGraph: {
-    title: "Obras Selecionadas | Fabian Baldovino — Brand Filmmaker Porto Alegre",
-    description: "Portfólio de Brand Filmmaking: Termolar, Quick House, Copelmi e mais. Conheça as narrativas visuais que constroem marcas de alto valor.",
+    title: "Projetos | Fabian Baldovino — Produtora de Vídeo em Porto Alegre",
+    description: "Projetos de vídeo e brand filmmaking: Termolar, Quick House, Copelmi e mais. Conheça as narrativas visuais que constroem marcas de alto valor.",
     url: "https://www.fabian.art.br/projetos",
     type: "website",
     siteName: "Fabian Baldovino",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Obras Selecionadas — Fabian Baldovino Brand Filmmaker",
+        alt: "Projetos — Fabian Baldovino Brand Filmmaker",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obras Selecionadas | Fabian Baldovino — Brand Filmmaker Porto Alegre",
-    description: "Portfólio de Brand Filmmaking: Termolar, Quick House, Copelmi e mais. Conheça as narrativas visuais que constroem marcas de alto valor.",
+    title: "Projetos | Fabian Baldovino — Produtora de Vídeo em Porto Alegre",
+    description: "Projetos de vídeo e brand filmmaking: Termolar, Quick House, Copelmi e mais. Conheça as narrativas visuais que constroem marcas de alto valor.",
     images: ["/og-image.jpg"],
   },
 };

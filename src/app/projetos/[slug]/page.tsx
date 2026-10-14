@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `${project.name} | Portfólio | Fabian Baldovino`;
+  const title = `${project.name} | Projetos | Fabian Baldovino`;
   const description = `${project.deliverable} para ${project.client}. ${project.description.slice(0, 140)}...`;
 
   return {

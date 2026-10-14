@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
-  description: "O journal de Fabian Baldovino sobre brand filmmaking, neuromarketing e os códigos culturais que moldam o comportamento do consumidor brasileiro.",
+  description: "O Código Brasil é o método de brand filmmaking de Fabian Baldovino: como o brasileiro decide confiar em uma marca e como transformar isso em filme.",
   alternates: {
     canonical: "/o-codigo-brasil",
   },
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.fabian.art.br/o-codigo-brasil",
     title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
-      description: "O journal de Fabian Baldovino sobre brand filmmaking, neuromarketing e os códigos culturais que moldam o comportamento do consumidor brasileiro.",
+      description: "O Código Brasil é o método de brand filmmaking de Fabian Baldovino: como o brasileiro decide confiar em uma marca e como transformar isso em filme.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Método & Manifesto O Código Brasil | Fabian Baldovino",
-    description: "O journal de Fabian Baldovino sobre brand filmmaking, neuromarketing e os códigos culturais que moldam o comportamento do consumidor brasileiro.",
+    description: "O Código Brasil é o método de brand filmmaking de Fabian Baldovino: como o brasileiro decide confiar em uma marca e como transformar isso em filme.",
     images: ["/FOTOS/capa_manifesto_o_codigo_brasil_fabian_baldovino.png"],
   },
 };

@@ -43,10 +43,10 @@ export default function ProjetosPage() {
                 </Link>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-brand-accent font-medium">
-                    Portfólio
+                    Projetos
                   </p>
                   <h1 className="text-2xl md:text-3xl font-medium">
-                    Obras Selecionadas
+                    Filmes que fizemos para marcas do RS e do Brasil
                   </h1>
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function ProjetosPage() {
                 initial="hidden"
                 animate="visible"
               >
-                Acervo em Destaque
+                Todos os projetos
               </motion.h2>
 
               {rest.map((project, i) => (

@@ -30,7 +30,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description: "A Termolar nos desafiou a repensar a interação com o público mobile. O resultado foi um thriller psicológico em 4 episódios. Abandonamos a publicidade convencional para criar uma novela vertical de alta retenção. Nesse formato, o produto não interrompe a experiência; ele conduz uma história envolvente escrita por Renata Maltz e eleva a percepção de valor da marca através do entretenimento.",
     narrative: [
       "### O desafio",
-      "Quando a Termolar chegou ao projeto, o pedido parecia simples: um brand film.",
+      "Quando a Termolar chegou ao projeto, o pedido parecia simples: um filme de marca.",
       "O que estava por baixo era mais sofisticado — e mais raro. A Termolar não queria ser o herói da narrativa. Ela queria ser a cena.",
       "Não o produto que resolve o problema. O elemento cultural que pertence àquele mundo.",
       "### A abordagem",
@@ -38,7 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "O trabalho do Código Brasil aqui foi encontrar o código de pertencimento — a frequência emocional que a marca compartilha com a cena onde ela existe. Não o que a Termolar faz ou oferece, mas onde ela naturalmente *está*, como parte do tecido cultural daquele universo.",
       "O filme foi construído para que o espectador sinta a presença da marca antes de nomeá-la. É a diferença entre ser apresentado a alguém e reconhecer alguém que já faz parte da sua vida.",
       "### O resultado",
-      "Uma marca que não precisa se explicar já venceu metade da batalha de comunicação. A Termolar saiu desse processo com um brand film que não parece publicidade — parece documento.",
+      "Uma marca que não precisa se explicar já venceu metade da batalha de comunicação. A Termolar saiu desse processo com uma série que não parece publicidade — parece documento.",
       "Esse é o objetivo mais difícil de atingir. E o mais duradouro.",
     ],
     instagramUrls: [
@@ -111,14 +111,14 @@ export const portfolioProjects: PortfolioProject[] = [
     narrative: [
       "### O desafio",
       "Fasano. JHSF. Os nomes mais exigentes da construção de alto padrão no Brasil.",
-      "Quando você executa projetos para essas marcas, você não está só construindo — você está participando da criação de lugares que vão definir o padrão de excelência por décadas. A Quick House opera nesse nível. O desafio era fazer um brand film à altura disso.",
+      "Quando você executa projetos para essas marcas, você não está só construindo — você está participando da criação de lugares que vão definir o padrão de excelência por décadas. A Quick House opera nesse nível. O desafio era fazer um filme à altura disso.",
       "Não demonstrar competência — comunicar **grandeza**.",
       "### A abordagem",
       "O código da Quick House é *inteligência construtiva* — a capacidade de entregar velocidade sem sacrificar precisão, e precisão sem sacrificar escala. Num mercado onde rapidez e qualidade são frequentemente apresentadas como opostos, a Quick House é a prova de que essa dicotomia é falsa.",
       "O trabalho do Código Brasil aqui foi mostrar a lógica por trás da entrega: o sistema, o raciocínio, a decisão que acontece antes de qualquer material ser colocado no lugar. A grandeza não está no resultado final — está no processo que o torna inevitável.",
       "O filme foi construído para que o espectador sinta o que é trabalhar com alguém que já pensou em tudo antes que você precisasse pensar.",
       "### O resultado",
-      "Marcas como Fasano e JHSF não escolhem parceiros por preço ou prazo — escolhem por confiança. O brand film da Quick House faz exatamente o que esse posicionamento exige: estabelece confiança antes da primeira conversa comercial.",
+      "Marcas como Fasano e JHSF não escolhem parceiros por preço ou prazo — escolhem por confiança. O filme da Quick House faz exatamente o que esse posicionamento exige: estabelece confiança antes da primeira conversa comercial.",
       "Isso é o que brand filmmaking resolve quando o cliente opera no nível mais alto do mercado.",
     ],
     youtubeIds: ["a01rHmvCfN4", "_ijnZb_6aHA"],
@@ -141,7 +141,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Descobrimos o código da **Autoridade Pacífica**. O verdadeiro poder não grita.",
       "Em vez de locutores de voz agressiva e textos de venda, a estratégia pelo Código Brasil foi usar o respiro e o tempo a favor da imagem. Enquadramentos fixos, movimentação majestosa, e uma edição que não tem pressa. Cada imagem é um monumento. Ao retratarmos a imensidão das instalações energéticas e a solidez dos times, entregamos o silêncio confortável de quem sabe o tamanho que tem.",
       "### O resultado",
-      "Um posicionamento que cala qualquer questionamento antes que ele comece. O brand film da Copelmi se transformou em uma credencial imediata que afirma a posição da empresa como base de infraestrutura na mente do público, elevando sua herança a um patamar cinematográfico.",
+      "Um posicionamento que cala qualquer questionamento antes que ele comece. O filme da Copelmi se transformou em uma credencial imediata que afirma a posição da empresa como base de infraestrutura na mente do público, elevando sua herança a um patamar cinematográfico.",
     ],
   },
   {

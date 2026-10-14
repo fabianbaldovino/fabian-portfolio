@@ -6,16 +6,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Journal & Insights | Fabian Baldovino",
-  description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor em Porto Alegre.",
+  title: "Artigos sobre vídeo e marca | Fabian Baldovino",
+  description: "Como empresas usam vídeo para ganhar confiança e vender sem baixar preço: artigos de Fabian Baldovino, brand filmmaker em Porto Alegre.",
   alternates: {
     canonical: "https://www.fabian.art.br/conteudo",
   },
   openGraph: {
     type: "website",
     url: "https://www.fabian.art.br/conteudo",
-    title: "Journal & Insights | Fabian Baldovino",
-    description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor em Porto Alegre.",
+    title: "Artigos sobre vídeo e marca | Fabian Baldovino",
+    description: "Como empresas usam vídeo para ganhar confiança e vender sem baixar preço: artigos de Fabian Baldovino, brand filmmaker em Porto Alegre.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fabian Baldovino — Journal & Insights de Brand Filmmaking",
+        alt: "Fabian Baldovino — Artigos sobre vídeo e marca",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Journal & Insights | Fabian Baldovino",
-    description: "Artigos, vídeos e insights sobre brand filmmaking, psicanálise de consumo e estratégia de alto valor.",
+    title: "Artigos sobre vídeo e marca | Fabian Baldovino",
+    description: "Como empresas usam vídeo para ganhar confiança e vender sem baixar preço: artigos de Fabian Baldovino, brand filmmaker em Porto Alegre.",
     images: ["/og-image.jpg"],
   },
 };
@@ -48,7 +48,7 @@ export default function JournalHub() {
                 Artigos & Filmes
               </p>
               <h1 className="text-4xl md:text-5xl font-medium mb-3">
-                Journal <span className="italic font-light text-brand-accent">&</span> Insights
+                Artigos <span className="italic font-light text-brand-accent">sobre</span> vídeo e marca
               </h1>
               <p className="text-foreground/70 text-lg">
                 Estratégias visuais para fortalecer marcas. <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-accent transition-colors">O Código Brasil, manifesto de Fabian Baldovino</a>.
@@ -59,7 +59,7 @@ export default function JournalHub() {
             </p>
           </header>
 
-          <ul className="flex flex-col gap-4 list-none p-0 m-0" aria-label="Publicações do Journal">
+          <ul className="flex flex-col gap-4 list-none p-0 m-0" aria-label="Artigos publicados">
             {conteudos.map((item) => (
               <li key={item.slug}>
                 <Link
