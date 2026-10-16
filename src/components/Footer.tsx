@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { socials } from "@/lib/constants/socials";
 import { business, whatsappUrl, LOCAL_PAGE_PATH } from "@/lib/constants/business";
 
@@ -18,6 +19,7 @@ export default function Footer({ className = "" }: FooterProps) {
   return (
     <footer className={`text-foreground/70 text-xs pb-14 md:pb-0 ${className}`}>
       <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-3">
+        <Image src="/logo/monograma-dourado.svg" alt="" width={20} height={20} unoptimized className="h-5 w-5" />
         <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={linkClass}>
           WhatsApp {business.phone}
         </a>
