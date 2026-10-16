@@ -81,15 +81,15 @@ const servicos = [
 const etapas = [
   {
     title: "Conversa e briefing",
-    text: "Entendemos o que a empresa precisa provocar em quem assiste, onde o vídeo vai circular e qual é o prazo. Desse encontro sai o orçamento.",
+    text: "Eu entendo o que a empresa precisa provocar em quem assiste, onde o vídeo vai circular e qual é o prazo. Desse encontro sai o orçamento.",
   },
   {
     title: "Leitura do código",
-    text: "Antes da câmera, a pesquisa. Com o método O Código Brasil, identificamos o que o seu público sente sobre a sua categoria e qual história a marca pode contar com verdade.",
+    text: "Antes da câmera, a pesquisa. Com o método O Código Brasil, identifico o que o seu público sente sobre a sua categoria e qual história a marca pode contar com verdade.",
   },
   {
     title: "Roteiro e filmagem",
-    text: "Roteiro aprovado, locações e equipe definidas. Filmamos em Porto Alegre, na Região Metropolitana, na Serra, no interior do RS ou onde a história estiver.",
+    text: "Roteiro aprovado, locações e equipe definidas. Gravo em Porto Alegre, na Região Metropolitana, na Serra, no interior do RS ou onde a história estiver.",
   },
   {
     title: "Montagem e entrega",
@@ -100,7 +100,7 @@ const etapas = [
 const faq = [
   {
     q: "Quanto custa um vídeo institucional em Porto Alegre?",
-    a: "Depende de quantos dias de filmagem o projeto exige, do tamanho da equipe, de locações, elenco e do trabalho de pós-produção (montagem, cor, trilha e animações). Por isso cada orçamento é feito a partir do briefing. Mande pelo WhatsApp o objetivo do vídeo, onde ele vai ser usado e o prazo, e respondemos com uma proposta.",
+    a: "Depende de quantos dias de filmagem o projeto exige, do tamanho da equipe, de locações, elenco e do trabalho de pós-produção (montagem, cor, trilha e animações). Por isso cada orçamento é feito a partir do briefing. Mande pelo WhatsApp o objetivo do vídeo, onde ele vai ser usado e o prazo, e respondo com uma proposta.",
   },
   {
     q: "Quanto tempo leva para produzir um vídeo?",
@@ -116,11 +116,11 @@ const faq = [
   },
   {
     q: "Vocês atendem empresas fora de Porto Alegre?",
-    a: "Sim. A base é Porto Alegre, e atendemos toda a Região Metropolitana, a Serra Gaúcha, o Litoral e o interior do Rio Grande do Sul. Projetos em outros estados também são atendidos, com deslocamento da equipe incluído no orçamento.",
+    a: "Sim. A base é Porto Alegre, e atendo toda a Região Metropolitana, a Serra Gaúcha, o Litoral e o interior do Rio Grande do Sul. Projetos em outros estados também são atendidos, com deslocamento da equipe incluído no orçamento.",
   },
   {
     q: "Vocês fazem vídeos para Instagram, Reels e anúncios?",
-    a: "Sim. Produzimos campanhas para Meta Ads, teasers verticais e novelas verticais em episódios, pensadas para prender a atenção no celular desde o primeiro segundo.",
+    a: "Sim. Produzo campanhas para Meta Ads, teasers verticais e novelas verticais em episódios, pensadas para prender a atenção no celular desde o primeiro segundo.",
     link: { href: "/especialidades/novela-vertical", label: "Conheça a novela vertical" },
   },
   {
@@ -204,7 +204,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
               </p>
               <div className="h-[1px] bg-accent/30 my-2" />
               <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
-                Fazemos vídeo institucional, brand film, documentário de marca e vídeos para
+                Eu dirijo vídeo institucional, brand film, documentário de marca e vídeos para
                 redes sociais para empresas de Porto Alegre e de todo o Rio Grande do Sul. A
                 diferença está antes da câmera: cada roteiro nasce de uma leitura de como o seu
                 cliente decide, para que o filme seja lembrado, e não pulado.
@@ -286,7 +286,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
           <h2 className="text-2xl md:text-3xl font-medium mb-3">Cases</h2>
           <p className="text-base md:text-lg font-light text-foreground/75 max-w-3xl mb-8 leading-relaxed">
             Indústria, mineração, construção, nutrição e gastronomia. Alguns dos filmes que
-            produzimos e o que cada um precisava resolver.
+            dirigi e o que cada um precisava resolver.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioProjects.map((c) => (
@@ -295,7 +295,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
                   <div className="relative w-full h-44 overflow-hidden">
                     <Image
                       src={c.imgSrc}
-                      alt={`${c.name} — ${c.client}, produção de Fabian Baldovino`}
+                      alt={`${c.name} — ${c.client}, ${c.city}. Produção de Fabian Baldovino`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -303,7 +303,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
                   </div>
                   <div className="p-5 flex flex-col gap-2 flex-grow">
                     <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold">
-                      {c.client}
+                      {c.client} · {c.city}
                     </p>
                     <h3 className="text-lg font-medium group-hover:text-brand-accent transition-colors">
                       {c.name}
@@ -357,13 +357,28 @@ export default function ProdutoraDeVideoPortoAlegre() {
               poucas horas.
             </p>
             <p className="text-base md:text-lg font-light leading-relaxed text-foreground/85">
-              Desde {business.foundingYear}, Fabian Baldovino dirige filmes para marcas do Rio
+              Desde {business.foundingYear} eu dirijo filmes para marcas do Rio
               Grande do Sul e de outros estados. O trabalho combina linguagem de cinema com
               pesquisa de comportamento, para que o vídeo da sua empresa seja assistido até o fim
               e faça o cliente confiar antes mesmo da primeira reunião.
             </p>
           </div>
         </article>
+
+        {/* Abrangência */}
+        <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-medium mb-3">Onde eu atendo</h2>
+          <p className="text-base md:text-lg font-light text-foreground/75 max-w-3xl mb-6 leading-relaxed">
+            Minha base é Porto Alegre, e eu vou até a sua empresa. Atendo toda a região, e a
+            equipe se desloca para onde a história estiver.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 max-w-3xl list-none p-0 m-0 text-sm md:text-base font-light text-foreground/80">
+            <li><strong className="font-medium text-foreground">Porto Alegre:</strong> todos os bairros.</li>
+            <li><strong className="font-medium text-foreground">Região Metropolitana:</strong> Canoas, Novo Hamburgo, São Leopoldo, Gravataí, Cachoeirinha e Viamão.</li>
+            <li><strong className="font-medium text-foreground">Serra Gaúcha:</strong> Caxias do Sul, Bento Gonçalves e Gramado.</li>
+            <li><strong className="font-medium text-foreground">Litoral e interior do RS:</strong> sob consulta, com deslocamento no orçamento.</li>
+          </ul>
+        </section>
 
         {/* FAQ */}
         <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
@@ -431,7 +446,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-foreground/70 hover:text-brand-accent transition-colors"
                   >
-                    <Star size={14} aria-hidden="true" /> Já trabalhou com a gente? Avalie no Google
+                    <Star size={14} aria-hidden="true" /> Já trabalhou comigo? Avalie no Google
                   </a>
                 )}
               </div>

@@ -2,6 +2,8 @@ export type PortfolioProject = {
   slug: string;
   name: string;
   client: string;
+  /** Cidade e UF do cliente, no formato "Porto Alegre, RS" (SEO local) */
+  city: string;
   imgSrc: string;
   tags: string[];
   description: string;
@@ -23,6 +25,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "termolar",
     name: "Termolar — Novela Vertical de 4 Episódios",
     client: "Termolar",
+    city: "Porto Alegre, RS",
     imgSrc: "/FOTOS/trabalhos/ele nao foi embora.jpg",
     tags: ["Novela Vertical", "4 Episódios", "Thriller Psicológico"],
     deliverable: "Novela vertical · 4 episódios",
@@ -52,6 +55,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "ristorante-fontana",
     name: "Campanha de Redes Sociais",
     client: "Ristorante Fontana",
+    city: "Porto Alegre, RS",
     imgSrc: "/FOTOS/trabalhos/fontana.jpg",
     tags: ["Campanha de 4 Filmes", "META ADS", "Redes Sociais"],
     deliverable: "4 filmes · META ADS",
@@ -79,6 +83,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "wedy-nutrition",
     name: "#WedyPraTodos",
     client: "Wedy Nutrition",
+    city: "Porto Alegre, RS",
     imgSrc: "/FOTOS/trabalhos/wedy nutrition.png",
     tags: ["Série de Filmes", "Suplementação Esportiva", "Campanha de Marca"],
     deliverable: "Série de filmes · Campanha",
@@ -103,6 +108,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "quick-house",
     name: "Vídeo Institucional — Construção de Alto Padrão",
     client: "Quick House",
+    city: "Canoas, RS",
     imgSrc: "/FOTOS/trabalhos/quickhouse.png",
     tags: ["Vídeo Institucional", "Construção à Seco", "Escala Nacional"],
     deliverable: "Dezenas de vídeos · Institucional",
@@ -127,6 +133,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "copelmi",
     name: "Vídeo Institucional — O Peso da Liderança",
     client: "Copelmi",
+    city: "Porto Alegre, RS",
     imgSrc: "/FOTOS/trabalhos/copelmi.png",
     tags: ["Vídeo Institucional", "Energia", "Mineração"],
     deliverable: "Produção institucional",
@@ -148,6 +155,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "seival-sul-mineradora",
     name: "Vídeo Institucional — Soberania Energética",
     client: "Seival Sul Mineração",
+    city: "Candiota, RS",
     imgSrc: "/FOTOS/trabalhos/seivalsulmineracao.png",
     tags: ["Vídeo Institucional", "Mineração", "Sul do Brasil"],
     deliverable: "1 filme · Institucional",

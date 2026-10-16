@@ -154,7 +154,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       
       <div className="mb-10">
         <span className="text-brand-accent text-sm font-bold tracking-widest uppercase mb-4 block">
-          {new Date(conteudo.date).toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
+          {new Date(conteudo.date + "T12:00:00").toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
           {conteudo.title}
@@ -226,7 +226,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       {/* Seção de Autor/CTA no final do artigo */}
       <div className="mt-20 pt-10 border-t border-accent flex flex-col md:flex-row gap-8 items-center bg-card p-8 rounded-[20px]">
         <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 relative border-2 border-brand-accent">
-          <Image src="/og-image.jpg" alt="Fabian Baldovino" fill sizes="96px" className="object-cover object-center" />
+          <Image src="/FOTOS/fabian_baldovino_porto_alegre_Rio_grande_do_sul_2.webp" alt="Fabian Baldovino" fill sizes="96px" className="object-cover" style={{ objectPosition: "50% 22%" }} />
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>

@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${project.name} | Projetos | Fabian Baldovino`;
-  const description = `${project.deliverable} para ${project.client}. ${project.description.slice(0, 140)}...`;
+  const description = `${project.deliverable} para ${project.client} (${project.city}). ${project.description.slice(0, 140)}...`;
 
   return {
     title,
@@ -106,6 +106,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
         "@id": `https://www.fabian.art.br/projetos/${project.slug}#work`,
         "name": project.name,
         "headline": `${project.name} para ${project.client}`,
+        "locationCreated": { "@type": "Place", "name": project.city },
         "description": project.description,
         "image": `https://www.fabian.art.br${project.imgSrc}`,
         "creator": { "@id": SCHEMA_IDS.person },
@@ -202,7 +203,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
             <div className="flex flex-col gap-4">
               <div>
                 <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-1">
-                  {project.client}
+                  {project.client} · {project.city}
                 </p>
                 <h1 className="text-3xl md:text-5xl font-medium leading-tight">
                   {project.name}
