@@ -14,6 +14,36 @@ export type Conteudo = {
 
 export const conteudos: Conteudo[] = [
   {
+    title: "Vídeo institucional para indústrias no RS: como filmar uma operação pesada sem fazer um vídeo frio",
+    slug: "video-institucional-para-industrias-rs",
+    coverImage: "/FOTOS/trabalhos/seivalsulmineracao.png",
+    excerpt: "Indústria, mineração e energia costumam ganhar vídeos que listam máquinas e toneladas. Veja o que muda quando o filme mostra o peso real da operação, com exemplos de Copelmi e Seival Sul.",
+    content: [
+      "O Rio Grande do Sul tem indústria pesada em quase toda região: o polo da Serra, o eixo metropolitano, a mineração da Campanha. E quase todas essas empresas têm o mesmo problema quando o assunto é vídeo.",
+      "O vídeo institucional da indústria costuma ser uma lista. Metros quadrados, toneladas por mês, frota, certificações, logo no final. Tudo verdade, e ninguém assiste até o fim.",
+      "### O problema não é o setor, é o formato",
+      "Quem assiste a um vídeo de indústria raramente é um consumidor. É um comprador de outra empresa, um investidor, um parceiro institucional, alguém da comunidade ao redor da operação. Essas pessoas não precisam ser convencidas de que a empresa tem máquinas. Elas precisam sentir que podem confiar nela.",
+      "Número informa. Imagem com direção faz sentir. Um bom institucional de indústria usa os números como prova dentro de uma história, não como roteiro.",
+      "### O que muda quando o filme é dirigido",
+      "Na mineração e na energia, existe um estigma: o mercado se acostumou a ver operações mostradas de forma fria e operacional. Quando filmei a [Seival Sul](/projetos/seival-sul-mineradora), na Mina de Candiota, a proposta foi entrar como documentarista, não como publicitário. O foco não foi a máquina, foi o peso da operação para a região e para quem trabalha nela.",
+      "Na [Copelmi](/projetos/copelmi), o caminho foi outro. Uma empresa líder no setor de energia não precisa provar o tamanho, precisa consolidar o legado. O filme usou enquadramentos que não têm pressa e uma montagem com respiro. Poder real não grita.",
+      "Nos dois casos, o roteiro nasceu de uma pergunta antes da câmera: o que o público dessa empresa precisa sentir para confiar nela? Esse é o ponto de partida do método O Código Brasil.",
+      "### O que um vídeo de indústria precisa ter",
+      "- Um objetivo claro: vender para outras empresas, apresentar a investidores, integrar colaboradores ou falar com a comunidade.",
+      "- Pessoas, não só equipamentos. Quem opera é o que dá escala humana à operação.",
+      "- Imagem aérea quando a escala é o argumento.",
+      "- Versões para cada uso: um filme principal e cortes curtos para LinkedIn, feiras e apresentações.",
+      "- Um ritmo de cinema, não de apresentação de slides.",
+      "### Institucional ou documentário?",
+      "Se a empresa precisa apresentar o que faz para quem ainda não conhece, o vídeo institucional resolve. Se a operação é grande e a empresa precisa ser compreendida na escala real que ocupa, o documentário de marca é o formato certo.",
+      "↳ Conheça o formato: [Vídeo institucional](/especialidades/video-institucional)",
+      "↳ Para operações de grande escala: [Brand Documentary](/especialidades/brand-documentary)",
+      "↳ Quanto custa: [faixas de preço do vídeo institucional](/conteudo/quanto-custa-video-institucional-em-porto-alegre)",
+    ],
+    date: "2026-10-17",
+    tags: ["Vídeo Institucional", "Indústria", "Mineração", "Rio Grande do Sul"]
+  },
+  {
     title: "Quanto custa um vídeo institucional em Porto Alegre: faixas de preço e o que muda o valor",
     slug: "quanto-custa-video-institucional-em-porto-alegre",
     coverImage: "/FOTOS/fabian_baldovino_parque_moinhos_de_vento_porto_alegre_rs.webp",

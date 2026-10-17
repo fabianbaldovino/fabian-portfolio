@@ -113,6 +113,21 @@ export default async function ProjectCasePage({ params }: PageProps) {
         "publisher": { "@id": SCHEMA_IDS.business },
         "keywords": project.tags.join(", ")
       },
+      // Vídeos do case: habilita a página na aba Vídeos do Google.
+      ...(project.youtubeUploadDate
+        ? (project.youtubeIds ?? []).map((id, idx) => ({
+            "@type": "VideoObject",
+            "@id": `https://www.fabian.art.br/projetos/${project.slug}#video-${idx + 1}`,
+            "name": `${project.client}: ${project.name} (filme ${idx + 1})`,
+            "description": project.description,
+            "thumbnailUrl": `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+            "uploadDate": project.youtubeUploadDate,
+            "embedUrl": `https://www.youtube.com/embed/${id}`,
+            "contentUrl": `https://www.youtube.com/watch?v=${id}`,
+            "creator": { "@id": SCHEMA_IDS.person },
+            "isPartOf": { "@id": `https://www.fabian.art.br/projetos/${project.slug}#work` },
+          }))
+        : []),
       {
         "@type": "BreadcrumbList",
         "itemListElement": [

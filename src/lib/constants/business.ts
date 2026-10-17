@@ -46,6 +46,28 @@ export const business = {
   openingHours: ["Mo-Fr 09:00-18:00"] as string[],
 
   areaServed: ["Porto Alegre", "Região Metropolitana de Porto Alegre", "Rio Grande do Sul", "Brasil"],
+
+  /**
+   * Cidades citadas na seção "Onde eu atendo" da página local e declaradas
+   * uma a uma no areaServed do schema. Uma página só, sem página por cidade
+   * (evita doorway pages).
+   */
+  citiesServed: [
+    "Porto Alegre",
+    "Canoas",
+    "Novo Hamburgo",
+    "São Leopoldo",
+    "Gravataí",
+    "Cachoeirinha",
+    "Viamão",
+    "Caxias do Sul",
+    "Bento Gonçalves",
+    "Gramado",
+    "Pelotas",
+    "Rio Grande",
+    "Candiota",
+    "Passo Fundo",
+  ],
 } as const;
 
 export const whatsappUrl = (text?: string) =>

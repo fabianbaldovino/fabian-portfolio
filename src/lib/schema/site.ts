@@ -25,8 +25,9 @@ const servicos = especialidades.map((e) => ({
 }));
 
 const areaServed = [
-  { "@type": "City", name: "Porto Alegre" },
+  ...business.citiesServed.map((name) => ({ "@type": "City", name })),
   { "@type": "AdministrativeArea", name: "Região Metropolitana de Porto Alegre" },
+  { "@type": "AdministrativeArea", name: "Serra Gaúcha" },
   { "@type": "State", name: "Rio Grande do Sul" },
   { "@type": "Country", name: "Brasil" },
 ];

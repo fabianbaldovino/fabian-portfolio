@@ -71,6 +71,41 @@ const servicos = especialidades.map((e) => ({
   href: `/especialidades/${e.slug}`,
 }));
 
+const setores = [
+  {
+    title: "Indústria, mineração e energia",
+    text: "Operações grandes que costumam ser mostradas com vídeos frios, cheios de máquinas e números. Aqui o filme mostra o peso real da operação para investidores, parceiros e a comunidade ao redor.",
+    links: [
+      { label: "Copelmi", href: "/projetos/copelmi" },
+      { label: "Seival Sul (Candiota)", href: "/projetos/seival-sul-mineradora" },
+      { label: "Vídeo para indústrias no RS", href: "/conteudo/video-institucional-para-industrias-rs" },
+    ],
+  },
+  {
+    title: "Construção e incorporadoras",
+    text: "Quem constrói para clientes exigentes precisa transmitir precisão antes da primeira reunião. O filme mostra o raciocínio por trás da obra, não só o resultado.",
+    links: [{ label: "Quick House (Canoas)", href: "/projetos/quick-house" }],
+  },
+  {
+    title: "Marcas de consumo e varejo",
+    text: "Produtos que disputam atenção no celular. Campanhas e séries verticais que prendem nos primeiros segundos e criam vínculo com a marca.",
+    links: [
+      { label: "Termolar", href: "/projetos/termolar" },
+      { label: "Wedy Nutrition", href: "/projetos/wedy-nutrition" },
+    ],
+  },
+  {
+    title: "Gastronomia e hospitalidade",
+    text: "O cliente não escolhe só pelo prato, escolhe pelo clima do lugar. Filmes curtos para redes que mostram o ritual, não só a receita.",
+    links: [{ label: "Ristorante Fontana", href: "/projetos/ristorante-fontana" }],
+  },
+  {
+    title: "Empresas com história para contar",
+    text: "Aniversário de 30, 50 anos, sucessão familiar, legado. O formato certo é o documentário de marca.",
+    links: [{ label: "Brand Documentary", href: "/especialidades/brand-documentary" }],
+  },
+];
+
 const etapas = [
   {
     title: "Conversa e briefing",
@@ -255,7 +290,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
         {/* Serviços */}
         <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-medium mb-3">
-            Produção audiovisual para empresas
+            Produtora audiovisual em Porto Alegre para empresas
           </h2>
           <p className="text-base md:text-lg font-light text-foreground/75 max-w-3xl mb-8 leading-relaxed">
             Cada formato resolve um problema diferente. A escolha depende de quem precisa ser
@@ -315,6 +350,33 @@ export default function ProdutoraDeVideoPortoAlegre() {
           </div>
         </section>
 
+        {/* Para quem eu filmo — um bloco por setor, cada um ligado ao case que o comprova */}
+        <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-medium mb-3">Para quem eu filmo</h2>
+          <p className="text-base md:text-lg font-light text-foreground/75 max-w-3xl mb-8 leading-relaxed">
+            Cada setor tem um jeito próprio de ganhar confiança. O filme precisa falar a língua de
+            quem decide naquele mercado.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {setores.map((s) => (
+              <div key={s.title} className="flex flex-col gap-2 rounded-[16px] border border-white/5 bg-background/40 p-5">
+                <h3 className="text-lg font-medium">{s.title}</h3>
+                <p className="text-sm md:text-base font-light leading-relaxed text-foreground/75">{s.text}</p>
+                <p className="text-sm text-foreground/60">
+                  {s.links.map((l, i) => (
+                    <span key={l.href}>
+                      {i > 0 && " · "}
+                      <Link href={l.href} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+                        {l.label}
+                      </Link>
+                    </span>
+                  ))}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Processo */}
         <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-medium mb-8">Como funciona a produção</h2>
@@ -366,14 +428,22 @@ export default function ProdutoraDeVideoPortoAlegre() {
         <section className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-medium mb-3">Onde eu atendo</h2>
           <p className="text-base md:text-lg font-light text-foreground/75 max-w-3xl mb-6 leading-relaxed">
-            Minha base é Porto Alegre, e eu vou até a sua empresa. Atendo toda a região, e a
-            equipe se desloca para onde a história estiver.
+            Minha base é Porto Alegre, e eu vou até a sua empresa. Atendo todo o Rio Grande do
+            Sul, e a equipe se desloca para onde a história estiver.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 max-w-3xl list-none p-0 m-0 text-sm md:text-base font-light text-foreground/80">
             <li><strong className="font-medium text-foreground">Porto Alegre:</strong> todos os bairros.</li>
-            <li><strong className="font-medium text-foreground">Região Metropolitana:</strong> Canoas, Novo Hamburgo, São Leopoldo, Gravataí, Cachoeirinha e Viamão.</li>
+            <li>
+              <strong className="font-medium text-foreground">Região Metropolitana:</strong> Canoas, Novo Hamburgo, São Leopoldo, Gravataí, Cachoeirinha e Viamão. Em Canoas, dirigi os filmes da{" "}
+              <Link href="/projetos/quick-house" className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">Quick House</Link>.
+            </li>
             <li><strong className="font-medium text-foreground">Serra Gaúcha:</strong> Caxias do Sul, Bento Gonçalves e Gramado.</li>
-            <li><strong className="font-medium text-foreground">Litoral e interior do RS:</strong> sob consulta, com deslocamento no orçamento.</li>
+            <li>
+              <strong className="font-medium text-foreground">Sul do estado:</strong> Pelotas, Rio Grande e a região da Campanha. Em Candiota, filmei a operação da{" "}
+              <Link href="/projetos/seival-sul-mineradora" className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">Seival Sul</Link>.
+            </li>
+            <li><strong className="font-medium text-foreground">Norte e interior:</strong> Passo Fundo e demais cidades do interior, com deslocamento no orçamento.</li>
+            <li><strong className="font-medium text-foreground">Litoral:</strong> sob consulta.</li>
           </ul>
         </section>
 

@@ -18,6 +18,8 @@ export type PortfolioProject = {
   instagramUrls?: string[];
   /** IDs de vídeos do YouTube */
   youtubeIds?: string[];
+  /** Data de publicação dos vídeos do YouTube (ISO 8601). Sem ela, não gera VideoObject. */
+  youtubeUploadDate?: string;
   /** Rótulo das peças no player: "Episódio" (padrão) ou "Filme" */
   videoNoun?: string;
 };
@@ -134,6 +136,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Isso é o que brand filmmaking resolve quando o cliente opera no nível mais alto do mercado.",
     ],
     youtubeIds: ["a01rHmvCfN4", "_ijnZb_6aHA"],
+    // Informado pelo Fabian em 17/10/2026: publicados "há 9 meses".
+    youtubeUploadDate: "2026-01",
   },
   {
     slug: "copelmi",
