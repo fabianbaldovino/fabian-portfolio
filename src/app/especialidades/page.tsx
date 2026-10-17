@@ -7,16 +7,16 @@ import { especialidades } from "@/lib/constants/especialidades";
 import { LOCAL_PAGE_PATH } from "@/lib/constants/business";
 
 export const metadata: Metadata = {
-  title: "Especialidades — Brand Film, Documentary e Novela Vertical | Fabian Baldovino",
+  title: "Especialidades — Vídeo Institucional, Brand Film e Novela Vertical | Fabian Baldovino",
   description:
-    "Brand film, brand documentary, teaser cinematográfico e novela vertical. Quatro formatos de narrativa audiovisual para marcas, por Fabian Baldovino em Porto Alegre, RS.",
+    "Vídeo institucional, brand film, brand documentary, teaser cinematográfico e novela vertical. Cinco formatos audiovisuais para empresas, por Fabian Baldovino em Porto Alegre, RS.",
   alternates: {
     canonical: "https://www.fabian.art.br/especialidades",
   },
   openGraph: {
     title: "Especialidades | Fabian Baldovino",
     description:
-      "Brand film, brand documentary, teaser cinematográfico e novela vertical. Quatro formatos de narrativa audiovisual para marcas.",
+      "Vídeo institucional, brand film, brand documentary, teaser cinematográfico e novela vertical. Cinco formatos audiovisuais para empresas.",
     url: "https://www.fabian.art.br/especialidades",
     type: "website",
     siteName: "Fabian Baldovino",
@@ -90,7 +90,7 @@ export default function EspecialidadesHub() {
             Que tipo de filme sua empresa precisa?
           </h1>
           <p className="text-base md:text-lg font-light text-foreground/80 max-w-2xl leading-relaxed">
-            São quatro formatos, cada um para um objetivo: apresentar a empresa, contar
+            São formatos diferentes, cada um para um objetivo: apresentar a empresa, contar
             sua história, vender com emoção ou falar com quem está no celular. A escolha
             depende de quem precisa ser convencido, de quanto tempo você tem para isso
             e de onde o filme vai ser visto.

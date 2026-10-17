@@ -18,18 +18,11 @@ const socialProfiles = [
   "https://www.threads.com/@fabianbaldovino9",
 ];
 
-const servicos = [
-  {
-    name: "Vídeo Institucional",
-    url: `${business.url}/conteudo/video-institucional-vs-brand-film-a-diferenca-real`,
-    description: "Produção de vídeo institucional para empresas em Porto Alegre e no RS.",
-  },
-  ...especialidades.map((e) => ({
-    name: e.name,
-    url: `${business.url}/especialidades/${e.slug}`,
-    description: e.metaDescription,
-  })),
-];
+const servicos = especialidades.map((e) => ({
+  name: e.name,
+  url: `${business.url}/especialidades/${e.slug}`,
+  description: e.metaDescription,
+}));
 
 const areaServed = [
   { "@type": "City", name: "Porto Alegre" },

@@ -13,10 +13,22 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-/** Renderiza **negrito** e *itálico* dentro de um parágrafo. */
+/** Renderiza **negrito**, *itálico* e [texto](/link) dentro de um parágrafo. */
 function renderInline(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) {
+      return (
+        <Link
+          key={i}
+          href={link[2]}
+          className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors"
+        >
+          {link[1]}
+        </Link>
+      );
+    }
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
         <strong key={i} className="font-semibold text-foreground">
@@ -249,6 +261,14 @@ export default async function EspecialidadePage({ params }: PageProps) {
                 >
                   {block.slice(4)}
                 </h2>
+              ) : block.startsWith("- ") ? (
+                <p
+                  key={i}
+                  className="text-base md:text-lg font-light leading-relaxed text-foreground/85 pl-6 relative"
+                >
+                  <span aria-hidden="true" className="absolute left-1 text-brand-accent">•</span>
+                  {renderInline(block.slice(2))}
+                </p>
               ) : (
                 <p
                   key={i}

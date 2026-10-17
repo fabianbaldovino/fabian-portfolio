@@ -65,18 +65,11 @@ export const metadata: Metadata = {
   },
 };
 
-const servicos = [
-  {
-    name: "Vídeo Institucional",
-    text: "O filme que apresenta a empresa para clientes, investidores e novos colaboradores. Feito para ser assistido até o fim, não para cumprir tabela.",
-    href: "/conteudo/video-institucional-vs-brand-film-a-diferenca-real",
-  },
-  ...especialidades.map((e) => ({
-    name: e.name,
-    text: e.tagline + ".",
-    href: `/especialidades/${e.slug}`,
-  })),
-];
+const servicos = especialidades.map((e) => ({
+  name: e.name,
+  text: e.tagline + ".",
+  href: `/especialidades/${e.slug}`,
+}));
 
 const etapas = [
   {
