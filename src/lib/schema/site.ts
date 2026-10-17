@@ -110,7 +110,11 @@ export const siteSchema = {
       },
       ...(business.googleMapsUrl ? { hasMap: business.googleMapsUrl } : {}),
       ...(business.openingHours.length ? { openingHours: business.openingHours } : {}),
-      sameAs: [...socialProfiles, ...(business.googleMapsUrl ? [business.googleMapsUrl] : [])],
+      sameAs: [
+        ...socialProfiles,
+        ...(business.googleMapsUrl ? [business.googleMapsUrl] : []),
+        ...business.listings,
+      ],
     },
     {
       "@type": "CreativeWork",

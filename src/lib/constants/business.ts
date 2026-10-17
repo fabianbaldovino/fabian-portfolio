@@ -39,6 +39,16 @@ export const business = {
   googleReviewUrl: "https://g.page/r/CXME2DIGTVXKEBM/review",
 
   /**
+   * Cadastros externos com os mesmos dados (NAP). Entram no sameAs do negócio.
+   * Ao criar um cadastro novo, conferir nome e telefone e acrescentar aqui.
+   */
+  listings: [
+    "https://poafilmcommission.portoalegre.rs.gov.br/servicos/fabian-baldovino",
+    "https://www.ohub.com.br/empresa/fabian-baldovino-porto-alegre-rs-740114",
+    "https://www.facebook.com/profile.php?id=61595588396973",
+  ],
+
+  /**
    * Horário comercial — deve ser o mesmo do Perfil da Empresa.
    * Formato schema.org: ["Mo-Fr 09:00-18:00", "Sa 09:00-13:00"].
    * Vazio = não declarado no schema.
