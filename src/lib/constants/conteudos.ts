@@ -14,6 +14,36 @@ export type Conteudo = {
 
 export const conteudos: Conteudo[] = [
   {
+    title: "Vídeo para construtoras e incorporadoras em Porto Alegre: como mostrar precisão antes da primeira reunião",
+    slug: "video-para-construtoras-e-incorporadoras-porto-alegre",
+    coverImage: "/FOTOS/trabalhos/quickhouse.png",
+    excerpt: "Construtora vende confiança antes de vender obra. Veja o que um vídeo institucional de construção precisa mostrar, com o exemplo da Quick House, de Canoas.",
+    content: [
+      "Quem contrata uma construtora está entregando prazo, dinheiro e reputação na mão de outra empresa. Antes de qualquer planta ou orçamento, a pergunta é uma só: dá para confiar?",
+      "O vídeo institucional de uma construtora existe para responder essa pergunta antes da primeira reunião.",
+      "### O erro mais comum",
+      "A maioria dos vídeos de construção mostra o resultado: a fachada pronta, o drone sobre o terreno, a lista de obras entregues. É bonito, e qualquer concorrente pode mostrar a mesma coisa.",
+      "O que diferencia uma construtora de outra não está na foto final. Está no raciocínio que vem antes: como ela planeja, como decide, como evita o problema antes que ele apareça.",
+      "### O exemplo da Quick House",
+      "A Quick House, de Canoas, trabalha com construção modular em SteelPanel. O sistema permite erguer obras como hospitais e a sede da COP-30 em velocidade recorde, para clientes do nível de Fasano e JHSF.",
+      "O desafio do filme tinha uma armadilha: para o público, velocidade pode soar como fragilidade. Se o vídeo mostrasse só a rapidez, a marca perderia exatamente o que precisava transmitir.",
+      "O caminho foi mostrar a lógica por trás da entrega. Do detalhe da precisão do aço às imagens aéreas da escala da obra, o filme foi construído para que o espectador sinta que está diante de alguém que já pensou em tudo antes que ele precisasse pensar.",
+      "[Veja o case completo da Quick House](/projetos/quick-house).",
+      "### O que um vídeo de construtora precisa mostrar",
+      "- **O método, não só a obra.** O processo é o que o concorrente não consegue copiar.",
+      "- **Escala com detalhe.** A imagem aérea mostra o tamanho; o close mostra o cuidado. As duas juntas criam confiança.",
+      "- **Pessoas.** Engenheiros, mestres de obra, equipe de projeto. Cliente confia em gente, não em guindaste.",
+      "- **Versões para cada uso:** um filme principal para o site e apresentações comerciais, e cortes curtos para LinkedIn e anúncios.",
+      "### Incorporadora é diferente de construtora",
+      "A construtora fala com quem contrata a obra. A incorporadora fala com quem vai morar ou investir. Para a incorporadora, o vídeo precisa vender o modo de vida do empreendimento, não só a solidez de quem constrói. Muitas vezes o mesmo dia de filmagem rende as duas peças.",
+      "↳ Conheça o formato: [Vídeo institucional](/especialidades/video-institucional)",
+      "↳ Quanto custa: [faixas de preço do vídeo institucional](/conteudo/quanto-custa-video-institucional-em-porto-alegre)",
+      "↳ Veja como trabalho: [produtora de vídeo em Porto Alegre](/produtora-de-video-porto-alegre)",
+    ],
+    date: "2026-10-17",
+    tags: ["Vídeo Corporativo", "Construção Civil", "Incorporadoras", "Porto Alegre"]
+  },
+  {
     title: "Vídeo institucional para indústrias no RS: como filmar uma operação pesada sem fazer um vídeo frio",
     slug: "video-institucional-para-industrias-rs",
     coverImage: "/FOTOS/trabalhos/seivalsulmineracao.png",

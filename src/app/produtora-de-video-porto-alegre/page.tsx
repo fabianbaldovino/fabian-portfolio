@@ -84,7 +84,10 @@ const setores = [
   {
     title: "Construção e incorporadoras",
     text: "Quem constrói para clientes exigentes precisa transmitir precisão antes da primeira reunião. O filme mostra o raciocínio por trás da obra, não só o resultado.",
-    links: [{ label: "Quick House (Canoas)", href: "/projetos/quick-house" }],
+    links: [
+      { label: "Quick House (Canoas)", href: "/projetos/quick-house" },
+      { label: "Vídeo para construtoras", href: "/conteudo/video-para-construtoras-e-incorporadoras-porto-alegre" },
+    ],
   },
   {
     title: "Marcas de consumo e varejo",
