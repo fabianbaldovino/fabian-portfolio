@@ -6,6 +6,8 @@ export type Conteudo = {
   excerpt: string;
   content: string[];
   date: string;
+  /** Data da última revisão relevante (AAAA-MM-DD). Vazio = igual a date. */
+  updated?: string;
   tags: string[];
   coverImage?: string;
 };

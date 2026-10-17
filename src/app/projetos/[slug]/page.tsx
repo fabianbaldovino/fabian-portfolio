@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import { portfolioProjects } from "@/lib/constants/portfolioProjects";
 import { especialidades } from "@/lib/constants/especialidades";
-import { business, LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
+import { business, whatsappUrl, LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `${project.name} | Projetos | Fabian Baldovino`;
+  const title = `${project.seoTitle ?? `${project.name} | Projetos`} | Fabian Baldovino`;
   const description = `${project.deliverable} para ${project.client} (${project.city}). ${project.description.slice(0, 140)}...`;
 
   return {
@@ -249,9 +249,9 @@ export default async function ProjectCasePage({ params }: PageProps) {
                 Interessado em uma produção no mesmo padrão para sua marca?
               </p>
               <a
-                href={`https://wa.me/5551999654160?text=${encodeURIComponent(
+                href={whatsappUrl(
                   `Olá Fabian, vi o projeto ${project.name} (${project.client}) no seu site e gostaria de conversar sobre um projeto similar para minha marca.`
-                )}`}
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"

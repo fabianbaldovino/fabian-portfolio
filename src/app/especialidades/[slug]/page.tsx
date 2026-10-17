@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { especialidades } from "@/lib/constants/especialidades";
 import { portfolioProjects } from "@/lib/constants/portfolioProjects";
-import { LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
+import { whatsappUrl, LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -220,9 +220,9 @@ export default async function EspecialidadePage({ params }: PageProps) {
                 Quer avaliar se esse é o formato certo para sua marca?
               </p>
               <a
-                href={`https://wa.me/5551999654160?text=${encodeURIComponent(
+                href={whatsappUrl(
                   `Olá Fabian, vi a página de ${esp.name} no seu site e gostaria de conversar sobre um projeto para minha marca.`
-                )}`}
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"

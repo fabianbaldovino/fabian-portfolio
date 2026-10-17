@@ -8,6 +8,7 @@ import { portfolioProjects } from "@/lib/constants/portfolioProjects";
 import { containerVariants, cardVariants, textVariants } from "@/lib/animation/variants";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { whatsappUrl } from "@/lib/constants/business";
 
 export default function ProjetosPage() {
   const [featured, ...rest] = portfolioProjects;
@@ -190,7 +191,7 @@ export default function ProjetosPage() {
                 </h2>
               </div>
               <a
-                href="https://wa.me/5551999654160"
+                href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-accent text-brand-dark px-6 py-3 rounded-full font-medium w-full text-sm text-center hover:bg-brand-accent/90 hover:shadow-[0_0_20px_rgba(205,160,89,0.25)] active:scale-[0.98] transition-all min-h-[48px] flex items-center justify-center"

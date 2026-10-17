@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { business, whatsappUrl, LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
 
 function renderFormattedText(text: string) {
   // Inclui [texto](/destino): sem isto os links dos artigos vazavam como
@@ -102,20 +103,22 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
     {
       "@context": "https://schema.org",
       "@type": "Article",
+      "@id": `https://www.fabian.art.br/conteudo/${slug}#article`,
       "headline": conteudo.title,
       "description": conteudo.excerpt,
       "image": conteudo.coverImage ? "https://www.fabian.art.br" + conteudo.coverImage : "https://www.fabian.art.br/og-image.jpg",
       "datePublished": conteudo.date,
-      "dateModified": conteudo.date,
+      "dateModified": conteudo.updated ?? conteudo.date,
+      // Mesmos @id do grafo global (lib/schema/site.ts): o autor do artigo é
+      // a mesma entidade do Person e do Perfil da Empresa.
       "author": {
-        "@type": "Person",
-        "name": "Fabian Baldovino",
-        "url": "https://www.fabian.art.br"
+        "@id": SCHEMA_IDS.person,
+        "name": business.name,
+        "url": `${business.url}/sobre`
       },
       "publisher": {
-        "@type": "Person",
-        "name": "Fabian Baldovino",
-        "url": "https://www.fabian.art.br"
+        "@id": SCHEMA_IDS.business,
+        "name": business.name
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -233,8 +236,18 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
           <p className="text-foreground/70 text-sm md:text-base mb-4 leading-relaxed">
             Brand filmmaker e autor de <em>O Código Brasil</em>. Se o conteúdo gerou valor para você, considere estruturar a narrativa da sua própria empresa com uma produção de nível cinematográfico.
           </p>
+          {/* Links internos de autoria: todo artigo aponta para /sobre e para a página local. */}
+          <p className="text-foreground/70 text-sm mb-4">
+            <Link href="/sobre" className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+              Conheça Fabian Baldovino
+            </Link>
+            {" · "}
+            <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+              Produtora de vídeo em {business.city}
+            </Link>
+          </p>
           <a
-            href="https://wa.me/5551999654160?text=Ol%C3%A1%20Fabian,%20li%20o%20artigo%20no%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+            href={whatsappUrl("Olá Fabian, li o artigo no seu site e gostaria de conversar sobre um projeto.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-accent text-brand-dark font-medium text-sm hover:brightness-110 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"

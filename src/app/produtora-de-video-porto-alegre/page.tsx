@@ -101,6 +101,10 @@ const faq = [
   {
     q: "Quanto custa um vídeo institucional em Porto Alegre?",
     a: "Depende de quantos dias de filmagem o projeto exige, do tamanho da equipe, de locações, elenco e do trabalho de pós-produção (montagem, cor, trilha e animações). Por isso cada orçamento é feito a partir do briefing. Mande pelo WhatsApp o objetivo do vídeo, onde ele vai ser usado e o prazo, e respondo com uma proposta.",
+    link: {
+      href: "/conteudo/quanto-custa-video-institucional-em-porto-alegre",
+      label: "Veja as faixas de preço do mercado",
+    },
   },
   {
     q: "Quanto tempo leva para produzir um vídeo?",

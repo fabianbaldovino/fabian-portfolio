@@ -3,18 +3,20 @@ import Link from "next/link";
 import { Camera, Film, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { business, whatsappUrl, LOCAL_PAGE_PATH, SCHEMA_IDS } from "@/lib/constants/business";
+import { socials } from "@/lib/constants/socials";
 
 export const metadata: Metadata = {
-  title: "Sobre | Fabian Baldovino — Brand Filmmaker Porto Alegre",
-  description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
+  title: "Fabian Baldovino | Diretor Audiovisual e Brand Filmmaker em Porto Alegre",
+  description: "Conheça Fabian Baldovino, diretor audiovisual e brand filmmaker em Porto Alegre, RS, criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
   alternates: {
     canonical: "/sobre",
   },
   openGraph: {
     type: "website",
     url: "https://www.fabian.art.br/sobre",
-    title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
-    description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
+    title: "Fabian Baldovino | Diretor Audiovisual e Brand Filmmaker em Porto Alegre",
+    description: "Conheça Fabian Baldovino, diretor audiovisual e brand filmmaker em Porto Alegre, RS, criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
     siteName: "Fabian Baldovino",
     locale: "pt_BR",
     images: [
@@ -28,15 +30,44 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sobre Fabian Baldovino | Brand Filmmaker Porto Alegre",
-    description: "Conheça Fabian Baldovino — Brand Filmmaker porto-alegrense criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
+    title: "Fabian Baldovino | Diretor Audiovisual e Brand Filmmaker em Porto Alegre",
+    description: "Conheça Fabian Baldovino, diretor audiovisual e brand filmmaker em Porto Alegre, RS, criador da metodologia O Código Brasil. Cinema e antropologia a serviço da verdade das marcas.",
     images: ["/og-image.jpg"],
   },
+};
+
+const SOBRE_URL = `${business.url}/sobre`;
+
+// ProfilePage aponta para o mesmo Person do grafo global (lib/schema/site.ts).
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${SOBRE_URL}#page`,
+      url: SOBRE_URL,
+      name: "Fabian Baldovino | Diretor Audiovisual e Brand Filmmaker em Porto Alegre",
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": SCHEMA_IDS.website },
+      mainEntity: { "@id": SCHEMA_IDS.person },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: business.url },
+        { "@type": "ListItem", position: 2, name: "Sobre", item: SOBRE_URL },
+      ],
+    },
+  ],
 };
 
 export default function SobrePage() {
   return (
     <div className="flex flex-col min-h-screen font-sans pt-2 md:pt-0 lg:py-6 xl:py-0 xl:pb-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       <main className="flex flex-col items-center pb-24 overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
@@ -101,7 +132,7 @@ export default function SobrePage() {
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-10">
             <div className="prose prose-invert max-w-none mb-12">
               <p className="text-foreground/90 font-medium leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Sou Fabian Baldovino, filmmaker de marcas em Porto Alegre. Desde <strong className="text-brand-accent">2011</strong> dirijo, com equipe própria e parceiros de captação, filmes para <strong className="text-brand-accent">mais de 100 marcas e instituições</strong>. Comecei em <strong className="text-brand-accent">Ciências Sociais</strong>, fazendo documentário e oficina de cinema em escolas públicas da rede municipal. Hoje uno técnica de cinema e antropologia do consumo em cada filme.
+                Sou Fabian Baldovino, diretor audiovisual e filmmaker de marcas em Porto Alegre. Desde <strong className="text-brand-accent">2011</strong> dirijo, com equipe própria e parceiros de captação, filmes para <strong className="text-brand-accent">mais de 100 marcas e instituições</strong>. Comecei em <strong className="text-brand-accent">Ciências Sociais</strong>, fazendo documentário e oficina de cinema em escolas públicas da rede municipal. Hoje uno técnica de cinema e antropologia do consumo em cada filme.
               </p>
               <p className="text-foreground/70 font-light mt-6 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Escrevi o Manifesto <strong className="text-brand-accent font-medium tracking-wide">O Código Brasil</strong> para entender uma coisa simples: por que o brasileiro confia — ou não — em uma marca. A resposta é que a pessoa decide sentindo primeiro, e só depois raciocina.
@@ -115,7 +146,7 @@ export default function SobrePage() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-3 mt-10">
-                {["Estratégia Visual", "Narrativa de Marca", "Porto Alegre", "Neuromarketing"].map((tag) => (
+                {["Direção de Cena", "Estratégia Visual", "Narrativa de Marca", "Porto Alegre", "Neuromarketing"].map((tag) => (
                   <span
                     key={tag}
                     className="text-xs uppercase tracking-wider px-4 py-2 rounded-full border border-brand-accent/30 text-brand-accent font-medium bg-brand-accent/5"
@@ -145,7 +176,24 @@ export default function SobrePage() {
                   <span>O Código Brasil, manifesto de Fabian Baldovino</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
+                <Link
+                  href={LOCAL_PAGE_PATH}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-brand-accent transition-colors group"
+                >
+                  <Camera size={16} className="text-brand-accent" />
+                  <span>Produtora de vídeo em {business.city}</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </Link>
               </div>
+
+              {/* Perfis — rel="me" confirma ao Google que são da mesma pessoa */}
+              <p className="text-sm text-foreground/60 font-light mt-6">
+                <a href={socials.linkedin} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-brand-accent transition-colors">LinkedIn</a>
+                {" · "}
+                <a href={socials.instagram} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-brand-accent transition-colors">Instagram</a>
+                {" · "}
+                <a href={socials.youtube} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-brand-accent transition-colors">YouTube</a>
+              </p>
             </div>
 
             {/* Golden CTA Card */}
@@ -158,7 +206,7 @@ export default function SobrePage() {
               </p>
 
               <a
-                href="https://wa.me/5551999654160"
+                href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center min-h-[48px] hover:brightness-110 hover:shadow-[0_0_30px_rgba(205,160,89,0.3)] active:scale-[0.98] transition-all"

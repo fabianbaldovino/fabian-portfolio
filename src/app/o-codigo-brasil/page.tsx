@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Lock, ArrowRight, ShieldCheck, Workflow } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
+import { whatsappUrl } from "@/lib/constants/business";
 
 const etapas = [
   {
@@ -48,10 +49,7 @@ export default function OCodigoBrasilPage() {
     if (!formData.name || !formData.company || !formData.role) return;
 
     const message = `Olá Fabian. Sou ${formData.name}, ${formData.role} da ${formData.company}. Gostaria de solicitar o meu acesso gratuito ao manifesto 'O Código Brasil'.`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/5551999654160?text=${encodedMessage}`;
-
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl(message), "_blank");
   };
 
   return (

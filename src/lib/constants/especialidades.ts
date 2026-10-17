@@ -64,7 +64,7 @@ export const especialidades: Especialidade[] = [
     slug: "brand-documentary",
     name: "Brand Documentary",
     tagline: "Quando a marca é grande demais para ser anunciada",
-    metaTitle: "Brand Documentary — Documentário de Marca | Fabian Baldovino",
+    metaTitle: "Documentário de Marca (Brand Documentary) no RS | Fabian Baldovino",
     metaDescription:
       "Documentário de marca para empresas que precisam consolidar legado, não vender produto. Brand documentary com direção cinematográfica em Porto Alegre, RS.",
     imgSrc: "/FOTOS/fabian_baldovino_casa_de_cultura_mario_quintana_porto_alegre_rs.webp",

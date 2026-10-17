@@ -1,6 +1,8 @@
 export type PortfolioProject = {
   slug: string;
   name: string;
+  /** Title tag (sem o sufixo "| Fabian Baldovino"): formato, cliente, setor e cidade. Vazio = "{name} | Projetos". */
+  seoTitle?: string;
   client: string;
   /** Cidade e UF do cliente, no formato "Porto Alegre, RS" (SEO local) */
   city: string;
@@ -23,6 +25,7 @@ export type PortfolioProject = {
 export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "termolar",
+    seoTitle: "Novela Vertical Termolar: Série de 4 Episódios em Porto Alegre",
     name: "Termolar — Novela Vertical de 4 Episódios",
     client: "Termolar",
     city: "Porto Alegre, RS",
@@ -53,6 +56,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "ristorante-fontana",
+    seoTitle: "Vídeos para Redes Sociais: Ristorante Fontana, Porto Alegre",
     name: "Campanha de Redes Sociais",
     client: "Ristorante Fontana",
     city: "Porto Alegre, RS",
@@ -81,6 +85,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "wedy-nutrition",
+    seoTitle: "Campanha de Vídeo #WedyPraTodos: Wedy Nutrition, Porto Alegre",
     name: "#WedyPraTodos",
     client: "Wedy Nutrition",
     city: "Porto Alegre, RS",
@@ -106,6 +111,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "quick-house",
+    seoTitle: "Vídeo Institucional Quick House: Construção Modular em Canoas, RS",
     name: "Vídeo Institucional — Construção de Alto Padrão",
     client: "Quick House",
     city: "Canoas, RS",
@@ -131,6 +137,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "copelmi",
+    seoTitle: "Vídeo Institucional Copelmi: Mineração e Energia no RS",
     name: "Vídeo Institucional — O Peso da Liderança",
     client: "Copelmi",
     city: "Porto Alegre, RS",
@@ -153,6 +160,7 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "seival-sul-mineradora",
+    seoTitle: "Vídeo Institucional Seival Sul: Mineração em Candiota, RS",
     name: "Vídeo Institucional — Soberania Energética",
     client: "Seival Sul Mineração",
     city: "Candiota, RS",

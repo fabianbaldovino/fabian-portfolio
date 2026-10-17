@@ -1,7 +1,10 @@
+import { business } from "./business";
+
+/** Derivado de business.ts: telefone e e-mail têm uma fonte só (NAP). */
 export const contactInfo = {
-  email: "fbpaciel@gmail.com",
-  phone: "+55 51 99965-4160",
-  phoneRaw: "+5551999654160",
-  location: "Porto Alegre, RS",
+  email: business.email,
+  phone: business.phone,
+  phoneRaw: business.phoneRaw,
+  location: `${business.city}, ${business.region}`,
   availability: "Disponível para projetos",
 };
