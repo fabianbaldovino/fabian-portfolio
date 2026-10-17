@@ -105,7 +105,10 @@ const setores = [
   {
     title: "Empresas com história para contar",
     text: "Aniversário de 30, 50 anos, sucessão familiar, legado. O formato certo é o documentário de marca.",
-    links: [{ label: "Brand Documentary", href: "/especialidades/brand-documentary" }],
+    links: [
+      { label: "Brand Documentary", href: "/especialidades/brand-documentary" },
+      { label: "Vídeo comemorativo de empresa", href: "/conteudo/video-comemorativo-historia-da-empresa" },
+    ],
   },
 ];
 
