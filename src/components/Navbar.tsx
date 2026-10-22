@@ -24,13 +24,13 @@ export default function Navbar() {
           <span className="text-xl lg:text-2xl uppercase font-medium">Baldovino</span>
         </Link>
         <HamburgerButton open={menuOpen} onClick={toggleMenu} />
-        <ul className="hidden md:flex flex-row gap-6 lg:gap-10 xl:gap-14 list-none m-0 items-center">
+        <ul className="hidden xl:flex flex-row gap-8 2xl:gap-14 list-none m-0 items-center">
           {navItems.map(({ action, href, label, title }) => (
             <li key={action}>
               {href ? (
                 <Link
                   href={href}
-                  className="text-[1rem] uppercase font-light hover:opacity-80 transition-opacity"
+                  className="text-[1rem] uppercase font-light whitespace-nowrap hover:opacity-80 transition-opacity"
                   aria-label={label}
                 >
                   {title}
@@ -38,7 +38,7 @@ export default function Navbar() {
               ) : (
                 <button
                   onClick={() => dispatchAction(action)}
-                  className="text-[1rem] uppercase font-light hover:opacity-80 transition-opacity cursor-pointer"
+                  className="text-[1rem] uppercase font-light whitespace-nowrap hover:opacity-80 transition-opacity cursor-pointer"
                   aria-label={label}
                 >
                   {title}
