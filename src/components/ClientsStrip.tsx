@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 export default function ClientsStrip() {
   return (
     <motion.div
-      className="w-full bg-card rounded-[20px] py-4 overflow-hidden relative"
+      className="w-full bg-card rounded-[20px] py-4 h-md:py-3 h-sm:py-2 h-2xs:py-1.5 overflow-hidden relative"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.15 }}
@@ -21,7 +21,7 @@ export default function ClientsStrip() {
       <div className="pointer-events-none absolute inset-y-0 right-0 w-16 z-10 bg-gradient-to-l from-card to-transparent" />
 
       <div
-        className="marquee-track flex items-center w-max h-[60px] md:h-[80px]"
+        className="marquee-track flex items-center w-max h-[60px] md:h-[80px] h-md:h-[64px] h-sm:h-[48px] h-2xs:h-[40px]"
         style={{ animation: "marquee-scroll 40s linear infinite" }}
       >
         {/* Renderiza a imagem duas vezes para criar o efeito de loop infinito */}

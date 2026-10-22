@@ -11,40 +11,40 @@ export default function HeroSection() {
 
   return (
     <motion.div 
-      className="w-full lg:flex-1 bg-card rounded-[20px] flex flex-col items-start justify-center p-6 md:p-8 xl:p-10 min-h-[250px] lg:min-h-0 relative overflow-hidden"
+      className="w-full lg:flex-1 bg-card rounded-[20px] flex flex-col items-start justify-center p-6 md:p-8 xl:p-10 h-md:p-7 h-sm:p-6 h-xs:py-4 min-h-[250px] lg:min-h-0 relative overflow-hidden"
       variants={heroVariants}
       initial="hidden"
       animate="visible"
       whileHover="hover"
     >
       <motion.div 
-        className="flex flex-col gap-5 lg:gap-6 max-w-3xl"
+        className="flex flex-col gap-5 lg:gap-6 h-sm:gap-3 max-w-3xl"
         variants={textVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="flex flex-col gap-3 md:gap-4 max-w-[95%]">
-          <p className="text-base md:text-lg lg:text-xl font-medium leading-snug text-brand-accent">
+        <div className="flex flex-col gap-3 md:gap-4 h-sm:gap-2 max-w-[95%]">
+          <p className="text-base md:text-lg lg:text-xl h-md:text-lg h-sm:text-base font-medium leading-snug text-brand-accent">
             <Link href={LOCAL_PAGE_PATH} className="hover:text-foreground transition-colors">Produtora de vídeo em Porto Alegre, RS</Link> • <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="underline decoration-1 underline-offset-4 hover:text-foreground transition-colors">O Código Brasil</a>
           </p>
-          <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-[2.15rem] xl:text-[2.5rem] leading-[1.15] tracking-tight text-foreground text-balance">
+          <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-[2.15rem] xl:text-[2.5rem] h-md:text-[2.1rem] h-sm:text-[1.75rem] h-xs:text-[1.5rem] leading-[1.15] tracking-tight text-foreground text-balance">
             <span className="font-light italic text-foreground/80">Seu cliente decide</span> <span className="font-medium text-brand-accent">em segundos</span> <span className="font-light italic text-foreground/80">se confia em</span> <span className="font-medium">você.</span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-lg text-foreground/70 font-light leading-relaxed text-balance">
+          <p className="text-sm sm:text-base md:text-lg lg:text-lg h-md:text-base h-sm:text-sm h-sm:leading-snug text-foreground/70 font-light leading-relaxed text-balance">
             <span className="italic opacity-90">Filmes de marca e vídeos institucionais para empresas de Porto Alegre e do RS.</span> Eu dirijo o <span className="font-medium text-brand-accent opacity-100">filme</span> que faz essa decisão pender para o seu lado, para você <span className="font-medium text-foreground/90">defender seu preço</span> sem guerra de desconto.
           </p>
-          <div className="flex flex-wrap items-center gap-3 mt-1">
+          <div className="flex flex-wrap items-center gap-3 mt-1 h-sm:mt-0">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-brand-accent text-brand-dark px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider min-h-[44px] hover:brightness-110 active:scale-[0.98] transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-brand-accent text-brand-dark px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider min-h-[44px] h-sm:min-h-[38px] h-sm:py-2 hover:brightness-110 active:scale-[0.98] transition-all"
             >
               Falar no WhatsApp
             </a>
             <Link
               href="/projetos"
-              className="inline-flex items-center justify-center gap-2 border border-white/15 text-foreground/85 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium min-h-[44px] hover:border-brand-accent/50 hover:text-brand-accent transition-all"
+              className="inline-flex items-center justify-center gap-2 border border-white/15 text-foreground/85 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium min-h-[44px] h-sm:min-h-[38px] h-sm:py-2 hover:border-brand-accent/50 hover:text-brand-accent transition-all"
             >
               Ver projetos →
             </Link>
