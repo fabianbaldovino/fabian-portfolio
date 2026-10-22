@@ -189,7 +189,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Main Visual Column */}
           <div className="w-full lg:w-[60%] flex flex-col gap-4">
-            <div className="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-[20px] overflow-hidden bg-card border border-white/5">
+            <div className="relative w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-auto lg:flex-1 lg:min-h-[420px] rounded-[20px] overflow-hidden bg-card border border-white/5">
               <Image
                 src={project.imgSrc}
                 alt={`${project.name} — Obra audiovisual para ${project.client} por Fabian Baldovino`}

@@ -35,7 +35,7 @@ export default function ProjectsSection() {
             Casos de Estudo
           </motion.h2>
           <motion.p
-            className="text-xs md:text-sm text-background/70 mt-1 font-light"
+            className="text-xs md:text-sm text-background/70 mt-1 font-light h-xs:hidden"
             variants={textVariants}
             initial="hidden"
             animate="visible"

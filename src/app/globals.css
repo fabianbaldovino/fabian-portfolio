@@ -6,6 +6,13 @@
   --font-gilroy: 'Gilroy', sans-serif;
 }
 
+/* Home no desktop cabe inteira na janela: em janelas mais baixas os cards
+   compactam o conteúdo em vez de cortar ou gerar rolagem. */
+@custom-variant h-md (@media (min-width: 64rem) and (max-height: 950px));
+@custom-variant h-sm (@media (min-width: 64rem) and (max-height: 810px));
+@custom-variant h-xs (@media (min-width: 64rem) and (max-height: 730px));
+@custom-variant h-2xs (@media (min-width: 64rem) and (max-height: 660px));
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

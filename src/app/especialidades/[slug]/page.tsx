@@ -188,8 +188,8 @@ export default async function EspecialidadePage({ params }: PageProps) {
 
         {/* Hero */}
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className="w-full lg:w-[55%]">
-            <div className="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-[20px] overflow-hidden bg-card border border-white/5">
+          <div className="w-full lg:w-[55%] flex flex-col">
+            <div className="relative w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-auto lg:flex-1 lg:min-h-[360px] rounded-[20px] overflow-hidden bg-card border border-white/5">
               <Image
                 src={esp.imgSrc}
                 alt={`${esp.name} — ${esp.tagline}. Fabian Baldovino, brand filmmaker em Porto Alegre.`}
