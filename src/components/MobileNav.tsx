@@ -37,7 +37,7 @@ const MobileNav = React.memo(({ open, closeMenu }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden"
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -47,7 +47,7 @@ const MobileNav = React.memo(({ open, closeMenu }: Props) => {
             exit="exit"
             variants={mobileMenuVariants}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="absolute top-[80px] left-0 border border-accent w-full bg-card rounded-[20px] shadow-lg flex flex-col gap-6 py-8 px-10 z-50 md:hidden"
+            className="absolute top-[80px] left-0 border border-accent w-full bg-card rounded-[20px] shadow-lg flex flex-col gap-6 py-8 px-10 z-50 xl:hidden"
             role="menu"
           >
             {navItems.map(({ action, href, label, title }) => (
