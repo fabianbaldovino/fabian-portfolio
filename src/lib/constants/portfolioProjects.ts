@@ -117,7 +117,7 @@ export const portfolioProjects: PortfolioProject[] = [
     name: "Flex Full — Reel de Lançamento com Motion Design",
     client: "Fábrica de Suplementos",
     city: "Porto Alegre, RS",
-    imgSrc: "/FOTOS/trabalhos/flex-full.jpg",
+    imgSrc: "/FOTOS/trabalhos/flex-full.png",
     tags: ["Reel de Lançamento", "Motion Design", "Suplementação"],
     deliverable: "1 reel · Gravação + motion design",
     especialidade: "teaser-cinematografico",
