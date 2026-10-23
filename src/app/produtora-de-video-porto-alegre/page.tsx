@@ -95,6 +95,7 @@ const setores = [
     links: [
       { label: "Termolar", href: "/projetos/termolar" },
       { label: "Wedy Nutrition", href: "/projetos/wedy-nutrition" },
+      { label: "Flex Full (Fábrica de Suplementos)", href: "/projetos/flex-full" },
     ],
   },
   {
