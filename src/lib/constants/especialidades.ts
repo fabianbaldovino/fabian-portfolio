@@ -178,7 +178,7 @@ export const especialidades: Especialidade[] = [
       "### O que você recebe",
       "Conjunto de filmes curtos (tipicamente de três a seis peças por campanha), entregues em todos os formatos de veiculação, com variações de abertura para teste A/B em mídia paga.",
     ],
-    relatedCases: ["ristorante-fontana", "wedy-nutrition"],
+    relatedCases: ["ristorante-fontana", "wedy-nutrition", "flex-full"],
   },
   {
     slug: "novela-vertical",
