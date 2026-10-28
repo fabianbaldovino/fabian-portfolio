@@ -7,8 +7,8 @@ interface Props {
 
 const HamburgerButton = React.memo(({ open, onClick }: Props) => (
   <button
-    className="xl:hidden flex flex-col justify-center items-center w-11 h-11 focus:outline-none"
-    aria-label={open ? 'Close menu' : 'Open menu'}
+    className="xl:hidden flex flex-col justify-center items-center w-11 h-11 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card transition-all"
+    aria-label={open ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
     aria-expanded={open}
     onClick={onClick}
   >

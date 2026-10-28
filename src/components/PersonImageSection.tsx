@@ -57,7 +57,7 @@ export default function PersonImageSection() {
           aria-label="Assistir reel 2026"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[72px] h-[72px] rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-black/60 hover:scale-105 active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         >
-          <Play size={28} className="text-[#E8CEC2] fill-[#E8CEC2] translate-x-[2px]" aria-hidden="true" />
+          <Play size={28} className="text-foreground fill-foreground translate-x-[2px]" aria-hidden="true" />
         </button>
       )}
     </motion.div>

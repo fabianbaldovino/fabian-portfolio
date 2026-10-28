@@ -22,6 +22,10 @@ export type PortfolioProject = {
   youtubeUploadDate?: string;
   /** Rótulo das peças no player: "Episódio" (padrão) ou "Filme" */
   videoNoun?: string;
+  /** Orientação da imagem principal do case: "horizontal" (widescreen) ou "vertical" (reels 9:16) */
+  orientation?: "horizontal" | "vertical";
+  /** Proporção CSS exata da imagem principal (ex: "930 / 478", "16 / 9", "9 / 16") para renderização sem cortes */
+  aspectRatio?: string;
 };
 
 export const portfolioProjects: PortfolioProject[] = [
@@ -94,6 +98,8 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/wedy nutrition.png",
     tags: ["Série de Filmes", "Suplementação Esportiva", "Campanha de Marca"],
     deliverable: "Série de filmes · Campanha",
+    orientation: "vertical",
+    aspectRatio: "9 / 16",
     especialidade: "teaser-cinematografico",
     description: "O mercado de suplementação é um oceano vermelho de promessas estéticas vazias. Para a campanha #WedyPraTodos, abandonamos a linguagem fria dos laboratórios e acionamos o arquétipo do herói cotidiano. Nossa cinematografia construiu uma identidade autêntica que não vende apenas performance, mas pertencimento a uma comunidade comprometida com força e disciplina.",
     narrative: [
@@ -120,6 +126,8 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/flex-full.png",
     tags: ["Reel de Lançamento", "Motion Design", "Suplementação"],
     deliverable: "1 reel · Gravação + motion design",
+    orientation: "vertical",
+    aspectRatio: "9 / 16",
     especialidade: "teaser-cinematografico",
     description: "A Fábrica de Suplementos é uma loja multimarca de suplementação esportiva. Para apresentar o Flex Full, goma de colágeno tipo 2 com curcumina que chegou às prateleiras da loja, trocamos a ficha técnica por uma pergunta que qualquer pessoa já sentiu na pele: \"Sabe aquele estalo no joelho quando você se abaixa?\". O reel une gravação e motion design num roteiro que parte de uma dor real e chega ao produto em menos de 40 segundos. Roteiro, captação, edição e animação feitos pela nossa produtora em Porto Alegre.",
     narrative: [
@@ -147,6 +155,8 @@ export const portfolioProjects: PortfolioProject[] = [
     imgSrc: "/FOTOS/trabalhos/quickhouse.png",
     tags: ["Vídeo Institucional", "Construção à Seco", "Escala Nacional"],
     deliverable: "Dezenas de vídeos · Institucional",
+    orientation: "horizontal",
+    aspectRatio: "930 / 478",
     especialidade: "brand-film",
     description: "A magia da construção modular (SteelPanel) permite erguer hospitais e a sede da COP-30 em velocidade recorde. Mas para o instinto humano, velocidade pode soar como fragilidade se não for ancorada em grandeza. Nossa direção de arte operou uma expansão das fronteiras visuais da Quick House: do micro-detalhe da precisão do aço às captações aéreas monumentais. Construímos a semiótica definitiva de um império modular imbatível.",
     narrative: [

@@ -1,0 +1,11 @@
+MATERIAIS GOOGLE MEU NEGÓCIO — Fabian Baldovino
+
+CAPA_google_meu_negocio_2048x1152.jpg
+  Foto de capa (16:9, padrão recomendado pelo Google; o Google aceita JPG/PNG entre 10 KB e 5 MB).
+  O conteúdo importante fica no centro, porque o Google corta as bordas em algumas telas.
+
+LOGO_google_meu_negocio_1080x1080.png
+  Logotipo quadrado. O monograma fica dentro do círculo central, já que o Google exibe o logo recortado em círculo.
+
+_fonte/  HTML de origem (capa.html, logo.html) e render.mjs (Playwright) para regerar ou editar textos.
+  Logos usadas: logotipo_vetor/completo e monograma (dourado #C5A059). Fonte dos textos: Urbanist (parecida com a Gilroy do site).

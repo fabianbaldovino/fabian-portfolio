@@ -191,7 +191,11 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
               return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{renderFormattedText(paragraph.replace("### ", ""))}</h3>;
             }
             if (paragraph.startsWith("> ")) {
-              return <blockquote key={idx} className="border-l-2 border-brand-accent pl-6 py-2 my-8 italic text-foreground/70 bg-accent/5 rounded-r-lg">{renderFormattedText(paragraph.replace("> ", ""))}</blockquote>;
+              return (
+                <blockquote key={idx} className="border-l border-white/20 pl-6 py-2 my-8 italic text-lg text-foreground/90 font-light">
+                  {renderFormattedText(paragraph.replace("> ", ""))}
+                </blockquote>
+              );
             }
             if (paragraph.startsWith("- ")) {
               return (

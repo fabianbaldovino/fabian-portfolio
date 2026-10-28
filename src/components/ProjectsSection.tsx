@@ -94,7 +94,7 @@ export default function ProjectsSection() {
           <hr className="border-0 h-[1px] bg-background/20 mb-2" />
           <Link 
             href="/projetos"
-            className="w-full flex justify-between items-center min-h-[44px] py-1.5 group cursor-pointer text-left focus:outline-none active:opacity-70 transition-opacity"
+            className="w-full flex justify-between items-center min-h-[44px] py-1.5 group cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark/50 rounded-lg active:opacity-70 transition-opacity"
             aria-label="Ir para Projetos"
           >
             <span className="text-sm md:text-base font-medium group-hover:text-brand-dark/70 transition-colors uppercase tracking-wider">Projetos</span>
@@ -112,7 +112,7 @@ export default function ProjectsSection() {
       >
         <motion.a
           href={socials.instagram}
-          className="text-light hover:text-accent transition-all p-3 flex items-center justify-center"
+          className="text-foreground hover:text-accent transition-all p-3 flex items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
           variants={socialVariants}
           initial="hidden"
           animate="visible"
@@ -126,7 +126,7 @@ export default function ProjectsSection() {
         </motion.a>
         <motion.a
           href={socials.linkedin}
-          className="text-light hover:text-accent transition-all p-3 flex items-center justify-center"
+          className="text-foreground hover:text-accent transition-all p-3 flex items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
           variants={socialVariants}
           initial="hidden"
           animate="visible"

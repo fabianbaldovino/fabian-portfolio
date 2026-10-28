@@ -186,108 +186,241 @@ export default async function ProjectCasePage({ params }: PageProps) {
         </div>
 
         {/* Case Study Content Grid */}
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Main Visual Column */}
-          <div className="w-full lg:w-[60%] flex flex-col gap-4">
-            <div className="relative w-full aspect-[16/10] md:aspect-[16/9] lg:aspect-auto lg:flex-1 lg:min-h-[420px] rounded-[20px] overflow-hidden bg-card border border-white/5">
+        {project.orientation === "vertical" ? (
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Main Visual Column (Vertical Reel) */}
+            <div className="w-full lg:w-[50%] flex flex-col gap-4">
+              <div
+                className="relative w-full max-h-[720px] rounded-[20px] overflow-hidden bg-card border border-white/5 mx-auto"
+                style={{ aspectRatio: project.aspectRatio ?? "9 / 16" }}
+              >
+                <Image
+                  src={project.imgSrc}
+                  alt={`${project.name} — Obra audiovisual para ${project.client} por Fabian Baldovino`}
+                  fill
+                  priority
+                  loading="eager"
+                  quality={100}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs uppercase tracking-wider px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-foreground/90 border border-white/10"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Strategic Context & Details Column */}
+            <div className="w-full lg:w-[50%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-10 border border-white/5">
+              <div className="flex flex-col gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-1">
+                    {project.client} · {project.city}
+                  </p>
+                  <h1 className="text-3xl md:text-5xl font-medium leading-tight">
+                    {project.name}
+                  </h1>
+                  <p className="text-sm uppercase tracking-widest text-foreground/50 mt-2">
+                    {project.deliverable}
+                  </p>
+                </div>
+
+                <div className="h-[1px] bg-accent/30 my-2" />
+
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-xs uppercase tracking-widest text-foreground/60 font-medium">
+                    Direção Estratégica &amp; Obra
+                  </h2>
+                  <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
+                    {project.description}
+                  </p>
+                  <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
+                    <strong>Produção:</strong>{" "}
+                    <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+                      produtora de vídeo em Porto Alegre
+                    </Link>
+                    , com atuação em todo o Rio Grande do Sul e no Brasil.
+                  </p>
+                  {especialidade && (
+                    <p className="text-sm font-light text-foreground/70 mt-1">
+                      Formato:{" "}
+                      <Link
+                        href={`/especialidades/${especialidade.slug}`}
+                        className="text-brand-accent underline hover:text-foreground transition-colors"
+                      >
+                        {especialidade.name}
+                      </Link>
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Direct Conversion CTA */}
+              <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
+                <p className="text-xs text-foreground/60">
+                  Interessado em uma produção no mesmo padrão para sua marca?
+                </p>
+                <a
+                  href={whatsappUrl(
+                    `Olá Fabian, vi o projeto ${project.name} (${project.client}) no seu site e gostaria de conversar sobre um projeto similar para minha marca.`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
+                >
+                  <MessageCircle size={20} />
+                  <span>Conversar no WhatsApp</span>
+                  <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+                {business.googleReviewUrl && (
+                  <a
+                    href={business.googleReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-center text-foreground/60 hover:text-brand-accent transition-colors pt-1"
+                  >
+                    Fez parte deste projeto? <span className="underline underline-offset-4">Avalie no Google ★</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Horizontal Widescreen Layout (Tamanho natural horizontal sem cortes) */
+          <div className="flex flex-col gap-6">
+            <div
+              className="relative w-full rounded-[20px] overflow-hidden bg-card border border-white/5 shadow-xl"
+              style={{ aspectRatio: project.aspectRatio ?? "16 / 9" }}
+            >
               <Image
                 src={project.imgSrc}
                 alt={`${project.name} — Obra audiovisual para ${project.client} por Fabian Baldovino`}
                 fill
                 priority
+                loading="eager"
                 quality={100}
-                sizes="(max-width: 1024px) 100vw, 60vw"
+                sizes="(max-width: 1280px) 100vw, 1280px"
                 className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs uppercase tracking-wider px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-foreground/90 border border-white/10"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Strategic Context & Details Column */}
-          <div className="w-full lg:w-[40%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-10 border border-white/5">
-            <div className="flex flex-col gap-4">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-1">
-                  {project.client} · {project.city}
-                </p>
-                <h1 className="text-3xl md:text-5xl font-medium leading-tight">
-                  {project.name}
-                </h1>
-                <p className="text-sm uppercase tracking-widest text-foreground/50 mt-2">
-                  {project.deliverable}
-                </p>
-              </div>
-
-              <div className="h-[1px] bg-accent/30 my-2" />
-
-              <div className="flex flex-col gap-3">
-                <h2 className="text-xs uppercase tracking-widest text-foreground/60 font-medium">
-                  Direção Estratégica &amp; Obra
-                </h2>
-                <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
-                  {project.description}
-                </p>
-                <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
-                  <strong>Produção:</strong>{" "}
-                  <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
-                    produtora de vídeo em Porto Alegre
-                  </Link>
-                  , com atuação em todo o Rio Grande do Sul e no Brasil.
-                </p>
-                {especialidade && (
-                  <p className="text-sm font-light text-foreground/70 mt-1">
-                    Formato:{" "}
-                    <Link
-                      href={`/especialidades/${especialidade.slug}`}
-                      className="text-brand-accent underline hover:text-foreground transition-colors"
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md text-foreground/90 border border-white/10"
                     >
-                      {especialidade.name}
-                    </Link>
-                  </p>
-                )}
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs uppercase tracking-widest text-brand-accent font-semibold bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10">
+                  {project.client} · {project.city}
+                </span>
               </div>
             </div>
 
-            {/* Direct Conversion CTA */}
-            <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
-              <p className="text-xs text-foreground/60">
-                Interessado em uma produção no mesmo padrão para sua marca?
-              </p>
-              <a
-                href={whatsappUrl(
-                  `Olá Fabian, vi o projeto ${project.name} (${project.client}) no seu site e gostaria de conversar sobre um projeto similar para minha marca.`
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
-              >
-                <MessageCircle size={20} />
-                <span>Conversar no WhatsApp</span>
-                <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-              {business.googleReviewUrl && (
-                <a
-                  href={business.googleReviewUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-center text-foreground/60 hover:text-brand-accent transition-colors pt-1"
-                >
-                  Fez parte deste projeto? <span className="underline underline-offset-4">Avalie no Google ★</span>
-                </a>
-              )}
+            {/* Strategic Context & Conversion Grid */}
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Strategic Context Column */}
+              <div className="w-full lg:w-[65%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-10 border border-white/5">
+                <div className="flex flex-col gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-1">
+                      {project.client} · {project.city}
+                    </p>
+                    <h1 className="text-3xl md:text-5xl font-medium leading-tight">
+                      {project.name}
+                    </h1>
+                    <p className="text-sm uppercase tracking-widest text-foreground/50 mt-2">
+                      {project.deliverable}
+                    </p>
+                  </div>
+
+                  <div className="h-[1px] bg-accent/30 my-2" />
+
+                  <div className="flex flex-col gap-3">
+                    <h2 className="text-xs uppercase tracking-widest text-foreground/60 font-medium">
+                      Direção Estratégica &amp; Obra
+                    </h2>
+                    <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
+                      {project.description}
+                    </p>
+                    <p className="text-sm font-light text-foreground/70 mt-2 border-l-2 border-brand-accent pl-4 py-1">
+                      <strong>Produção:</strong>{" "}
+                      <Link href={LOCAL_PAGE_PATH} className="text-brand-accent underline underline-offset-4 hover:text-foreground transition-colors">
+                        produtora de vídeo em Porto Alegre
+                      </Link>
+                      , com atuação em todo o Rio Grande do Sul e no Brasil.
+                    </p>
+                    {especialidade && (
+                      <p className="text-sm font-light text-foreground/70 mt-1">
+                        Formato:{" "}
+                        <Link
+                          href={`/especialidades/${especialidade.slug}`}
+                          className="text-brand-accent underline hover:text-foreground transition-colors"
+                        >
+                          {especialidade.name}
+                        </Link>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Direct Conversion CTA Column */}
+              <div className="w-full lg:w-[35%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-8 border border-white/5">
+                <div className="flex flex-col gap-3">
+                  <span className="text-xs uppercase tracking-widest text-brand-accent font-semibold">
+                    Atendimento Direto
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-medium text-foreground">
+                    Pronto para valorizar a sua marca?
+                  </h3>
+                  <p className="text-sm font-light text-foreground/70 leading-relaxed">
+                    Atendo poucas marcas por vez para cuidar de cada detalhe com autoria e equipe própria.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
+                  <p className="text-xs text-foreground/60">
+                    Interessado em uma produção no mesmo padrão para sua marca?
+                  </p>
+                  <a
+                    href={whatsappUrl(
+                      `Olá Fabian, vi o projeto ${project.name} (${project.client}) no seu site e gostaria de conversar sobre um projeto similar para minha marca.`
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
+                  >
+                    <MessageCircle size={20} />
+                    <span>Conversar no WhatsApp</span>
+                    <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                  {business.googleReviewUrl && (
+                    <a
+                      href={business.googleReviewUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-center text-foreground/60 hover:text-brand-accent transition-colors pt-1"
+                    >
+                      Fez parte deste projeto? <span className="underline underline-offset-4">Avalie no Google ★</span>
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* ══════════════════════════════════════════
             NARRATIVA DO CASE — O desafio / A abordagem / O resultado

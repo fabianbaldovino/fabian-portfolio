@@ -62,7 +62,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <h2 id="contact-modal-title" className="text-4xl md:text-6xl lg:text-8xl font-medium mb-4">
                 Fale comigo
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground">
+              <p className="text-lg md:text-xl text-foreground/70 font-light">
                 Vamos construir o legado da sua marca
               </p>
             </motion.div>
@@ -88,7 +88,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </motion.div>
                 <div>
                   <h3 className="font-medium text-lg">E-mail</h3>
-                  <p className="text-muted-foreground">{contactInfo.email}</p>
+                  <p className="text-foreground/70 font-light">{contactInfo.email}</p>
                 </div>
               </motion.a>
 
@@ -113,7 +113,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </motion.div>
                 <div>
                   <h3 className="font-medium text-lg">Telefone / WhatsApp</h3>
-                  <p className="text-muted-foreground">{contactInfo.phone}</p>
+                  <p className="text-foreground/70 font-light">{contactInfo.phone}</p>
                 </div>
               </motion.a>
 
@@ -133,7 +133,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </motion.div>
                 <div>
                   <h3 className="font-medium text-lg">Localização</h3>
-                  <p className="text-muted-foreground">{contactInfo.location}</p>
+                  <p className="text-foreground/70 font-light">{contactInfo.location}</p>
                 </div>
               </motion.div>
 
@@ -152,14 +152,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 />
                 <div>
                   <h3 className="font-medium text-lg">Disponibilidade</h3>
-                  <p className="text-muted-foreground">{contactInfo.availability}</p>
+                  <p className="text-foreground/70 font-light">{contactInfo.availability}</p>
                 </div>
               </motion.div>
             </div>
 
             {/* Social Links */}
             <motion.div
-              className="border-t border-border pt-6"
+              className="border-t border-white/10 pt-6"
               variants={textVariants}
               initial="hidden"
               animate="visible"

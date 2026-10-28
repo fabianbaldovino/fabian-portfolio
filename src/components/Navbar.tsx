@@ -13,11 +13,11 @@ export default function Navbar() {
 
   return (
     <header className="rounded-[20px] bg-card mb-4" role="banner">
-      <nav className="flex flex-row justify-between px-4 py-4 lg:px-10 lg:py-6 h-sm:py-3 items-center md:flex-row md:items-center relative" aria-label="Main navigation">
+      <nav className="flex flex-row justify-between px-4 py-4 lg:px-10 lg:py-6 h-sm:py-3 items-center md:flex-row md:items-center relative" aria-label="Navegação principal">
         <Link
           href="/"
-          className="flex flex-row gap-2 lg:gap-3 items-center py-2 active:scale-[0.97] transition-transform"
-          aria-label="Go to homepage"
+          className="flex flex-row gap-2 lg:gap-3 items-center py-2 active:scale-[0.97] transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg"
+          aria-label="Ir para a página inicial"
         >
           <Image src="/logo/monograma-dourado.svg" alt="" width={44} height={44} unoptimized priority className="h-8 w-8 lg:h-10 lg:w-10" />
           <span className="text-xl lg:text-2xl uppercase font-light italic">Fabian</span>
