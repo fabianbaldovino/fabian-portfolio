@@ -1,0 +1,12 @@
+MATERIAIS LINKEDIN (perfil pessoal) — Fabian Baldovino
+
+CAPA_linkedin_1584x396.jpg / .png   Tamanho oficial do banner de perfil pessoal (4:1, JPG/PNG até 8 MB).
+CAPA_linkedin_3168x792_alta.jpg     Mesma arte em 2x, mais nítida em telas retina (mesma proporção 4:1).
+
+Cortes respeitados:
+- A foto de perfil cobre o canto inferior esquerdo (no celular ela ocupa até ~1/3 da largura), então todo o conteúdo começa depois de x≈545.
+- O celular corta um pouco as bordas laterais e o topo: conteúdo fica a mais de 140 px das laterais e centralizado verticalmente um pouco acima do meio.
+Página de empresa usa outra medida (1128x191) — esta arte é só para o perfil pessoal.
+
+previa_desktop.jpg / previa_celular.jpg  Simulação com a foto de perfil sobreposta.
+_fonte/  capa.html, render.mjs (Playwright) e previas.py para regerar.

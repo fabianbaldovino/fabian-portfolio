@@ -1,0 +1,9 @@
+MATERIAIS WHATSAPP BUSINESS — Fabian Baldovino
+
+CAPA_whatsapp_business_2560x1440.jpg / .png
+  Foto de capa do perfil comercial (16:9; o WhatsApp recomenda 1211x681, JPG/PNG até 5 MB — esta é a mesma proporção em resolução maior).
+  Textos e logo ficam no centro, longe das bordas (o app corta as laterais em alguns aparelhos)
+  e acima do quarto inferior central, onde a foto de perfil redonda fica sobreposta.
+
+previa_no_celular.jpg  Simulação de como a capa aparece com a foto de perfil por cima.
+_fonte/  capa.html e render.mjs (Playwright) para regerar. Mesma identidade da capa do LinkedIn/Google.
