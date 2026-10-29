@@ -233,7 +233,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       {/* Seção de Autor/CTA no final do artigo */}
       <div className="mt-20 pt-10 border-t border-accent flex flex-col md:flex-row gap-8 items-center bg-card p-8 rounded-[20px]">
         <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 relative border-2 border-brand-accent">
-          <Image src="/FOTOS/fabian_baldovino_porto_alegre_Rio_grande_do_sul_2.webp" alt="Fabian Baldovino" fill sizes="96px" className="object-cover" style={{ objectPosition: "50% 22%" }} />
+          <Image src="/FOTOS/fabian_baldovino_brand_filmmaker_porto_alegre_rs.webp" alt="Fabian Baldovino" fill sizes="96px" className="object-cover" style={{ objectPosition: "50% 22%" }} />
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>
