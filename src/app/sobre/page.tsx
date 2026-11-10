@@ -219,16 +219,56 @@ export default function SobrePage() {
 
         </div>
 
+        {/* Trabalho para empresas — o que o decisor quer ver primeiro */}
+        <section aria-label="Trabalho para empresas" className="w-full max-w-6xl px-6 mt-16 lg:mt-24">
+          <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-3">
+            Hoje
+          </p>
+          <h2 className="text-2xl md:text-3xl font-medium mb-8 text-white">
+            Filmes para empresas do Rio Grande do Sul
+          </h2>
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 list-none p-0 m-0">
+            {[
+              {
+                titulo: "Para quem dirigi",
+                desc: "Copelmi, Seival Sul Mineração, Quick House, Termolar, Wedy Nutrition e Ristorante Fontana, entre mais de 100 marcas e instituições desde 2011.",
+                href: "/projetos",
+                link: "Ver os projetos",
+              },
+              {
+                titulo: "Setores",
+                desc: "Indústria, mineração e energia, construção, bens de consumo, nutrição e gastronomia, em Porto Alegre, na Região Metropolitana, na Serra e no interior do RS.",
+                href: LOCAL_PAGE_PATH,
+                link: "Produtora de vídeo em Porto Alegre",
+              },
+              {
+                titulo: "O que eu entrego",
+                desc: "Vídeo institucional, brand film, documentário de marca e séries para o celular. Da pesquisa ao filme pronto, com direção minha em cada etapa e proposta por escrito antes de começar.",
+                href: "/especialidades",
+                link: "Ver os formatos",
+              },
+            ].map((item) => (
+              <li key={item.titulo} className="bg-card rounded-[20px] border border-white/5 p-6 flex flex-col gap-3 hover:border-brand-accent/30 transition-colors">
+                <h3 className="text-lg font-medium text-white">{item.titulo}</h3>
+                <p className="text-sm text-foreground/70 font-light leading-relaxed flex-1">{item.desc}</p>
+                <Link href={item.href} className="text-brand-accent text-xs font-bold uppercase tracking-widest hover:text-foreground transition-colors">
+                  {item.link} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Trajetória — marcos verificados (§10.2 da auditoria) */}
         <section aria-label="Trajetória" className="w-full max-w-6xl px-6 mt-16 lg:mt-24">
           <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-3">
             Trajetória
           </p>
           <h2 className="text-2xl md:text-3xl font-medium mb-2 text-white">
-            De oficina de cinema em escolas a +100 marcas
+            A origem do método
           </h2>
           <p className="text-foreground/60 font-light mb-8 max-w-2xl leading-relaxed">
-            2011 — Ciências Sociais, documentário e educação pública: o começo que explica o método.
+Antes das marcas, Ciências Sociais, documentário e cinema em escolas públicas. Foi ali que aprendi a ouvir antes de filmar.
           </p>
 
           {/* Prova visual — acervo original das oficinas de cinema em escolas (2011) */}
@@ -296,7 +336,7 @@ export default function SobrePage() {
               {
                 ano: "2011 · Ofício CECE",
                 titulo: "Chamado da Câmara para debater",
-                desc: "Ofício Circular nº 101/2011-Circ (03/10/2011) da Comissão de Educação, Cultura, Esporte e Juventude: convite para a reunião de 11/10, às 14h30, sala 303 — pauta: apresentação do projeto Curta nas Escolas. Assinado pelo ver. Professor Garcia, presidente da CECE.",
+                desc: "Convite oficial da Comissão de Educação, Cultura, Esporte e Juventude da Câmara Municipal para apresentar o projeto Curta nas Escolas.",
               },
               {
                 ano: "2011 · Imprensa",

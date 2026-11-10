@@ -170,11 +170,11 @@ export default function OCodigoBrasilPage() {
               className="w-full text-center lg:text-left"
             >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-                <ShieldCheck size={14} /> Neuromarketing Estratégico
+                <ShieldCheck size={14} /> O método por trás de cada roteiro
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-[44px] font-medium leading-[1.1] mb-6 text-white" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Decifrando a Mente no Mercado Mais <br className="hidden lg:block" /><span className="text-brand-accent italic font-serif">Emocional</span> do Mundo.
+                Como o brasileiro decide <br className="hidden lg:block" />em quem <span className="text-brand-accent italic font-serif">confiar</span>.
               </h2>
             </motion.div>
 
@@ -207,16 +207,16 @@ export default function OCodigoBrasilPage() {
               className="prose prose-invert max-w-none mb-12"
             >
               <p className="text-lg md:text-xl font-light leading-relaxed text-foreground/90 border-l-2 border-brand-accent pl-6">
-                &ldquo;Esqueça tudo o que você aprendeu nos manuais de marketing importados. Campanhas lógicas e produtos tecnicamente superiores fracassam de forma miserável no Brasil todos os dias.&rdquo;
+                &ldquo;No Brasil, o melhor produto nem sempre vence. Vence a empresa em quem o cliente sente que pode confiar.&rdquo;
               </p>
               <p className="text-foreground/70 font-light mt-8 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Para o nosso cérebro instintivo, o mundo é dividido em dois universos excludentes: a <strong className="text-foreground font-medium tracking-wide">RUA</strong> (o espaço impessoal, frio, a burocracia e a hostilidade) e a <strong className="text-brand-accent font-medium tracking-wide">CASA</strong> (o espaço quente, o afeto, a lealdade e a proteção).
+                Para quem compra no Brasil, existem dois lugares: a <strong className="text-foreground font-medium tracking-wide">RUA</strong> (o espaço impessoal, frio, a burocracia e a hostilidade) e a <strong className="text-brand-accent font-medium tracking-wide">CASA</strong> (o espaço quente, o afeto, a lealdade e a proteção).
               </p>
               <p className="text-foreground/70 font-light mt-4 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                O mercado brasileiro não quer comprar o seu produto. Ele quer comprar a segurança de não estar sozinho na rua. O consumo no Brasil é, no seu nível mais profundo e inconsciente, uma tentativa desesperada de transformar a hostilidade da rua no conforto da casa.
+                O cliente não compra só o produto. Ele compra a segurança de estar em boas mãos. A empresa que consegue parecer casa, e não rua, deixa de ser comparada só pelo preço.
               </p>
               <p className="text-foreground/90 font-medium italic mt-8 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Neste documento, eu não vou te ensinar a vender um serviço. Vou te mostrar exatamente quais botões emocionais você precisa apertar para entender a mente do seu consumidor no mercado mais passional do mundo.
+                É essa leitura que vem antes de cada roteiro meu: o que o seu cliente sente sobre o seu setor, e qual história a sua empresa pode contar com verdade para ganhar a confiança dele.
               </p>
             </motion.div>
 

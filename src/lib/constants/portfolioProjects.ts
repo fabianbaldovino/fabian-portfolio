@@ -158,7 +158,7 @@ export const portfolioProjects: PortfolioProject[] = [
     orientation: "horizontal",
     aspectRatio: "930 / 478",
     especialidade: "brand-film",
-    description: "A magia da construção modular (SteelPanel) permite erguer hospitais e a sede da COP-30 em velocidade recorde. Mas para o instinto humano, velocidade pode soar como fragilidade se não for ancorada em grandeza. Nossa direção de arte operou uma expansão das fronteiras visuais da Quick House: do micro-detalhe da precisão do aço às captações aéreas monumentais. Construímos a semiótica definitiva de um império modular imbatível.",
+    description: "A magia da construção modular (SteelPanel) permite erguer hospitais e a sede da COP-30 em velocidade recorde. Mas para o instinto humano, velocidade pode soar como fragilidade se não for ancorada em grandeza. Nossa direção de arte operou uma expansão das fronteiras visuais da Quick House: do micro-detalhe da precisão do aço às captações aéreas monumentais. O filme mostra uma empresa que entrega rápido sem abrir mão da solidez.",
     narrative: [
       "### O desafio",
       "Fasano. JHSF. Os nomes mais exigentes da construção de alto padrão no Brasil.",
@@ -186,7 +186,7 @@ export const portfolioProjects: PortfolioProject[] = [
     tags: ["Vídeo Institucional", "Energia", "Mineração"],
     deliverable: "Produção institucional",
     especialidade: "brand-documentary",
-    description: "Uma das maiores potências do setor energético brasileiro não precisa provar seu tamanho, precisa consolidar o seu legado. Nossa missão foi fortalecer a percepção da Copelmi, traduzindo o peso real de sua operação em uma autoridade pacífica e segura que dispensa argumentos. Cada frame foi milimetricamente desenhado para transmitir a solidez institucional que apenas os líderes absolutos podem sustentar.",
+    description: "Uma das maiores potências do setor energético brasileiro não precisa provar seu tamanho, precisa consolidar o seu legado. Nossa missão foi fortalecer a percepção da Copelmi, traduzindo o peso real de sua operação em uma autoridade pacífica e segura que dispensa argumentos. Cada plano foi pensado para transmitir a solidez de uma empresa que construiu sua história ao longo de décadas.",
     narrative: [
       "### O desafio",
       "Quando você já é um líder histórico no mercado de energia, a sua comunicação não precisa mais 'vender' ou 'explicar'.",
@@ -196,7 +196,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Descobrimos o código da **Autoridade Pacífica**. O verdadeiro poder não grita.",
       "Em vez de locutores de voz agressiva e textos de venda, a estratégia pelo Código Brasil foi usar o respiro e o tempo a favor da imagem. Enquadramentos fixos, movimentação majestosa, e uma edição que não tem pressa. Cada imagem é um monumento. Ao retratarmos a imensidão das instalações energéticas e a solidez dos times, entregamos o silêncio confortável de quem sabe o tamanho que tem.",
       "### O resultado",
-      "Um posicionamento que cala qualquer questionamento antes que ele comece. O filme da Copelmi se transformou em uma credencial imediata que afirma a posição da empresa como base de infraestrutura na mente do público, elevando sua herança a um patamar cinematográfico.",
+      "Um filme que apresenta a Copelmi com o peso que ela tem, sem precisar de discurso de venda. A empresa passou a ter uma credencial visual à altura da sua história, para usar com parceiros, comunidade e mercado.",
     ],
   },
   {
@@ -209,7 +209,7 @@ export const portfolioProjects: PortfolioProject[] = [
     tags: ["Vídeo Institucional", "Mineração", "Sul do Brasil"],
     deliverable: "1 filme · Institucional",
     especialidade: "brand-documentary",
-    description: "A Seival Sul não extrai apenas toneladas de minério na Mina de Candiota; ela é a força motriz que garante a segurança energética de uma região inteira. Abandonamos o formato de 'vídeo corporativo' e criamos um manifesto de soberania industrial. Através de uma escala visual colossal, transformamos a poeira e o aço da operação em um ativador instintivo de confiança máxima para parceiros e investidores do mercado de capitais.",
+    description: "A Seival Sul não extrai apenas toneladas de minério na Mina de Candiota; ela é a força motriz que garante a segurança energética de uma região inteira. Abandonamos o formato de 'vídeo corporativo' e criamos um manifesto de soberania industrial. Através de uma escala visual colossal, transformamos a poeira e o aço da operação em um filme que gera confiança em parceiros e investidores.",
     narrative: [
       "### O desafio",
       "O setor de mineração e energia carrega um estigma de comunicação brutalista. O mercado estava acostumado a vídeos operacionais frios que listavam maquinários e metros cúbicos extraídos.",
@@ -218,7 +218,26 @@ export const portfolioProjects: PortfolioProject[] = [
       "O código aqui é a **Soberania Intransponível**. Entramos na Mina de Candiota não como publicitários, mas como documentaristas do peso da indústria pesada.",
       "O roteiro e a captação do Código Brasil trataram os trabalhadores e a própria mina como entidades colossais. Filmamos não a 'operação', mas o movimento tectônico humano que mantém a luz acesa. O somatório entre decupagem cinematográfica, trilha de escala épica e montagem rítmica traduz o poder bruto em segurança silenciosa.",
       "### O resultado",
-      "Ao assistir ao filme, o investidor ou parceiro não avalia mais se a Seival Sul tem capacidade técnica. O filme impõe uma presença incontestável. Transformou a narrativa da marca de uma 'operação de mineração' para uma 'guardiã energética inabalável'.",
+      "Ao assistir ao filme, o investidor ou parceiro não avalia mais se a Seival Sul tem capacidade técnica. O filme mostra a escala da operação e o papel dela na energia da região. A conversa deixa de ser sobre uma mina e passa a ser sobre segurança energética.",
     ],
   },
 ];
+
+/**
+ * Ordem de exibição: primeiro os filmes para empresas (institucional, brand film,
+ * documentário e série), depois as campanhas para redes sociais. O decisor que
+ * chega por /projetos ou pela página local vê primeiro o trabalho do porte dele.
+ */
+const ORDEM_DE_EXIBICAO = [
+  "termolar",
+  "quick-house",
+  "copelmi",
+  "seival-sul-mineradora",
+  "wedy-nutrition",
+  "ristorante-fontana",
+  "flex-full",
+];
+
+portfolioProjects.sort(
+  (a, b) => ORDEM_DE_EXIBICAO.indexOf(a.slug) - ORDEM_DE_EXIBICAO.indexOf(b.slug),
+);
