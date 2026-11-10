@@ -43,15 +43,12 @@ export default function ProjetosPage() {
                   <ArrowLeft size={20} className="text-foreground" />
                 </Link>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-brand-accent font-medium">
-                    Projetos
-                  </p>
                   <h1 className="text-2xl md:text-3xl font-medium">
                     Filmes que fizemos para marcas do RS e do Brasil
                   </h1>
                 </div>
               </div>
-              <p className="text-foreground/50 text-sm md:text-base max-w-xs text-right hidden md:block">
+              <p className="text-foreground/70 text-sm md:text-base max-w-xs text-right hidden md:block">
                 {portfolioProjects.length} obras em destaque · Brand Filmmaking
               </p>
             </motion.div>
@@ -73,7 +70,7 @@ export default function ProjetosPage() {
                   alt={`${featured.name} — Produção Audiovisual para ${featured.client} por Fabian Baldovino`}
                   fill
                   priority
-                  quality={100}
+                  quality={85}
                   sizes="(max-width: 768px) 100vw, 65vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
@@ -147,13 +144,13 @@ export default function ProjetosPage() {
                     aria-label={`Ver caso completo: ${project.name} — ${project.client}`}
                   >
                     <div className="flex flex-col gap-1 flex-1 min-w-0">
-                      <p className="text-xs uppercase tracking-widest text-background/50 font-medium">
+                      <p className="text-xs uppercase tracking-widest text-background/80 font-medium">
                         {project.client}
                       </p>
                       <span className="text-lg font-medium group-hover:text-brand-accent transition-colors truncate">
                         {project.name}
                       </span>
-                      <p className="text-xs text-background/40">
+                      <p className="text-xs text-background/75">
                         {project.deliverable}
                       </p>
                     </div>
@@ -184,7 +181,7 @@ export default function ProjetosPage() {
               whileHover={{ y: -4 }}
             >
               <div>
-                <p className="text-sm font-light text-foreground/60">Quer ser o próximo?</p>
+                <p className="text-sm font-light text-foreground/70">Quer ser o próximo?</p>
                 <h2 className="text-3xl md:text-4xl font-medium leading-tight mt-1">
                   Vamos criar<br />
                   <span className="italic font-light text-brand-accent">juntos.</span>
@@ -194,7 +191,7 @@ export default function ProjetosPage() {
                 href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-accent text-brand-dark px-6 py-3 rounded-full font-medium w-full text-sm text-center hover:bg-brand-accent/90 hover:shadow-[0_0_20px_rgba(205,160,89,0.25)] active:scale-[0.98] transition-all min-h-[48px] flex items-center justify-center"
+                className="bg-brand-accent text-brand-dark px-6 py-3 rounded-full font-medium w-full text-sm text-center hover:bg-brand-accent/90 active:scale-[0.98] transition-all min-h-[48px] flex items-center justify-center"
                 aria-label="Iniciar conversa no WhatsApp com Fabian Baldovino"
               >
                 Falar no WhatsApp

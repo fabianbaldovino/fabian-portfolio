@@ -4,6 +4,7 @@ import "./globals.css";
 import ConsoleProvider from "@/components/Console";
 import { Analytics } from "@vercel/analytics/next"
 import GlobalModals from "@/components/GlobalModals";
+import MotionProvider from "@/components/MotionProvider";
 import { siteSchema } from "@/lib/schema/site";
 
 // Initialize Gilroy font
@@ -107,8 +108,10 @@ export default function RootLayout({
       </head>
       <body className={`${gilroy.variable} font-gilroy antialiased`}>
         <ConsoleProvider />
-        {children}
-        <GlobalModals />
+        <MotionProvider>
+          {children}
+          <GlobalModals />
+        </MotionProvider>
         <Analytics />
       </body>
     </html>

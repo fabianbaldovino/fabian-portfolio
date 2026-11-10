@@ -81,7 +81,7 @@ export default function AboutContactSection() {
             Atendo poucas marcas por vez, para cuidar de perto. Me conta o que você precisa e eu respondo pelo WhatsApp.
           </motion.p>
 
-          <div className="flex items-center justify-between gap-3 mt-3 lg:mt-2 pt-3 lg:pt-2 h-md:mt-1.5 h-md:pt-1.5 border-t border-white/10 text-brand-accent text-[11px] font-bold uppercase tracking-widest">
+          <div className="flex items-center justify-between gap-3 mt-3 lg:mt-2 pt-3 lg:pt-2 h-md:mt-1.5 h-md:pt-1.5 border-t border-white/10 text-brand-accent text-xs font-bold uppercase tracking-widest">
             <span className="flex items-center gap-2 min-w-0">
               <MessageCircle size={14} className="shrink-0" aria-hidden="true" />
               Iniciar conversa

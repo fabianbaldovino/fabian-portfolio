@@ -76,22 +76,18 @@ export default function SobrePage() {
           {/* Left Column: Cover & Hero */}
           <div className="col-span-1 lg:col-span-6 flex flex-col items-center lg:items-start">
             <div className="w-full text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-                <Camera size={14} /> Brand Filmmaker
-              </div>
-
               <h1 className="text-4xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] mb-3 text-white" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Fabian <br className="hidden lg:block" /><span className="text-brand-accent italic font-serif">Baldovino</span>
               </h1>
 
               {/* Credencial — prova social imediata */}
               <p className="text-sm text-foreground/70 uppercase tracking-widest font-light mb-3">
-                +15 anos · +100 marcas · Porto Alegre, RS
+                Brand filmmaker · +15 anos · +100 marcas · Porto Alegre, RS
               </p>
 
               {/* Cobertura da imprensa — selos de confiança (veículos que noticiaram, não clientes) */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 mb-6">
-                <span className="w-full text-center lg:text-left text-[10px] text-foreground/40 uppercase tracking-widest font-light">
+                <span className="w-full text-center lg:text-left text-xs text-foreground/70 uppercase tracking-widest font-light">
                   Na imprensa
                 </span>
                 {[
@@ -187,7 +183,7 @@ export default function SobrePage() {
               </div>
 
               {/* Perfis — rel="me" confirma ao Google que são da mesma pessoa */}
-              <p className="text-sm text-foreground/60 font-light mt-6">
+              <p className="text-sm text-foreground/70 font-light mt-6">
                 <a href={socials.linkedin} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-brand-accent transition-colors">LinkedIn</a>
                 {" · "}
                 <a href={socials.instagram} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-brand-accent transition-colors">Instagram</a>
@@ -201,7 +197,7 @@ export default function SobrePage() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent opacity-50" />
 
               <h2 className="text-xl font-medium tracking-wide mb-2">Vamos conversar sobre a sua marca?</h2>
-              <p className="text-sm text-foreground/60 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
+              <p className="text-sm text-foreground/70 mb-8 font-light leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
                 Atendo poucas marcas por vez para cuidar do seu filme de perto, do começo ao fim.
               </p>
 
@@ -209,7 +205,7 @@ export default function SobrePage() {
                 href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center min-h-[48px] hover:brightness-110 hover:shadow-[0_0_30px_rgba(205,160,89,0.3)] active:scale-[0.98] transition-all"
+                className="w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center min-h-[48px] hover:brightness-110 active:scale-[0.98] transition-all"
                 aria-label="Iniciar conversa no WhatsApp com Fabian Baldovino"
               >
                 Falar no WhatsApp
@@ -221,9 +217,6 @@ export default function SobrePage() {
 
         {/* Trabalho para empresas — o que o decisor quer ver primeiro */}
         <section aria-label="Trabalho para empresas" className="w-full max-w-6xl px-6 mt-16 lg:mt-24">
-          <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-3">
-            Hoje
-          </p>
           <h2 className="text-2xl md:text-3xl font-medium mb-8 text-white">
             Filmes para empresas do Rio Grande do Sul
           </h2>
@@ -261,13 +254,10 @@ export default function SobrePage() {
 
         {/* Trajetória — marcos verificados (§10.2 da auditoria) */}
         <section aria-label="Trajetória" className="w-full max-w-6xl px-6 mt-16 lg:mt-24">
-          <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-3">
-            Trajetória
-          </p>
           <h2 className="text-2xl md:text-3xl font-medium mb-2 text-white">
             A origem do método
           </h2>
-          <p className="text-foreground/60 font-light mb-8 max-w-2xl leading-relaxed">
+          <p className="text-foreground/70 font-light mb-8 max-w-2xl leading-relaxed">
 Antes das marcas, Ciências Sociais, documentário e cinema em escolas públicas. Foi ali que aprendi a ouvir antes de filmar.
           </p>
 
@@ -309,7 +299,7 @@ Antes das marcas, Ciências Sociais, documentário e cinema em escolas públicas
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                <figcaption className="absolute bottom-0 left-0 right-0 p-3 text-[11px] font-light text-foreground/85 leading-snug">
+                <figcaption className="absolute bottom-0 left-0 right-0 p-3 text-xs font-light text-foreground/85 leading-snug">
                   {foto.caption}
                 </figcaption>
               </figure>

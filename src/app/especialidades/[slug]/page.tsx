@@ -174,7 +174,7 @@ export default async function EspecialidadePage({ params }: PageProps) {
 
           <nav
             aria-label="Breadcrumb"
-            className="hidden sm:flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/50"
+            className="hidden sm:flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/70"
           >
             <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
@@ -205,11 +205,8 @@ export default async function EspecialidadePage({ params }: PageProps) {
 
           <div className="w-full lg:w-[45%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-10 border border-white/5">
             <div className="flex flex-col gap-4">
-              <p className="text-xs uppercase tracking-widest text-brand-accent font-semibold">
-                Especialidade
-              </p>
               <h1 className="text-3xl md:text-5xl font-medium leading-tight">{esp.name}</h1>
-              <p className="text-sm uppercase tracking-widest text-foreground/50">
+              <p className="text-sm uppercase tracking-widest text-foreground/70">
                 {esp.tagline}
               </p>
 
@@ -228,7 +225,7 @@ export default async function EspecialidadePage({ params }: PageProps) {
             </div>
 
             <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
-              <p className="text-xs text-foreground/60">
+              <p className="text-xs text-foreground/70">
                 Quer avaliar se esse é o formato certo para sua marca?
               </p>
               <a
@@ -237,7 +234,7 @@ export default async function EspecialidadePage({ params }: PageProps) {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
+                className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base group cursor-pointer"
               >
                 <MessageCircle size={20} />
                 <span>Conversar no WhatsApp</span>
@@ -307,7 +304,7 @@ export default async function EspecialidadePage({ params }: PageProps) {
                       <h3 className="text-lg font-medium group-hover:text-brand-accent transition-colors">
                         {c.name}
                       </h3>
-                      <p className="text-xs uppercase tracking-wider text-foreground/50">
+                      <p className="text-xs uppercase tracking-wider text-foreground/70">
                         {c.deliverable}
                       </p>
                     </div>

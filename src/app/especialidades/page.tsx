@@ -77,7 +77,7 @@ export default function EspecialidadesHub() {
         <div className="bg-card rounded-[20px] p-6 md:p-12 border border-white/5">
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/50 mb-6"
+            className="flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/70 mb-6"
           >
             <Link href="/" className="hover:text-foreground transition-colors">
               Home

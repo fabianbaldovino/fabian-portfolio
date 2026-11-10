@@ -139,6 +139,15 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
     });
   }
 
+  // Seções do artigo ("### ") para o sumário lateral; o id casa com o do <h2>.
+  const secoes = conteudo.content
+    .map((bloco, idx) => ({ bloco, idx }))
+    .filter(({ bloco }) => bloco.startsWith("### "))
+    .map(({ bloco, idx }) => ({
+      id: `secao-${idx}`,
+      titulo: bloco.slice(4).replace(/\*/g, ""),
+    }));
+
   return (
     <main className="min-h-screen pt-24 pb-24 px-4 md:px-8 max-w-6xl mx-auto">
       <script
@@ -149,23 +158,23 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
       <div className="mb-8">
         <Link 
           href="/conteudo" 
-          className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md py-1 px-2 -ml-2"
+          className="inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-md py-1 px-2 -ml-2"
         >
           <span aria-hidden="true">&larr;</span> Voltar para os artigos
         </Link>
       </div>
       
       <div className="mb-10">
-        <span className="text-brand-accent text-sm font-bold tracking-widest uppercase mb-4 block">
-          {new Date(conteudo.date + "T12:00:00").toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
-        </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
           {conteudo.title}
         </h1>
         
-        <div className="flex gap-2 flex-wrap mb-8">
+        <div className="flex gap-2 flex-wrap items-center mb-8">
+          <time dateTime={conteudo.date} className="text-sm text-foreground/75 mr-2">
+            {new Date(conteudo.date + "T12:00:00").toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
           {conteudo.tags.map(tag => (
-            <span key={tag} className="text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-accent text-foreground/60">
+            <span key={tag} className="text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-accent text-foreground/70">
               {tag}
             </span>
           ))}
@@ -184,11 +193,12 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
         </div>
       )}
 
-      <div className="flex flex-col gap-8 items-start">
-        <article className="prose prose-invert prose-lg max-w-none text-foreground/80 leading-relaxed font-light w-full">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+        <div className="flex flex-col gap-8 w-full lg:max-w-[68ch]">
+        <article className="text-lg text-foreground/80 leading-relaxed font-light w-full">
           {conteudo.content.map((paragraph, idx) => {
             if (paragraph.startsWith("### ")) {
-              return <h3 key={idx} className="text-2xl font-medium mt-10 mb-4 text-foreground">{renderFormattedText(paragraph.replace("### ", ""))}</h3>;
+              return <h2 key={idx} id={`secao-${idx}`} className="text-2xl font-medium mt-10 mb-4 text-foreground scroll-mt-28">{renderFormattedText(paragraph.replace("### ", ""))}</h2>;
             }
             if (paragraph.startsWith("> ")) {
               return (
@@ -228,6 +238,32 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
             ></iframe>
           </div>
         )}
+        </div>
+
+        {/* Sumário lateral: ocupa a coluna direita no desktop e acompanha a leitura */}
+        {secoes.length > 1 && (
+          <nav aria-label="Neste artigo" className="hidden lg:flex flex-col gap-4 flex-1 sticky top-28 bg-card rounded-[20px] border border-white/5 p-6">
+            <h2 className="text-lg font-medium text-foreground">Neste artigo</h2>
+            <ol className="flex flex-col gap-2 list-none p-0 m-0">
+              {secoes.map((secao) => (
+                <li key={secao.id}>
+                  <a href={`#${secao.id}`} className="text-sm text-foreground/75 hover:text-brand-accent transition-colors">
+                    {secao.titulo}
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <a
+              href={whatsappUrl("Olá Fabian, li o artigo no seu site e gostaria de conversar sobre um projeto.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-accent text-brand-dark font-bold text-xs uppercase tracking-wider min-h-[44px] hover:brightness-110 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+            >
+              Falar no WhatsApp
+            </a>
+          </nav>
+        )}
+
       </div>
 
       {/* Seção de Autor/CTA no final do artigo */}
@@ -236,7 +272,7 @@ export default async function ConteudoPage({ params }: { params: Promise<{ slug:
           <Image src="/FOTOS/fabian_baldovino_retrato_brand_filmmaker_porto_alegre.webp" alt="Fabian Baldovino" fill sizes="96px" className="object-cover" style={{ objectPosition: "50% 22%" }} />
         </div>
         <div className="flex-1">
-          <h3 className="text-2xl font-medium mb-2">Fabian Baldovino</h3>
+          <h2 className="text-2xl font-medium mb-2">Fabian Baldovino</h2>
           <p className="text-foreground/70 text-sm md:text-base mb-4 leading-relaxed">
             Brand filmmaker e autor de <em>O Código Brasil</em>. Se o conteúdo gerou valor para você, considere estruturar a narrativa da sua própria empresa com uma produção de nível cinematográfico.
           </p>

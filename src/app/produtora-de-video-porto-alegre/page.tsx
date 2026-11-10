@@ -227,7 +227,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
             <div className="flex flex-col gap-4">
               <nav
                 aria-label="Breadcrumb"
-                className="flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/50"
+                className="flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/70"
               >
                 <Link href="/" className="hover:text-foreground transition-colors">
                   Home
@@ -238,7 +238,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
               <h1 className="text-3xl md:text-5xl font-medium leading-tight text-balance">
                 Produtora de Vídeo em Porto Alegre
               </h1>
-              <p className="text-sm uppercase tracking-widest text-foreground/50">
+              <p className="text-sm uppercase tracking-widest text-foreground/70">
                 Produção audiovisual e brand filmmaking · RS · desde {business.foundingYear}
               </p>
               <div className="h-[1px] bg-accent/30 my-2" />
@@ -261,7 +261,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
                 href={ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10"
+                className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base"
               >
                 <MessageCircle size={20} aria-hidden="true" />
                 Pedir orçamento no WhatsApp
@@ -347,7 +347,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
                     <h3 className="text-lg font-medium group-hover:text-brand-accent transition-colors">
                       {c.name}
                     </h3>
-                    <p className="text-xs uppercase tracking-wider text-foreground/50">
+                    <p className="text-xs uppercase tracking-wider text-foreground/70">
                       {c.deliverable}
                     </p>
                   </div>
@@ -369,7 +369,7 @@ export default function ProdutoraDeVideoPortoAlegre() {
               <div key={s.title} className="flex flex-col gap-2 rounded-[16px] border border-white/5 bg-background/40 p-5">
                 <h3 className="text-lg font-medium">{s.title}</h3>
                 <p className="text-sm md:text-base font-light leading-relaxed text-foreground/75">{s.text}</p>
-                <p className="text-sm text-foreground/60">
+                <p className="text-sm text-foreground/70">
                   {s.links.map((l, i) => (
                     <span key={l.href}>
                       {i > 0 && " · "}
