@@ -22,7 +22,7 @@ export default function InstagramEmbed({ urls, projectName, itemNoun = "Episódi
               <span className="text-xs font-bold uppercase tracking-widest text-brand-accent px-3 py-1 rounded-full bg-brand-accent/10 border border-brand-accent/20">
                 {itemNoun} {num}
               </span>
-              <span className="flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-foreground/50 truncate">
+              <span className="flex items-center gap-1.5 text-xs uppercase tracking-wider text-foreground/70 truncate">
                 <Instagram size={14} className="shrink-0" />
                 <span className="truncate">{projectName}</span>
               </span>

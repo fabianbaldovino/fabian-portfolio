@@ -44,9 +44,6 @@ export default function JournalHub() {
         <div className="max-w-5xl mx-auto flex flex-col gap-4">
           <header className="bg-card rounded-[20px] p-6 md:p-10 border border-accent flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-widest text-brand-accent font-medium mb-3">
-                Artigos & Filmes
-              </p>
               <h1 className="text-4xl md:text-5xl font-medium mb-3">
                 Artigos <span className="italic font-light text-brand-accent">sobre</span> vídeo e marca
               </h1>
@@ -54,7 +51,7 @@ export default function JournalHub() {
                 Estratégias visuais para fortalecer marcas. <a href="https://ocodigobrasil.com.br" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-accent transition-colors">O Código Brasil, manifesto de Fabian Baldovino</a>.
               </p>
             </div>
-            <p className="text-foreground/50 text-sm uppercase tracking-wider md:text-right">
+            <p className="text-foreground/70 text-sm uppercase tracking-wider md:text-right">
               {conteudos.length} publicações · artigos e vídeos
             </p>
           </header>
@@ -78,7 +75,7 @@ export default function JournalHub() {
                         <p className="text-foreground/80 text-sm md:text-base leading-relaxed line-clamp-3 md:line-clamp-none">{item.excerpt}</p>
                         <div className="flex gap-2 flex-wrap mt-4">
                           {item.tags.slice(0, 3).map(tag => (
-                            <span key={tag} className="text-[11px] uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-accent/60 text-foreground/60">
+                            <span key={tag} className="text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-accent/60 text-foreground/70">
                               {tag}
                             </span>
                           ))}
@@ -87,12 +84,12 @@ export default function JournalHub() {
                       {item.coverImage ? (
                         <div className="w-full md:w-56 lg:w-64 aspect-video md:aspect-[16/10] flex-shrink-0 rounded-xl border border-accent/40 relative overflow-hidden bg-card group-hover:border-brand-accent/60 group-hover:scale-[1.02] transition-all duration-300">
                           <Image src={item.coverImage} fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover opacity-85 group-hover:opacity-100 transition-opacity" alt={item.title} />
-                          {item.youtubeId && <span className="text-red-500 font-bold text-[10px] uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2">▶ YouTube</span>}
-                          {item.instagramUrl && !item.youtubeId && <span className="text-brand-accent font-bold text-[10px] uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2 border border-brand-accent/30">Instagram</span>}
+                          {item.youtubeId && <span className="text-red-500 font-bold text-xs uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2">▶ YouTube</span>}
+                          {item.instagramUrl && !item.youtubeId && <span className="text-brand-accent font-bold text-xs uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2 border border-brand-accent/30">Instagram</span>}
                         </div>
                       ) : item.youtubeId ? (
                         <div className="w-full md:w-56 lg:w-64 aspect-video md:aspect-[16/10] flex-shrink-0 rounded-xl border border-accent/40 relative overflow-hidden bg-black group-hover:border-brand-accent/60 group-hover:scale-[1.02] transition-all duration-300">
-                          <span className="text-red-500 font-bold text-[10px] uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2">▶ YouTube</span>
+                          <span className="text-red-500 font-bold text-xs uppercase z-10 bg-black/80 px-2 py-0.5 rounded absolute top-2 right-2">▶ YouTube</span>
                           <Image src={`https://img.youtube.com/vi/${item.youtubeId}/mqdefault.jpg`} fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover opacity-70" alt={item.title} />
                         </div>
                       ) : item.instagramUrl ? (

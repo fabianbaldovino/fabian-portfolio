@@ -176,7 +176,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
             <span>Voltar para Projetos</span>
           </Link>
 
-          <nav aria-label="Breadcrumb" className="hidden sm:flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/50">
+          <nav aria-label="Breadcrumb" className="hidden sm:flex items-center gap-2 text-xs uppercase tracking-widest text-foreground/70">
             <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
             <Link href="/projetos" className="hover:text-foreground transition-colors">Projetos</Link>
@@ -200,7 +200,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                   fill
                   priority
                   loading="eager"
-                  quality={100}
+                  quality={85}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
@@ -228,7 +228,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                   <h1 className="text-3xl md:text-5xl font-medium leading-tight">
                     {project.name}
                   </h1>
-                  <p className="text-sm uppercase tracking-widest text-foreground/50 mt-2">
+                  <p className="text-sm uppercase tracking-widest text-foreground/70 mt-2">
                     {project.deliverable}
                   </p>
                 </div>
@@ -236,7 +236,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                 <div className="h-[1px] bg-accent/30 my-2" />
 
                 <div className="flex flex-col gap-3">
-                  <h2 className="text-xs uppercase tracking-widest text-foreground/60 font-medium">
+                  <h2 className="text-xs uppercase tracking-widest text-foreground/70 font-medium">
                     Direção Estratégica &amp; Obra
                   </h2>
                   <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
@@ -265,7 +265,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
 
               {/* Direct Conversion CTA */}
               <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
-                <p className="text-xs text-foreground/60">
+                <p className="text-xs text-foreground/70">
                   Interessado em uma produção no mesmo padrão para sua marca?
                 </p>
                 <a
@@ -274,7 +274,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
+                  className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base group cursor-pointer"
                 >
                   <MessageCircle size={20} />
                   <span>Conversar no WhatsApp</span>
@@ -285,7 +285,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                     href={business.googleReviewUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-center text-foreground/60 hover:text-brand-accent transition-colors pt-1"
+                    className="text-xs text-center text-foreground/70 hover:text-brand-accent transition-colors pt-1"
                   >
                     Fez parte deste projeto? <span className="underline underline-offset-4">Avalie no Google ★</span>
                   </a>
@@ -306,7 +306,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                 fill
                 priority
                 loading="eager"
-                quality={100}
+                quality={85}
                 sizes="(max-width: 1280px) 100vw, 1280px"
                 className="object-cover object-center"
               />
@@ -340,7 +340,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                     <h1 className="text-3xl md:text-5xl font-medium leading-tight">
                       {project.name}
                     </h1>
-                    <p className="text-sm uppercase tracking-widest text-foreground/50 mt-2">
+                    <p className="text-sm uppercase tracking-widest text-foreground/70 mt-2">
                       {project.deliverable}
                     </p>
                   </div>
@@ -348,7 +348,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                   <div className="h-[1px] bg-accent/30 my-2" />
 
                   <div className="flex flex-col gap-3">
-                    <h2 className="text-xs uppercase tracking-widest text-foreground/60 font-medium">
+                    <h2 className="text-xs uppercase tracking-widest text-foreground/70 font-medium">
                       Direção Estratégica &amp; Obra
                     </h2>
                     <p className="text-base md:text-lg font-light leading-relaxed text-foreground/90">
@@ -379,9 +379,6 @@ export default async function ProjectCasePage({ params }: PageProps) {
               {/* Direct Conversion CTA Column */}
               <div className="w-full lg:w-[35%] flex flex-col justify-between gap-6 bg-card rounded-[20px] p-6 md:p-8 border border-white/5">
                 <div className="flex flex-col gap-3">
-                  <span className="text-xs uppercase tracking-widest text-brand-accent font-semibold">
-                    Atendimento Direto
-                  </span>
                   <h3 className="text-xl md:text-2xl font-medium text-foreground">
                     Pronto para valorizar a sua marca?
                   </h3>
@@ -390,8 +387,25 @@ export default async function ProjectCasePage({ params }: PageProps) {
                   </p>
                 </div>
 
+                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm pt-4 border-t border-accent/30">
+                  <dt className="text-foreground/70">Cliente</dt>
+                  <dd className="text-foreground/90 m-0">{project.client}</dd>
+                  <dt className="text-foreground/70">Cidade</dt>
+                  <dd className="text-foreground/90 m-0">{project.city}</dd>
+                  <dt className="text-foreground/70">Entrega</dt>
+                  <dd className="text-foreground/90 m-0">{project.deliverable}</dd>
+                  {especialidade && (
+                    <>
+                      <dt className="text-foreground/70">Formato</dt>
+                      <dd className="text-foreground/90 m-0">{especialidade.name}</dd>
+                    </>
+                  )}
+                  <dt className="text-foreground/70">Direção</dt>
+                  <dd className="text-foreground/90 m-0">Fabian Baldovino</dd>
+                </dl>
+
                 <div className="flex flex-col gap-3 pt-4 border-t border-accent/30">
-                  <p className="text-xs text-foreground/60">
+                  <p className="text-xs text-foreground/70">
                     Interessado em uma produção no mesmo padrão para sua marca?
                   </p>
                   <a
@@ -400,7 +414,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base shadow-lg shadow-brand-accent/10 group cursor-pointer"
+                    className="bg-brand-accent text-brand-dark px-6 py-4 rounded-full font-medium hover:bg-brand-accent/90 transition-all flex items-center justify-center gap-2 text-base group cursor-pointer"
                   >
                     <MessageCircle size={20} />
                     <span>Conversar no WhatsApp</span>
@@ -411,7 +425,7 @@ export default async function ProjectCasePage({ params }: PageProps) {
                       href={business.googleReviewUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-center text-foreground/60 hover:text-brand-accent transition-colors pt-1"
+                      className="text-xs text-center text-foreground/70 hover:text-brand-accent transition-colors pt-1"
                     >
                       Fez parte deste projeto? <span className="underline underline-offset-4">Avalie no Google ★</span>
                     </a>
@@ -427,26 +441,51 @@ export default async function ProjectCasePage({ params }: PageProps) {
             Conteúdo editorial longo. Principal ativo de SEO da página.
         ═══════════════════════════════════════════ */}
         {project.narrative && project.narrative.length > 0 && (
-          <article className="w-full bg-card rounded-[20px] border border-white/5 p-6 md:p-12">
-            <div className="max-w-3xl flex flex-col gap-5">
-              {project.narrative.map((block, i) =>
-                block.startsWith("### ") ? (
-                  <h2
-                    key={i}
-                    className="text-2xl md:text-3xl font-medium mt-6 first:mt-0 text-foreground"
-                  >
-                    {block.slice(4)}
-                  </h2>
-                ) : (
-                  <p
-                    key={i}
-                    className="text-base md:text-lg font-light leading-relaxed text-foreground/85"
-                  >
-                    {renderInline(block)}
-                  </p>
-                )
-              )}
-            </div>
+          <article className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {project.narrative
+              .reduce<{ title: string; blocks: string[] }[]>((sections, block) => {
+                if (block.startsWith("### ")) {
+                  sections.push({ title: block.slice(4), blocks: [] });
+                } else if (sections.length === 0) {
+                  sections.push({ title: "", blocks: [block] });
+                } else {
+                  sections[sections.length - 1].blocks.push(block);
+                }
+                return sections;
+              }, [])
+              .map((section, i) => (
+                <section
+                  key={i}
+                  className="bg-card rounded-[20px] border border-white/5 p-6 md:p-8 flex flex-col gap-4"
+                >
+                  {section.title && (
+                    <h2 className="text-2xl md:text-3xl font-medium text-foreground">
+                      {section.title}
+                    </h2>
+                  )}
+                  {section.blocks.map((block, j) => (
+                    <p
+                      key={j}
+                      className="text-base font-light leading-relaxed text-foreground/85"
+                    >
+                      {renderInline(block)}
+                    </p>
+                  ))}
+                  {section.title === "O resultado" && (
+                    <a
+                      href={whatsappUrl(
+                        `Olá Fabian, vi o projeto ${project.name} (${project.client}) no seu site e gostaria de conversar sobre um projeto similar para minha empresa.`
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto pt-4 border-t border-accent/30 text-brand-accent text-xs font-bold uppercase tracking-widest flex items-center justify-between gap-3 hover:text-foreground transition-colors"
+                    >
+                      <span>Quer um filme assim para a sua empresa?</span>
+                      <ArrowUpRight size={16} className="shrink-0" />
+                    </a>
+                  )}
+                </section>
+              ))}
           </article>
         )}
 

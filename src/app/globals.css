@@ -103,3 +103,23 @@ main.min-h-screen {
 
 /* Referencia em classe CSS: o minifier de producao descarta @keyframes sem uso dentro do CSS — esta regra marca marquee-scroll como usada. */
 .marquee-track { animation: marquee-scroll 36s linear infinite; }
+
+/* Quebra de linha: títulos equilibrados e parágrafos sem palavra órfã na última linha. */
+@layer base {
+  h1, h2, h3 { text-wrap: balance; }
+  p, li, blockquote, figcaption { text-wrap: pretty; }
+}
+
+/* Seleção de texto e cursor de digitação na paleta da marca. */
+::selection { background: #C5A059; color: #0C0D0F; }
+input, textarea { caret-color: #C5A059; }
+
+/* "Reduzir movimento": a faixa de logos fica parada e os efeitos de
+   escala e deslocamento no hover deixam de animar. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; }
+  *, *::before, *::after {
+    transition-property: color, background-color, border-color, opacity !important;
+    scroll-behavior: auto !important;
+  }
+}

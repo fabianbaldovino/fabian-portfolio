@@ -16,6 +16,8 @@ export default function PersonImageSection() {
   // para não baixar o vídeo em rede lenta antes da hidratação.
   useEffect(() => {
     if (!checked || dataSaver) return;
+    // Quem pede "reduzir movimento" vê o pôster e dá o play quando quiser.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const v = videoRef.current;
     if (!v) return;
     // React nem sempre aplica o atributo muted no HTML; sem isso o navegador bloqueia o autoplay.
@@ -35,7 +37,7 @@ export default function PersonImageSection() {
     >
       <video
         ref={videoRef}
-        src="/videos/REEL_2026_1.mp4"
+        src="/videos/reel_2026_leve.mp4"
         muted
         preload={dataSaver ? "none" : "metadata"}
         poster="/FOTOS/fabian_baldovino_parque_moinhos_de_vento_porto_alegre_rs.webp"

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Lock, ArrowRight, ShieldCheck, Workflow } from "lucide-react";
+import { Lock, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import { whatsappUrl } from "@/lib/constants/business";
@@ -70,10 +70,6 @@ export default function OCodigoBrasilPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-                <Workflow size={14} /> Como Operamos
-              </div>
-
               <h1
                 className="text-4xl md:text-5xl lg:text-[56px] font-medium leading-[1.1] mb-6 text-white"
                 style={{ textWrap: "balance" } as React.CSSProperties}
@@ -137,7 +133,7 @@ export default function OCodigoBrasilPage() {
               </ol>
 
               <div className="mt-8">
-                <p className="text-[10px] uppercase tracking-widest text-foreground/50 font-medium mb-3 ml-1">
+                <p className="text-xs uppercase tracking-widest text-foreground/70 font-medium mb-3 ml-1">
                   Estrutura
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -169,12 +165,8 @@ export default function OCodigoBrasilPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-                <ShieldCheck size={14} /> Neuromarketing Estratégico
-              </div>
-
               <h2 className="text-3xl md:text-4xl lg:text-[44px] font-medium leading-[1.1] mb-6 text-white" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Decifrando a Mente no Mercado Mais <br className="hidden lg:block" /><span className="text-brand-accent italic font-serif">Emocional</span> do Mundo.
+                Como o brasileiro decide <br className="hidden lg:block" />em quem <span className="text-brand-accent italic font-serif">confiar</span>.
               </h2>
             </motion.div>
 
@@ -207,16 +199,16 @@ export default function OCodigoBrasilPage() {
               className="prose prose-invert max-w-none mb-12"
             >
               <p className="text-lg md:text-xl font-light leading-relaxed text-foreground/90 border-l-2 border-brand-accent pl-6">
-                &ldquo;Esqueça tudo o que você aprendeu nos manuais de marketing importados. Campanhas lógicas e produtos tecnicamente superiores fracassam de forma miserável no Brasil todos os dias.&rdquo;
+                &ldquo;No Brasil, o melhor produto nem sempre vence. Vence a empresa em quem o cliente sente que pode confiar.&rdquo;
               </p>
               <p className="text-foreground/70 font-light mt-8 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Para o nosso cérebro instintivo, o mundo é dividido em dois universos excludentes: a <strong className="text-foreground font-medium tracking-wide">RUA</strong> (o espaço impessoal, frio, a burocracia e a hostilidade) e a <strong className="text-brand-accent font-medium tracking-wide">CASA</strong> (o espaço quente, o afeto, a lealdade e a proteção).
+                Para quem compra no Brasil, existem dois lugares: a <strong className="text-foreground font-medium tracking-wide">RUA</strong> (o espaço impessoal, frio, a burocracia e a hostilidade) e a <strong className="text-brand-accent font-medium tracking-wide">CASA</strong> (o espaço quente, o afeto, a lealdade e a proteção).
               </p>
               <p className="text-foreground/70 font-light mt-4 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                O mercado brasileiro não quer comprar o seu produto. Ele quer comprar a segurança de não estar sozinho na rua. O consumo no Brasil é, no seu nível mais profundo e inconsciente, uma tentativa desesperada de transformar a hostilidade da rua no conforto da casa.
+                O cliente não compra só o produto. Ele compra a segurança de estar em boas mãos. A empresa que consegue parecer casa, e não rua, deixa de ser comparada só pelo preço.
               </p>
               <p className="text-foreground/90 font-medium italic mt-8 leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
-                Neste documento, eu não vou te ensinar a vender um serviço. Vou te mostrar exatamente quais botões emocionais você precisa apertar para entender a mente do seu consumidor no mercado mais passional do mundo.
+                É essa leitura que vem antes de cada roteiro meu: o que o seu cliente sente sobre o seu setor, e qual história a sua empresa pode contar com verdade para ganhar a confiança dele.
               </p>
             </motion.div>
 
@@ -239,7 +231,7 @@ export default function OCodigoBrasilPage() {
 
               <form onSubmit={handleWhatsAppRedirect} className="flex flex-col gap-6" noValidate>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium ml-1">
+                  <label htmlFor="name" className="text-xs uppercase tracking-widest text-foreground/70 font-medium ml-1">
                     Seu Nome
                   </label>
                   <input
@@ -249,14 +241,14 @@ export default function OCodigoBrasilPage() {
                     autoComplete="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/45 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
+                    className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/70 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
                     placeholder="Como devemos chamá-lo?"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="company" className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium ml-1">
+                    <label htmlFor="company" className="text-xs uppercase tracking-widest text-foreground/70 font-medium ml-1">
                       Sua Empresa
                     </label>
                     <input
@@ -266,13 +258,13 @@ export default function OCodigoBrasilPage() {
                       autoComplete="organization"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/45 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
+                      className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/70 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
                       placeholder="Sua marca"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
                     {/* "Sua Posição" → "Seu Cargo" — mais claro e direto */}
-                    <label htmlFor="role" className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium ml-1">
+                    <label htmlFor="role" className="text-xs uppercase tracking-widest text-foreground/70 font-medium ml-1">
                       Seu Cargo
                     </label>
                     <input
@@ -282,14 +274,14 @@ export default function OCodigoBrasilPage() {
                       autoComplete="organization-title"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/45 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
+                      className="bg-background/80 border border-white/20 rounded-xl px-4 py-3.5 text-foreground text-base placeholder:text-foreground/70 focus:outline-none focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 transition-all font-light"
                       placeholder="CEO, Diretor, etc."
                     />
                   </div>
                 </div>
 
                 {/* Aviso de privacidade — LGPD */}
-                <p className="text-[11px] text-foreground/55 font-light leading-relaxed">
+                <p className="text-xs text-foreground/70 font-light leading-relaxed">
                   Seus dados são usados exclusivamente para o envio do manifesto via WhatsApp e não são armazenados ou compartilhados com terceiros.{" "}
                   <Link href="/sobre" className="underline underline-offset-2 hover:text-brand-accent/70 transition-colors">
                     Saiba mais sobre Fabian Baldovino.
@@ -298,7 +290,7 @@ export default function OCodigoBrasilPage() {
 
                 <button
                   type="submit"
-                  className="mt-2 w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3 min-h-[48px] hover:brightness-110 hover:shadow-[0_0_30px_rgba(205,160,89,0.3)] active:scale-[0.98] transition-all"
+                  className="mt-2 w-full bg-brand-accent text-brand-dark py-4 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3 min-h-[48px] hover:brightness-110 active:scale-[0.98] transition-all"
                   aria-label="Solicitar manifesto O Código Brasil via WhatsApp"
                 >
                   Solicitar pelo WhatsApp <ArrowRight size={18} />

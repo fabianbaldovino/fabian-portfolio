@@ -14,7 +14,7 @@ export const business = {
   name: "Fabian Baldovino",
   alternateName: "Fabian Baldovino Brand Filmmaking",
   url: SITE,
-  email: "fbpaciel@gmail.com",
+  email: "contato@fabian.art.br",
   phone: "+55 51 99965-4160",
   phoneRaw: "+5551999654160",
   foundingYear: "2011",
