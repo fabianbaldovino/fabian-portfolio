@@ -48,6 +48,19 @@ const nextConfig: NextConfig = {
         destination: "/conteudo/codigo-brasil-forca-brand-filmmaking-wedy",
         permanent: true,
       },
+      // Capas renomeadas sem espaço no nome. Com espaço, a URL saía crua no
+      // JSON-LD ("…/wedy nutrition.png") e o Googlebot cortava no espaço,
+      // rastreando "/FOTOS/trabalhos/wedy" e "/FOTOS/trabalhos/ele" → 404.
+      {
+        source: "/FOTOS/trabalhos/wedy%20nutrition.png",
+        destination: "/FOTOS/trabalhos/wedy-nutrition.png",
+        permanent: true,
+      },
+      {
+        source: "/FOTOS/trabalhos/ele%20nao%20foi%20embora.jpg",
+        destination: "/FOTOS/trabalhos/ele-nao-foi-embora.jpg",
+        permanent: true,
+      },
     ];
   },
   async headers() {
