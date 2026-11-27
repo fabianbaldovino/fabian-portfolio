@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     name: "Wedy Nutrition",
     slug: "wedy-nutrition",
-    imgSrc: "/FOTOS/trabalhos/wedy nutrition.png",
+    imgSrc: "/FOTOS/trabalhos/wedy-nutrition.png",
     shortDescription: "Tribo e Identidade",
   },
 ];
